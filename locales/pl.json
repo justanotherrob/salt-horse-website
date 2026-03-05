@@ -1,0 +1,114 @@
+{
+  "lang": "pl",
+  "lang_name": "Polski",
+  "flag": "\ud83c\uddf5\ud83c\uddf1",
+  "dir": "ltr",
+
+  "nav": {
+    "drink": "Napoje",
+    "food": "Jedzenie",
+    "gift_cards": "Karty Podarunkowe",
+    "book": "Rezerwacja",
+    "find_us": "Znajdź Nas",
+    "reserve": "Zarezerwuj"
+  },
+
+  "hero": {
+    "explore": "Odkryj"
+  },
+
+  "stats": {
+    "taps_label": "Rotacyjnych Kranów",
+    "bottles_label": "Puszek i Butelek",
+    "years_label": "Lat Działalności"
+  },
+
+  "drink": {
+    "section_label": "Co Nalewamy",
+    "title": "Tylko to<br>co najlepsze.",
+    "description": "Oferujemy starannie wyselekcjonowaną i rotacyjną kolekcję piw rzemieślniczych — czternaście linii z beczki i ponad 200 w puszkach i butelkach. Napij się tu albo zabierz do domu. Twój wybór.",
+    "feature_1": "14 rotacyjnych linii beczkowych — zawsze coś nowego",
+    "feature_2": "Około 200 puszek i butelek z Wielkiej Brytanii i nie tylko",
+    "feature_3": "Zawsze dobry wybór piw bezalkoholowych i bezglutenowych",
+    "feature_4": "Niewielki, ale starannie dobrany wybór win i alkoholi mocnych",
+    "feature_5": "Sprzedaż na wynos dostępna w bottle shopie"
+  },
+
+  "food": {
+    "banner": "Burgery, które robią robotę.",
+    "section_label": "Co Serwujemy",
+    "title": "Smash.<br>Znikają w minutę.",
+    "description": "Burgery, skrzydełka, frytki. Na tym się skupiamy. Menu jest małe, ale konkretne — wołowina dojrzewana na sucho, kanapki z kurczakiem w panierce, porządne frytki krojone ręcznie i smażone dwukrotnie. Kilka pozycji do dzielenia się. Kilka do zakąszania następnego piwa. Opcje wegańskie, które trzymają poziom.",
+    "description_2": "Świeżo przygotowane. Bez kompromisów.",
+    "current_menu": "Aktualne Menu",
+    "allergens": "Alergeny"
+  },
+
+  "book": {
+    "section_label": "Zarezerwuj Stolik",
+    "title": "Rezerwacje",
+    "description": "Rezerwacja nie jest obowiązkowa — zawsze rezerwujemy połowę miejsc dla gości bez rezerwacji. Ale jeśli chcesz mieć pewność, zarezerwuj poniżej.",
+    "book_table": "Zarezerwuj Stolik",
+    "groups_title": "Grupa powyżej 6 osób?",
+    "groups_text": "Zadzwoń pod numer 07400 653295. Nie możemy zagwarantować, że kilka zarezerwowanych stolików będzie obok siebie — skontaktuj się z nami, a wszystko zorganizujemy.",
+    "notice_title": "Warto wiedzieć",
+    "notice_text": "Stoliki są rezerwowane na 10 minut — zadzwoń, jeśli się spóźniasz. Miejsca w ogródku są dostępne w kolejności przybycia i nie można ich zarezerwować."
+  },
+
+  "location": {
+    "section_label": "Znajdź Nas",
+    "title": "Lokalizacja i Godziny",
+    "where_we_are": "Gdzie Jesteśmy",
+    "bar_hours": "Godziny Baru",
+    "kitchen_hours": "Godziny Kuchni",
+    "google_maps": "Google Maps",
+    "call_us": "Zadzwoń",
+    "kitchen_note": "Po zamknięciu kuchni obsługujemy tylko gości bez rezerwacji."
+  },
+
+  "footer": {
+    "tagline": "Piwo rzemieślnicze i burgery na Starym Mieście w Edynburgu od 2016 roku."
+  },
+
+  "gift_cards": {
+    "page_title": "Podaruj Piwo Rzemieślnicze",
+    "subtitle": "Wybierz kwotę, powiedz nam dla kogo, a wyślemy kartę podarunkową e-mailem z PDF-em do wydruku.",
+    "choose_amount": "Wybierz Kwotę",
+    "custom_amount": "Lub wybierz własną kwotę",
+    "min_max": "Min £25 — Max £250",
+    "who_is_it_for": "Dla kogo?",
+    "for_me": "Dla Mnie",
+    "for_friend": "Dla Znajomego",
+    "your_details": "Twoje Dane",
+    "your_name": "Twoje Imię",
+    "your_email": "Twój Email",
+    "recipient_details": "Dane Odbiorcy",
+    "recipient_name": "Imię Odbiorcy",
+    "recipient_email": "Email Odbiorcy",
+    "buy_button": "Kup Kartę Podarunkową",
+    "expires_note": "Karty podarunkowe są ważne przez 12 miesięcy od zakupu.",
+    "processing": "Przetwarzanie..."
+  },
+
+  "gift_cards_success": {
+    "title": "Dziękujemy!",
+    "subtitle": "Twoja karta podarunkowa została utworzona.",
+    "code_label": "Kod Karty Podarunkowej",
+    "amount_label": "Kwota",
+    "expires_label": "Ważna do",
+    "email_note": "Sprawdź swoją skrzynkę — karta podarunkowa z PDF-em została wysłana e-mailem.",
+    "back_home": "Wróć do Salt Horse",
+    "processing_title": "Przetwarzanie Twojej Karty Podarunkowej...",
+    "processing_text": "Twoja płatność jest potwierdzana. Wkrótce otrzymasz e-mail z kartą podarunkową."
+  },
+
+  "days": {
+    "Monday": "Poniedziałek",
+    "Tuesday": "Wtorek",
+    "Wednesday": "Środa",
+    "Thursday": "Czwartek",
+    "Friday": "Piątek",
+    "Saturday": "Sobota",
+    "Sunday": "Niedziela"
+  }
+}
