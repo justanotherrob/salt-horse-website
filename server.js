@@ -5,7 +5,9 @@ const session = require('express-session');
 const SQLiteStore = require('connect-sqlite3')(session);
 const bodyParser = require('body-parser');
 const path = require('path');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = process.env.STRIPE_SECRET_KEY
+  ? require('stripe')(process.env.STRIPE_SECRET_KEY)
+  : null;
 
 const cookieParser = require('cookie-parser');
 const { redirectMiddleware } = require('./middleware/redirects');
@@ -21,6 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // ── Stripe Webhook (must be before body-parser) ──────────
 app.post('/webhook/stripe', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
+  if (!stripe) return res.status(503).send('Stripe not configured');
   const sig = req.headers['stripe-signature'];
   let event;
   try {
