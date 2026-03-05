@@ -12,9 +12,11 @@ router.get('/', (req, res) => {
   const activeCards = db.prepare('SELECT COUNT(*) as count FROM gift_cards WHERE status = ?').get('active');
   const totalRevenue = db.prepare("SELECT COALESCE(SUM(initial_amount), 0) as total FROM gift_cards WHERE status != 'pending'").get();
   const redirectCount = db.prepare('SELECT COUNT(*) as count FROM redirects').get();
+  const giftCardsEnabled = db.prepare("SELECT value FROM site_settings WHERE key = 'gift_cards_enabled'").get();
 
   res.render('admin/dashboard', {
     user: req.session.userName,
+    giftCardsEnabled: giftCardsEnabled ? giftCardsEnabled.value === 'true' : false,
     stats: {
       totalCards: totalCards.count,
       activeCards: activeCards.count,

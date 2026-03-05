@@ -116,6 +116,7 @@ app.use((req, res) => {
     hours: [],
     formatTime: () => '',
     stripeKey: process.env.STRIPE_PUBLISHABLE_KEY,
+    giftCardsEnabled: false,
     t: res.locals.t,
     lang: res.locals.lang,
     supportedLangs: res.locals.supportedLangs,

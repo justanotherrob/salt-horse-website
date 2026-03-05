@@ -24,7 +24,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#drink" onclick="closeMenu()"><%= t.nav.drink %></a></li>
             <li><a href="#food" onclick="closeMenu()"><%= t.nav.food %></a></li>
-            <li><a href="/gift-cards" onclick="closeMenu()"><%= t.nav.gift_cards %></a></li>
+            <% if (giftCardsEnabled) { %><li><a href="/gift-cards" onclick="closeMenu()"><%= t.nav.gift_cards %></a></li><% } %>
             <li><a href="#book" onclick="closeMenu()"><%= t.nav.book %></a></li>
             <li><a href="#location" onclick="closeMenu()"><%= t.nav.find_us %></a></li>
             <li><a href="<%= content.book_url %>" target="_blank" class="nav-cta" onclick="closeMenu()"><%= t.nav.reserve %></a></li>

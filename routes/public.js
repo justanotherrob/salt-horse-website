@@ -2,6 +2,12 @@ const express = require('express');
 const db = require('../db/database');
 const router = express.Router();
 
+// Helper: check if a site setting is enabled
+function getSetting(key) {
+  const row = db.prepare('SELECT value FROM site_settings WHERE key = ?').get(key);
+  return row ? row.value === 'true' : false;
+}
+
 // Helper: get all content as key-value object
 function getContent() {
   const rows = db.prepare('SELECT key, value, type FROM content_blocks').all();
@@ -32,17 +38,20 @@ function formatTime(time24) {
 router.get('/', (req, res) => {
   const content = getContent();
   const hours = getHours();
-  res.render('index', { content, hours, formatTime, stripeKey: process.env.STRIPE_PUBLISHABLE_KEY });
+  const giftCardsEnabled = getSetting('gift_cards_enabled');
+  res.render('index', { content, hours, formatTime, stripeKey: process.env.STRIPE_PUBLISHABLE_KEY, giftCardsEnabled });
 });
 
 // GET /gift-cards — Purchase page
 router.get('/gift-cards', (req, res) => {
+  if (!getSetting('gift_cards_enabled')) return res.redirect('/');
   const content = getContent();
   res.render('gift-cards', { content, stripeKey: process.env.STRIPE_PUBLISHABLE_KEY });
 });
 
 // GET /gift-cards/success
 router.get('/gift-cards/success', (req, res) => {
+  if (!getSetting('gift_cards_enabled')) return res.redirect('/');
   const sessionId = req.query.session_id;
   let giftCard = null;
 

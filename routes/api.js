@@ -159,6 +159,20 @@ router.post('/gift-cards/import', upload.single('csv'), (req, res) => {
   }
 });
 
+// ── Site Settings ────────────────────────────────────
+
+// POST /api/settings/:key
+router.post('/settings/:key', (req, res) => {
+  const { key } = req.params;
+  const { value } = req.body;
+
+  const setting = db.prepare('SELECT key FROM site_settings WHERE key = ?').get(key);
+  if (!setting) return res.status(404).json({ error: 'Setting not found' });
+
+  db.prepare('UPDATE site_settings SET value = ?, updated_at = CURRENT_TIMESTAMP WHERE key = ?').run(value, key);
+  res.json({ success: true, key, value });
+});
+
 // ── Redirects ────────────────────────────────────────────
 
 // POST /api/redirects

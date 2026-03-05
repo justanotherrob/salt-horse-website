@@ -21,4 +21,44 @@
     </div>
 </div>
 
+<h2 style="margin-top: 2.5rem;">Site Features</h2>
+<div class="settings-card" style="margin-top: 1rem; background: var(--card-bg); padding: 1.5rem; border-radius: 6px;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+            <strong>Gift Cards Page</strong>
+            <p style="margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--text-dim);">
+                When off, the gift cards link is hidden and the page returns visitors to the homepage.
+            </p>
+        </div>
+        <label class="toggle-switch">
+            <input type="checkbox" id="giftCardsToggle" <%= giftCardsEnabled ? 'checked' : '' %> onchange="toggleGiftCards(this)">
+            <span class="toggle-slider"></span>
+        </label>
+    </div>
+    <div id="giftCardsStatus" style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-dim);"></div>
+</div>
+
+<script>
+async function toggleGiftCards(el) {
+    const value = el.checked ? 'true' : 'false';
+    const status = document.getElementById('giftCardsStatus');
+    try {
+        const res = await fetch('/api/settings/gift_cards_enabled', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ value })
+        });
+        const data = await res.json();
+        if (data.success) {
+            status.textContent = el.checked ? 'Gift cards page is now live.' : 'Gift cards page is now hidden.';
+            status.style.color = el.checked ? '#4ade80' : '#f59e0b';
+        }
+    } catch (err) {
+        status.textContent = 'Error saving setting.';
+        status.style.color = '#ef4444';
+        el.checked = !el.checked;
+    }
+}
+</script>
+
 <%- include('_footer') %>

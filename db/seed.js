@@ -111,4 +111,17 @@ const insertHoursMany = db.transaction((rows) => {
 insertHoursMany(hours);
 console.log('✓ Seeded 7 days of opening hours');
 
+// ── Seed Site Settings ───────────────────────────────────
+const settings = [
+  { key: 'gift_cards_enabled', value: 'false', label: 'Gift Cards Page Enabled' },
+];
+
+const insertSetting = db.prepare(`
+  INSERT OR IGNORE INTO site_settings (key, value, label)
+  VALUES (@key, @value, @label)
+`);
+
+for (const s of settings) insertSetting.run(s);
+console.log('✓ Seeded site settings');
+
 console.log('\nDone! Database ready.');
