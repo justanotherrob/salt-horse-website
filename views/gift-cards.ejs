@@ -27,12 +27,12 @@
         <!-- Language Switcher -->
         <div class="lang-switcher" id="langSwitcher">
             <button class="lang-current" onclick="toggleLangMenu()" aria-label="Change language">
-                <%= t.lang_name %>
+                <%= t.flag %> <%= t.lang_name %>
             </button>
             <div class="lang-dropdown" id="langDropdown">
                 <% supportedLangs.forEach(function(code) { %>
                     <a href="?lang=<%= code %>" class="lang-option<%= code === lang ? ' active' : '' %>">
-                        <%= locales[code].lang_name %>
+                        <%= locales[code].flag %> <%= locales[code].lang_name %>
                     </a>
                 <% }); %>
             </div>
