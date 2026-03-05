@@ -63,7 +63,8 @@
     "kitchen_hours": "Orari della Cucina",
     "google_maps": "Google Maps",
     "call_us": "Chiamaci",
-    "kitchen_note": "Solo senza prenotazione dopo la chiusura della cucina."
+    "kitchen_note": "Solo senza prenotazione dopo la chiusura della cucina.",
+    "venue_notice": "Siamo un locale riservato ai maggiori di 18 anni."
   },
 
   "footer": {

@@ -63,7 +63,8 @@
     "kitchen_hours": "Godziny Kuchni",
     "google_maps": "Google Maps",
     "call_us": "Zadzwoń",
-    "kitchen_note": "Po zamknięciu kuchni obsługujemy tylko gości bez rezerwacji."
+    "kitchen_note": "Po zamknięciu kuchni obsługujemy tylko gości bez rezerwacji.",
+    "venue_notice": "Jesteśmy lokalem wyłącznie dla osób powyżej 18 roku życia."
   },
 
   "footer": {

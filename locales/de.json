@@ -63,7 +63,8 @@
     "kitchen_hours": "Küchen-Öffnungszeiten",
     "google_maps": "Google Maps",
     "call_us": "Ruf uns an",
-    "kitchen_note": "Nach Küchenschluss nur für Laufkundschaft."
+    "kitchen_note": "Nach Küchenschluss nur für Laufkundschaft.",
+    "venue_notice": "Wir sind ein Lokal ab 18 Jahren."
   },
 
   "footer": {

@@ -63,7 +63,8 @@
     "kitchen_hours": "Kitchen Hours",
     "google_maps": "Google Maps",
     "call_us": "Call Us",
-    "kitchen_note": "Walk-in only after the kitchen closes."
+    "kitchen_note": "Walk-in only after the kitchen closes.",
+    "venue_notice": "We are an 18+ venue."
   },
 
   "footer": {

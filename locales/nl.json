@@ -63,7 +63,8 @@
     "kitchen_hours": "Keuken Openingstijden",
     "google_maps": "Google Maps",
     "call_us": "Bel Ons",
-    "kitchen_note": "Alleen inloop na sluiting van de keuken."
+    "kitchen_note": "Alleen inloop na sluiting van de keuken.",
+    "venue_notice": "Wij zijn een 18+ locatie."
   },
 
   "footer": {

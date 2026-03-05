@@ -177,13 +177,14 @@
                     <p class="address-main">Salt Horse</p>
                     <p><%= content.location_address_1 %></p>
                     <p><%= content.location_address_2 %></p>
+                    <p><%= content.location_address_3 %></p>
                     <p style="margin-top: 1rem;"><%= content.location_phone %></p>
                     <div class="address-links">
                         <a href="<%= content.location_maps_url %>" target="_blank"><%= t.location.google_maps %></a>
                         <a href="tel:+447400653295"><%= t.location.call_us %></a>
                     </div>
                     <div class="notice">
-                        <%= t.location.kitchen_note %>
+                        <%= t.location.venue_notice %>
                     </div>
                 </div>
 
@@ -222,7 +223,7 @@
             <a href="<%= content.footer_untappd %>" target="_blank">Untappd</a>
         </div>
         <div class="footer-bottom">
-            &copy; Salt Horse. <%= content.location_address_1 %>, <%= content.location_address_2 %>.
+            &copy; Salt Horse. <%= content.location_address_1 %>, <%= content.location_address_2 %>, <%= content.location_address_3 %>.
         </div>
     </footer>
 

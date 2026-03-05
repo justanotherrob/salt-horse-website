@@ -63,7 +63,8 @@
     "kitchen_hours": "厨房营业时间",
     "google_maps": "谷歌地图",
     "call_us": "致电我们",
-    "kitchen_note": "厨房关闭后仅接待无预约客人。"
+    "kitchen_note": "厨房关闭后仅接待无预约客人。",
+    "venue_notice": "本场所仅限18岁以上人士进入。"
   },
 
   "footer": {
