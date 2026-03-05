@@ -1,0 +1,113 @@
+{
+  "lang": "nl",
+  "lang_name": "Nederlands",
+  "dir": "ltr",
+
+  "nav": {
+    "drink": "Drinken",
+    "food": "Eten",
+    "gift_cards": "Cadeaubonnen",
+    "book": "Reserveren",
+    "find_us": "Vind Ons",
+    "reserve": "Reserveren"
+  },
+
+  "hero": {
+    "explore": "Ontdekken"
+  },
+
+  "stats": {
+    "taps_label": "Wisselende Taps",
+    "bottles_label": "Blikjes & Flessen",
+    "years_label": "Jaar aan het Tappen"
+  },
+
+  "drink": {
+    "section_label": "Wat we tappen",
+    "title": "Alleen het<br>Goede Spul.",
+    "description": "We hebben een zorgvuldig samengesteld en wisselend aanbod van craft bier met veertien taps en meer dan 200 soorten in blik en fles. Hier opdrinken of mee naar huis nemen. Jij kiest.",
+    "feature_1": "14 wisselende taps — altijd iets nieuws",
+    "feature_2": "Ongeveer 200 blikjes en flessen uit het VK en daarbuiten",
+    "feature_3": "Altijd een goede selectie alcoholvrije en glutenvrije bieren",
+    "feature_4": "Een kleine, maar uitstekende selectie wijnen en sterke drank",
+    "feature_5": "Afhaal beschikbaar vanuit de slijterij"
+  },
+
+  "food": {
+    "banner": "Burgers die geen grappen maken.",
+    "section_label": "Wat we serveren",
+    "title": "Gesmashed.<br>Zo op.",
+    "description": "Burgers, wings, friet. Dat is de focus. De kaart is klein maar strak — dry-aged rundvlees, gefrituurde kipsandwiches, echte friet handgesneden en dubbel gebakken. Een paar dingen om te delen. Een paar om het volgende biertje op te vangen. Vegan opties die overtuigen.",
+    "description_2": "Vers gemaakt. Geen shortcuts.",
+    "current_menu": "Huidige Menu",
+    "allergens": "Allergenen"
+  },
+
+  "book": {
+    "section_label": "Reserveer een tafel",
+    "title": "Reserveringen",
+    "description": "Reserveren is optioneel — we houden altijd de helft van de ruimte vrij voor inloop. Maar als je zeker wilt zijn van een plekje, reserveer hieronder.",
+    "book_table": "Reserveer een Tafel",
+    "groups_title": "Groepen van meer dan 6?",
+    "groups_text": "Bel ons op 07400 653295. We kunnen niet garanderen dat meerdere gereserveerde tafels naast elkaar staan — neem contact met ons op en we regelen het.",
+    "notice_title": "Goed om te weten",
+    "notice_text": "Tafels worden 10 minuten gereserveerd — bel als je vertraagd bent. Tuinplaatsen zijn op volgorde van binnenkomst en kunnen niet gereserveerd worden."
+  },
+
+  "location": {
+    "section_label": "Vind ons",
+    "title": "Locatie & Openingstijden",
+    "where_we_are": "Waar we zijn",
+    "bar_hours": "Bar Openingstijden",
+    "kitchen_hours": "Keuken Openingstijden",
+    "google_maps": "Google Maps",
+    "call_us": "Bel Ons",
+    "kitchen_note": "Alleen inloop na sluiting van de keuken."
+  },
+
+  "footer": {
+    "tagline": "Craft Bier & Burgers in de oude binnenstad van Edinburgh sinds 2016."
+  },
+
+  "gift_cards": {
+    "page_title": "Geef Craft Bier Cadeau",
+    "subtitle": "Kies een bedrag, vertel ons voor wie het is, en we sturen een cadeaubon per e-mail met een PDF om af te drukken.",
+    "choose_amount": "Kies een Bedrag",
+    "custom_amount": "Of kies je eigen bedrag",
+    "min_max": "Min £25 — Max £250",
+    "who_is_it_for": "Voor wie is het?",
+    "for_me": "Voor Mij",
+    "for_friend": "Voor een Vriend",
+    "your_details": "Jouw Gegevens",
+    "your_name": "Jouw Naam",
+    "your_email": "Jouw E-mail",
+    "recipient_details": "Gegevens Ontvanger",
+    "recipient_name": "Naam Ontvanger",
+    "recipient_email": "E-mail Ontvanger",
+    "buy_button": "Cadeaubon Kopen",
+    "expires_note": "Cadeaubonnen zijn 12 maanden geldig vanaf aankoop.",
+    "processing": "Bezig met verwerken..."
+  },
+
+  "gift_cards_success": {
+    "title": "Bedankt!",
+    "subtitle": "Je cadeaubon is aangemaakt.",
+    "code_label": "Cadeaubon Code",
+    "amount_label": "Bedrag",
+    "expires_label": "Geldig tot",
+    "email_note": "Controleer je e-mail voor je cadeaubon met PDF-bijlage.",
+    "back_home": "Terug naar Salt Horse",
+    "processing_title": "Je cadeaubon wordt verwerkt...",
+    "processing_text": "Je betaling wordt bevestigd. Je ontvangt binnenkort een e-mail met je cadeaubon."
+  },
+
+  "days": {
+    "Monday": "Maandag",
+    "Tuesday": "Dinsdag",
+    "Wednesday": "Woensdag",
+    "Thursday": "Donderdag",
+    "Friday": "Vrijdag",
+    "Saturday": "Zaterdag",
+    "Sunday": "Zondag"
+  }
+}

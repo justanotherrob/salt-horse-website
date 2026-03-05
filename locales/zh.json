@@ -1,0 +1,113 @@
+{
+  "lang": "zh",
+  "lang_name": "中文",
+  "dir": "ltr",
+
+  "nav": {
+    "drink": "饮品",
+    "food": "美食",
+    "gift_cards": "礼品卡",
+    "book": "预订",
+    "find_us": "找到我们",
+    "reserve": "预订"
+  },
+
+  "hero": {
+    "explore": "探索"
+  },
+
+  "stats": {
+    "taps_label": "轮换生啤",
+    "bottles_label": "罐装与瓶装",
+    "years_label": "年经营历史"
+  },
+
+  "drink": {
+    "section_label": "我们提供的",
+    "title": "只选<br>好的。",
+    "description": "我们精心策划并轮换供应精酿啤酒，拥有十四条生啤管线和超过200种罐装及瓶装选择。在这里畅饮或带回家，随你选择。",
+    "feature_1": "14条轮换生啤管线 — 总有新鲜选择",
+    "feature_2": "约200种来自英国及世界各地的罐装和瓶装啤酒",
+    "feature_3": "始终提供丰富的无酒精和无麸质啤酒选择",
+    "feature_4": "精选少量葡萄酒和烈酒",
+    "feature_5": "瓶装店提供外带服务"
+  },
+
+  "food": {
+    "banner": "认真做的汉堡。",
+    "section_label": "我们提供的",
+    "title": "碾压。<br>瞬间消失。",
+    "description": "汉堡、鸡翅、薯条。这就是我们的专注。菜单精简但品质过硬 — 干式熟成牛肉、炸鸡三明治、手切双炸薯条。一些适合分享的。一些适合配下一杯啤酒的。素食选择同样出色。",
+    "description_2": "现做现卖。绝不偷工减料。",
+    "current_menu": "当前菜单",
+    "allergens": "过敏原"
+  },
+
+  "book": {
+    "section_label": "预订座位",
+    "title": "预订",
+    "description": "预订不是必须的 — 我们始终为无预约客人保留一半的位置。但如果你想确保有座位，请在下方预订。",
+    "book_table": "预订座位",
+    "groups_title": "超过6人的团体？",
+    "groups_text": "请致电07400 653295。我们无法保证多桌预订会相邻 — 请联系我们，我们会为您安排。",
+    "notice_title": "温馨提示",
+    "notice_text": "座位保留10分钟 — 如果迟到请电话告知。花园座位先到先得，无法预订。"
+  },
+
+  "location": {
+    "section_label": "找到我们",
+    "title": "位置与营业时间",
+    "where_we_are": "我们的位置",
+    "bar_hours": "酒吧营业时间",
+    "kitchen_hours": "厨房营业时间",
+    "google_maps": "谷歌地图",
+    "call_us": "致电我们",
+    "kitchen_note": "厨房关闭后仅接待无预约客人。"
+  },
+
+  "footer": {
+    "tagline": "自2016年起，在爱丁堡老城区提供精酿啤酒与汉堡。"
+  },
+
+  "gift_cards": {
+    "page_title": "赠送精酿啤酒",
+    "subtitle": "选择金额，告诉我们送给谁，我们将通过电子邮件发送礼品卡及可打印的PDF。",
+    "choose_amount": "选择金额",
+    "custom_amount": "或自定义金额",
+    "min_max": "最低 £25 — 最高 £250",
+    "who_is_it_for": "送给谁？",
+    "for_me": "自己",
+    "for_friend": "朋友",
+    "your_details": "你的信息",
+    "your_name": "你的姓名",
+    "your_email": "你的邮箱",
+    "recipient_details": "收件人信息",
+    "recipient_name": "收件人姓名",
+    "recipient_email": "收件人邮箱",
+    "buy_button": "购买礼品卡",
+    "expires_note": "礼品卡自购买之日起12个月内有效。",
+    "processing": "处理中..."
+  },
+
+  "gift_cards_success": {
+    "title": "谢谢！",
+    "subtitle": "你的礼品卡已创建。",
+    "code_label": "礼品卡代码",
+    "amount_label": "金额",
+    "expires_label": "有效期至",
+    "email_note": "请查收邮件，礼品卡PDF已附在邮件中。",
+    "back_home": "返回 Salt Horse",
+    "processing_title": "正在处理你的礼品卡...",
+    "processing_text": "你的付款正在确认中。稍后你将收到包含礼品卡的邮件。"
+  },
+
+  "days": {
+    "Monday": "周一",
+    "Tuesday": "周二",
+    "Wednesday": "周三",
+    "Thursday": "周四",
+    "Friday": "周五",
+    "Saturday": "周六",
+    "Sunday": "周日"
+  }
+}

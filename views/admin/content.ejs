@@ -1,0 +1,50 @@
+<%- include('_header') %>
+
+<h1>Content Management</h1>
+
+<div class="content-sections">
+    <% Object.keys(sections).forEach(sectionName => { %>
+        <div class="content-section">
+            <h2><%= sectionName %></h2>
+
+            <% sections[sectionName].forEach(item => { %>
+                <div class="content-block">
+                    <label><%= item.label %></label>
+                    <% if (item.type === 'textarea') { %>
+                        <textarea class="content-input" data-key="<%= item.key %>" rows="4"><%= item.value %></textarea>
+                    <% } else { %>
+                        <input type="text" class="content-input" data-key="<%= item.key %>" value="<%= item.value %>">
+                    <% } %>
+                    <button class="btn-save" onclick="saveContent('<%= item.key %>')">Save</button>
+                    <span class="save-status"></span>
+                </div>
+            <% }); %>
+        </div>
+    <% }); %>
+</div>
+
+<script>
+function saveContent(key) {
+    const input = document.querySelector(`[data-key="${key}"]`);
+    const value = input.value;
+    const statusEl = input.parentElement.querySelector('.save-status');
+
+    fetch(`/api/content/${key}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ value })
+    })
+    .then(res => res.json())
+    .then(data => {
+        statusEl.textContent = 'Saved!';
+        statusEl.style.color = '#28a745';
+        setTimeout(() => statusEl.textContent = '', 2000);
+    })
+    .catch(err => {
+        statusEl.textContent = 'Error saving';
+        statusEl.style.color = '#dc3545';
+    });
+}
+</script>
+
+<%- include('_footer') %>

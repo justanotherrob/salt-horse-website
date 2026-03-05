@@ -1,0 +1,113 @@
+{
+  "lang": "es",
+  "lang_name": "Español",
+  "dir": "ltr",
+
+  "nav": {
+    "drink": "Bebidas",
+    "food": "Comida",
+    "gift_cards": "Tarjetas Regalo",
+    "book": "Reservar",
+    "find_us": "Encuéntranos",
+    "reserve": "Reservar"
+  },
+
+  "hero": {
+    "explore": "Explorar"
+  },
+
+  "stats": {
+    "taps_label": "Grifos Rotativos",
+    "bottles_label": "Latas y Botellas",
+    "years_label": "Años Sirviendo"
+  },
+
+  "drink": {
+    "section_label": "Lo que servimos",
+    "title": "Solo lo<br>Bueno.",
+    "description": "Ofrecemos una selección cuidadosamente curada y rotativa de cerveza artesanal con catorce grifos y más de 200 variedades en lata y botella. Tómatela aquí o llévatela a casa. Tú decides.",
+    "feature_1": "14 grifos rotativos — siempre algo nuevo",
+    "feature_2": "Alrededor de 200 latas y botellas del Reino Unido y más allá",
+    "feature_3": "Siempre una buena selección de cervezas sin alcohol y sin gluten",
+    "feature_4": "Una pequeña y cuidada selección de vinos y licores",
+    "feature_5": "Para llevar disponible desde la tienda de botellas"
+  },
+
+  "food": {
+    "banner": "Hamburguesas que van en serio.",
+    "section_label": "Lo que servimos",
+    "title": "Smash.<br>Desaparecen en minutos.",
+    "description": "Hamburguesas, alitas, patatas fritas. Ese es el enfoque. La carta es pequeña pero sólida — ternera madurada, sándwiches de pollo frito, patatas fritas de verdad cortadas a mano y cocinadas dos veces. Algunas cosas para compartir. Otras para acompañar la siguiente cerveza. Opciones veganas que convencen.",
+    "description_2": "Hecho al momento. Sin atajos.",
+    "current_menu": "Menú Actual",
+    "allergens": "Alérgenos"
+  },
+
+  "book": {
+    "section_label": "Reservar una mesa",
+    "title": "Reservas",
+    "description": "La reserva es opcional — siempre guardamos la mitad del espacio para quienes vienen sin reserva. Pero si quieres asegurar tu sitio, reserva a continuación.",
+    "book_table": "Reservar Mesa",
+    "groups_title": "¿Grupos de más de 6?",
+    "groups_text": "Llámanos al 07400 653295. No podemos garantizar que varias mesas reservadas estén juntas — contáctanos y lo organizamos.",
+    "notice_title": "Bueno saberlo",
+    "notice_text": "Las mesas se reservan durante 10 minutos — llama si te retrasas. Las mesas del jardín son por orden de llegada y no se pueden reservar."
+  },
+
+  "location": {
+    "section_label": "Encuéntranos",
+    "title": "Ubicación y Horarios",
+    "where_we_are": "Dónde estamos",
+    "bar_hours": "Horario del Bar",
+    "kitchen_hours": "Horario de Cocina",
+    "google_maps": "Google Maps",
+    "call_us": "Llámanos",
+    "kitchen_note": "Solo sin reserva después del cierre de cocina."
+  },
+
+  "footer": {
+    "tagline": "Cerveza artesanal y hamburguesas en el casco antiguo de Edimburgo desde 2016."
+  },
+
+  "gift_cards": {
+    "page_title": "Regala Cerveza Artesanal",
+    "subtitle": "Elige un importe, dinos para quién es, y enviaremos una tarjeta regalo por email con un PDF para imprimir.",
+    "choose_amount": "Elige un Importe",
+    "custom_amount": "O elige tu propio importe",
+    "min_max": "Mín £25 — Máx £250",
+    "who_is_it_for": "¿Para quién es?",
+    "for_me": "Para Mí",
+    "for_friend": "Para un Amigo",
+    "your_details": "Tus Datos",
+    "your_name": "Tu Nombre",
+    "your_email": "Tu Email",
+    "recipient_details": "Datos del Destinatario",
+    "recipient_name": "Nombre del Destinatario",
+    "recipient_email": "Email del Destinatario",
+    "buy_button": "Comprar Tarjeta Regalo",
+    "expires_note": "Las tarjetas regalo son válidas durante 12 meses desde la compra.",
+    "processing": "Procesando..."
+  },
+
+  "gift_cards_success": {
+    "title": "¡Gracias!",
+    "subtitle": "Tu tarjeta regalo ha sido creada.",
+    "code_label": "Código de Tarjeta Regalo",
+    "amount_label": "Importe",
+    "expires_label": "Válida hasta",
+    "email_note": "Revisa tu email para tu tarjeta regalo con el PDF adjunto.",
+    "back_home": "Volver a Salt Horse",
+    "processing_title": "Procesando tu tarjeta regalo...",
+    "processing_text": "Tu pago está siendo confirmado. Recibirás un email con tu tarjeta regalo en breve."
+  },
+
+  "days": {
+    "Monday": "Lunes",
+    "Tuesday": "Martes",
+    "Wednesday": "Miércoles",
+    "Thursday": "Jueves",
+    "Friday": "Viernes",
+    "Saturday": "Sábado",
+    "Sunday": "Domingo"
+  }
+}

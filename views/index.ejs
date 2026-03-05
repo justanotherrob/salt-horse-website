@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt Horse — Craft Beer & Burgers, Edinburgh</title>
+    <meta name="description" content="<%= content.meta_description %>">
+    <meta property="og:title" content="Salt Horse — Craft Beer & Burgers, Edinburgh">
+    <meta property="og:description" content="14 rotating draught lines. 200+ cans and bottles. Smash burgers. Edinburgh Old Town.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ═══ NAV ═══ -->
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#drink" onclick="closeMenu()"><%= t.nav.drink %></a></li>
+            <li><a href="#food" onclick="closeMenu()"><%= t.nav.food %></a></li>
+            <li><a href="/gift-cards" onclick="closeMenu()"><%= t.nav.gift_cards %></a></li>
+            <li><a href="#book" onclick="closeMenu()"><%= t.nav.book %></a></li>
+            <li><a href="#location" onclick="closeMenu()"><%= t.nav.find_us %></a></li>
+            <li><a href="<%= content.book_url %>" target="_blank" class="nav-cta" onclick="closeMenu()"><%= t.nav.reserve %></a></li>
+        </ul>
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-current" onclick="toggleLangMenu()" aria-label="Change language">
+                <%= t.lang_name %>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <% supportedLangs.forEach(function(code) { %>
+                    <a href="?lang=<%= code %>" class="lang-option<%= code === lang ? ' active' : '' %>">
+                        <%= locales[code].lang_name %>
+                    </a>
+                <% }); %>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <img src="/logos/salthorse_lesstext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="hero-logo">
+            <p class="hero-tagline"><%= content.hero_tagline %></p>
+            <div class="hero-scroll">
+                <a href="#drink">
+                    <span><%= t.hero.explore %></span>
+                    <div class="scroll-line"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ STATS ═══ -->
+    <div class="stats">
+        <div class="stats-grid reveal">
+            <div>
+                <div class="stat-number"><%= content.stats_taps %></div>
+                <div class="stat-label"><%= t.stats.taps_label %></div>
+            </div>
+            <div>
+                <div class="stat-number"><%= content.stats_bottles %></div>
+                <div class="stat-label"><%= t.stats.bottles_label %></div>
+            </div>
+            <div>
+                <div class="stat-number"><%= content.stats_years %></div>
+                <div class="stat-label"><%= t.stats.years_label %></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ DRINK ═══ -->
+    <section class="drink" id="drink">
+        <div class="section-inner">
+            <div class="drink-layout reveal">
+                <div class="drink-image">
+                    <img src="/images/fridges.jpg" alt="Beer fridges stocked with craft cans and bottles">
+                </div>
+                <div>
+                    <div class="section-label"><%= t.drink.section_label %></div>
+                    <h2 class="section-title"><%- t.drink.title %></h2>
+                    <p class="section-text"><%= t.drink.description %></p>
+                    <ul class="drink-features">
+                        <li><%= t.drink.feature_1 %></li>
+                        <li><%= t.drink.feature_2 %></li>
+                        <li><%= t.drink.feature_3 %></li>
+                        <li><%= t.drink.feature_4 %></li>
+                        <li><%= t.drink.feature_5 %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOD BANNER ═══ -->
+    <div class="image-banner">
+        <img src="/images/IMG_3780.jpg" alt="Spread of Salt Horse burgers and beer">
+        <div class="image-banner-text">
+            <h2><%= t.food.banner %></h2>
+        </div>
+    </div>
+
+    <!-- ═══ FOOD ═══ -->
+    <section class="food" id="food">
+        <div class="section-inner">
+            <div class="food-layout reveal">
+                <div class="food-gallery">
+                    <img src="/images/IMG_3692.jpg" alt="Smash burger close-up">
+                    <img src="/images/IMG_3721.jpg" alt="Fried chicken burger and beer">
+                    <img src="/images/IMG_3799.jpg" alt="Loaded chips">
+                </div>
+                <div class="food-text">
+                    <div class="section-label"><%= t.food.section_label %></div>
+                    <h2 class="section-title"><%- t.food.title %></h2>
+                    <p class="section-text"><%= t.food.description %></p>
+                    <p class="section-text" style="margin-top: 1rem;"><%= t.food.description_2 %></p>
+                    <div class="food-links">
+                        <a href="<%= content.food_menu_url %>" target="_blank" class="btn"><%= t.food.current_menu %></a>
+                        <a href="<%= content.food_allergens_url %>" target="_blank" class="btn btn-amber"><%= t.food.allergens %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ INTERIOR BANNER ═══ -->
+    <div class="image-banner">
+        <img src="/images/bararea.jpg" alt="Salt Horse bar interior with warm lighting and exposed brick">
+    </div>
+
+    <!-- ═══ BOOK ═══ -->
+    <section class="book" id="book">
+        <div class="section-inner reveal">
+            <div class="section-label" style="text-align:center;"><%= t.book.section_label %></div>
+            <h2 class="section-title" style="text-align:center;"><%= t.book.title %></h2>
+            <div class="book-info">
+                <p class="section-text" style="margin: 0 auto; text-align: center;"><%= t.book.description %></p>
+            </div>
+            <div style="text-align: center;">
+                <a href="<%= content.book_url %>" target="_blank" class="btn btn-fill"><%= t.book.book_table %></a>
+            </div>
+
+            <div class="book-details">
+                <div class="book-detail">
+                    <strong><%= t.book.groups_title %></strong><br>
+                    <%= t.book.groups_text %>
+                </div>
+                <div class="book-detail">
+                    <strong><%= t.book.notice_title %></strong><br>
+                    <%= t.book.notice_text %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ LOCATION & HOURS ═══ -->
+    <section class="location" id="location">
+        <div class="section-inner reveal">
+            <div class="section-label"><%= t.location.section_label %></div>
+            <h2 class="section-title" style="margin-bottom: 3rem;"><%= t.location.title %></h2>
+
+            <div class="location-layout">
+                <!-- Address -->
+                <div class="location-block address-block">
+                    <h3><%= t.location.where_we_are %></h3>
+                    <p class="address-main">Salt Horse</p>
+                    <p><%= content.location_address_1 %></p>
+                    <p><%= content.location_address_2 %></p>
+                    <p style="margin-top: 1rem;"><%= content.location_phone %></p>
+                    <div class="address-links">
+                        <a href="<%= content.location_maps_url %>" target="_blank"><%= t.location.google_maps %></a>
+                        <a href="tel:+447400653295"><%= t.location.call_us %></a>
+                    </div>
+                    <div class="notice">
+                        <%= t.location.kitchen_note %>
+                    </div>
+                </div>
+
+                <!-- Bar Hours -->
+                <div class="location-block">
+                    <h3><%= t.location.bar_hours %></h3>
+                    <table class="hours-table">
+                        <% hours.forEach(h => { %>
+                            <tr><td class="day"><%= t.days[h.day] || h.day %></td><td class="time"><%= formatTime(h.bar_open) %> – <%= formatTime(h.bar_close) %></td></tr>
+                        <% }); %>
+                    </table>
+                </div>
+
+                <!-- Kitchen Hours -->
+                <div class="location-block">
+                    <h3><%= t.location.kitchen_hours %></h3>
+                    <table class="hours-table">
+                        <% hours.forEach(h => { %>
+                            <tr><td class="day"><%= t.days[h.day] || h.day %></td><td class="time"><%= formatTime(h.kitchen_open) %> – <%= formatTime(h.kitchen_close) %></td></tr>
+                        <% }); %>
+                    </table>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--cream-dim);">
+                        <%= t.location.kitchen_note %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note"><%= t.footer.tagline %></p>
+        <div class="footer-social">
+            <a href="<%= content.footer_instagram %>" target="_blank">Instagram</a>
+            <a href="<%= content.footer_untappd %>" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; Salt Horse. <%= content.location_address_1 %>, <%= content.location_address_2 %>.
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Language switcher toggle
+        function toggleLangMenu() {
+            document.getElementById('langDropdown').classList.toggle('open');
+        }
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-switcher')) {
+                document.getElementById('langDropdown').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

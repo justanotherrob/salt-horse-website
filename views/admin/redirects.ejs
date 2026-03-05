@@ -1,0 +1,82 @@
+<%- include('_header') %>
+
+<h1>URL Redirects</h1>
+
+<div class="add-redirect-form">
+    <h3>Add New Redirect</h3>
+    <form id="addRedirectForm">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="from">From Path</label>
+                <input type="text" id="from" placeholder="/old-path" required>
+            </div>
+            <div class="form-group">
+                <label for="to">To URL</label>
+                <input type="url" id="to" placeholder="https://example.com/new-path" required>
+            </div>
+            <button type="submit" class="btn">Add</button>
+        </div>
+    </form>
+</div>
+
+<table class="redirects-table">
+    <thead>
+        <tr>
+            <th>From Path</th>
+            <th>To URL</th>
+            <th>Created</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (redirects && redirects.length > 0) { %>
+            <% redirects.forEach(r => { %>
+                <tr data-id="<%= r.id %>">
+                    <td><code><%= r.from_path %></code></td>
+                    <td><%= r.to_url %></td>
+                    <td><%= new Date(r.created_at).toLocaleDateString() %></td>
+                    <td><button class="btn-delete" onclick="deleteRedirect('<%= r.id %>')">Delete</button></td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr><td colspan="4" style="text-align:center; padding: 2rem;">No redirects yet</td></tr>
+        <% } %>
+    </tbody>
+</table>
+
+<script>
+document.getElementById('addRedirectForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+        from_path: document.getElementById('from').value,
+        to_url: document.getElementById('to').value
+    };
+
+    try {
+        const response = await fetch('/api/redirects', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            location.reload();
+        } else {
+            alert('Error adding redirect');
+        }
+    } catch (err) {
+        alert('Error: ' + err.message);
+    }
+});
+
+function deleteRedirect(id) {
+    if (confirm('Delete this redirect?')) {
+        fetch(`/api/redirects/${id}`, { method: 'DELETE' })
+            .then(() => location.reload())
+            .catch(err => alert('Error: ' + err.message));
+    }
+}
+</script>
+
+<%- include('_footer') %>

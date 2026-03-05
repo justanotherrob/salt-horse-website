@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt Horse Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-logo">
+                <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/admin" class="sidebar-link">Dashboard</a>
+                <a href="/admin/content" class="sidebar-link">Content</a>
+                <a href="/admin/hours" class="sidebar-link">Hours</a>
+                <a href="/admin/gift-cards" class="sidebar-link">Gift Cards</a>
+                <a href="/admin/redeem" class="sidebar-link">Redeem</a>
+                <a href="/admin/import" class="sidebar-link">Import</a>
+                <a href="/admin/redirects" class="sidebar-link">Redirects</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <!-- Topbar -->
+            <div class="admin-topbar">
+                <div class="topbar-user">
+                    <span>Logged in as <strong><%= user %></strong></span>
+                </div>
+                <form method="POST" action="/admin/logout" style="margin: 0;">
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            </div>
+
+            <!-- Content Area -->
+            <div class="admin-content">

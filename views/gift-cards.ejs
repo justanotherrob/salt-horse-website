@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= t.nav.gift_cards %> - Salt Horse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ═══ NAV ═══ -->
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#drink" onclick="closeMenu()"><%= t.nav.drink %></a></li>
+            <li><a href="/#food" onclick="closeMenu()"><%= t.nav.food %></a></li>
+            <li><a href="/gift-cards" onclick="closeMenu()"><%= t.nav.gift_cards %></a></li>
+            <li><a href="/#book" onclick="closeMenu()"><%= t.nav.book %></a></li>
+            <li><a href="/#location" onclick="closeMenu()"><%= t.nav.find_us %></a></li>
+            <li><a href="#reserve" target="_blank" class="nav-cta" onclick="closeMenu()"><%= t.nav.reserve %></a></li>
+        </ul>
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-current" onclick="toggleLangMenu()" aria-label="Change language">
+                <%= t.lang_name %>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <% supportedLangs.forEach(function(code) { %>
+                    <a href="?lang=<%= code %>" class="lang-option<%= code === lang ? ' active' : '' %>">
+                        <%= locales[code].lang_name %>
+                    </a>
+                <% }); %>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO SECTION ═══ -->
+    <section class="gift-cards-hero" style="padding-top: 10rem; text-align: center;">
+        <div class="section-inner">
+            <h1 class="section-title"><%= t.gift_cards.page_title %></h1>
+            <p class="section-text" style="margin: 1.5rem auto; max-width: 600px;">
+                <%= t.gift_cards.subtitle %>
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PURCHASE FORM ═══ -->
+    <section class="gift-cards-form" style="padding: 4rem 2rem; background: var(--bg-light);">
+        <div class="section-inner" style="max-width: 600px;">
+
+            <!-- Amount Selection -->
+            <div class="form-section">
+                <label class="form-label"><%= t.gift_cards.choose_amount %></label>
+                <div class="amount-buttons">
+                    <button class="amount-btn" onclick="setAmount(25)">£25</button>
+                    <button class="amount-btn" onclick="setAmount(50)">£50</button>
+                    <button class="amount-btn" onclick="setAmount(75)">£75</button>
+                    <button class="amount-btn" onclick="setAmount(100)">£100</button>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <label style="color: var(--cream-dim); font-size: 0.9rem;"><%= t.gift_cards.custom_amount %></label>
+                    <input type="number" id="customAmount" placeholder="£" min="25" max="250" step="0.01" class="amount-input">
+                    <p style="font-size: 0.8rem; color: var(--cream-dim); margin-top: 0.5rem;"><%= t.gift_cards.min_max %></p>
+                </div>
+            </div>
+
+            <!-- For Me / For a Friend -->
+            <div class="form-section">
+                <label class="form-label"><%= t.gift_cards.who_is_it_for %></label>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" onclick="toggleFor('self')"><%= t.gift_cards.for_me %></button>
+                    <button class="toggle-btn" onclick="toggleFor('friend')"><%= t.gift_cards.for_friend %></button>
+                </div>
+            </div>
+
+            <!-- Buyer Details -->
+            <div class="form-section">
+                <label class="form-label"><%= t.gift_cards.your_details %></label>
+                <input type="text" id="buyerName" placeholder="<%= t.gift_cards.your_name %>" class="form-input" required>
+                <input type="email" id="buyerEmail" placeholder="<%= t.gift_cards.your_email %>" class="form-input" required>
+            </div>
+
+            <!-- Recipient Details (hidden by default) -->
+            <div class="form-section" id="recipientSection" style="display:none;">
+                <label class="form-label"><%= t.gift_cards.recipient_details %></label>
+                <input type="text" id="recipientName" placeholder="<%= t.gift_cards.recipient_name %>" class="form-input">
+                <input type="email" id="recipientEmail" placeholder="<%= t.gift_cards.recipient_email %>" class="form-input">
+            </div>
+
+            <!-- Buy Button -->
+            <button class="btn btn-fill" id="buyBtn" onclick="checkout()" style="width: 100%; margin-top: 2rem;">
+                <%= t.gift_cards.buy_button %>
+            </button>
+
+            <p style="font-size: 0.85rem; color: var(--cream-dim); text-align: center; margin-top: 1rem;">
+                <%= t.gift_cards.expires_note %>
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note"><%= t.footer.tagline %></p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.
+        </div>
+    </footer>
+
+    <script>
+        let selectedAmount = null;
+        let giftFor = 'self';
+        const processingText = '<%= t.gift_cards.processing %>';
+
+        function setAmount(amount) {
+            selectedAmount = amount;
+            document.getElementById('customAmount').value = '';
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function toggleFor(type) {
+            giftFor = type;
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const recipientSection = document.getElementById('recipientSection');
+            recipientSection.style.display = type === 'friend' ? 'block' : 'none';
+        }
+
+        async function checkout() {
+            const amount = selectedAmount || parseFloat(document.getElementById('customAmount').value);
+
+            if (!amount || amount < 25 || amount > 250) {
+                alert('Please select an amount between £25 and £250');
+                return;
+            }
+
+            const buyerName = document.getElementById('buyerName').value;
+            const buyerEmail = document.getElementById('buyerEmail').value;
+
+            if (!buyerName || !buyerEmail) {
+                alert('Please enter your details');
+                return;
+            }
+
+            let recipientName = buyerName;
+            let recipientEmail = buyerEmail;
+
+            if (giftFor === 'friend') {
+                recipientName = document.getElementById('recipientName').value;
+                recipientEmail = document.getElementById('recipientEmail').value;
+
+                if (!recipientName || !recipientEmail) {
+                    alert('Please enter recipient details');
+                    return;
+                }
+            }
+
+            // Show processing state
+            const btn = document.getElementById('buyBtn');
+            btn.textContent = processingText;
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('/gift-cards/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount,
+                        buyer_name: buyerName,
+                        buyer_email: buyerEmail,
+                        recipient_name: recipientName,
+                        recipient_email: recipientEmail,
+                        for_friend: giftFor === 'friend'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Error: ' + (data.error || 'Could not create checkout'));
+                    btn.textContent = '<%= t.gift_cards.buy_button %>';
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+                btn.textContent = '<%= t.gift_cards.buy_button %>';
+                btn.disabled = false;
+            }
+        }
+
+        // Navigation script
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Language switcher
+        function toggleLangMenu() {
+            document.getElementById('langDropdown').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-switcher')) {
+                document.getElementById('langDropdown').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

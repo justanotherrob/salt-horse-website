@@ -1,0 +1,68 @@
+<%- include('_header') %>
+
+<h1>Import Gift Cards</h1>
+
+<div class="import-form">
+    <form id="importForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">CSV File</label>
+            <input type="file" id="file" name="file" accept=".csv" required>
+            <p class="help-text">CSV format: code, amount, purchaser_email, recipient_email, expires_at</p>
+        </div>
+        <button type="submit" class="btn btn-fill">Import</button>
+        <div id="progress" class="progress-container" style="display:none;">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </form>
+</div>
+
+<% if (result) { %>
+    <div class="import-results">
+        <h3>Import Results</h3>
+        <p><strong><%= result.imported %></strong> cards imported</p>
+        <p><strong><%= result.skipped %></strong> rows skipped</p>
+
+        <% if (result.errors && result.errors.length > 0) { %>
+            <div class="errors-list">
+                <h4>Errors:</h4>
+                <ul>
+                    <% result.errors.forEach(err => { %>
+                        <li><%= err %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<script>
+document.getElementById('importForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const file = document.getElementById('file').files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const progress = document.getElementById('progress');
+    progress.style.display = 'block';
+
+    try {
+        const response = await fetch('/api/gift-cards/import', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            location.reload();
+        } else {
+            alert('Import failed');
+        }
+    } catch (err) {
+        alert('Error: ' + err.message);
+    }
+});
+</script>
+
+<%- include('_footer') %>

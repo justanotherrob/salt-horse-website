@@ -1,0 +1,57 @@
+<%- include('_header') %>
+
+<h1>Gift Cards</h1>
+
+<div class="filter-tabs">
+    <a href="?filter=all" class="tab <%= filter === 'all' ? 'active' : '' %>">All</a>
+    <a href="?filter=active" class="tab <%= filter === 'active' ? 'active' : '' %>">Active</a>
+    <a href="?filter=redeemed" class="tab <%= filter === 'redeemed' ? 'active' : '' %>">Redeemed</a>
+    <a href="?filter=expired" class="tab <%= filter === 'expired' ? 'active' : '' %>">Expired</a>
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search by code or email" value="<%= search %>">
+</div>
+
+<table class="gift-cards-table">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Purchaser</th>
+            <th>Recipient</th>
+            <th>Amount</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th>Purchased</th>
+            <th>Expires</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% cards.forEach(card => { %>
+            <tr>
+                <td><code><%= card.code %></code></td>
+                <td><%= card.purchaser_email %></td>
+                <td><%= card.recipient_email %></td>
+                <td>£<%= card.amount.toFixed(2) %></td>
+                <td>£<%= card.balance.toFixed(2) %></td>
+                <td>
+                    <span class="badge <%= card.status %>">
+                        <%= card.status.charAt(0).toUpperCase() + card.status.slice(1) %>
+                    </span>
+                </td>
+                <td><%= new Date(card.created_at).toLocaleDateString() %></td>
+                <td><%= new Date(card.expires_at).toLocaleDateString() %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="?page=<%= i %>" class="page-link <%= i === page ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+</div>
+
+<div class="total-count">Total: <%= total %> cards</div>
+
+<%- include('_footer') %>

@@ -1,0 +1,55 @@
+<%- include('_header') %>
+
+<h1>Operating Hours</h1>
+
+<div class="hours-editor">
+    <table class="hours-table">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Bar Open</th>
+                <th>Bar Close</th>
+                <th>Kitchen Open</th>
+                <th>Kitchen Close</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% hours.forEach(h => { %>
+                <tr data-day="<%= h.day %>">
+                    <td><%= h.day %></td>
+                    <td><input type="time" class="bar-open" value="<%= h.bar_open %>"></td>
+                    <td><input type="time" class="bar-close" value="<%= h.bar_close %>"></td>
+                    <td><input type="time" class="kitchen-open" value="<%= h.kitchen_open %>"></td>
+                    <td><input type="time" class="kitchen-close" value="<%= h.kitchen_close %>"></td>
+                    <td><button class="btn-save" onclick="saveHours('<%= h.day %>')">Save</button></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<script>
+function saveHours(day) {
+    const row = document.querySelector(`tr[data-day="${day}"]`);
+    const data = {
+        bar_open: row.querySelector('.bar-open').value,
+        bar_close: row.querySelector('.bar-close').value,
+        kitchen_open: row.querySelector('.kitchen-open').value,
+        kitchen_close: row.querySelector('.kitchen-close').value
+    };
+
+    fetch(`/api/hours/${day}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert('Hours saved!');
+    })
+    .catch(err => alert('Error saving hours'));
+}
+</script>
+
+<%- include('_footer') %>

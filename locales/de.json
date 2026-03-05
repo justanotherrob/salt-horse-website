@@ -1,0 +1,113 @@
+{
+  "lang": "de",
+  "lang_name": "Deutsch",
+  "dir": "ltr",
+
+  "nav": {
+    "drink": "Getränke",
+    "food": "Essen",
+    "gift_cards": "Gutscheine",
+    "book": "Reservieren",
+    "find_us": "Anfahrt",
+    "reserve": "Reservieren"
+  },
+
+  "hero": {
+    "explore": "Entdecken"
+  },
+
+  "stats": {
+    "taps_label": "Wechselnde Zapfhähne",
+    "bottles_label": "Dosen & Flaschen",
+    "years_label": "Jahre am Zapfhahn"
+  },
+
+  "drink": {
+    "section_label": "Was wir ausschenken",
+    "title": "Nur das<br>Gute Zeug.",
+    "description": "Wir führen eine sorgfältig zusammengestellte und wechselnde Auswahl an Craft-Bier mit vierzehn Zapfhähnen und über 200 Sorten in Dosen und Flaschen. Hier trinken oder mit nach Hause nehmen. Deine Wahl.",
+    "feature_1": "14 wechselnde Zapfhähne — immer etwas Neues",
+    "feature_2": "Rund 200 Dosen und Flaschen aus dem UK und darüber hinaus",
+    "feature_3": "Immer eine gute Auswahl an alkoholfreien und glutenfreien Bieren",
+    "feature_4": "Eine kleine, aber feine Auswahl an Wein und Spirituosen",
+    "feature_5": "Zum Mitnehmen aus dem Flaschenladen"
+  },
+
+  "food": {
+    "banner": "Burger, die keine halben Sachen machen.",
+    "section_label": "Was wir servieren",
+    "title": "Gesmashed.<br>Sofort weg.",
+    "description": "Burger, Wings, Pommes. Das ist der Fokus. Die Karte ist klein aber fein — dry-aged Rindfleisch, gebratene Hähnchen-Sandwiches, echte Pommes, von Hand geschnitten und doppelt frittiert. Einiges zum Teilen. Einiges, um das nächste Bier aufzusaugen. Vegane Optionen, die überzeugen.",
+    "description_2": "Frisch zubereitet. Ohne Kompromisse.",
+    "current_menu": "Aktuelle Speisekarte",
+    "allergens": "Allergene"
+  },
+
+  "book": {
+    "section_label": "Tisch reservieren",
+    "title": "Reservierungen",
+    "description": "Reservierung optional — wir halten immer die Hälfte der Plätze für Laufkundschaft frei. Aber wenn du einen Platz garantieren möchtest, reserviere unten.",
+    "book_table": "Tisch reservieren",
+    "groups_title": "Gruppen über 6 Personen?",
+    "groups_text": "Ruf uns an unter 07400 653295. Wir können nicht garantieren, dass mehrere reservierte Tische nebeneinander sind — kontaktiere uns und wir kümmern uns darum.",
+    "notice_title": "Gut zu wissen",
+    "notice_text": "Tische werden 10 Minuten reserviert — ruf an, wenn du dich verspätest. Gartenplätze sind nach Verfügbarkeit und können nicht reserviert werden."
+  },
+
+  "location": {
+    "section_label": "So findest du uns",
+    "title": "Lage & Öffnungszeiten",
+    "where_we_are": "Wo wir sind",
+    "bar_hours": "Bar-Öffnungszeiten",
+    "kitchen_hours": "Küchen-Öffnungszeiten",
+    "google_maps": "Google Maps",
+    "call_us": "Ruf uns an",
+    "kitchen_note": "Nach Küchenschluss nur für Laufkundschaft."
+  },
+
+  "footer": {
+    "tagline": "Craft-Bier & Burger in Edinburghs Altstadt seit 2016."
+  },
+
+  "gift_cards": {
+    "page_title": "Verschenke Craft-Bier",
+    "subtitle": "Wähle einen Betrag, sag uns für wen, und wir senden eine Geschenkkarte per E-Mail mit PDF zum Ausdrucken.",
+    "choose_amount": "Betrag wählen",
+    "custom_amount": "Oder wähle einen eigenen Betrag",
+    "min_max": "Min £25 — Max £250",
+    "who_is_it_for": "Für wen ist es?",
+    "for_me": "Für mich",
+    "for_friend": "Für einen Freund",
+    "your_details": "Deine Daten",
+    "your_name": "Dein Name",
+    "your_email": "Deine E-Mail",
+    "recipient_details": "Empfänger-Daten",
+    "recipient_name": "Name des Empfängers",
+    "recipient_email": "E-Mail des Empfängers",
+    "buy_button": "Gutschein kaufen",
+    "expires_note": "Gutscheine sind 12 Monate ab Kauf gültig.",
+    "processing": "Wird bearbeitet..."
+  },
+
+  "gift_cards_success": {
+    "title": "Vielen Dank!",
+    "subtitle": "Dein Gutschein wurde erstellt.",
+    "code_label": "Gutschein-Code",
+    "amount_label": "Betrag",
+    "expires_label": "Gültig bis",
+    "email_note": "Prüfe deine E-Mails für den Gutschein mit PDF-Anhang.",
+    "back_home": "Zurück zu Salt Horse",
+    "processing_title": "Dein Gutschein wird bearbeitet...",
+    "processing_text": "Deine Zahlung wird bestätigt. Du erhältst in Kürze eine E-Mail mit deinem Gutschein."
+  },
+
+  "days": {
+    "Monday": "Montag",
+    "Tuesday": "Dienstag",
+    "Wednesday": "Mittwoch",
+    "Thursday": "Donnerstag",
+    "Friday": "Freitag",
+    "Saturday": "Samstag",
+    "Sunday": "Sonntag"
+  }
+}

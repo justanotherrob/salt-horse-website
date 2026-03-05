@@ -1,0 +1,117 @@
+<%- include('_header') %>
+
+<h1>Redeem Gift Card</h1>
+
+<div class="redeem-search">
+    <form method="GET" style="margin-bottom: 2rem;">
+        <input type="text" name="code" placeholder="Enter gift card code" value="<%= code %>" required>
+        <button type="submit" class="btn">Search</button>
+    </form>
+</div>
+
+<% if (card) { %>
+    <div class="card-details">
+        <div class="detail-group">
+            <label>Code</label>
+            <code><%= card.code %></code>
+        </div>
+
+        <div class="detail-group">
+            <label>Status</label>
+            <span class="badge <%= card.status %>"><%= card.status %></span>
+        </div>
+
+        <div class="balance-display">
+            <div class="balance-label">Balance</div>
+            <div class="balance-amount">£<%= card.balance.toFixed(2) %></div>
+        </div>
+
+        <div class="detail-group">
+            <label>Expires</label>
+            <span><%= new Date(card.expires_at).toLocaleDateString() %></span>
+        </div>
+
+        <% if (card.status === 'active') { %>
+            <div class="redeem-actions">
+                <button class="btn btn-fill" onclick="redeemAll('<%= card.code %>')">Redeem All</button>
+
+                <div class="custom-amount">
+                    <input type="number" id="customAmount" placeholder="Custom amount" min="0" step="0.01">
+                    <button class="btn" onclick="redeemCustom('<%= card.code %>')">Redeem</button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <% if (transactions && transactions.length > 0) { %>
+        <div class="transaction-history">
+            <h3>Transaction History</h3>
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% transactions.forEach(t => { %>
+                        <tr>
+                            <td><%= new Date(t.created_at).toLocaleDateString() %></td>
+                            <td>£<%= t.amount.toFixed(2) %></td>
+                            <td><%= t.description %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+<% } else if (code) { %>
+    <div class="alert alert-warning">
+        Gift card not found
+    </div>
+<% } else { %>
+    <div class="alert alert-info">
+        Enter a gift card code to get started
+    </div>
+<% } %>
+
+<script>
+function redeemAll(code) {
+    if (confirm('Redeem full balance on this card?')) {
+        fetch(`/api/gift-cards/${code}/redeem`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ amount: null })
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert('Redeemed! Balance: £' + data.balance.toFixed(2));
+            location.reload();
+        })
+        .catch(err => alert('Error: ' + err.message));
+    }
+}
+
+function redeemCustom(code) {
+    const amount = parseFloat(document.getElementById('customAmount').value);
+    if (!amount || amount <= 0) {
+        alert('Enter a valid amount');
+        return;
+    }
+
+    fetch(`/api/gift-cards/${code}/redeem`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert('Redeemed £' + amount.toFixed(2) + '! Balance: £' + data.balance.toFixed(2));
+        location.reload();
+    })
+    .catch(err => alert('Error: ' + err.message));
+}
+</script>
+
+<%- include('_footer') %>

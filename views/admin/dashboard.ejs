@@ -1,0 +1,24 @@
+<%- include('_header') %>
+
+<h1>Dashboard</h1>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-label">Total Gift Cards</div>
+        <div class="stat-value"><%= stats.totalCards %></div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Active Cards</div>
+        <div class="stat-value"><%= stats.activeCards %></div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Total Revenue</div>
+        <div class="stat-value">£<%= stats.totalRevenue %></div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Redirects</div>
+        <div class="stat-value"><%= stats.redirectCount %></div>
+    </div>
+</div>
+
+<%- include('_footer') %>
