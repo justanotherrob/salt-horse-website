@@ -14,9 +14,18 @@ router.get('/', (req, res) => {
   const redirectCount = db.prepare('SELECT COUNT(*) as count FROM redirects').get();
   const giftCardsEnabled = db.prepare("SELECT value FROM site_settings WHERE key = 'gift_cards_enabled'").get();
 
+  // Get enabled state for each language
+  const langCodes = ['fr', 'de', 'es', 'it', 'nl', 'pl', 'zh'];
+  const enabledLangs = {};
+  for (const code of langCodes) {
+    const setting = db.prepare("SELECT value FROM site_settings WHERE key = ?").get(`lang_${code}_enabled`);
+    enabledLangs[code] = setting ? setting.value === 'true' : true; // default to true if not set
+  }
+
   res.render('admin/dashboard', {
     user: req.session.userName,
     giftCardsEnabled: giftCardsEnabled ? giftCardsEnabled.value === 'true' : false,
+    enabledLangs,
     stats: {
       totalCards: totalCards.count,
       activeCards: activeCards.count,

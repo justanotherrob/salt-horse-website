@@ -101,4 +101,25 @@ try {
   db.exec("ALTER TABLE gift_cards ADD COLUMN personal_message TEXT");
 }
 
+// ── Seed language settings ──────────────────────────────
+// Each non-English language gets a toggle (English is always on)
+const languages = [
+  { code: 'fr', label: 'French' },
+  { code: 'de', label: 'German' },
+  { code: 'es', label: 'Spanish' },
+  { code: 'it', label: 'Italian' },
+  { code: 'nl', label: 'Dutch' },
+  { code: 'pl', label: 'Polish' },
+  { code: 'zh', label: 'Chinese' },
+];
+
+const insertSetting = db.prepare(`
+  INSERT OR IGNORE INTO site_settings (key, value, label)
+  VALUES (?, ?, ?)
+`);
+
+for (const lang of languages) {
+  insertSetting.run(`lang_${lang.code}_enabled`, 'true', `${lang.label} (${lang.code})`);
+}
+
 module.exports = db;

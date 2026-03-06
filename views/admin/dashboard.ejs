@@ -38,6 +38,29 @@
     <div id="giftCardsStatus" style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-dim);"></div>
 </div>
 
+<h2 style="margin-top: 2.5rem;">Languages</h2>
+<p style="font-size: 0.85rem; color: var(--text-dim); margin: 0.25rem 0 1rem;">English is always available. Toggle other languages on or off for the public site.</p>
+
+<div class="settings-card" style="margin-top: 0; background: var(--card-bg); padding: 1.5rem; border-radius: 6px;">
+    <% const langNames = { fr: 'French', de: 'German', es: 'Spanish', it: 'Italian', nl: 'Dutch', pl: 'Polish', zh: 'Chinese' }; %>
+    <% const langFlags = { fr: '🇫🇷', de: '🇩🇪', es: '🇪🇸', it: '🇮🇹', nl: '🇳🇱', pl: '🇵🇱', zh: '🇨🇳' }; %>
+
+    <% Object.keys(langNames).forEach(function(code, i) { %>
+        <div style="display: flex; align-items: center; justify-content: space-between; <%= i > 0 ? 'border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.75rem; margin-top: 0.75rem;' : '' %>">
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="font-size: 1.2rem;"><%= langFlags[code] %></span>
+                <span><%= langNames[code] %></span>
+                <span style="font-size: 0.8rem; color: var(--text-dim);">(<%= code %>)</span>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="lang_<%= code %>" <%= enabledLangs[code] ? 'checked' : '' %> onchange="toggleLang('<%= code %>', this)">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    <% }); %>
+    <div id="langStatus" style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-dim);"></div>
+</div>
+
 <script>
 async function toggleGiftCards(el) {
     const value = el.checked ? 'true' : 'false';
@@ -51,6 +74,28 @@ async function toggleGiftCards(el) {
         const data = await res.json();
         if (data.success) {
             status.textContent = el.checked ? 'Gift cards page is now live.' : 'Gift cards page is now hidden.';
+            status.style.color = el.checked ? '#4ade80' : '#f59e0b';
+        }
+    } catch (err) {
+        status.textContent = 'Error saving setting.';
+        status.style.color = '#ef4444';
+        el.checked = !el.checked;
+    }
+}
+
+async function toggleLang(code, el) {
+    const value = el.checked ? 'true' : 'false';
+    const status = document.getElementById('langStatus');
+    const langNames = { fr: 'French', de: 'German', es: 'Spanish', it: 'Italian', nl: 'Dutch', pl: 'Polish', zh: 'Chinese' };
+    try {
+        const res = await fetch('/api/settings/lang_' + code + '_enabled', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ value })
+        });
+        const data = await res.json();
+        if (data.success) {
+            status.textContent = langNames[code] + (el.checked ? ' is now enabled.' : ' is now disabled.');
             status.style.color = el.checked ? '#4ade80' : '#f59e0b';
         }
     } catch (err) {

@@ -1,26 +1,44 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../db/database');
 
 // Load all locale files at startup
 const localesDir = path.join(__dirname, '..', 'locales');
 const locales = {};
-const supportedLangs = [];
+const allLangs = [];
 
 fs.readdirSync(localesDir).forEach(file => {
-  if (file.endsWith('.json')) {
+  if (file.endsWith('.json') && !file.startsWith('_')) {
     const lang = file.replace('.json', '');
     locales[lang] = JSON.parse(fs.readFileSync(path.join(localesDir, file), 'utf8'));
-    supportedLangs.push(lang);
+    allLangs.push(lang);
   }
 });
 
 const defaultLang = 'en';
 
 /**
- * Parse Accept-Language header and return best matching language.
+ * Get the list of currently enabled languages (always includes 'en').
+ * Reads from site_settings on each request so admin changes take effect immediately.
+ */
+function getEnabledLangs() {
+  const enabled = ['en'];
+  for (const lang of allLangs) {
+    if (lang === 'en') continue;
+    const setting = db.prepare("SELECT value FROM site_settings WHERE key = ?").get(`lang_${lang}_enabled`);
+    // Default to enabled if no setting exists yet
+    if (!setting || setting.value === 'true') {
+      enabled.push(lang);
+    }
+  }
+  return enabled;
+}
+
+/**
+ * Parse Accept-Language header and return best matching enabled language.
  * e.g. "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7" → "de"
  */
-function parseAcceptLanguage(header) {
+function parseAcceptLanguage(header, enabledLangs) {
   if (!header) return null;
 
   const langs = header.split(',').map(part => {
@@ -31,7 +49,7 @@ function parseAcceptLanguage(header) {
   }).sort((a, b) => b.q - a.q);
 
   for (const { lang } of langs) {
-    if (supportedLangs.includes(lang)) {
+    if (enabledLangs.includes(lang)) {
       return lang;
     }
   }
@@ -44,34 +62,38 @@ function parseAcceptLanguage(header) {
  * 2. lang cookie (from previous manual selection)
  * 3. Accept-Language header
  * 4. Default to English
+ *
+ * Only enabled languages are offered. Disabled languages fall back to English.
  */
 function i18nMiddleware(req, res, next) {
+  const enabledLangs = getEnabledLangs();
+
   // Skip admin routes — admin is always in English
   if (req.path.startsWith('/admin') || req.path.startsWith('/api')) {
     res.locals.t = locales[defaultLang];
     res.locals.lang = defaultLang;
-    res.locals.supportedLangs = supportedLangs;
+    res.locals.supportedLangs = enabledLangs;
     res.locals.locales = locales;
     return next();
   }
 
   let lang = null;
 
-  // 1. Query parameter override — ?lang=de
-  if (req.query.lang && supportedLangs.includes(req.query.lang)) {
+  // 1. Query parameter override — ?lang=de (only if that language is enabled)
+  if (req.query.lang && enabledLangs.includes(req.query.lang)) {
     lang = req.query.lang;
     // Set cookie for 30 days so the choice persists
     res.cookie('lang', lang, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'lax' });
   }
 
-  // 2. Cookie from previous selection
-  if (!lang && req.cookies && req.cookies.lang && supportedLangs.includes(req.cookies.lang)) {
+  // 2. Cookie from previous selection (only if that language is still enabled)
+  if (!lang && req.cookies && req.cookies.lang && enabledLangs.includes(req.cookies.lang)) {
     lang = req.cookies.lang;
   }
 
   // 3. Accept-Language header
   if (!lang) {
-    lang = parseAcceptLanguage(req.headers['accept-language']);
+    lang = parseAcceptLanguage(req.headers['accept-language'], enabledLangs);
   }
 
   // 4. Default
@@ -81,10 +103,10 @@ function i18nMiddleware(req, res, next) {
 
   res.locals.t = locales[lang] || locales[defaultLang];
   res.locals.lang = lang;
-  res.locals.supportedLangs = supportedLangs;
+  res.locals.supportedLangs = enabledLangs;
   res.locals.locales = locales;
 
   next();
 }
 
-module.exports = { i18nMiddleware, locales, supportedLangs };
+module.exports = { i18nMiddleware, locales, supportedLangs: allLangs };
