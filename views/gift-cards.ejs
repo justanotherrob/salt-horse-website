@@ -456,6 +456,8 @@
                 <label class="form-label"><%= t.gift_cards.recipient_details %></label>
                 <input type="text" id="recipientName" placeholder="<%= t.gift_cards.recipient_name %>" class="form-input">
                 <input type="email" id="recipientEmail" placeholder="<%= t.gift_cards.recipient_email %>" class="form-input">
+                <textarea id="personalMessage" placeholder="<%= t.gift_cards.personal_message_placeholder || 'Add a personal message (optional)' %>" class="form-input" maxlength="300" rows="3" style="resize:none;"></textarea>
+                <p class="amount-range"><span id="messageCharCount">0</span>/300</p>
             </div>
 
             <!-- Buy Button -->
@@ -578,6 +580,11 @@
             document.getElementById('recipientSection').style.display = type === 'friend' ? 'block' : 'none';
         }
 
+        // Character counter for personal message
+        document.getElementById('personalMessage').addEventListener('input', function() {
+            document.getElementById('messageCharCount').textContent = this.value.length;
+        });
+
         async function openCheckout() {
             const amount = selectedAmount || parseFloat(document.getElementById('customAmount').value);
             if (!amount || amount < 25 || amount > 250) {
@@ -594,9 +601,11 @@
 
             let recipientName = buyerName;
             let recipientEmail = buyerEmail;
+            let personalMessage = '';
             if (giftFor === 'friend') {
                 recipientName = document.getElementById('recipientName').value.trim();
                 recipientEmail = document.getElementById('recipientEmail').value.trim();
+                personalMessage = document.getElementById('personalMessage').value.trim().substring(0, 300);
                 if (!recipientName || !recipientEmail) {
                     alert('<%= t.gift_cards.error_recipient || "Please enter recipient details" %>');
                     return;
@@ -624,7 +633,8 @@
                         purchaserEmail: buyerEmail,
                         recipientName: recipientName,
                         recipientEmail: recipientEmail,
-                        sendTo: giftFor === 'friend' ? 'friend' : 'self'
+                        sendTo: giftFor === 'friend' ? 'friend' : 'self',
+                        personalMessage: personalMessage
                     })
                 });
 

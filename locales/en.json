@@ -95,7 +95,8 @@
     "error_details": "Please enter your details",
     "error_recipient": "Please enter recipient details",
     "processing_payment": "Confirming your payment...",
-    "confirmation_sent": "Confirmation and gift card PDF sent to"
+    "confirmation_sent": "Confirmation and gift card PDF sent to",
+    "personal_message_placeholder": "Add a personal message (optional)"
   },
 
   "gift_cards_success": {

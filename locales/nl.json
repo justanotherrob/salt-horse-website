@@ -95,7 +95,8 @@
     "error_details": "Voer alstublieft je gegevens in",
     "error_recipient": "Voer alstublieft de gegevens van de ontvanger in",
     "processing_payment": "Je betaling wordt bevestigd...",
-    "confirmation_sent": "Bevestiging en cadeaubon-PDF verzonden naar"
+    "confirmation_sent": "Bevestiging en cadeaubon-PDF verzonden naar",
+    "personal_message_placeholder": "Voeg een persoonlijk bericht toe (optioneel)"
   },
 
   "gift_cards_success": {

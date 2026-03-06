@@ -66,6 +66,14 @@ async function sendGiftCardEmail(giftCard, overrideEmail) {
             </td></tr>
           </table>
 
+          ${giftCard.personal_message && giftCard.send_to === 'friend' ? `
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(212,148,58,0.08);border-left:3px solid #D4943A;border-radius:0 4px 4px 0;margin-bottom:20px;">
+            <tr><td style="padding:15px 20px;">
+              <p style="color:rgba(255,246,218,0.5);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;">Personal Message</p>
+              <p style="color:#FFF6DA;font-size:14px;font-style:italic;line-height:1.5;margin:0;">"${giftCard.personal_message}"</p>
+            </td></tr>
+          </table>` : ''}
+
           <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0 0 10px;">
             Present this code when you visit Salt Horse to redeem your gift card. It can be used for anything we serve or sell.
           </p>

@@ -95,7 +95,8 @@
     "error_details": "Wpisz swoje dane",
     "error_recipient": "Wpisz dane odbiorcy",
     "processing_payment": "Potwierdzanie twojej płatności...",
-    "confirmation_sent": "Potwierdzenie i PDF karty podarunkowej wysłane do"
+    "confirmation_sent": "Potwierdzenie i PDF karty podarunkowej wysłane do",
+    "personal_message_placeholder": "Dodaj wiadomość osobistą (opcjonalnie)"
   },
 
   "gift_cards_success": {

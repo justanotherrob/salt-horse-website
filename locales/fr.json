@@ -95,7 +95,8 @@
     "error_details": "Veuillez entrer vos coordonnées",
     "error_recipient": "Veuillez entrer les coordonnées du destinataire",
     "processing_payment": "Confirmation de votre paiement...",
-    "confirmation_sent": "Confirmation et PDF de la carte cadeau envoyés à"
+    "confirmation_sent": "Confirmation et PDF de la carte cadeau envoyés à",
+    "personal_message_placeholder": "Ajouter un message personnel (facultatif)"
   },
 
   "gift_cards_success": {

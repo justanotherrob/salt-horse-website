@@ -52,6 +52,7 @@ db.exec(`
     recipient_email TEXT,
     recipient_name TEXT,
     send_to TEXT DEFAULT 'self',
+    personal_message TEXT,
     stripe_session_id TEXT,
     stripe_payment_intent TEXT,
     purchased_at DATETIME,
@@ -91,5 +92,13 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_content_key ON content_blocks(key);
   CREATE INDEX IF NOT EXISTS idx_redirects_path ON redirects(from_path);
 `);
+
+// ── Migrations ──────────────────────────────────────────
+// Add personal_message column if it doesn't exist (for existing databases)
+try {
+  db.prepare("SELECT personal_message FROM gift_cards LIMIT 0").run();
+} catch (e) {
+  db.exec("ALTER TABLE gift_cards ADD COLUMN personal_message TEXT");
+}
 
 module.exports = db;

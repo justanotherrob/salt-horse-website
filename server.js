@@ -92,7 +92,7 @@ const { createCheckoutSession } = require('./services/stripe');
 
 app.post('/gift-cards/checkout', async (req, res) => {
   try {
-    const { amount, purchaserName, purchaserEmail, recipientName, recipientEmail, sendTo } = req.body;
+    const { amount, purchaserName, purchaserEmail, recipientName, recipientEmail, sendTo, personalMessage } = req.body;
 
     const amountPence = parseInt(amount);
     if (isNaN(amountPence) || amountPence < 2500 || amountPence > 25000) {
@@ -106,6 +106,7 @@ app.post('/gift-cards/checkout', async (req, res) => {
       recipientName: sendTo === 'friend' ? recipientName : null,
       recipientEmail: sendTo === 'friend' ? recipientEmail : null,
       sendTo: sendTo || 'self',
+      personalMessage: sendTo === 'friend' ? (personalMessage || '').substring(0, 300) : null,
     });
 
     res.json({ clientSecret: session.client_secret });

@@ -25,7 +25,7 @@ function generateUniqueCode() {
   throw new Error('Could not generate unique gift card code');
 }
 
-async function createCheckoutSession({ amount, purchaserName, purchaserEmail, recipientName, recipientEmail, sendTo }) {
+async function createCheckoutSession({ amount, purchaserName, purchaserEmail, recipientName, recipientEmail, sendTo, personalMessage }) {
   const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
 
   // Create pending gift card record
@@ -55,13 +55,14 @@ async function createCheckoutSession({ amount, purchaserName, purchaserEmail, re
       recipient_name: recipientName || purchaserName,
       recipient_email: recipientEmail || purchaserEmail,
       send_to: sendTo,
+      personal_message: (personalMessage || '').substring(0, 300),
     },
   });
 
   // Insert pending gift card
   db.prepare(`
-    INSERT INTO gift_cards (code, initial_amount, balance, status, purchaser_email, purchaser_name, recipient_email, recipient_name, send_to, stripe_session_id, expires_at)
-    VALUES (?, ?, ?, 'pending', ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO gift_cards (code, initial_amount, balance, status, purchaser_email, purchaser_name, recipient_email, recipient_name, send_to, personal_message, stripe_session_id, expires_at)
+    VALUES (?, ?, ?, 'pending', ?, ?, ?, ?, ?, ?, ?, ?)
   `).run(
     'PENDING-' + session.id.slice(-12),
     amount, amount,
@@ -69,6 +70,7 @@ async function createCheckoutSession({ amount, purchaserName, purchaserEmail, re
     recipientEmail || purchaserEmail,
     recipientName || purchaserName,
     sendTo,
+    personalMessage || null,
     session.id,
     expiresAt
   );

@@ -5,8 +5,11 @@ const fs = require('fs');
 function generateGiftCardPDF(giftCard) {
   return new Promise((resolve, reject) => {
     try {
+      const hasMessage = giftCard.personal_message && giftCard.send_to === 'friend';
+      const pageHeight = hasMessage ? 420 : 340;
+
       const doc = new PDFDocument({
-        size: [600, 340],
+        size: [600, pageHeight],
         margins: { top: 40, bottom: 40, left: 50, right: 50 },
       });
 
@@ -20,10 +23,10 @@ function generateGiftCardPDF(giftCard) {
       const amber = '#D4943A';
 
       // Background
-      doc.rect(0, 0, 600, 340).fill(navy);
+      doc.rect(0, 0, 600, pageHeight).fill(navy);
 
       // Decorative border
-      doc.rect(15, 15, 570, 310).lineWidth(1).stroke(amber);
+      doc.rect(15, 15, 570, pageHeight - 30).lineWidth(1).stroke(amber);
 
       // Header
       doc.fontSize(10).fill(amber).font('Helvetica');
@@ -52,21 +55,38 @@ function generateGiftCardPDF(giftCard) {
       doc.moveTo(200, 225).lineTo(400, 225).lineWidth(0.5).stroke(amber);
 
       // Details
+      let detailY = 235;
       doc.fontSize(8).fill(cream).font('Helvetica');
 
       if (giftCard.recipient_name && giftCard.send_to === 'friend') {
-        doc.text(`For: ${giftCard.recipient_name}`, 50, 240, { align: 'center', width: 500 });
+        doc.text(`For: ${giftCard.recipient_name}`, 50, detailY, { align: 'center', width: 500 });
+        detailY += 15;
       }
 
       const expiryDate = giftCard.expires_at
         ? new Date(giftCard.expires_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
         : '12 months from purchase';
-      doc.text(`Valid until ${expiryDate}`, 50, 255, { align: 'center', width: 500 });
+      doc.text(`Valid until ${expiryDate}`, 50, detailY, { align: 'center', width: 500 });
+      detailY += 20;
+
+      // Personal message
+      if (hasMessage) {
+        doc.moveTo(150, detailY).lineTo(450, detailY).lineWidth(0.5).stroke(amber);
+        detailY += 12;
+        doc.fontSize(9).fill(cream).font('Helvetica-Oblique');
+        doc.text(`"${giftCard.personal_message}"`, 60, detailY, {
+          align: 'center',
+          width: 480,
+          lineGap: 3
+        });
+        detailY += doc.heightOfString(`"${giftCard.personal_message}"`, { width: 480, lineGap: 3 }) + 15;
+      }
 
       // Footer
       doc.fontSize(7).fill(amber).font('Helvetica');
-      doc.text('Redeem in person at Salt Horse', 50, 280, { align: 'center', width: 500 });
-      doc.text('57-61 Blackfriars St, Edinburgh EH1 1NB', 50, 292, { align: 'center', width: 500 });
+      const footerY = hasMessage ? pageHeight - 45 : 280;
+      doc.text('Redeem in person at Salt Horse', 50, footerY, { align: 'center', width: 500 });
+      doc.text('57-61 Blackfriars St, Edinburgh EH1 1NB', 50, footerY + 12, { align: 'center', width: 500 });
 
       doc.end();
     } catch (err) {

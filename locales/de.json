@@ -95,7 +95,8 @@
     "error_details": "Bitte gib deine Daten ein",
     "error_recipient": "Bitte gib die Daten des Empfängers ein",
     "processing_payment": "Zahlung wird bestätigt...",
-    "confirmation_sent": "Bestätigung und Gutschein-PDF versendet an"
+    "confirmation_sent": "Bestätigung und Gutschein-PDF versendet an",
+    "personal_message_placeholder": "Persönliche Nachricht hinzufügen (optional)"
   },
 
   "gift_cards_success": {

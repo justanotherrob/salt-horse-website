@@ -95,7 +95,8 @@
     "error_details": "Inserisci i tuoi dati",
     "error_recipient": "Inserisci i dati del destinatario",
     "processing_payment": "Confermando il tuo pagamento...",
-    "confirmation_sent": "Conferma e PDF del buono regalo inviati a"
+    "confirmation_sent": "Conferma e PDF del buono regalo inviati a",
+    "personal_message_placeholder": "Aggiungi un messaggio personale (facoltativo)"
   },
 
   "gift_cards_success": {

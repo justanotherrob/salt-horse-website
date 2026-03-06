@@ -95,7 +95,8 @@
     "error_details": "Introduce tus datos",
     "error_recipient": "Introduce los datos del destinatario",
     "processing_payment": "Confirmando tu pago...",
-    "confirmation_sent": "Confirmación y PDF de tarjeta regalo enviados a"
+    "confirmation_sent": "Confirmación y PDF de tarjeta regalo enviados a",
+    "personal_message_placeholder": "Añadir un mensaje personal (opcional)"
   },
 
   "gift_cards_success": {
