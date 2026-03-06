@@ -8,9 +8,9 @@ router.use(requireAuth);
 
 // GET /admin — Dashboard
 router.get('/', (req, res) => {
-  const totalCards = db.prepare('SELECT COUNT(*) as count FROM gift_cards WHERE status != ?').get('pending');
+  const totalCards = db.prepare('SELECT COUNT(*) as count FROM gift_cards').get();
   const activeCards = db.prepare('SELECT COUNT(*) as count FROM gift_cards WHERE status = ?').get('active');
-  const totalRevenue = db.prepare("SELECT COALESCE(SUM(initial_amount), 0) as total FROM gift_cards WHERE status != 'pending'").get();
+  const totalRevenue = db.prepare("SELECT COALESCE(SUM(initial_amount), 0) as total FROM gift_cards WHERE status IN ('active', 'redeemed')").get();
   const redirectCount = db.prepare('SELECT COUNT(*) as count FROM redirects').get();
   const giftCardsEnabled = db.prepare("SELECT value FROM site_settings WHERE key = 'gift_cards_enabled'").get();
 
@@ -54,12 +54,13 @@ router.get('/gift-cards', (req, res) => {
   const perPage = 25;
   const offset = (page - 1) * perPage;
 
-  let where = "WHERE status != 'pending'";
+  let where = "WHERE 1=1";
   const params = [];
 
   if (filter === 'active') { where += " AND status = 'active'"; }
   else if (filter === 'redeemed') { where += " AND status = 'redeemed'"; }
   else if (filter === 'expired') { where += " AND status = 'expired'"; }
+  else if (filter === 'pending') { where += " AND status = 'pending'"; }
 
   if (search) {
     where += ' AND (code LIKE ? OR purchaser_email LIKE ? OR recipient_email LIKE ?)';
