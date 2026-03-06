@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WE DO NOT SELL BUTTERBEER — Salt Horse</title>
+  <meta name="description" content="Salt Horse does not sell butterbeer. But our Sorting Tap can find your perfect craft beer. Take the quiz.">
+  <meta property="og:title" content="WE DO NOT SELL BUTTERBEER — Salt Horse">
+  <meta property="og:description" content="No butterbeer here. But the Sorting Tap knows what you should be drinking instead.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.salthorse.beer/butterbeer">
+  <meta property="og:site_name" content="Salt Horse">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #182241;
+      --bg-light: #1e2d54;
+      --bg-dark: #111a33;
+      --cream: #FFF6DA;
+      --cream-dim: rgba(255, 246, 218, 0.6);
+      --cream-faint: rgba(255, 246, 218, 0.12);
+      --amber: #D4943A;
+      --amber-glow: rgba(212, 148, 58, 0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    a { color: var(--cream); text-decoration: none; }
+
+    /* ── Background ── */
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('/images/candleswindow.jpg') center/cover no-repeat;
+      filter: brightness(0.2) saturate(0.5);
+    }
+    .page-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, var(--bg) 75%);
+    }
+
+    /* ── Container ── */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .page-header .back-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      transition: color 0.3s;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .page-header .back-link:hover { color: var(--amber); }
+    .page-header .back-link::before { content: '← '; }
+
+    .page-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-header h1 .amber { color: var(--amber); }
+
+    .page-header .subtitle {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Intro ── */
+    .intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .intro .big-text {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .intro p {
+      color: var(--cream-dim);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .start-btn {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      background: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 2rem;
+    }
+    .start-btn:hover {
+      background: var(--amber);
+      color: var(--bg);
+    }
+
+    /* ── Quiz ── */
+    .quiz { width: 100%; display: none; }
+    .quiz.active { display: block; }
+
+    .progress-bar {
+      width: 100%;
+      height: 2px;
+      background: var(--cream-faint);
+      margin-bottom: 3rem;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--amber);
+      transition: width 0.5s ease;
+      width: 0%;
+    }
+
+    .question-wrap {
+      display: none;
+      animation: fadeIn 0.6s ease-out;
+    }
+    .question-wrap.active { display: block; }
+
+    .question-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    .question-text {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .option-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      padding: 1.1rem 1.5rem;
+      background: var(--cream-faint);
+      border: 1px solid transparent;
+      color: var(--cream);
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 4px;
+    }
+    .option-btn:hover {
+      border-color: var(--amber);
+      background: var(--amber-glow);
+    }
+    .option-btn.selected {
+      border-color: var(--amber);
+      background: var(--amber);
+      color: var(--bg);
+    }
+
+    /* ── Sorting Animation ── */
+    .sorting-screen {
+      display: none;
+      text-align: center;
+      padding: 4rem 0;
+    }
+    .sorting-screen.active { display: block; }
+
+    .sorting-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .tap-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: wobble 0.8s ease-in-out infinite;
+    }
+
+    .sorting-candidates {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      min-height: 2rem;
+    }
+    .sorting-candidates .flash-style {
+      animation: flashIn 0.15s ease-out;
+    }
+
+    /* ── Result ── */
+    .result-screen {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.8s ease-out;
+    }
+    .result-screen.active { display: block; }
+
+    .result-style-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    .result-title {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-house {
+      font-size: 1.1rem;
+      color: var(--amber);
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .result-emoji {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .result-desc {
+      font-size: 1.05rem;
+      color: var(--cream-dim);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    .result-punchline {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+      padding: 1rem 1.5rem;
+      background: var(--cream-faint);
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .result-btn {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border: 1px solid var(--cream);
+      color: var(--cream);
+      background: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .result-btn:hover {
+      background: var(--cream);
+      color: var(--bg);
+    }
+    .result-btn.primary {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--bg);
+    }
+    .result-btn.primary:hover {
+      background: transparent;
+      color: var(--amber);
+    }
+
+    .retake-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      cursor: pointer;
+      background: none;
+      border: none;
+      margin-top: 1rem;
+      transition: color 0.3s;
+    }
+    .retake-link:hover { color: var(--amber); }
+
+    /* ── The original list (hidden until result) ── */
+    .beer-list-section {
+      display: none;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--cream-faint);
+      text-align: center;
+      width: 100%;
+    }
+    .beer-list-section.active { display: block; }
+
+    .beer-list-section h3 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .beer-list {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      line-height: 2;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .beer-list .no-bb {
+      color: var(--cream);
+      font-weight: 600;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    @keyframes wobble {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes flashIn {
+      from { opacity: 0; transform: scale(1.2); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes revealGlow {
+      0% { text-shadow: 0 0 0 transparent; }
+      50% { text-shadow: 0 0 30px var(--amber), 0 0 60px rgba(212, 148, 58, 0.3); }
+      100% { text-shadow: 0 0 0 transparent; }
+    }
+    .glow { animation: revealGlow 2s ease-out; }
+
+    @media (max-width: 600px) {
+      .container { padding: 2rem 1.25rem; }
+      .option-btn { font-size: 0.9rem; padding: 1rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <div class="container">
+    <!-- INTRO SCREEN -->
+    <div id="intro">
+      <div class="page-header">
+        <a href="/" class="back-link">Salt Horse</a>
+        <h1>We Do Not Sell<br><span class="amber">Butterbeer.</span></h1>
+        <p class="subtitle">Sorry. We're a real bar.</p>
+      </div>
+
+      <div class="intro">
+        <p class="big-text">But the Sorting Tap knows exactly what you should be drinking instead.</p>
+        <p>Answer five quick questions and we'll match you with your perfect craft beer style from our collection of over 200.</p>
+        <button class="start-btn" onclick="startQuiz()">Approach the Sorting Tap</button>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz" id="quiz">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+      <!-- Q1 -->
+      <div class="question-wrap" data-q="0">
+        <div class="question-number">Question I of V</div>
+        <div class="question-text">It's Friday night. What's the vibe?</div>
+        <div class="options">
+          <button class="option-btn" data-scores="ipa:2,sour:1">Something bold and new — surprise me</button>
+          <button class="option-btn" data-scores="stout:2,tripel:1">Dark corner, good company, settle in</button>
+          <button class="option-btn" data-scores="tripel:2,saison:1">Big table, mates, it's going to be a long one</button>
+          <button class="option-btn" data-scores="pilsner:2,saison:1">Easy does it — keep things simple and crisp</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-wrap" data-q="1">
+        <div class="question-number">Question II of V</div>
+        <div class="question-text">Pick a snack.</div>
+        <div class="options">
+          <button class="option-btn" data-scores="ipa:2,saison:1">Spicy wings with hot sauce</button>
+          <button class="option-btn" data-scores="stout:2,tripel:1">Dark chocolate, the good stuff</button>
+          <button class="option-btn" data-scores="tripel:2,pilsner:1">A cheese board — the fancier the better</button>
+          <button class="option-btn" data-scores="sour:2,saison:1">Pickles, kimchi, anything fermented</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-wrap" data-q="2">
+        <div class="question-number">Question III of V</div>
+        <div class="question-text">Where are you going on holiday?</div>
+        <div class="options">
+          <button class="option-btn" data-scores="sour:2,saison:1">Somewhere I can't pronounce yet</button>
+          <button class="option-btn" data-scores="stout:2,ipa:1">A cabin. Rain on the roof. No WiFi.</button>
+          <button class="option-btn" data-scores="tripel:1,pilsner:2">European city — architecture, cafés, culture</button>
+          <button class="option-btn" data-scores="ipa:2,pilsner:1">Beach with a stack of books</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-wrap" data-q="3">
+        <div class="question-number">Question IV of V</div>
+        <div class="question-text">What's the soundtrack?</div>
+        <div class="options">
+          <button class="option-btn" data-scores="ipa:2,sour:1">Loud. Electric. Probably too loud.</button>
+          <button class="option-btn" data-scores="stout:2,tripel:1">Jazz, blues, something with soul</button>
+          <button class="option-btn" data-scores="saison:2,sour:1">Folk, acoustic, vinyl crackle</button>
+          <button class="option-btn" data-scores="pilsner:2,ipa:1">Classic rock. No arguments.</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-wrap" data-q="4">
+        <div class="question-number">Question V of V</div>
+        <div class="question-text">What matters most in a drink?</div>
+        <div class="options">
+          <button class="option-btn" data-scores="ipa:2,tripel:1">Flavour. Hit me with everything.</button>
+          <button class="option-btn" data-scores="stout:2,saison:1">Depth and warmth — something to sit with</button>
+          <button class="option-btn" data-scores="sour:2,tripel:1">Surprise me. I want my eyebrows to go up.</button>
+          <button class="option-btn" data-scores="pilsner:2,saison:1">Refreshment. Clean and crushable.</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SORTING ANIMATION -->
+    <div class="sorting-screen" id="sorting">
+      <div class="tap-icon">🍺</div>
+      <div class="sorting-text">The Sorting Tap is Deciding...</div>
+      <div class="sorting-candidates" id="sortingCandidates"></div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-screen" id="result">
+      <div class="result-style-name">The Sorting Tap Has Spoken</div>
+      <div class="result-emoji" id="resultEmoji"></div>
+      <div class="result-title glow" id="resultTitle"></div>
+      <div class="result-house" id="resultHouse"></div>
+      <div class="result-desc" id="resultDesc"></div>
+      <div class="result-punchline">Still no butterbeer though.</div>
+      <div class="result-actions">
+        <a href="/#drink" class="result-btn primary">See What's on Tap</a>
+        <a href="/#book" class="result-btn">Book a Table</a>
+        <button class="retake-link" onclick="retake()">↻ Try Again</button>
+      </div>
+    </div>
+
+    <!-- The Original Beer List -->
+    <div class="beer-list-section" id="beerList">
+      <h3>What We Actually Sell</h3>
+      <p class="beer-list">
+        Lager, saisons, rustic farmhouse ales, doppelbocks, West Coast IPAs, hazy doubles, New England IPAs, Belgian quads, tripels, dubbels, Patersbiers, pale ales, Australian pales, New Zealand pales, tropical pales, hefeweizens, weissbiers, kellerbiers, smoked lagers, rauchbiers, Märzens, dunkels, altbiers, helles lagers, export lagers, Czech pilsners, German-style pilsners, amber ales, spiced ambers, imperial stouts, breakfast stouts, nitro porters, coffee porters, fruited lambics, krieks, raspberry lambics, peach lambics, cherry & black pepper lambics, Oude Geuzes, Oude Geuze cuvées, blended oak-aged lambics, dry-hopped sours, berry sours, cherry sours, lemon sours, mango gose, golden sours, framboise-style sours, mixed-fermentation sours, radlers, wild ales, barrel-aged wild ales, fresh-hop blends, Bretted pales, session IPAs, and a generous selection of sharers, fruit ciders, perries, rosé ciders, and other things you would expect, <span class="no-bb">but no butterbeer.</span>
+      </p>
+    </div>
+  </div>
+
+<script>
+  var scores = { ipa: 0, stout: 0, tripel: 0, sour: 0, pilsner: 0, saison: 0 };
+  var currentQ = 0;
+  var totalQ = 5;
+
+  var results = {
+    ipa: {
+      emoji: '🌊',
+      title: 'Hazy IPA',
+      house: 'House of Hops',
+      desc: 'Bold, tropical, and unapologetically juicy. You don\'t do subtle and neither does your pint. You want mango, passionfruit, and a haze you could lose yourself in. We\'ve got fourteen lines of exactly this kind of thing.'
+    },
+    stout: {
+      emoji: '🌑',
+      title: 'Imperial Stout',
+      house: 'The Dark Order',
+      desc: 'Rich, roasted, and built for long nights. You\'re the one who stays till close, nursing something thick and dark with notes of chocolate, coffee, and quiet satisfaction. We respect that.'
+    },
+    tripel: {
+      emoji: '⚗️',
+      title: 'Belgian Tripel',
+      house: 'The Golden Circle',
+      desc: 'Complex, golden, deceptively strong. You appreciate craftsmanship and tradition — but you also like a drink that creeps up on you. Spicy, fruity, dangerously smooth. Proceed with caution.'
+    },
+    sour: {
+      emoji: '🍋',
+      title: 'Sour / Lambic',
+      house: 'The Wild Ferment',
+      desc: 'Tart, funky, and completely unpredictable. You like things that make other people pull faces. Lambics, geuzes, fruited sours — the weirder the better. We keep a whole fridge of these for people like you.'
+    },
+    pilsner: {
+      emoji: '✨',
+      title: 'Czech Pilsner',
+      house: 'The Crisp Edge',
+      desc: 'Clean, golden, no nonsense. You know that simplicity done perfectly is the hardest thing to brew. While everyone\'s chasing the latest haze, you\'re quietly drinking the best pint in the room.'
+    },
+    saison: {
+      emoji: '🌾',
+      title: 'Farmhouse Saison',
+      house: 'The Free Pour',
+      desc: 'Dry, rustic, and a little bit wild. You\'re the one who orders something nobody else has heard of and doesn\'t care. Peppery, earthy, bone-dry finish. You probably also like natural wine, don\'t you?'
+    }
+  };
+
+  var flashStyles = ['Hazy IPA', 'Imperial Stout', 'Belgian Tripel', 'Oude Geuze', 'Czech Pilsner', 'Farmhouse Saison', 'West Coast IPA', 'Breakfast Stout', 'Mango Gose', 'Doppelbock', 'Hefeweizen', 'Kriek', 'Pale Ale', 'Porter', 'Radler', 'Dunkel'];
+
+  function startQuiz() {
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('quiz').classList.add('active');
+    showQuestion(0);
+  }
+
+  function showQuestion(idx) {
+    var wraps = document.querySelectorAll('.question-wrap');
+    wraps.forEach(function(w) { w.classList.remove('active'); });
+    var target = document.querySelector('[data-q="' + idx + '"]');
+    if (target) {
+      target.classList.add('active');
+      document.getElementById('progressFill').style.width = ((idx / totalQ) * 100) + '%';
+    }
+  }
+
+  document.querySelectorAll('.option-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var scoreData = this.getAttribute('data-scores');
+      scoreData.split(',').forEach(function(pair) {
+        var parts = pair.split(':');
+        scores[parts[0]] += parseInt(parts[1]);
+      });
+
+      this.classList.add('selected');
+      var siblings = this.parentElement.querySelectorAll('.option-btn');
+      siblings.forEach(function(s) { s.style.pointerEvents = 'none'; });
+
+      setTimeout(function() {
+        currentQ++;
+        if (currentQ >= totalQ) {
+          document.getElementById('progressFill').style.width = '100%';
+          setTimeout(showSorting, 300);
+        } else {
+          showQuestion(currentQ);
+        }
+      }, 400);
+    });
+  });
+
+  function showSorting() {
+    document.getElementById('quiz').classList.remove('active');
+    document.getElementById('sorting').classList.add('active');
+
+    var candidateEl = document.getElementById('sortingCandidates');
+    var flashCount = 0;
+    var maxFlashes = 20;
+
+    var interval = setInterval(function() {
+      var style = flashStyles[Math.floor(Math.random() * flashStyles.length)];
+      candidateEl.innerHTML = '<span class="flash-style">' + style + '?</span>';
+      flashCount++;
+      if (flashCount >= maxFlashes) {
+        clearInterval(interval);
+        setTimeout(showResult, 600);
+      }
+    }, 150);
+  }
+
+  function showResult() {
+    document.getElementById('sorting').classList.remove('active');
+
+    var winner = Object.keys(scores).reduce(function(a, b) {
+      return scores[a] > scores[b] ? a : b;
+    });
+
+    var r = results[winner];
+    document.getElementById('resultEmoji').textContent = r.emoji;
+    document.getElementById('resultTitle').textContent = r.title;
+    document.getElementById('resultHouse').textContent = r.house;
+    document.getElementById('resultDesc').textContent = r.desc;
+
+    document.getElementById('result').classList.add('active');
+    document.getElementById('beerList').classList.add('active');
+  }
+
+  function retake() {
+    scores = { ipa: 0, stout: 0, tripel: 0, sour: 0, pilsner: 0, saison: 0 };
+    currentQ = 0;
+
+    document.getElementById('result').classList.remove('active');
+    document.getElementById('beerList').classList.remove('active');
+    document.getElementById('sorting').classList.remove('active');
+
+    document.querySelectorAll('.option-btn').forEach(function(btn) {
+      btn.classList.remove('selected');
+      btn.style.pointerEvents = '';
+    });
+
+    document.getElementById('intro').style.display = '';
+    document.getElementById('quiz').classList.remove('active');
+  }
+</script>
+</body>
+</html>

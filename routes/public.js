@@ -63,4 +63,9 @@ router.get('/gift-cards/success', (req, res) => {
   res.render('gift-cards-success', { content, giftCard });
 });
 
+// GET /butterbeer — The Sorting Tap
+router.get('/butterbeer', (req, res) => {
+  res.render('butterbeer');
+});
+
 module.exports = router;
