@@ -88,7 +88,14 @@
     "recipient_email": "E-mail Ontvanger",
     "buy_button": "Cadeaubon Kopen",
     "expires_note": "Cadeaubonnen zijn 12 maanden geldig vanaf aankoop.",
-    "processing": "Bezig met verwerken..."
+    "processing": "Bezig met verwerken...",
+    "payment_title": "Betaling Afronden",
+    "recipient_label": "Voor",
+    "error_amount": "Selecteer alstublieft een bedrag tussen £25 en £250",
+    "error_details": "Voer alstublieft je gegevens in",
+    "error_recipient": "Voer alstublieft de gegevens van de ontvanger in",
+    "processing_payment": "Je betaling wordt bevestigd...",
+    "confirmation_sent": "Bevestiging en cadeaubon-PDF verzonden naar"
   },
 
   "gift_cards_success": {

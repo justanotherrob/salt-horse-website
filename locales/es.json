@@ -88,7 +88,14 @@
     "recipient_email": "Email del Destinatario",
     "buy_button": "Comprar Tarjeta Regalo",
     "expires_note": "Las tarjetas regalo son válidas durante 12 meses desde la compra.",
-    "processing": "Procesando..."
+    "processing": "Procesando...",
+    "payment_title": "Completar Pago",
+    "recipient_label": "Para",
+    "error_amount": "Selecciona un importe entre £25 y £250",
+    "error_details": "Introduce tus datos",
+    "error_recipient": "Introduce los datos del destinatario",
+    "processing_payment": "Confirmando tu pago...",
+    "confirmation_sent": "Confirmación y PDF de tarjeta regalo enviados a"
   },
 
   "gift_cards_success": {

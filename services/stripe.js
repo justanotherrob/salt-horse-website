@@ -2,7 +2,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
   ? require('stripe')(process.env.STRIPE_SECRET_KEY)
   : null;
 const db = require('../db/database');
-const { sendGiftCardEmail } = require('./email');
+const { sendGiftCardEmail, sendPurchaserReceipt } = require('./email');
 
 function generateCode() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no I/O/0/1 for clarity
@@ -32,12 +32,13 @@ async function createCheckoutSession({ amount, purchaserName, purchaserEmail, re
   const expiresAt = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString();
 
   const session = await stripe.checkout.sessions.create({
+    ui_mode: 'embedded',
     payment_method_types: ['card'],
     line_items: [{
       price_data: {
         currency: 'gbp',
         product_data: {
-          name: `Salt Horse Gift Card — £${(amount / 100).toFixed(0)}`,
+          name: `Salt Horse Gift Card £${(amount / 100).toFixed(0)}`,
           description: 'Redeemable at Salt Horse, Edinburgh',
         },
         unit_amount: amount,
@@ -46,8 +47,7 @@ async function createCheckoutSession({ amount, purchaserName, purchaserEmail, re
     }],
     customer_email: purchaserEmail,
     mode: 'payment',
-    success_url: `${baseUrl}/gift-cards/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${baseUrl}/gift-cards`,
+    return_url: `${baseUrl}/gift-cards/success?session_id={CHECKOUT_SESSION_ID}`,
     metadata: {
       type: 'gift_card',
       purchaser_name: purchaserName,
@@ -106,10 +106,14 @@ async function handleWebhook(event) {
       VALUES (?, ?, 'purchase', 'Stripe payment')
     `).run(card.id, card.initial_amount);
 
-    // Send email with PDF
+    // Send emails
     try {
       const updatedCard = db.prepare('SELECT * FROM gift_cards WHERE id = ?').get(card.id);
       await sendGiftCardEmail(updatedCard);
+      // If it's a gift for a friend, also send the purchaser a receipt
+      if (updatedCard.send_to === 'friend') {
+        await sendPurchaserReceipt(updatedCard);
+      }
     } catch (err) {
       console.error('Failed to send gift card email:', err);
     }

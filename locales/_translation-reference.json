@@ -85,7 +85,14 @@
     "recipient_email": "Recipient Email",
     "buy_button": "Buy Gift Card",
     "expires_note": "Gift cards are valid for 12 months from purchase.",
-    "processing": "Processing..."
+    "processing": "Processing...",
+    "payment_title": "Complete Payment",
+    "recipient_label": "For",
+    "error_amount": "Please select an amount between £25 and £250",
+    "error_details": "Please enter your details",
+    "error_recipient": "Please enter recipient details",
+    "processing_payment": "Confirming your payment...",
+    "confirmation_sent": "Confirmation and gift card PDF sent to"
   },
 
   "gift_cards_success": {

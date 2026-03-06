@@ -10,6 +10,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
   : null;
 
 const cookieParser = require('cookie-parser');
+const db = require('./db/database');
 const { redirectMiddleware } = require('./middleware/redirects');
 const { i18nMiddleware } = require('./middleware/i18n');
 const { handleWebhook } = require('./services/stripe');
@@ -107,11 +108,28 @@ app.post('/gift-cards/checkout', async (req, res) => {
       sendTo: sendTo || 'self',
     });
 
-    res.json({ url: session.url });
+    res.json({ clientSecret: session.client_secret });
   } catch (err) {
     console.error('Checkout error:', err);
     res.status(500).json({ error: 'Failed to create checkout session' });
   }
+});
+
+// ── Gift Card Status Polling ─────────────────────────────
+app.get('/gift-cards/status', (req, res) => {
+  const sessionId = req.query.session_id;
+  if (!sessionId) return res.status(400).json({ error: 'Missing session_id' });
+
+  const card = db.prepare('SELECT code, status, initial_amount, expires_at, recipient_email, purchaser_email, send_to FROM gift_cards WHERE stripe_session_id = ?').get(sessionId);
+  if (!card) return res.json({ status: 'not_found' });
+
+  res.json({
+    status: card.status,
+    code: card.status === 'active' ? card.code : null,
+    amount: card.status === 'active' ? (card.initial_amount / 100).toFixed(2) : null,
+    expiresAt: card.status === 'active' ? card.expires_at : null,
+    emailSentTo: card.status === 'active' ? (card.send_to === 'friend' ? card.recipient_email : card.purchaser_email) : null,
+  });
 });
 
 // ── 404 ──────────────────────────────────────────────────

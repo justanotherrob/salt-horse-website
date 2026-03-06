@@ -88,7 +88,14 @@
     "recipient_email": "Email del Destinatario",
     "buy_button": "Acquista Buono Regalo",
     "expires_note": "I buoni regalo sono validi per 12 mesi dall'acquisto.",
-    "processing": "Elaborazione..."
+    "processing": "Elaborazione...",
+    "payment_title": "Completa il Pagamento",
+    "recipient_label": "Per",
+    "error_amount": "Seleziona un importo tra £25 e £250",
+    "error_details": "Inserisci i tuoi dati",
+    "error_recipient": "Inserisci i dati del destinatario",
+    "processing_payment": "Confermando il tuo pagamento...",
+    "confirmation_sent": "Conferma e PDF del buono regalo inviati a"
   },
 
   "gift_cards_success": {

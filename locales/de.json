@@ -88,7 +88,14 @@
     "recipient_email": "E-Mail des Empfängers",
     "buy_button": "Gutschein Kaufen",
     "expires_note": "Gutscheine sind 12 Monate ab Kauf gültig.",
-    "processing": "Wird bearbeitet..."
+    "processing": "Wird bearbeitet...",
+    "payment_title": "Zahlung Abschließen",
+    "recipient_label": "Für",
+    "error_amount": "Bitte wähle einen Betrag zwischen £25 und £250",
+    "error_details": "Bitte gib deine Daten ein",
+    "error_recipient": "Bitte gib die Daten des Empfängers ein",
+    "processing_payment": "Zahlung wird bestätigt...",
+    "confirmation_sent": "Bestätigung und Gutschein-PDF versendet an"
   },
 
   "gift_cards_success": {

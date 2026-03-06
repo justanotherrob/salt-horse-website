@@ -88,7 +88,14 @@
     "recipient_email": "Email Odbiorcy",
     "buy_button": "Kup Kartę Podarunkową",
     "expires_note": "Karty podarunkowe są ważne przez 12 miesięcy od zakupu.",
-    "processing": "Przetwarzanie..."
+    "processing": "Przetwarzanie...",
+    "payment_title": "Dokończ Płatność",
+    "recipient_label": "Dla",
+    "error_amount": "Wybierz kwotę między £25 a £250",
+    "error_details": "Wpisz swoje dane",
+    "error_recipient": "Wpisz dane odbiorcy",
+    "processing_payment": "Potwierdzanie twojej płatności...",
+    "confirmation_sent": "Potwierdzenie i PDF karty podarunkowej wysłane do"
   },
 
   "gift_cards_success": {

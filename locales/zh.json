@@ -88,7 +88,14 @@
     "recipient_email": "收件人邮箱",
     "buy_button": "购买礼品卡",
     "expires_note": "礼品卡自购买之日起12个月内有效。",
-    "processing": "处理中..."
+    "processing": "处理中...",
+    "payment_title": "完成支付",
+    "recipient_label": "送给",
+    "error_amount": "请选择£25至£250之间的金额",
+    "error_details": "请输入你的信息",
+    "error_recipient": "请输入收件人信息",
+    "processing_payment": "正在确认你的支付...",
+    "confirmation_sent": "确认和礼品卡PDF已发送至"
   },
 
   "gift_cards_success": {

@@ -43,6 +43,41 @@ router.post('/hours/:day', (req, res) => {
   res.json({ success: true });
 });
 
+// ── Gift Card Resend Emails ──────────────────────────────
+const { sendGiftCardEmail, sendPurchaserReceipt } = require('../services/email');
+
+// POST /api/gift-cards/:id/resend-purchaser
+router.post('/gift-cards/:id/resend-purchaser', async (req, res) => {
+  const card = db.prepare('SELECT * FROM gift_cards WHERE id = ?').get(req.params.id);
+  if (!card) return res.status(404).json({ error: 'Gift card not found' });
+  if (card.status === 'pending') return res.status(400).json({ error: 'Gift card is still pending' });
+
+  const email = req.body.email || card.purchaser_email;
+  try {
+    await sendPurchaserReceipt(card, email);
+    res.json({ success: true, sentTo: email });
+  } catch (err) {
+    console.error('Failed to resend purchaser receipt:', err);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
+// POST /api/gift-cards/:id/resend-recipient
+router.post('/gift-cards/:id/resend-recipient', async (req, res) => {
+  const card = db.prepare('SELECT * FROM gift_cards WHERE id = ?').get(req.params.id);
+  if (!card) return res.status(404).json({ error: 'Gift card not found' });
+  if (card.status === 'pending') return res.status(400).json({ error: 'Gift card is still pending' });
+
+  const email = req.body.email || (card.send_to === 'friend' ? card.recipient_email : card.purchaser_email);
+  try {
+    await sendGiftCardEmail(card, email);
+    res.json({ success: true, sentTo: email });
+  } catch (err) {
+    console.error('Failed to resend gift card email:', err);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
 // ── Gift Card Redemption ─────────────────────────────────
 
 // POST /api/gift-cards/:code/redeem
