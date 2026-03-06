@@ -1,0 +1,157 @@
+{
+  "url": "https://www.salthorse.beer/game",
+  "title": "Game — Salt Horse",
+  "meta_description": "",
+  "headings": [
+    {
+      "level": 4,
+      "text": "Location"
+    },
+    {
+      "level": 4,
+      "text": "Hours"
+    },
+    {
+      "level": 4,
+      "text": "Contact"
+    }
+  ],
+  "text_blocks": [
+    "<div id=\"game-container\">\n    <div id=\"pint-glass\">\n        <div id=\"beer-fill\"></div>\n    </div>\n    <button id=\"stop-button\">Stop</button>\n    <div id=\"result\"></div>\n</div>\n\n#game-container {\n    text-align: center;\n    margin-top: 50px;\n}\n\n#pint-glass {\n    width: 100px;\n    height: 200px;\n    border: 5px solid #000;\n    border-radius: 10px;\n    overflow: hidden;\n    margin: 0 auto;\n    position: relative;\n}\n\n#beer-fill {\n    width: 100%;\n    height: 0%;\n    background-color: #FFD700;\n    position: absolute;\n    bottom: 0;\n}\n\n#stop-button {\n    margin-top: 20px;\n    padding: 10px 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    cursor: pointer;\n    font-size: 16px;\n    border-radius: 5px;\n}\n\n#result {\n    margin-top: 20px;\n    font-size: 18px;\n}\n\nlet fillInterval;\nlet fillPercentage = 0;\n\nfunction startFilling() {\n    fillInterval = setInterval(() => {\n        fillPercentage += 1;\n        document.getElementById('beer-fill').style.height = fillPercentage + '%';\n\n        if (fillPercentage >= 100) {\n            clearInterval(fillInterval);\n            document.getElementById('result').innerText = \"You spilled it!\";\n        }\n    }, 100); // Adjust the speed as necessary\n}\n\ndocument.getElementById('stop-button').addEventListener('click', function () {\n    clearInterval(fillInterval);\n    if (fillPercentage === 100) {\n        document.getElementById('result').innerText = \"Perfect pint!\";\n    } else {\n        document.getElementById('result').innerText = `You stopped at ${fillPercentage}%. Try again!`;\n    }\n});\n\nstartFilling(); // Start filling automatically when the page loads"
+  ],
+  "links": {
+    "internal": [
+      {
+        "text": "",
+        "url": "https://www.salthorse.beer/",
+        "raw_href": "/"
+      },
+      {
+        "text": "DRINK",
+        "url": "https://www.salthorse.beer/drink",
+        "raw_href": "/drink"
+      },
+      {
+        "text": "FOOD",
+        "url": "https://www.salthorse.beer/food",
+        "raw_href": "/food"
+      },
+      {
+        "text": "GIFT CARD",
+        "url": "https://www.salthorse.beer/gift-card",
+        "raw_href": "/gift-card"
+      },
+      {
+        "text": "BOOK A TABLE",
+        "url": "https://www.salthorse.beer/book",
+        "raw_href": "/book"
+      },
+      {
+        "text": "LOCATION & OPENING TIMES",
+        "url": "https://www.salthorse.beer/opening-times-and-location",
+        "raw_href": "/opening-times-and-location"
+      },
+      {
+        "text": "0",
+        "url": "https://www.salthorse.beer/cart",
+        "raw_href": "/cart"
+      },
+      {
+        "text": "0",
+        "url": "https://www.salthorse.beer/cart",
+        "raw_href": "/cart"
+      },
+      {
+        "text": "",
+        "url": "https://www.salthorse.beer/",
+        "raw_href": "/"
+      },
+      {
+        "text": "DRINK",
+        "url": "https://www.salthorse.beer/drink",
+        "raw_href": "/drink"
+      },
+      {
+        "text": "FOOD",
+        "url": "https://www.salthorse.beer/food",
+        "raw_href": "/food"
+      },
+      {
+        "text": "GIFT CARD",
+        "url": "https://www.salthorse.beer/gift-card",
+        "raw_href": "/gift-card"
+      },
+      {
+        "text": "BOOK A TABLE",
+        "url": "https://www.salthorse.beer/book",
+        "raw_href": "/book"
+      },
+      {
+        "text": "LOCATION & OPENING TIMES",
+        "url": "https://www.salthorse.beer/opening-times-and-location",
+        "raw_href": "/opening-times-and-location"
+      },
+      {
+        "text": "0",
+        "url": "https://www.salthorse.beer/cart",
+        "raw_href": "/cart"
+      },
+      {
+        "text": "0",
+        "url": "https://www.salthorse.beer/cart",
+        "raw_href": "/cart"
+      },
+      {
+        "text": "DRINK",
+        "url": "https://www.salthorse.beer/drink",
+        "raw_href": "/drink"
+      },
+      {
+        "text": "FOOD",
+        "url": "https://www.salthorse.beer/food",
+        "raw_href": "/food"
+      },
+      {
+        "text": "GIFT CARD",
+        "url": "https://www.salthorse.beer/gift-card",
+        "raw_href": "/gift-card"
+      },
+      {
+        "text": "BOOK A TABLE",
+        "url": "https://www.salthorse.beer/book",
+        "raw_href": "/book"
+      },
+      {
+        "text": "LOCATION & OPENING TIMES",
+        "url": "https://www.salthorse.beer/opening-times-and-location",
+        "raw_href": "/opening-times-and-location"
+      },
+      {
+        "text": "ALL OPENING TIMES HERE",
+        "url": "https://www.salthorse.beer/opening-times-and-location",
+        "raw_href": "/opening-times-and-location"
+      },
+      {
+        "text": "Book here",
+        "url": "https://www.salthorse.beer/book",
+        "raw_href": "/book"
+      }
+    ],
+    "external": [
+      {
+        "text": "Google Maps",
+        "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+        "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+        "found_on": "game"
+      }
+    ]
+  },
+  "images": [],
+  "raw_text": "<div id=\"game-container\">\n    <div id=\"pint-glass\">\n        <div id=\"beer-fill\"></div>\n    </div>\n    <button id=\"stop-button\">Stop</button>\n    <div id=\"result\"></div>\n</div>\n\n#game-container {\n    text-align: center;\n    margin-top: 50px;\n}\n\n#pint-glass {\n    width: 100px;\n    height: 200px;\n    border: 5px solid #000;\n    border-radius: 10px;\n    overflow: hidden;\n    margin: 0 auto;\n    position: relative;\n}\n\n#beer-fill {\n    width: 100%;\n    height: 0%;\n    background-color: #FFD700;\n    position: absolute;\n    bottom: 0;\n}\n\n#stop-button {\n    margin-top: 20px;\n    padding: 10px 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    cursor: pointer;\n    font-size: 16px;\n    border-radius: 5px;\n}\n\n#result {\n    margin-top: 20px;\n    font-size: 18px;\n}\n\nlet fillInterval;\nlet fillPercentage = 0;\n\nfunction startFilling() {\n    fillInterval = setInterval(() => {\n        fillPercentage += 1;\n        document.getElementById('beer-fill').style.height = fillPercentage + '%';\n\n        if (fillPercentage >= 100) {\n            clearInterval(fillInterval);\n            document.getElementById('result').innerText = \"You spilled it!\";\n        }\n    }, 100); // Adjust the speed as necessary\n}\n\ndocument.getElementById('stop-button').addEventListener('click', function () {\n    clearInterval(fillInterval);\n    if (fillPercentage === 100) {\n        document.getElementById('result').innerText = \"Perfect pint!\";\n    } else {\n        document.getElementById('result').innerText = `You stopped at ${fillPercentage}%. Try again!`;\n    }\n});\n\nstartFilling(); // Start filling automatically when the page loads",
+  "og_tags": {
+    "og:site_name": "Salt Horse",
+    "og:title": "Game — Salt Horse",
+    "og:url": "https://www.salthorse.beer/game",
+    "og:type": "website"
+  }
+}

@@ -20,38 +20,38 @@
   "stats": {
     "taps_label": "Spine Rotanti",
     "bottles_label": "Lattine e Bottiglie",
-    "years_label": "Anni di Servizio"
+    "years_label": "Anni di Attività"
   },
 
   "drink": {
-    "section_label": "Cosa Serviamo",
+    "section_label": "Le Nostre Bevande",
     "title": "Solo il<br>Meglio.",
-    "description": "Offriamo una selezione accuratamente curata e rotante di birra artigianale con quattordici spine alla spina e oltre 200 varietà in lattina e bottiglia. Bevila qui o portala a casa. Decidi tu.",
+    "description": "Proponiamo una selezione accurata e regolarmente rinnovata di birra artigianale — quattordici spine e oltre 200 lattine e bottiglie. Da gustare qui o da portare a casa. Scegli tu.",
     "feature_1": "14 spine rotanti — sempre qualcosa di nuovo",
     "feature_2": "Circa 200 lattine e bottiglie dal Regno Unito e oltre",
     "feature_3": "Sempre una buona selezione di birre analcoliche e senza glutine",
     "feature_4": "Una piccola e curata selezione di vini e liquori",
-    "feature_5": "Asporto disponibile dal bottle shop"
+    "feature_5": "Asporto disponibile"
   },
 
   "food": {
-    "banner": "Hamburger che fanno sul serio.",
-    "section_label": "Cosa Serviamo",
-    "title": "Smash.<br>Spariscono in un attimo.",
-    "description": "Hamburger, alette, patatine. Questo è il focus. Il menù è piccolo ma solido — manzo frollato, panini con pollo fritto, patatine vere tagliate a mano e cotte due volte. Qualcosa da condividere. Qualcosa per accompagnare la prossima birra. Opzioni vegane che convincono.",
-    "description_2": "Fatto al momento. Senza scorciatoie.",
+    "banner": "Hamburger fatti come si deve.",
+    "section_label": "Il Nostro Cibo",
+    "title": "Freschi.<br>Finiscono subito.",
+    "description": "Hamburger, alette, patatine. Questa è la nostra specialità. Il menù è piccolo ma eccellente — manzo frollato, panini con pollo fritto, patatine vere tagliate a mano e cotte due volte. Piatti da condividere. Piatti da abbinare alla prossima birra. Opzioni vegane altrettanto buone.",
+    "description_2": "Fatto al momento. Senza compromessi.",
     "current_menu": "Menù Attuale",
     "allergens": "Allergeni"
   },
 
   "book": {
-    "section_label": "Prenota un tavolo",
+    "section_label": "Prenota un Tavolo",
     "title": "Prenotazioni",
-    "description": "La prenotazione è facoltativa — riserviamo sempre metà dello spazio per chi arriva senza prenotare. Ma se vuoi assicurarti un posto, prenota qui sotto.",
+    "description": "La prenotazione è facoltativa — riserviamo sempre metà dei posti per chi arriva senza prenotare. Se vuoi essere sicuro di avere un tavolo, prenota qui sotto.",
     "book_table": "Prenota un Tavolo",
     "groups_title": "Gruppi di più di 6?",
     "groups_text": "Chiamaci al 07400 653295. Non possiamo garantire che più tavoli prenotati siano vicini — contattaci e organizziamo tutto.",
-    "notice_title": "Buono a sapersi",
+    "notice_title": "Buono a Sapersi",
     "notice_text": "I tavoli sono riservati per 10 minuti — chiamaci se sei in ritardo. I posti in giardino sono in ordine di arrivo e non possono essere prenotati."
   },
 
@@ -64,7 +64,7 @@
     "google_maps": "Google Maps",
     "call_us": "Chiamaci",
     "kitchen_note": "Solo senza prenotazione dopo la chiusura della cucina.",
-    "venue_notice": "Siamo un locale riservato ai maggiori di 18 anni."
+    "venue_notice": "Locale riservato ai maggiori di 18 anni."
   },
 
   "footer": {
@@ -96,7 +96,7 @@
     "subtitle": "Il tuo buono regalo è stato creato.",
     "code_label": "Codice Buono Regalo",
     "amount_label": "Importo",
-    "expires_label": "Valido fino al",
+    "expires_label": "Valido Fino Al",
     "email_note": "Controlla la tua email per il buono regalo con il PDF allegato.",
     "back_home": "Torna a Salt Horse",
     "processing_title": "Elaborazione del tuo buono regalo...",

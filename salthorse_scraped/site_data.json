@@ -1,0 +1,1725 @@
+{
+  "scraped_at": "2026-03-05 12:45:00",
+  "base_url": "https://www.salthorse.beer",
+  "pages_scraped": [
+    "home",
+    "drink",
+    "food",
+    "book",
+    "opening-times-and-location",
+    "game",
+    "gift-cards",
+    "butterbeer"
+  ],
+  "content": {
+    "home": {
+      "url": "https://www.salthorse.beer/",
+      "title": "Salt Horse",
+      "meta_description": "Salt Horse offers local craft beers, grass-fed beef burgers, and numerous \r\nvegan choices. It's listed among Time-Out's Best Bars in Edinburgh.",
+      "headings": [
+        {
+          "level": 2,
+          "text": "14 Lines,Rotating taps.Just the good stuff."
+        },
+        {
+          "level": 2,
+          "text": "Burgers That Don’t Mess About.Smashed. Gone in minutes."
+        },
+        {
+          "level": 2,
+          "text": "200 Bottles and Cans in Stock.Crack one open here or haul it home. Your call."
+        },
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "14 Lines,Rotating taps.Just the good stuff.Burgers That Don’t Mess About.Smashed. Gone in minutes.200 Bottles and Cans in Stock.Crack one open here or haul it home. Your call.",
+        "FIND US",
+        "LOCATION"
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "FIND US",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "BOOK",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "LOCATION",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "home"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "14 Lines,\nRotating taps.\nJust the good stuff.\nBurgers That Don’t Mess About.\nSmashed. Gone in minutes.\n200 Bottles and Cans in Stock.\nCrack one open here or haul it home. Your call.\nFIND US\nBOOK\nFOOD\nLOCATION\nDRINK",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "Salt Horse",
+        "og:url": "https://www.salthorse.beer",
+        "og:type": "website",
+        "og:description": "Salt Horse offers local craft beers, grass-fed beef burgers, and numerous vegan choices. It's listed among Time-Out's Best Bars in Edinburgh.",
+        "og:image": "http://static1.squarespace.com/static/65e9da5115406510ba2dcf7c/t/681cde36f769780a8a3534ad/1746722358369/small_logo_png_FFF5D9.png?format=1500w",
+        "og:image:width": "300",
+        "og:image:height": "125"
+      }
+    },
+    "drink": {
+      "url": "https://www.salthorse.beer/drink",
+      "title": "Craft Beer, Wine, and Spirits — Salt Horse",
+      "meta_description": "We carry a carefully curated and rotating selection of craft beer with \r\nfourteen lines on draught and over 200 in cans and bottles",
+      "headings": [
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "CRAFT BEER FOCUSED - WE ARE THE CRAFT BEER BAR OF EDINBURGH",
+        "14 ROTATING DRAUGHT LINES",
+        "AROUND 200 CANS AND BOTTLES",
+        "A SMALL, WELL-FORMED SELECTION OF WINE AND SPIRITS",
+        "CRAFT BEER FOCUSED - WE ARE THE CRAFT BEER BAR OF EDINBURGH14 ROTATING DRAUGHT LINESAROUND 200 CANS AND BOTTLESA SMALL, WELL-FORMED SELECTION OF WINE AND SPIRITS"
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DL2gB29o9Sp/",
+            "raw_href": "https://www.instagram.com/p/DL2gB29o9Sp/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DK-jTRHoAz7/",
+            "raw_href": "https://www.instagram.com/p/DK-jTRHoAz7/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DJ9fZTQoMOL/",
+            "raw_href": "https://www.instagram.com/p/DJ9fZTQoMOL/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DJhWeuWo2-X/",
+            "raw_href": "https://www.instagram.com/p/DJhWeuWo2-X/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DJZiXZjIf_E/",
+            "raw_href": "https://www.instagram.com/p/DJZiXZjIf_E/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DIoYd98IdnA/",
+            "raw_href": "https://www.instagram.com/p/DIoYd98IdnA/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DIZas4QI9ML/",
+            "raw_href": "https://www.instagram.com/p/DIZas4QI9ML/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DIRDL9Bomrc/",
+            "raw_href": "https://www.instagram.com/p/DIRDL9Bomrc/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DIOTUrIIhLW/",
+            "raw_href": "https://www.instagram.com/p/DIOTUrIIhLW/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DHwHzInoVtB/",
+            "raw_href": "https://www.instagram.com/p/DHwHzInoVtB/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DHa92gmov8M/",
+            "raw_href": "https://www.instagram.com/p/DHa92gmov8M/",
+            "found_on": "drink"
+          },
+          {
+            "text": "",
+            "url": "https://www.instagram.com/p/DHLQS03o-iK/",
+            "raw_href": "https://www.instagram.com/p/DHLQS03o-iK/",
+            "found_on": "drink"
+          },
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "drink"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "CRAFT BEER FOCUSED - WE ARE THE CRAFT BEER BAR OF EDINBURGH\n14 ROTATING DRAUGHT LINES\nAROUND 200 CANS AND BOTTLES\nA SMALL, WELL-FORMED SELECTION OF WINE AND SPIRITS",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "Craft Beer, Wine, and Spirits — Salt Horse",
+        "og:url": "https://www.salthorse.beer/drink",
+        "og:type": "website",
+        "og:description": "We carry a carefully curated and rotating selection of craft beer with fourteen lines on draught and over 200 in cans and bottles"
+      }
+    },
+    "food": {
+      "url": "https://www.salthorse.beer/food",
+      "title": "Smash Burgers @ Salt Horse -  Meaty, Vegan, Messy — Salt Horse",
+      "meta_description": "Organic beef smash burgers, chicken, and proper vegan options, all served \r\nup at Salt Horse, Edinburgh’s laid-back craft beer bar.",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Food at Salt Horse"
+        },
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "Burgers, wings, chips. That’s the focus.",
+        "The menu’s small but tight, dry-aged beef, fried chicken sandwichs, proper chips hand cut cooked twice.A few things for sharing. A few for soaking up the next beer. Vegan options that hold their own.",
+        "Freshly made. No shortcuts.Breakfast Burgers served all day on the 1st January",
+        "For Kitchen Opening Times SeeHere",
+        "Our licence prohibits under-18s on the premises.",
+        "Food at Salt HorseBurgers, wings, chips. That’s the focus.The menu’s small but tight, dry-aged beef, fried chicken sandwichs, proper chips hand cut cooked twice.A few things for sharing. A few for soaking up the next beer. Vegan options that hold their own.Freshly made. No shortcuts.Breakfast Burgers served all day on the 1st January",
+        "CURRENT MENU",
+        "ALLERGENS SHEET",
+        "For Kitchen Opening Times SeeHereOur licence prohibits under-18s on the premises."
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Here",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "CURRENT MENU",
+            "url": "https://www.canva.com/design/DAF60rRUkdo/05NCxWK150oq_6N_qFhoig/view?utm_content=DAF60rRUkdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee30c72c40",
+            "raw_href": "https://www.canva.com/design/DAF60rRUkdo/05NCxWK150oq_6N_qFhoig/view?utm_content=DAF60rRUkdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee30c72c40",
+            "found_on": "food"
+          },
+          {
+            "text": "ALLERGENS SHEET",
+            "url": "https://docs.google.com/spreadsheets/d/1RYQO_EE9GnEy0Qtt7vddVJO8bqLquqUHEKRmd2tsPX8/edit#gid=0",
+            "raw_href": "https://docs.google.com/spreadsheets/d/1RYQO_EE9GnEy0Qtt7vddVJO8bqLquqUHEKRmd2tsPX8/edit#gid=0",
+            "found_on": "food"
+          },
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "food"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "Food at Salt Horse\nBurgers, wings, chips. That’s the focus.\nThe menu’s small but tight, dry-aged beef, fried chicken sandwichs, proper chips hand cut cooked twice.\nA few things for sharing. A few for soaking up the next beer. Vegan options that hold their own.\nFreshly made. No shortcuts.\nBreakfast Burgers served all day on the 1st January\nCURRENT MENU\nALLERGENS SHEET\nFor Kitchen Opening Times See\nHere\nOur licence prohibits under-18s on the premises.",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "Smash Burgers @ Salt Horse -  Meaty, Vegan, Messy — Salt Horse",
+        "og:url": "https://www.salthorse.beer/food",
+        "og:type": "website",
+        "og:description": "Organic beef smash burgers, chicken, and proper vegan options, all served up at Salt Horse, Edinburgh’s laid-back craft beer bar."
+      }
+    },
+    "book": {
+      "url": "https://www.salthorse.beer/book",
+      "title": "BOOK — Salt Horse",
+      "meta_description": "Booking optional, we always hold space for walk-ins",
+      "headings": [
+        {
+          "level": 1,
+          "text": "BOOKINGS"
+        },
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "WALK IN ONLY ON THE 31st December and 1st January",
+        "WE RESERVE HALF THE SPACE FOR WALK-INS.WALK-IN ONLY AFTER THE KITCHEN CLOSES.SEEHEREFOR ALL OPENING TIMES",
+        "For group bookings over 6, call 07400 653295. We can't assure multiple booked tables will be next to each other, contact us for help.",
+        "Garden seating is first-come, first-served and cannot be reserved.",
+        "Tables are reserved for 10 minutes. Call if delayed.",
+        "Our licence prohibits under-18s on the premises.",
+        "BOOKINGS",
+        "BOOK HERE",
+        "For group bookings over 6, call 07400 653295. We can't assure multiple booked tables will be next to each other, contact us for help.Garden seating is first-come, first-served and cannot be reserved.Tables are reserved for 10 minutes. Call if delayed.Our licence prohibits under-18s on the premises."
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "BOOK HERE",
+            "url": "https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz",
+            "raw_href": "https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz",
+            "found_on": "book"
+          },
+          {
+            "text": "BOOK HERE",
+            "url": "https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz",
+            "raw_href": "https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz",
+            "found_on": "book"
+          },
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "book"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "BOOKINGS\nWALK IN ONLY ON THE 31st December and 1st January\nWE RESERVE HALF THE SPACE FOR WALK-INS.\nWALK-IN ONLY AFTER THE KITCHEN CLOSES.\nSEE\nHERE\nFOR ALL OPENING TIMES\nBOOK HERE\nFor group bookings over 6, call 07400 653295. We can't assure multiple booked tables will be next to each other, contact us for help.\nGarden seating is first-come, first-served and cannot be reserved.\nTables are reserved for 10 minutes. Call if delayed.\nOur licence prohibits under-18s on the premises.\nBOOK HERE",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "BOOK — Salt Horse",
+        "og:url": "https://www.salthorse.beer/book",
+        "og:type": "website",
+        "og:description": "Booking optional, we always hold space for walk-ins"
+      }
+    },
+    "opening-times-and-location": {
+      "url": "https://www.salthorse.beer/opening-times-and-location",
+      "title": "LOCATION & OPENING TIMES — Salt Horse",
+      "meta_description": "Open 7 Days a week in the heart of Edinburgh's Old town.",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Bar Opening Times"
+        },
+        {
+          "level": 2,
+          "text": "Kitchen Opening Times"
+        },
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "SALT HORSE57-61 BLACKFRIARS ST, EDINBURGHEH1 1NB+44 7400 653 295",
+        "—> Thursday 19th Feb: 4:00 PM – 11:00 PM <—",
+        "Monday:4:00 PM – 11:00 PMTuesday:4:00 PM – 11:00 PMWednesday:4:00 PM – 11:00 PMThursday:12:00 PM – 11:00 PMFriday:12:00 PM – 12:00 AMSaturday:12:00 PM – 12:00 AMSunday:12:30 PM – 11:00 PM",
+        "—> Thursday 19th Feb: 4:00 PM – 11:00 PM <—",
+        "Monday:4:00 PM – 9:00 PMTuesday:4:00 PM – 9:00 PMWednesday:4:00 PM – 9:00 PMThursday:12:00 PM – 9:00 PMFriday:12:00 PM – 10:00 PMSaturday:12:00 PM – 10:00 PMSunday:12:30 PM – 9:00 PM",
+        "Our licence prohibits under-18s on the premises.",
+        "Garden Closes 10pm each evening.Garden not currently open.",
+        "GOOGLE MAPS",
+        "CALL US 📞",
+        "Bar Opening Times—> Thursday 19th Feb: 4:00 PM – 11:00 PM <—Monday:4:00 PM – 11:00 PMTuesday:4:00 PM – 11:00 PMWednesday:4:00 PM – 11:00 PMThursday:12:00 PM – 11:00 PMFriday:12:00 PM – 12:00 AMSaturday:12:00 PM – 12:00 AMSunday:12:30 PM – 11:00 PMKitchen Opening Times—> Thursday 19th Feb: 4:00 PM – 11:00 PM <—Monday:4:00 PM – 9:00 PMTuesday:4:00 PM – 9:00 PMWednesday:4:00 PM – 9:00 PMThursday:12:00 PM – 9:00 PMFriday:12:00 PM – 10:00 PMSaturday:12:00 PM – 10:00 PMSunday:12:30 PM – 9:00 PMOur licence prohibits under-18s on the premises.Garden Closes 10pm each evening.Garden not currently open."
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "GOOGLE MAPS",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "opening-times-and-location"
+          },
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "opening-times-and-location"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "SALT HORSE\n57-61 BLACKFRIARS ST, EDINBURGH\nEH1 1NB\n+44 7400 653 295\nGOOGLE MAPS\nCALL US 📞\nBar Opening Times\n—> Thursday 19th Feb: 4:00 PM – 11:00 PM <—\nMonday:\n4:00 PM – 11:00 PM\nTuesday:\n4:00 PM – 11:00 PM\nWednesday:\n4:00 PM – 11:00 PM\nThursday:\n12:00 PM – 11:00 PM\nFriday:\n12:00 PM – 12:00 AM\nSaturday:\n12:00 PM – 12:00 AM\nSunday:\n12:30 PM – 11:00 PM\nKitchen Opening Times\n—> Thursday 19th Feb: 4:00 PM – 11:00 PM <—\nMonday:\n4:00 PM – 9:00 PM\nTuesday:\n4:00 PM – 9:00 PM\nWednesday:\n4:00 PM – 9:00 PM\nThursday:\n12:00 PM – 9:00 PM\nFriday:\n12:00 PM – 10:00 PM\nSaturday:\n12:00 PM – 10:00 PM\nSunday:\n12:30 PM – 9:00 PM\nOur licence prohibits under-18s on the premises.\nGarden Closes 10pm each evening.\nGarden not currently open.",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "LOCATION & OPENING TIMES — Salt Horse",
+        "og:url": "https://www.salthorse.beer/opening-times-and-location",
+        "og:type": "website",
+        "og:description": "Open 7 Days a week in the heart of Edinburgh's Old town."
+      }
+    },
+    "game": {
+      "url": "https://www.salthorse.beer/game",
+      "title": "Game — Salt Horse",
+      "meta_description": "",
+      "headings": [
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "<div id=\"game-container\">\n    <div id=\"pint-glass\">\n        <div id=\"beer-fill\"></div>\n    </div>\n    <button id=\"stop-button\">Stop</button>\n    <div id=\"result\"></div>\n</div>\n\n#game-container {\n    text-align: center;\n    margin-top: 50px;\n}\n\n#pint-glass {\n    width: 100px;\n    height: 200px;\n    border: 5px solid #000;\n    border-radius: 10px;\n    overflow: hidden;\n    margin: 0 auto;\n    position: relative;\n}\n\n#beer-fill {\n    width: 100%;\n    height: 0%;\n    background-color: #FFD700;\n    position: absolute;\n    bottom: 0;\n}\n\n#stop-button {\n    margin-top: 20px;\n    padding: 10px 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    cursor: pointer;\n    font-size: 16px;\n    border-radius: 5px;\n}\n\n#result {\n    margin-top: 20px;\n    font-size: 18px;\n}\n\nlet fillInterval;\nlet fillPercentage = 0;\n\nfunction startFilling() {\n    fillInterval = setInterval(() => {\n        fillPercentage += 1;\n        document.getElementById('beer-fill').style.height = fillPercentage + '%';\n\n        if (fillPercentage >= 100) {\n            clearInterval(fillInterval);\n            document.getElementById('result').innerText = \"You spilled it!\";\n        }\n    }, 100); // Adjust the speed as necessary\n}\n\ndocument.getElementById('stop-button').addEventListener('click', function () {\n    clearInterval(fillInterval);\n    if (fillPercentage === 100) {\n        document.getElementById('result').innerText = \"Perfect pint!\";\n    } else {\n        document.getElementById('result').innerText = `You stopped at ${fillPercentage}%. Try again!`;\n    }\n});\n\nstartFilling(); // Start filling automatically when the page loads"
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "game"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "<div id=\"game-container\">\n    <div id=\"pint-glass\">\n        <div id=\"beer-fill\"></div>\n    </div>\n    <button id=\"stop-button\">Stop</button>\n    <div id=\"result\"></div>\n</div>\n\n#game-container {\n    text-align: center;\n    margin-top: 50px;\n}\n\n#pint-glass {\n    width: 100px;\n    height: 200px;\n    border: 5px solid #000;\n    border-radius: 10px;\n    overflow: hidden;\n    margin: 0 auto;\n    position: relative;\n}\n\n#beer-fill {\n    width: 100%;\n    height: 0%;\n    background-color: #FFD700;\n    position: absolute;\n    bottom: 0;\n}\n\n#stop-button {\n    margin-top: 20px;\n    padding: 10px 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    cursor: pointer;\n    font-size: 16px;\n    border-radius: 5px;\n}\n\n#result {\n    margin-top: 20px;\n    font-size: 18px;\n}\n\nlet fillInterval;\nlet fillPercentage = 0;\n\nfunction startFilling() {\n    fillInterval = setInterval(() => {\n        fillPercentage += 1;\n        document.getElementById('beer-fill').style.height = fillPercentage + '%';\n\n        if (fillPercentage >= 100) {\n            clearInterval(fillInterval);\n            document.getElementById('result').innerText = \"You spilled it!\";\n        }\n    }, 100); // Adjust the speed as necessary\n}\n\ndocument.getElementById('stop-button').addEventListener('click', function () {\n    clearInterval(fillInterval);\n    if (fillPercentage === 100) {\n        document.getElementById('result').innerText = \"Perfect pint!\";\n    } else {\n        document.getElementById('result').innerText = `You stopped at ${fillPercentage}%. Try again!`;\n    }\n});\n\nstartFilling(); // Start filling automatically when the page loads",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "Game — Salt Horse",
+        "og:url": "https://www.salthorse.beer/game",
+        "og:type": "website"
+      }
+    },
+    "gift-cards": {
+      "url": "https://www.salthorse.beer/gift-cards",
+      "title": "Gift Cards — Salt Horse",
+      "meta_description": "",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Gift Cards"
+        },
+        {
+          "level": 4,
+          "text": "Filters"
+        },
+        {
+          "level": 4,
+          "text": "No results found"
+        },
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "No results match your search. Try removing a few filters."
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Salt Horse Gift Cardfrom £25.00",
+            "url": "https://www.salthorse.beer/gift-cards/p/in-store-cift-card",
+            "raw_href": "/gift-cards/p/in-store-cift-card"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "gift-cards"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "Gift Cards\nClear\nFilters\nFilter\nClear\nFilter\nSalt Horse Gift Card\nfrom £25.00\nNo results found\nNo results match your search. Try removing a few filters.",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "Gift Cards — Salt Horse",
+        "og:url": "https://www.salthorse.beer/gift-cards",
+        "og:type": "website"
+      }
+    },
+    "butterbeer": {
+      "url": "https://www.salthorse.beer/butterbeer",
+      "title": "WE DO NOT SELL BUTTERBEER — Salt Horse",
+      "meta_description": "",
+      "headings": [
+        {
+          "level": 4,
+          "text": "Location"
+        },
+        {
+          "level": 4,
+          "text": "Hours"
+        },
+        {
+          "level": 4,
+          "text": "Contact"
+        }
+      ],
+      "text_blocks": [
+        "We do not sell butter beer.But we do sell lager, saisons, rustic farmhouse ales, doppelbocks, West Coast IPAs, hazy doubles, New England IPAs, Belgian quads, tripels, dubbels, Patersbiers, pale ales, Australian pales, New Zealand pales, tropical pales, hefeweizens, weissbiers, kellerbiers, smoked lagers, rauchbiers, Marzens, dunkels, altbiers, helles lagers, export lagers, Czech pilsners, German-style pilsners, amber ales, spiced ambers, imperial stouts, breakfast stouts, nitro porters, coffee porters, fruited lambics, krieks, raspberry lambics, peach lambics, cherry & black pepper lambics, Oude Geuzes, Oude Geuze cuvées, blended oak-aged lambics, dry-hopped sours, berry sours, cherry sours, lemon sours, mango gose, golden sours, framboise-style sours, mixed-fermentation sours, radlers, wild ales, barrel-aged wild ales, fresh-hop blends, Bretted pales, session IPAs, and a generous selection of sharers, fruit ciders, perries, rosé ciders, and other things you would expect, but no butterbeer."
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "",
+            "url": "https://www.salthorse.beer/",
+            "raw_href": "/"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "0",
+            "url": "https://www.salthorse.beer/cart",
+            "raw_href": "/cart"
+          },
+          {
+            "text": "DRINK",
+            "url": "https://www.salthorse.beer/drink",
+            "raw_href": "/drink"
+          },
+          {
+            "text": "FOOD",
+            "url": "https://www.salthorse.beer/food",
+            "raw_href": "/food"
+          },
+          {
+            "text": "GIFT CARD",
+            "url": "https://www.salthorse.beer/gift-card",
+            "raw_href": "/gift-card"
+          },
+          {
+            "text": "BOOK A TABLE",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          },
+          {
+            "text": "LOCATION & OPENING TIMES",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "ALL OPENING TIMES HERE",
+            "url": "https://www.salthorse.beer/opening-times-and-location",
+            "raw_href": "/opening-times-and-location"
+          },
+          {
+            "text": "Book here",
+            "url": "https://www.salthorse.beer/book",
+            "raw_href": "/book"
+          }
+        ],
+        "external": [
+          {
+            "text": "Google Maps",
+            "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+            "found_on": "butterbeer"
+          }
+        ]
+      },
+      "images": [],
+      "raw_text": "We do not sell butter beer.\nBut we do sell lager, saisons, rustic farmhouse ales, doppelbocks, West Coast IPAs, hazy doubles, New England IPAs, Belgian quads, tripels, dubbels, Patersbiers, pale ales, Australian pales, New Zealand pales, tropical pales, hefeweizens, weissbiers, kellerbiers, smoked lagers, rauchbiers, Marzens, dunkels, altbiers, helles lagers, export lagers, Czech pilsners, German-style pilsners, amber ales, spiced ambers, imperial stouts, breakfast stouts, nitro porters, coffee porters, fruited lambics, krieks, raspberry lambics, peach lambics, cherry & black pepper lambics, Oude Geuzes, Oude Geuze cuvées, blended oak-aged lambics, dry-hopped sours, berry sours, cherry sours, lemon sours, mango gose, golden sours, framboise-style sours, mixed-fermentation sours, radlers, wild ales, barrel-aged wild ales, fresh-hop blends, Bretted pales, session IPAs, and a generous selection of sharers, fruit ciders, perries, rosé ciders, and other things you would expect, but no butterbeer.",
+      "og_tags": {
+        "og:site_name": "Salt Horse",
+        "og:title": "WE DO NOT SELL BUTTERBEER — Salt Horse",
+        "og:url": "https://www.salthorse.beer/butterbeer",
+        "og:type": "website"
+      }
+    }
+  },
+  "external_links": [
+    {
+      "text": "Google Maps",
+      "url": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+      "raw_href": "https://maps.app.goo.gl/cGZe1mgLYT23A3sm6",
+      "found_on": "home"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DL2gB29o9Sp/",
+      "raw_href": "https://www.instagram.com/p/DL2gB29o9Sp/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DK-jTRHoAz7/",
+      "raw_href": "https://www.instagram.com/p/DK-jTRHoAz7/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DJ9fZTQoMOL/",
+      "raw_href": "https://www.instagram.com/p/DJ9fZTQoMOL/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DJhWeuWo2-X/",
+      "raw_href": "https://www.instagram.com/p/DJhWeuWo2-X/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DJZiXZjIf_E/",
+      "raw_href": "https://www.instagram.com/p/DJZiXZjIf_E/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DIoYd98IdnA/",
+      "raw_href": "https://www.instagram.com/p/DIoYd98IdnA/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DIZas4QI9ML/",
+      "raw_href": "https://www.instagram.com/p/DIZas4QI9ML/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DIRDL9Bomrc/",
+      "raw_href": "https://www.instagram.com/p/DIRDL9Bomrc/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DIOTUrIIhLW/",
+      "raw_href": "https://www.instagram.com/p/DIOTUrIIhLW/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DHwHzInoVtB/",
+      "raw_href": "https://www.instagram.com/p/DHwHzInoVtB/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DHa92gmov8M/",
+      "raw_href": "https://www.instagram.com/p/DHa92gmov8M/",
+      "found_on": "drink"
+    },
+    {
+      "text": "",
+      "url": "https://www.instagram.com/p/DHLQS03o-iK/",
+      "raw_href": "https://www.instagram.com/p/DHLQS03o-iK/",
+      "found_on": "drink"
+    },
+    {
+      "text": "CURRENT MENU",
+      "url": "https://www.canva.com/design/DAF60rRUkdo/05NCxWK150oq_6N_qFhoig/view?utm_content=DAF60rRUkdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee30c72c40",
+      "raw_href": "https://www.canva.com/design/DAF60rRUkdo/05NCxWK150oq_6N_qFhoig/view?utm_content=DAF60rRUkdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee30c72c40",
+      "found_on": "food"
+    },
+    {
+      "text": "ALLERGENS SHEET",
+      "url": "https://docs.google.com/spreadsheets/d/1RYQO_EE9GnEy0Qtt7vddVJO8bqLquqUHEKRmd2tsPX8/edit#gid=0",
+      "raw_href": "https://docs.google.com/spreadsheets/d/1RYQO_EE9GnEy0Qtt7vddVJO8bqLquqUHEKRmd2tsPX8/edit#gid=0",
+      "found_on": "food"
+    },
+    {
+      "text": "BOOK HERE",
+      "url": "https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz",
+      "raw_href": "https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz",
+      "found_on": "book"
+    }
+  ],
+  "image_count": 131,
+  "images": [
+    "http://static1.squarespace.com/static/65e9da5115406510ba2dcf7c/t/681cde36f769780a8a3534ad/1746722358369/small_logo_png_FFF5D9.png?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/138e565e-c7e2-4784-898a-f8a4bf8ae655/IMG_3799.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741800074-0SWDYDW1K48013BQYEJW/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741801258-41W2QMHF4T9JWI9PXS3N/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741802196-NJ410BQJRALOAS7ZVQM6/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741803154-8FE3R0R47N6FZ0JMVBEC/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741804169-6FNXWJECFSAVEH7V35Z0/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741805173-GSHDJG0LEAM4M2ZNWF75/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741806173-63RWJ8Z2FEVH7XBEK15G/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746741807117-R8X581MCU6U3WQ2ACHUH/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1746990688980-Y6BX3YBZB63OQTTQQVHP/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1747927952074-L8L7TQ7AOKVRZH24AUG8/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1750112796706-RF74GLYQNTB9GBN2AQZK/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1751990935633-JLXCRJ8HUR3F4GW4Z40O/image-asset.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/1de3bd9d-07cf-46c2-add0-0dff99f84bee/IMG_3791.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/2bec55b1-3b7c-46e5-9cc7-12146d793be8/sourbeer.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/523e0d89-30d9-4fc4-bc39-27fe64a10a79/fridges.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5695e08a-deb9-4ed0-a1ba-7d9ffa2aa5ac/beerandburgers.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/580087ff-c608-463a-85e5-0ed55c1d3375/favicon.ico",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/580087ff-c608-463a-85e5-0ed55c1d3375/favicon.ico?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5a6e68bb-93dc-427d-b058-169386b8bedb/IMG_3721.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png&quot;,&quot;mediaFocalPoint&quot;:{&quot;x&quot;:0.5,&quot;y&quot;:0.5,&quot;source&quot;:3}}],&quot;mainImage&quot;:{&quot;title&quot;:&quot;Salt",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6986c53d-e6ba-472a-91a1-0d771ce5dae2/IMG_3692.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6dc57a2a-fdd2-4ef0-a042-55a664fe40aa/favicon.ico",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/6dc57a2a-fdd2-4ef0-a042-55a664fe40aa/favicon.ico?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8650c2af-1711-4d44-86b6-0acf6b9eb158/small_logo_png_FFF5D9.png?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8ae5adbc-c86f-4eb0-ba77-e8d05498aa08/outsidebar.jpeg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/a0fe33a3-43eb-4910-b50e-5500afd09f01/salthorse_main_logo_cream_transparent_drop_shadow.png?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/c425a3e8-292f-4efa-948b-972f5508de76/taps.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/d3385d74-acbb-40fc-855c-d3a721e288ab/bigface.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/f59af7cd-949b-4ec2-95a6-9f237b4a66ac/IMG_3780.jpg?format=750w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=1000w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=100w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=1500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=2500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=300w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=500w",
+    "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/fc3580b1-37f0-4dde-99fb-892ea7511eb0/bararea.jpg?format=750w"
+  ]
+}

@@ -20,51 +20,51 @@
   "stats": {
     "taps_label": "Grifos Rotativos",
     "bottles_label": "Latas y Botellas",
-    "years_label": "Años Sirviendo"
+    "years_label": "Años Abiertos"
   },
 
   "drink": {
-    "section_label": "Lo que servimos",
-    "title": "Solo lo<br>Bueno.",
-    "description": "Ofrecemos una selección cuidadosamente curada y rotativa de cerveza artesanal con catorce grifos y más de 200 variedades en lata y botella. Tómatela aquí o llévatela a casa. Tú decides.",
+    "section_label": "Nuestras Bebidas",
+    "title": "Solo lo<br>Mejor.",
+    "description": "Ofrecemos una selección cuidada y renovada regularmente de cerveza artesanal — catorce grifos y más de 200 latas y botellas. Disfruta aquí o llévala a casa. Tú eliges.",
     "feature_1": "14 grifos rotativos — siempre algo nuevo",
     "feature_2": "Alrededor de 200 latas y botellas del Reino Unido y más allá",
     "feature_3": "Siempre una buena selección de cervezas sin alcohol y sin gluten",
     "feature_4": "Una pequeña y cuidada selección de vinos y licores",
-    "feature_5": "Para llevar disponible desde la tienda de botellas"
+    "feature_5": "Disponible para llevar"
   },
 
   "food": {
-    "banner": "Hamburguesas que van en serio.",
-    "section_label": "Lo que servimos",
-    "title": "Smash.<br>Desaparecen en minutos.",
-    "description": "Hamburguesas, alitas, patatas fritas. Ese es el enfoque. La carta es pequeña pero sólida — ternera madurada, sándwiches de pollo frito, patatas fritas de verdad cortadas a mano y cocinadas dos veces. Algunas cosas para compartir. Otras para acompañar la siguiente cerveza. Opciones veganas que convencen.",
-    "description_2": "Hecho al momento. Sin atajos.",
+    "banner": "Hamburguesas de verdad.",
+    "section_label": "Nuestra Comida",
+    "title": "Frescas.<br>Vuelan rápido.",
+    "description": "Hamburguesas, alitas, patatas fritas. Esa es nuestra especialidad. La carta es pequeña pero excelente — ternera madurada, sándwiches de pollo frito, patatas fritas de verdad cortadas a mano y cocinadas dos veces. Platos para compartir. Platos para acompañar tu siguiente cerveza. Opciones veganas igual de buenas.",
+    "description_2": "Hecho al momento. Sin compromisos.",
     "current_menu": "Menú Actual",
     "allergens": "Alérgenos"
   },
 
   "book": {
-    "section_label": "Reservar una mesa",
+    "section_label": "Reservar una Mesa",
     "title": "Reservas",
-    "description": "La reserva es opcional — siempre guardamos la mitad del espacio para quienes vienen sin reserva. Pero si quieres asegurar tu sitio, reserva a continuación.",
+    "description": "La reserva es opcional — siempre guardamos la mitad del espacio para quienes vienen sin reserva. Si quieres asegurar tu mesa, reserva a continuación.",
     "book_table": "Reservar Mesa",
     "groups_title": "¿Grupos de más de 6?",
     "groups_text": "Llámanos al 07400 653295. No podemos garantizar que varias mesas reservadas estén juntas — contáctanos y lo organizamos.",
-    "notice_title": "Bueno saberlo",
-    "notice_text": "Las mesas se reservan durante 10 minutos — llama si te retrasas. Las mesas del jardín son por orden de llegada y no se pueden reservar."
+    "notice_title": "Bueno Saberlo",
+    "notice_text": "Las mesas se reservan durante 10 minutos — llama si llegas tarde. Las mesas del jardín son por orden de llegada y no se pueden reservar."
   },
 
   "location": {
     "section_label": "Encuéntranos",
     "title": "Ubicación y Horarios",
-    "where_we_are": "Dónde estamos",
+    "where_we_are": "Dónde Estamos",
     "bar_hours": "Horario del Bar",
     "kitchen_hours": "Horario de Cocina",
     "google_maps": "Google Maps",
     "call_us": "Llámanos",
     "kitchen_note": "Solo sin reserva después del cierre de cocina.",
-    "venue_notice": "Somos un local solo para mayores de 18 años."
+    "venue_notice": "Solo para mayores de 18 años."
   },
 
   "footer": {
@@ -73,11 +73,11 @@
 
   "gift_cards": {
     "page_title": "Regala Cerveza Artesanal",
-    "subtitle": "Elige un importe, dinos para quién es, y enviaremos una tarjeta regalo por email con un PDF para imprimir.",
+    "subtitle": "Elige un importe, dinos para quién, y enviaremos una tarjeta regalo por email con un PDF para imprimir.",
     "choose_amount": "Elige un Importe",
     "custom_amount": "O elige tu propio importe",
     "min_max": "Mín £25 — Máx £250",
-    "who_is_it_for": "¿Para quién es?",
+    "who_is_it_for": "¿Para quién?",
     "for_me": "Para Mí",
     "for_friend": "Para un Amigo",
     "your_details": "Tus Datos",
@@ -96,8 +96,8 @@
     "subtitle": "Tu tarjeta regalo ha sido creada.",
     "code_label": "Código de Tarjeta Regalo",
     "amount_label": "Importe",
-    "expires_label": "Válida hasta",
-    "email_note": "Revisa tu email para tu tarjeta regalo con el PDF adjunto.",
+    "expires_label": "Válida Hasta",
+    "email_note": "Revisa tu email para la tarjeta regalo con el PDF adjunto.",
     "back_home": "Volver a Salt Horse",
     "processing_title": "Procesando tu tarjeta regalo...",
     "processing_text": "Tu pago está siendo confirmado. Recibirás un email con tu tarjeta regalo en breve."

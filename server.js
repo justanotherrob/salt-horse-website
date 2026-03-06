@@ -46,8 +46,13 @@ app.post('/webhook/stripe', bodyParser.raw({ type: 'application/json' }), async 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Session store goes in the same persistent directory as the main DB
+const sessionDir = process.env.DATABASE_PATH
+  ? path.dirname(process.env.DATABASE_PATH)
+  : path.join(__dirname, 'db');
+
 app.use(session({
-  store: new SQLiteStore({ db: 'sessions.db', dir: path.join(__dirname, 'db') }),
+  store: new SQLiteStore({ db: 'sessions.db', dir: sessionDir }),
   secret: process.env.SESSION_SECRET || 'dev-secret',
   resave: false,
   saveUninitialized: false,

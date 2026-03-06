@@ -1,7 +1,7 @@
 {
   "lang": "pl",
   "lang_name": "Polski",
-  "flag": "\ud83c\uddf5\ud83c\uddf1",
+  "flag": "🇵🇱",
   "dir": "ltr",
 
   "nav": {
@@ -24,21 +24,21 @@
   },
 
   "drink": {
-    "section_label": "Co Nalewamy",
+    "section_label": "Nasze Napoje",
     "title": "Tylko to<br>co najlepsze.",
-    "description": "Oferujemy starannie wyselekcjonowaną i rotacyjną kolekcję piw rzemieślniczych — czternaście linii z beczki i ponad 200 w puszkach i butelkach. Napij się tu albo zabierz do domu. Twój wybór.",
-    "feature_1": "14 rotacyjnych linii beczkowych — zawsze coś nowego",
+    "description": "Oferujemy starannie wyselekcjonowaną i regularnie zmienianą kolekcję piw rzemieślniczych — czternaście kranów i ponad 200 puszek i butelek. Wypij na miejscu lub zabierz do domu. Ty decydujesz.",
+    "feature_1": "14 rotacyjnych kranów — zawsze coś nowego",
     "feature_2": "Około 200 puszek i butelek z Wielkiej Brytanii i nie tylko",
     "feature_3": "Zawsze dobry wybór piw bezalkoholowych i bezglutenowych",
     "feature_4": "Niewielki, ale starannie dobrany wybór win i alkoholi mocnych",
-    "feature_5": "Sprzedaż na wynos dostępna w bottle shopie"
+    "feature_5": "Sprzedaż na wynos dostępna"
   },
 
   "food": {
-    "banner": "Burgery, które robią robotę.",
-    "section_label": "Co Serwujemy",
-    "title": "Smash.<br>Znikają w minutę.",
-    "description": "Burgery, skrzydełka, frytki. Na tym się skupiamy. Menu jest małe, ale konkretne — wołowina dojrzewana na sucho, kanapki z kurczakiem w panierce, porządne frytki krojone ręcznie i smażone dwukrotnie. Kilka pozycji do dzielenia się. Kilka do zakąszania następnego piwa. Opcje wegańskie, które trzymają poziom.",
+    "banner": "Porządne burgery.",
+    "section_label": "Nasze Jedzenie",
+    "title": "Świeże.<br>Szybko znikają.",
+    "description": "Burgery, skrzydełka, frytki. Na tym się skupiamy. Menu jest małe, ale doskonałe — wołowina dojrzewana na sucho, kanapki z kurczakiem w panierce, prawdziwe frytki krojone ręcznie i smażone dwukrotnie. Dania do dzielenia się. Dania do następnego piwa. Opcje wegańskie równie dobre.",
     "description_2": "Świeżo przygotowane. Bez kompromisów.",
     "current_menu": "Aktualne Menu",
     "allergens": "Alergeny"
@@ -47,11 +47,11 @@
   "book": {
     "section_label": "Zarezerwuj Stolik",
     "title": "Rezerwacje",
-    "description": "Rezerwacja nie jest obowiązkowa — zawsze rezerwujemy połowę miejsc dla gości bez rezerwacji. Ale jeśli chcesz mieć pewność, zarezerwuj poniżej.",
+    "description": "Rezerwacja nie jest obowiązkowa — zawsze rezerwujemy połowę miejsc dla gości bez rezerwacji. Jeśli chcesz mieć pewność, zarezerwuj poniżej.",
     "book_table": "Zarezerwuj Stolik",
     "groups_title": "Grupa powyżej 6 osób?",
     "groups_text": "Zadzwoń pod numer 07400 653295. Nie możemy zagwarantować, że kilka zarezerwowanych stolików będzie obok siebie — skontaktuj się z nami, a wszystko zorganizujemy.",
-    "notice_title": "Warto wiedzieć",
+    "notice_title": "Warto Wiedzieć",
     "notice_text": "Stoliki są rezerwowane na 10 minut — zadzwoń, jeśli się spóźniasz. Miejsca w ogródku są dostępne w kolejności przybycia i nie można ich zarezerwować."
   },
 
@@ -64,7 +64,7 @@
     "google_maps": "Google Maps",
     "call_us": "Zadzwoń",
     "kitchen_note": "Po zamknięciu kuchni obsługujemy tylko gości bez rezerwacji.",
-    "venue_notice": "Jesteśmy lokalem wyłącznie dla osób powyżej 18 roku życia."
+    "venue_notice": "Lokal wyłącznie dla osób powyżej 18 lat."
   },
 
   "footer": {
@@ -96,7 +96,7 @@
     "subtitle": "Twoja karta podarunkowa została utworzona.",
     "code_label": "Kod Karty Podarunkowej",
     "amount_label": "Kwota",
-    "expires_label": "Ważna do",
+    "expires_label": "Ważna Do",
     "email_note": "Sprawdź swoją skrzynkę — karta podarunkowa z PDF-em została wysłana e-mailem.",
     "back_home": "Wróć do Salt Horse",
     "processing_title": "Przetwarzanie Twojej Karty Podarunkowej...",

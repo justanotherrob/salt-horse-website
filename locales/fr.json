@@ -1,7 +1,7 @@
 {
   "lang": "fr",
   "lang_name": "Français",
-  "flag": "\ud83c\uddeb\ud83c\uddf7",
+  "flag": "🇫🇷",
   "dir": "ltr",
 
   "nav": {
@@ -18,66 +18,66 @@
   },
 
   "stats": {
-    "taps_label": "Tireuses Rotatives",
+    "taps_label": "Bières Pression",
     "bottles_label": "Canettes & Bouteilles",
-    "years_label": "Années à Servir"
+    "years_label": "Ans d'Existence"
   },
 
   "drink": {
-    "section_label": "Ce que nous servons",
-    "title": "Que du<br>Bon.",
-    "description": "Nous proposons une sélection soigneusement choisie et tournante de bières artisanales avec quatorze tireuses et plus de 200 références en canettes et bouteilles. À déguster sur place ou à emporter. À vous de choisir.",
-    "feature_1": "14 tireuses rotatives — toujours quelque chose de nouveau",
+    "section_label": "Nos Boissons",
+    "title": "Que le<br>Meilleur.",
+    "description": "Nous proposons une sélection soignée et régulièrement renouvelée de bières artisanales — quatorze lignes de pression et plus de 200 canettes et bouteilles. À déguster sur place ou à emporter. À vous de choisir.",
+    "feature_1": "14 lignes de pression renouvelées — toujours de la nouveauté",
     "feature_2": "Environ 200 canettes et bouteilles du Royaume-Uni et d'ailleurs",
     "feature_3": "Toujours un bon choix de bières sans alcool et sans gluten",
     "feature_4": "Une petite sélection soignée de vins et spiritueux",
-    "feature_5": "Vente à emporter depuis notre cave"
+    "feature_5": "Vente à emporter disponible"
   },
 
   "food": {
-    "banner": "Des burgers qui ne plaisantent pas.",
-    "section_label": "Ce que nous servons",
-    "title": "Smashés.<br>Partis en minutes.",
-    "description": "Burgers, wings, frites. C'est notre focus. La carte est courte mais solide — bœuf maturé, sandwiches au poulet frit, vraies frites coupées main et cuites deux fois. Quelques plats à partager. De quoi accompagner la prochaine bière. Des options vegan qui tiennent la route.",
-    "description_2": "Fait maison. Sans raccourcis.",
+    "banner": "De vrais bons burgers.",
+    "section_label": "Notre Cuisine",
+    "title": "Frais.<br>Vite servi, vite fini.",
+    "description": "Burgers, ailes de poulet, frites. C'est notre spécialité. La carte est courte mais excellente — bœuf maturé, sandwiches au poulet frit, vraies frites coupées à la main et cuites deux fois. Des plats à partager. De quoi accompagner votre prochaine bière. Des options véganes tout aussi bonnes.",
+    "description_2": "Fait maison. Sans compromis.",
     "current_menu": "Menu Actuel",
     "allergens": "Allergènes"
   },
 
   "book": {
-    "section_label": "Réserver une table",
+    "section_label": "Réserver une Table",
     "title": "Réservations",
-    "description": "La réservation est facultative — nous gardons toujours la moitié des places pour les sans-réservation. Mais si vous voulez garantir votre place, réservez ci-dessous.",
+    "description": "La réservation est facultative — nous gardons toujours la moitié des places pour ceux qui viennent sans réserver. Si vous voulez être sûr d'avoir une table, réservez ci-dessous.",
     "book_table": "Réserver une Table",
-    "groups_title": "Groupes de plus de 6 ?",
-    "groups_text": "Appelez-nous au 07400 653295. Nous ne pouvons pas garantir que plusieurs tables réservées seront côte à côte — contactez-nous et nous nous en occuperons.",
-    "notice_title": "Bon à savoir",
-    "notice_text": "Les tables sont réservées pendant 10 minutes — appelez-nous si vous êtes en retard. Les places en terrasse sont disponibles selon l'ordre d'arrivée et ne peuvent pas être réservées."
+    "groups_title": "Groupe de plus de 6 ?",
+    "groups_text": "Appelez-nous au 07400 653295. Nous ne pouvons pas garantir que plusieurs tables réservées seront côte à côte — contactez-nous et nous organiserons tout.",
+    "notice_title": "Bon à Savoir",
+    "notice_text": "Les tables sont réservées pendant 10 minutes — appelez-nous si vous êtes en retard. Les places en terrasse sont en ordre d'arrivée et ne peuvent pas être réservées."
   },
 
   "location": {
-    "section_label": "Nous trouver",
+    "section_label": "Nous Trouver",
     "title": "Adresse & Horaires",
-    "where_we_are": "Où nous sommes",
+    "where_we_are": "Où Nous Sommes",
     "bar_hours": "Horaires du Bar",
     "kitchen_hours": "Horaires de la Cuisine",
     "google_maps": "Google Maps",
     "call_us": "Appelez-nous",
     "kitchen_note": "Sans réservation uniquement après la fermeture de la cuisine.",
-    "venue_notice": "Nous sommes un établissement réservé aux plus de 18 ans."
+    "venue_notice": "Établissement réservé aux plus de 18 ans."
   },
 
   "footer": {
-    "tagline": "Bière artisanale & Burgers dans la vieille ville d'Édimbourg depuis 2016."
+    "tagline": "Bière artisanale et burgers dans la vieille ville d'Édimbourg depuis 2016."
   },
 
   "gift_cards": {
     "page_title": "Offrez de la Bière Artisanale",
-    "subtitle": "Choisissez un montant, dites-nous à qui c'est destiné, et nous enverrons une carte cadeau par email avec un PDF à imprimer.",
+    "subtitle": "Choisissez un montant, dites-nous pour qui, et nous enverrons une carte cadeau par email avec un PDF à imprimer.",
     "choose_amount": "Choisir un Montant",
     "custom_amount": "Ou choisissez votre propre montant",
     "min_max": "Min £25 — Max £250",
-    "who_is_it_for": "Pour qui est-ce ?",
+    "who_is_it_for": "Pour qui ?",
     "for_me": "Pour Moi",
     "for_friend": "Pour un Ami",
     "your_details": "Vos Coordonnées",
@@ -96,8 +96,8 @@
     "subtitle": "Votre carte cadeau a été créée.",
     "code_label": "Code Carte Cadeau",
     "amount_label": "Montant",
-    "expires_label": "Valable jusqu'au",
-    "email_note": "Vérifiez vos emails pour votre carte cadeau avec le PDF en pièce jointe.",
+    "expires_label": "Valable Jusqu'au",
+    "email_note": "Vérifiez vos emails pour la carte cadeau avec le PDF en pièce jointe.",
     "back_home": "Retour à Salt Horse",
     "processing_title": "Traitement de votre carte cadeau...",
     "processing_text": "Votre paiement est en cours de confirmation. Vous recevrez un email avec votre carte cadeau sous peu."

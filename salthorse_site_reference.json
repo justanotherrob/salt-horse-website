@@ -1,0 +1,105 @@
+{
+  "site": {
+    "name": "Salt Horse",
+    "tagline": "Craft Beer, Burgers & More",
+    "description": "Independent craft beer bar and bottle shop in Edinburgh's Old Town. Local craft beers, grass-fed beef burgers, and numerous vegan choices. Featured in Time Out's Best Bars in Edinburgh.",
+    "established": "2016",
+    "address": "57-61 Blackfriars St, Old Town, Edinburgh EH1 1NB",
+    "phone": "+44 7400 653 295",
+    "email": null
+  },
+
+  "pages": {
+    "home": {
+      "path": "/",
+      "key_content": "Landing page. Salt Horse offers local craft beers, grass-fed beef burgers, and numerous vegan choices. Listed among Time-Out's Best Bars in Edinburgh. Over the past nine years, Salt Horse has been featured in some of the world's most respected travel, food, and beer publications."
+    },
+    "drink": {
+      "path": "/drink",
+      "title": "Craft Beer, Wine, and Spirits",
+      "key_content": "Craft beer bar of Edinburgh. 14 rotating draught lines. Over 200 cans and bottles from the UK and around the world. Also serves wine and spirits. Carefully curated and rotating selection."
+    },
+    "food": {
+      "path": "/food",
+      "title": "Smash Burgers @ Salt Horse - Meaty, Vegan, Messy",
+      "key_content": "Organic beef smash burgers, chicken, and proper vegan options. Menu is small but tight. Dry-aged beef, fried chicken sandwiches, proper chips hand cut and cooked twice, a few things for sharing, vegan options that hold their own, freshly made with no shortcuts."
+    },
+    "book": {
+      "path": "/book",
+      "title": "BOOK",
+      "key_content": "Table reservations. Booking is optional — always holds space for walk-ins. Half the space reserved for walk-ins. Tables reserved for 10 minutes; call if delayed. Garden seating is first-come, first-served and cannot be reserved. Groups over 6 should call."
+    },
+    "opening-times-and-location": {
+      "path": "/opening-times-and-location",
+      "title": "LOCATION & OPENING TIMES",
+      "key_content": "Address, map, opening hours, contact info."
+    },
+    "game": {
+      "path": "/game",
+      "title": "Game",
+      "key_content": "Interactive beer-pouring game. Pint glass fills up, player tries to stop it from overfilling."
+    },
+    "gift-cards": {
+      "path": "/gift-cards",
+      "title": "Gift Cards",
+      "key_content": "Pick the value, get the code by email (to you or recipient), bring code in to redeem on anything served or sold. Good for IPAs, burgers, or exploring the menu."
+    },
+    "butterbeer": {
+      "path": "/butterbeer",
+      "title": "WE DO NOT SELL BUTTERBEER",
+      "key_content": "Humorous page clarifying they don't sell Harry Potter butterbeer."
+    },
+    "reviews": {
+      "path": "/reviews",
+      "title": "General 1",
+      "key_content": "Press reviews and recognition."
+    }
+  },
+
+  "opening_hours": {
+    "monday": "4:00 PM – 11:00 PM",
+    "tuesday": "4:00 PM – 11:00 PM",
+    "wednesday": "4:00 PM – 11:00 PM",
+    "thursday": "12:00 PM – 11:00 PM",
+    "friday": "12:00 PM – 12:00 AM",
+    "saturday": "12:00 PM – 12:00 AM",
+    "sunday": "12:30 PM – 11:00 PM"
+  },
+
+  "external_links": {
+    "booking_system": {
+      "provider": "ResDiary",
+      "url": "https://booking.resdiary.com/widget/Standard/SaltHorse/20138"
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/salthorsebar/",
+      "twitter_x": "https://x.com/salthorsebar",
+      "linktree": "https://linktr.ee/salthorse"
+    },
+    "third_party_listings": {
+      "opentable": "https://www.opentable.com/r/salt-horse-beer-bar-and-shop-edinburgh",
+      "untappd": "https://untappd.com/v/salt-horse/4673421"
+    }
+  },
+
+  "key_selling_points": [
+    "14 rotating draught lines",
+    "200+ cans and bottles",
+    "Organic grass-fed beef smash burgers",
+    "Proper vegan options",
+    "Edinburgh Old Town location (Blackfriars St)",
+    "Featured in Time Out's Best Bars",
+    "9+ years of operation (since 2016)",
+    "Walk-ins always welcome",
+    "Gift cards available",
+    "Independent / craft focused"
+  ],
+
+  "notes_for_rebuild": {
+    "booking_integration": "Uses ResDiary widget — embed or link to https://booking.resdiary.com/widget/Standard/SaltHorse/20138",
+    "gift_cards": "Squarespace commerce product at /gift-cards/p/in-store-cift-card (note: typo 'cift' is in original URL)",
+    "game_page": "Interactive JS game — may want to recreate or skip for one-page site",
+    "butterbeer_page": "Fun/humorous content — good for personality section",
+    "additional_pages_found": ["/booking", "/directions", "/gift-card", "/reviews"]
+  }
+}

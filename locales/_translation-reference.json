@@ -1,0 +1,102 @@
+{
+  "_note": "THIS FILE IS NOT USED BY THE SITE. It is the simplified English base used for creating translations. The live English site uses en.json which has punchier copy.",
+
+  "nav": {
+    "drink": "Drinks",
+    "food": "Food",
+    "gift_cards": "Gift Cards",
+    "book": "Book",
+    "find_us": "Find Us",
+    "reserve": "Reserve"
+  },
+
+  "hero": {
+    "explore": "Explore"
+  },
+
+  "stats": {
+    "taps_label": "Rotating Taps",
+    "bottles_label": "Cans & Bottles",
+    "years_label": "Years Open"
+  },
+
+  "drink": {
+    "section_label": "Our Drinks",
+    "title": "Only the<br>Best.",
+    "description": "We offer a carefully selected and regularly changing range of craft beer — fourteen draught lines and over 200 cans and bottles. Enjoy here or take home. You choose.",
+    "feature_1": "14 rotating draught lines — always something new",
+    "feature_2": "Around 200 cans and bottles from the UK and beyond",
+    "feature_3": "Always a good selection of alcohol-free and gluten-free beers",
+    "feature_4": "A small, carefully chosen selection of wine and spirits",
+    "feature_5": "Takeaway available from the bottle shop"
+  },
+
+  "food": {
+    "banner": "Great burgers. Nothing less.",
+    "section_label": "Our Food",
+    "title": "Fresh.<br>Gone fast.",
+    "description": "Burgers, wings, chips. That is our focus. The menu is small but excellent — dry-aged beef, fried chicken sandwiches, real chips hand-cut and fried twice. Some dishes to share. Some to go with your next beer. Vegan options that are just as good.",
+    "description_2": "Freshly made. No compromise.",
+    "current_menu": "Current Menu",
+    "allergens": "Allergens"
+  },
+
+  "book": {
+    "section_label": "Reserve a Table",
+    "title": "Bookings",
+    "description": "Booking is optional — we always keep half the space for walk-ins. If you want to be sure of a table, book below.",
+    "book_table": "Book a Table",
+    "groups_title": "Groups over 6?",
+    "groups_text": "Call us on 07400 653295. We cannot guarantee that several reserved tables will be next to each other — contact us and we will arrange it.",
+    "notice_title": "Good to Know",
+    "notice_text": "Tables are held for 10 minutes — please call if you are running late. Garden seating is first come, first served and cannot be reserved."
+  },
+
+  "location": {
+    "section_label": "Find Us",
+    "title": "Location & Hours",
+    "where_we_are": "Where We Are",
+    "bar_hours": "Bar Hours",
+    "kitchen_hours": "Kitchen Hours",
+    "google_maps": "Google Maps",
+    "call_us": "Call Us",
+    "kitchen_note": "Walk-ins only after the kitchen closes.",
+    "venue_notice": "We are an 18+ venue."
+  },
+
+  "footer": {
+    "tagline": "Craft beer and burgers in Edinburgh's Old Town since 2016."
+  },
+
+  "gift_cards": {
+    "page_title": "Give the Gift of Craft Beer",
+    "subtitle": "Choose an amount, tell us who it is for, and we will send a gift card by email with a printable PDF.",
+    "choose_amount": "Choose an Amount",
+    "custom_amount": "Or choose your own amount",
+    "min_max": "Min £25 — Max £250",
+    "who_is_it_for": "Who is it for?",
+    "for_me": "For Me",
+    "for_friend": "For a Friend",
+    "your_details": "Your Details",
+    "your_name": "Your Name",
+    "your_email": "Your Email",
+    "recipient_details": "Recipient Details",
+    "recipient_name": "Recipient Name",
+    "recipient_email": "Recipient Email",
+    "buy_button": "Buy Gift Card",
+    "expires_note": "Gift cards are valid for 12 months from purchase.",
+    "processing": "Processing..."
+  },
+
+  "gift_cards_success": {
+    "title": "Thank You!",
+    "subtitle": "Your gift card has been created.",
+    "code_label": "Gift Card Code",
+    "amount_label": "Amount",
+    "expires_label": "Valid Until",
+    "email_note": "Check your email for the gift card with PDF attachment.",
+    "back_home": "Back to Salt Horse",
+    "processing_title": "Processing Your Gift Card...",
+    "processing_text": "Your payment is being confirmed. You will receive an email with your gift card shortly."
+  }
+}

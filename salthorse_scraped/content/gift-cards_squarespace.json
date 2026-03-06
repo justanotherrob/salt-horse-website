@@ -1,0 +1,966 @@
+{
+  "website": {
+    "id": "65e9da5115406510ba2dcf7c",
+    "identifier": "sepia-opossum-7hkz",
+    "websiteType": 1,
+    "contentModifiedOn": 1770295567422,
+    "cloneable": false,
+    "hasBeenCloneable": false,
+    "siteStatus": {},
+    "language": "en-GB",
+    "timeZone": "Europe/London",
+    "machineTimeZoneOffset": 0,
+    "timeZoneOffset": 0,
+    "timeZoneAbbr": "GMT",
+    "siteTitle": "Salt Horse",
+    "location": {},
+    "logoImageId": "681cde36f769780a8a3534ad",
+    "shareButtonOptions": {
+      "2": true,
+      "6": true,
+      "8": true,
+      "7": true,
+      "4": true,
+      "1": true,
+      "3": true
+    },
+    "logoImageUrl": "//images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/8650c2af-1711-4d44-86b6-0acf6b9eb158/small_logo_png_FFF5D9.png",
+    "authenticUrl": "https://www.salthorse.beer",
+    "internalUrl": "https://sepia-opossum-7hkz.squarespace.com",
+    "baseUrl": "https://www.salthorse.beer",
+    "primaryDomain": "www.salthorse.beer",
+    "sslSetting": 3,
+    "isHstsEnabled": true,
+    "socialAccounts": [
+      {
+        "serviceId": 64,
+        "addedOn": 1709824593985,
+        "profileUrl": "http://instagram.com/squarespace",
+        "iconEnabled": true,
+        "serviceName": "instagram-unauth"
+      },
+      {
+        "serviceId": 60,
+        "addedOn": 1709824593987,
+        "profileUrl": "http://facebook.com/squarespace",
+        "iconEnabled": true,
+        "serviceName": "facebook-unauth"
+      },
+      {
+        "serviceId": 62,
+        "screenname": "Twitter",
+        "addedOn": 1709824593991,
+        "profileUrl": "http://twitter.com/facebook",
+        "iconEnabled": true,
+        "serviceName": "twitter-unauth"
+      }
+    ],
+    "typekitId": "",
+    "statsMigrated": false,
+    "imageMetadataProcessingEnabled": false,
+    "screenshotId": "ad90bf83ef7f978c2c2c26ccc5aa20dec65a75288a837a83a2d7eae32b2a5923",
+    "captchaSettings": {
+      "enabledForDonations": false
+    },
+    "showOwnerLogin": false
+  },
+  "websiteSettings": {
+    "id": "65e9da5115406510ba2dcf7f",
+    "websiteId": "65e9da5115406510ba2dcf7c",
+    "subjects": [],
+    "country": "GB",
+    "state": "SCT",
+    "simpleLikingEnabled": true,
+    "mobileInfoBarSettings": {
+      "isContactEmailEnabled": false,
+      "isContactPhoneNumberEnabled": false,
+      "isLocationEnabled": false,
+      "isBusinessHoursEnabled": false
+    },
+    "announcementBarSettings": {
+      "style": 1,
+      "text": "<p data-rte-preserve-empty=\"true\" style=\"white-space:pre-wrap;\"><strong>—&gt; Thursday 19th Feb: 4:00 PM – 11:00 PM &lt;—</strong></p>",
+      "clickthroughUrl": {
+        "url": "/opening-times-and-location",
+        "newWindow": false
+      }
+    },
+    "commentLikesAllowed": true,
+    "commentAnonAllowed": true,
+    "commentThreaded": true,
+    "commentApprovalRequired": false,
+    "commentAvatarsOn": true,
+    "commentSortType": 2,
+    "commentFlagThreshold": 0,
+    "commentFlagsAllowed": true,
+    "commentEnableByDefault": true,
+    "commentDisableAfterDaysDefault": 0,
+    "disqusShortname": "",
+    "collectionTitleFormat": "%p — %s",
+    "itemTitleFormat": "%i — %s",
+    "commentsEnabled": false,
+    "uiComponentRegistrationsFlag": false,
+    "scriptRegistrationsFlag": false,
+    "bundleEligible": false,
+    "bucketingSeedId": "da34d28a-eabe-4cb4-8384-78a5eb45d1f0",
+    "newPlanArchitectureEligible": true,
+    "businessHours": {},
+    "storeSettings": {
+      "returnPolicy": null,
+      "termsOfService": null,
+      "privacyPolicy": null,
+      "expressCheckout": false,
+      "continueShoppingLinkUrl": "/",
+      "useLightCart": false,
+      "showNoteField": false,
+      "shippingCountryDefaultValue": "GB",
+      "billToShippingDefaultValue": false,
+      "showShippingPhoneNumber": true,
+      "isShippingPhoneRequired": false,
+      "showBillingPhoneNumber": true,
+      "isBillingPhoneRequired": false,
+      "currenciesSupported": [
+        "USD",
+        "CAD",
+        "GBP",
+        "AUD",
+        "EUR",
+        "CHF",
+        "NOK",
+        "SEK",
+        "DKK",
+        "NZD",
+        "SGD",
+        "MXN",
+        "HKD",
+        "CZK",
+        "ILS",
+        "MYR",
+        "RUB",
+        "PHP",
+        "PLN",
+        "THB",
+        "BRL",
+        "ARS",
+        "COP",
+        "IDR",
+        "INR",
+        "JPY",
+        "ZAR"
+      ],
+      "defaultCurrency": "USD",
+      "selectedCurrency": "GBP",
+      "measurementStandard": 1,
+      "showCustomCheckoutForm": false,
+      "checkoutPageMarketingOptInEnabled": true,
+      "enableMailingListOptInByDefault": false,
+      "sameAsRetailLocation": false,
+      "merchandisingSettings": {
+        "scarcityEnabledOnProductItems": false,
+        "scarcityEnabledOnProductBlocks": false,
+        "scarcityMessageType": "DEFAULT_SCARCITY_MESSAGE",
+        "scarcityThreshold": 10,
+        "multipleQuantityAllowedForServices": true,
+        "restockNotificationsEnabled": false,
+        "restockNotificationsSuccessText": "",
+        "restockNotificationsMailingListSignUpEnabled": false,
+        "relatedProductsEnabled": false,
+        "relatedProductsOrdering": "random",
+        "soldOutVariantsDropdownDisabled": false,
+        "productComposerOptedIn": false,
+        "productComposerABTestOptedOut": false,
+        "productReviewsEnabled": false
+      },
+      "minimumOrderSubtotalEnabled": false,
+      "minimumOrderSubtotal": {
+        "currency": "GBP",
+        "value": "0.00"
+      },
+      "addToCartConfirmationType": 2,
+      "isLive": true,
+      "multipleQuantityAllowedForServices": true
+    },
+    "useEscapeKeyToLogin": false,
+    "ssBadgeType": 1,
+    "ssBadgePosition": 4,
+    "ssBadgeVisibility": 1,
+    "ssBadgeDevices": 1,
+    "pinterestOverlayOptions": {
+      "mode": "disabled"
+    },
+    "ampEnabled": false,
+    "isRestrictiveCookiePolicyEnabled": false,
+    "seoHidden": false,
+    "userAccountsSettings": {
+      "loginAllowed": false,
+      "signupAllowed": false
+    },
+    "isCookieBannerEnabled": false,
+    "isVisitorDataRestricted": false
+  },
+  "collection": {
+    "id": "675076932fd9c774c38781f1",
+    "websiteId": "65e9da5115406510ba2dcf7c",
+    "backgroundSource": 1,
+    "enabled": true,
+    "starred": false,
+    "type": 13,
+    "ordering": 1,
+    "title": "Gift Cards",
+    "navigationTitle": "GIFT CARD",
+    "urlId": "gift-cards",
+    "itemCount": 1,
+    "updatedOn": 1733328452288,
+    "description": "",
+    "pageSize": 999,
+    "folder": false,
+    "dropdown": false,
+    "itemLayoutKey": "products-full-width-carousel",
+    "tags": [],
+    "categories": [],
+    "homepage": false,
+    "typeName": "products",
+    "regionName": "default",
+    "synchronizing": false,
+    "seoData": {
+      "seoHidden": false
+    },
+    "categoryPagesSeoHidden": false,
+    "tagPagesSeoHidden": false,
+    "qrCodeEnabled": false,
+    "pagePermissionType": 1,
+    "typeLabel": "products",
+    "fullUrl": "/gift-cards",
+    "passwordProtected": false,
+    "draft": false
+  },
+  "shoppingCart": {
+    "websiteId": "65e9da5115406510ba2dcf7c",
+    "created": 1772714652050,
+    "entries": [],
+    "shippingLocation": {},
+    "taxLineItems": [],
+    "coupons": [],
+    "promoCodes": [],
+    "appliedGiftCards": [],
+    "cartType": 1,
+    "validCoupons": [],
+    "invalidCoupons": [],
+    "subtotalCents": 0,
+    "taxCents": 0,
+    "shippingCostCents": 0,
+    "discountCents": 0,
+    "giftCardRedemptionTotalCents": 0,
+    "grandTotalCents": 0,
+    "amountDueCents": 0,
+    "remainingBalanceCents": 0,
+    "totalQuantity": 0,
+    "purelyDigital": false,
+    "hasDigital": false,
+    "requiresShipping": false,
+    "shippingOptions": []
+  },
+  "shareButtons": {
+    "twitter": true,
+    "facebook": true,
+    "reddit": true,
+    "tumblr": true,
+    "pinterest": true,
+    "google": true,
+    "linkedin": true
+  },
+  "showCart": true,
+  "localizedStrings": {
+    "smartling": {
+      "string_format": "icu"
+    },
+    "account": "Account",
+    "add": "Add",
+    "addVideo": "Add a video",
+    "all": "All",
+    "allProducts": "All Products",
+    "back": "Back",
+    "backToAllEvents": "Back to All Events",
+    "category": "Category",
+    "categories": "Categories",
+    "categorySelectText": "Select a Category",
+    "close": "Close",
+    "closeMenu": "Close Menu",
+    "completeAndContinue": "Complete & Continue",
+    "courseCtaStart": "Start Course",
+    "courseCtaContinue": "Continue Course",
+    "courseCtaPreview": "Preview Course",
+    "courseCtaRetake": "Retake Course",
+    "courseUnpublishedLessons": "Lessons do not appear in navigation until published.",
+    "courseProgress": "Course Progress",
+    "courseNavigation": "Course Navigation",
+    "openCourseNavigation": "Open Course Navigation",
+    "closeCourseNavigation": "Close Course Navigation",
+    "earlierEvent": "Earlier Event:",
+    "enableWebStorage": "Please enable web storage in your browser.",
+    "filter": "Filter",
+    "filteringByBoth": "Filtering by: “{0}” and “{1}”",
+    "filteringByOne": "Filtering by: “{0}”",
+    "filters": "Filters",
+    "folder": "Folder:",
+    "gallery": "Gallery",
+    "galleryThumbnails": "Gallery thumbnails",
+    "giftCardVariantSelectText": "Select Value",
+    "giftCardValueDisplayText": "Value",
+    "giftCardPurchaseText": "Purchase",
+    "googleCalendar": "Google Calendar",
+    "iCal": "ICS",
+    "joinNow": "Join Now",
+    "languageFlagIcon": "flag icon",
+    "laterEvent": "Later Event:",
+    "learnMore": "Learn More",
+    "lessonCount": {
+      "one": "{count} Lesson",
+      "other": "{count} Lessons"
+    },
+    "listOfCategories": "Categories:",
+    "login": "Login",
+    "map": "(map)",
+    "newerPosts": "Newer Posts",
+    "next": "Next",
+    "nextLesson": "Next Lesson",
+    "nextPage": "Next",
+    "noResultsFound": "No results found",
+    "noUpcomingEvents": "There are no upcoming events at this time.",
+    "olderPosts": "Older Posts",
+    "openMenu": "Open Menu",
+    "pairsWellWith": "PAIRS WELL WITH",
+    "postedIn": "Posted In:",
+    "preview": "Preview",
+    "prev": "Previous",
+    "previous": "Previous",
+    "previousPage": "Previous",
+    "productAddToCartText": "Add To Cart",
+    "productAddedToCartText": "Added!",
+    "productSelectOption": "Select Option",
+    "productAfterpayInfoButtonLabel": "Button to Afterpay Information Popup",
+    "productAfterpayInfoModalLabel": "Afterpay Information Popup",
+    "productAnswerMapAgree": "Agree",
+    "productAnswerMapDisagree": "Disagree",
+    "productAnswerMapNeutral": "Neutral",
+    "productAnswerMapStronglyDisagree": "Strongly Disagree",
+    "productAnswerStronglyAgree": "Strongly Agree",
+    "productListClearFilters": "Clear",
+    "productListNoResultsRemoveFilters": "No results match your search. Try removing a few filters.",
+    "productPrice__multiplePrices__1Monthly__indefinite": "from {price} every month",
+    "productPrice__multiplePrices__1Monthly__limited__1Years": "from {price} every month for 1 year",
+    "productPrice__multiplePrices__1Monthly__limited__nMonths": "from {price} every month for {duration} months",
+    "productPrice__multiplePrices__1Monthly__limited__nYears": "from {price} every month for {duration} years",
+    "productPrice__multiplePrices__1Weekly__indefinite": "from {price} every week",
+    "productPrice__multiplePrices__1Weekly__limited__1Months": "from {price} every week for 1 month",
+    "productPrice__multiplePrices__1Weekly__limited__1Years": "from {price} every week for 1 year",
+    "productPrice__multiplePrices__1Weekly__limited__nMonths": "from {price} every week for {duration} months",
+    "productPrice__multiplePrices__1Weekly__limited__nWeeks": "from {price} every week for {duration} weeks",
+    "productPrice__multiplePrices__1Weekly__limited__nYears": "from {price} every week for {duration} years",
+    "productPrice__multiplePrices__nMonthly__indefinite": "from {price} every {billingPeriodValue} months",
+    "productPrice__multiplePrices__nMonthly__limited__1Years": "from {price} every {billingPeriodValue} months for 1 year",
+    "productPrice__multiplePrices__nMonthly__limited__nMonths": "from {price} every {billingPeriodValue} months for {duration} months",
+    "productPrice__multiplePrices__nMonthly__limited__nYears": "from {price} every {billingPeriodValue} months for {duration} years",
+    "productPrice__multiplePrices__nWeekly__indefinite": "from {price} every {billingPeriodValue} weeks",
+    "productPrice__multiplePrices__nWeekly__limited__1Months": "from {price} every {billingPeriodValue} weeks for 1 month",
+    "productPrice__multiplePrices__nWeekly__limited__1Years": "from {price} every {billingPeriodValue} weeks for 1 year",
+    "productPrice__multiplePrices__nWeekly__limited__nMonths": "from {price} every {billingPeriodValue} weeks for {duration} months",
+    "productPrice__multiplePrices__nWeekly__limited__nWeeks": "from {price} every {billingPeriodValue} weeks for {duration} weeks",
+    "productPrice__multiplePrices__nWeekly__limited__nYears": "from {price} every {billingPeriodValue} weeks for {duration} years",
+    "productPrice__singlePrice__1Monthly__indefinite": "{price} every month",
+    "productPrice__singlePrice__1Monthly__limited__1Years": "{price} every month for 1 year",
+    "productPrice__singlePrice__1Monthly__limited__nMonths": "{price} every month for {duration} months",
+    "productPrice__singlePrice__1Monthly__limited__nYears": "{price} every month for {duration} years",
+    "productPrice__singlePrice__1Weekly__indefinite": "{price} every week",
+    "productPrice__singlePrice__1Weekly__limited__1Months": "{price} every week for 1 month",
+    "productPrice__singlePrice__1Weekly__limited__1Years": "{price} every week for 1 year",
+    "productPrice__singlePrice__1Weekly__limited__nMonths": "{price} every week for {duration} months",
+    "productPrice__singlePrice__1Weekly__limited__nWeeks": "{price} every week for {duration} weeks",
+    "productPrice__singlePrice__1Weekly__limited__nYears": "{price} every week for {duration} years",
+    "productPrice__singlePrice__nMonthly__indefinite": "{price} every {billingPeriodValue} months",
+    "productPrice__singlePrice__nMonthly__limited__1Years": "{price} every {billingPeriodValue} months for 1 year",
+    "productPrice__singlePrice__nMonthly__limited__nMonths": "{price} every {billingPeriodValue} months for {duration} months",
+    "productPrice__singlePrice__nMonthly__limited__nYears": "{price} every {billingPeriodValue} months for {duration} years",
+    "productPrice__singlePrice__nWeekly__indefinite": "{price} every {billingPeriodValue} weeks",
+    "productPrice__singlePrice__nWeekly__limited__1Months": "{price} every {billingPeriodValue} weeks for 1 month",
+    "productPrice__singlePrice__nWeekly__limited__1Years": "{price} every {billingPeriodValue} weeks for 1 year",
+    "productPrice__singlePrice__nWeekly__limited__nMonths": "{price} every {billingPeriodValue} weeks for {duration} months",
+    "productPrice__singlePrice__nWeekly__limited__nWeeks": "{price} every {billingPeriodValue} weeks for {duration} weeks",
+    "productPrice__singlePrice__nWeekly__limited__nYears": "{price} every {billingPeriodValue} weeks for {duration} years",
+    "productPriceFromMonthlyText": {
+      "one": "from {fromPrice} every month",
+      "other": "from {fromPrice} every {billingPeriodValue} months"
+    },
+    "productPriceFromText": "from {fromPrice}",
+    "productPriceFromWeeklyText": {
+      "one": "from {fromPrice} every week",
+      "other": "from {fromPrice} every {billingPeriodValue} weeks"
+    },
+    "productPricePerMonth": {
+      "one": "{price} every month",
+      "other": "{price} every {billingPeriodValue} months"
+    },
+    "productPricePerWeek": {
+      "one": "{price} every week",
+      "other": "{price} every {billingPeriodValue} weeks"
+    },
+    "productPriceUnavailable": "Unavailable",
+    "productQuantityInputLabel": "Quantity",
+    "productQuickViewText": "Quick View",
+    "productSaleText": "sale",
+    "productSaleTextSentenceCase": "Sale",
+    "productDefaultScarcityText": "Only {qtyInStock} available",
+    "productScarcityMessage1": "Only {qtyInStock} left in stock",
+    "productScarcityMessage2": "{qtyInStock} available",
+    "productScarcityMessage3": "Limited Availability",
+    "productRestockNotificationDefaultEmailPlaceholder": "Email Address",
+    "productRestockNotificationDefaultButtonText": "Sign Up",
+    "productRestockNotificationDefaultCTAText": "Get notified by email when this product is in stock.",
+    "productRestockNotificationDefaultMailingListDescription": "Sign up to receive news and updates.",
+    "productRestockNotificationDefaultSubmittedMessage": "Signed Up!",
+    "productRestockNotificationEmailBlankErrorMessage": "Email cannot be blank",
+    "productRestockNotificationEmailInvalidErrorMessage": "Email is invalid",
+    "productRestockNotificationDefaultFormSubmitErrorMessage": "Unable to submit form. Please try again later.",
+    "productResultCount": {
+      "one": "{numberOfResults} Result",
+      "other": "{numberOfResults} Results"
+    },
+    "productReviewsTitle": "Reviews",
+    "productReviewsAverageStoreRating": "Average store rating",
+    "productReviewsAverageStoreRatingWithValue": "{rating} average store rating",
+    "productReviewsAverageProductRating": "Average product rating",
+    "productReviewsAverageProductRatingWithValue": "{rating} average product rating",
+    "productReviewsTotalProductReviews": {
+      "one": "{numberOfReviews} product review",
+      "other": "{numberOfReviews} product reviews"
+    },
+    "productReviewsTotalStoreReviews": {
+      "one": "{numberOfReviews} store review",
+      "other": "{numberOfReviews} store reviews"
+    },
+    "productReviewsViewProductReviews": {
+      "one": "View {numberOfReviews} product review",
+      "other": "View {numberOfReviews} product reviews"
+    },
+    "productReviewsViewStoreReviews": {
+      "one": "View {numberOfReviews} store review",
+      "other": "View {numberOfReviews} store reviews"
+    },
+    "productReviewsStarRating": "{starRating} out of 5 stars",
+    "productReviewsStarRatingTitle": "Star Rating",
+    "productReviewsShowMore": "Show More",
+    "productReviewsShowMoreReviews": "Show more reviews",
+    "productReviewsRemainingReviewsCount": "{numberOfReviews} more reviews",
+    "productReviewsFailedToLoadMore": "Failed to load more reviews",
+    "productReviewsReviewerName": "Reviewer Name",
+    "productReviewsReviewDate": "Review Date",
+    "productReviewsAnonymousUser": "Anonymous",
+    "productReviewsReviewDescription": "Description",
+    "productReviewsViewLargerImage": "View larger image",
+    "productReviewsPostedOnEtsy": "Posted on Etsy",
+    "productReviewsProductNameLabel": "Product",
+    "progress": "Progress",
+    "salePriceText": "Sale Price:",
+    "originalPriceText": "Original Price:",
+    "productSoldOutText": "sold out",
+    "productSoldOutTextSentenceCase": "Sold out",
+    "productSoldOutTextCaptialized": "Sold Out",
+    "productSubscribeText": "Subscribe",
+    "productSummaryFormNoAnswerText": "N/A",
+    "productVariantSelectText": "Select {variantName}",
+    "readMore": "Read More",
+    "relatedProductsDefaultTitle": "You Might Also Like",
+    "relatedVideosDefaultTitle": "You Might Also Like",
+    "retakeCourseTitle": "Retake this course?",
+    "retakeCourseBody": "Retaking this course from the beginning will reset all of your tracked progress.",
+    "retakeCourseCtaConfirm": "Retake",
+    "retakeCourseCtaCancel": "Cancel",
+    "videoPaywallJoinButton": "Join Now",
+    "videoPaywallPrompt": "Sign up to view this video",
+    "signUpToReadThisPost": "Sign up to read this post",
+    "skipToContent": "Skip to Content",
+    "skipToVideos": "Skip to Videos",
+    "slideshowCurrentSlide": "Slide {0} (current slide)",
+    "slideshowNextSlide": "Next Slide",
+    "slideshowPreviousSlide": "Previous Slide",
+    "slideshowSlide": "Slide {0}",
+    "source": "Source:",
+    "tagged": "Tagged:",
+    "to": "to",
+    "untitledEvent": "Untitled Event",
+    "videos": "Videos",
+    "view": "View",
+    "viewEvent": "View Event",
+    "viewFullItem": "View Full Item",
+    "viewFullsize": "View fullsize",
+    "writtenBy": "Written By",
+    "image": "Image {0} of {1}",
+    "carousel": "Carousel",
+    "backgroundPause": "Pause Background",
+    "backgroundPlay": "Play Background",
+    "videoMissingLabel": "Video missing",
+    "viewOptions": "View Options",
+    "frequency": "Frequency",
+    "oneTimePurchase": "One time purchase",
+    "subscriptionFrequency-pluralized-weeks": "{frequency, plural, one {Every week} other {Every {frequency} weeks}}",
+    "subscriptionFrequency-pluralized-months": "{frequency, plural, one {Every month} other {Every {frequency} months}}",
+    "subscriptionFrequency-numberOfBillingCycles": " • For {numOfBillingCycles} payments",
+    "SubscriptionFrequency": "Subscription Frequency",
+    "savePercentage": "Save {percentage}",
+    "productQuantityStepperDecreaseLabel": "Decrease quantity by 1",
+    "productQuantityStepperIncreaseLabel": "Increase quantity by 1",
+    "payInFull": "Pay in Full",
+    "paymentOptions": "Payment options"
+  },
+  "userAccountsContext": {
+    "showSignInLink": false
+  },
+  "productMerchandisingContext": {
+    "675076b42c7ec556bb261042": {
+      "scarcityEnabled": false,
+      "scarcityShownByDefault": false,
+      "afterPayAvailable": false,
+      "klarnaAvailable": false,
+      "afterPayMin": 0,
+      "afterPayMax": 0,
+      "klarnaMin": 0,
+      "klarnaMax": 0,
+      "mailingListSignUpEnabled": false,
+      "mailingListOptInByDefault": false
+    }
+  },
+  "nestedCategories": {
+    "categories": []
+  },
+  "template": {
+    "mobileStylesEnabled": true
+  },
+  "uiextensions": {
+    "product-badge": "sqs-uiextensions-product-badge",
+    "product-body": "sqs-uiextensions-product-body",
+    "product-badge-mobile": "sqs-uiextensions-product-badge-mobile",
+    "product-body-mobile": "sqs-uiextensions-product-body-mobile",
+    "product-collection-item": "sqs-uiextensions-product-collection-item",
+    "scripts-enabled": false
+  },
+  "empty": false,
+  "emptyFolder": false,
+  "calendarView": false,
+  "items": [
+    {
+      "id": "675076b42c7ec556bb261042",
+      "collectionId": "675076932fd9c774c38781f1",
+      "recordType": 11,
+      "addedOn": 1733326516208,
+      "updatedOn": 1733327877941,
+      "displayIndex": 0,
+      "starred": false,
+      "passthrough": false,
+      "categoryIds": [
+        "675076932fd9c774c38781f5"
+      ],
+      "workflowState": 1,
+      "publishOn": 1733327877180,
+      "authorId": "664478b0af88bd547ee785c5",
+      "systemDataId": "5eb12bb9-1d6f-4028-a084-d6c78aa12e75",
+      "systemDataVariants": "1200x1200,100w,300w,500w,750w,1000w",
+      "systemDataSourceType": "PNG",
+      "filename": "shgiftcard2.png",
+      "mediaFocalPoint": {
+        "x": 0.5,
+        "y": 0.5,
+        "source": 3
+      },
+      "colorData": {
+        "topLeftAverage": "000000",
+        "topRightAverage": "000000",
+        "bottomLeftAverage": "000000",
+        "bottomRightAverage": "000000",
+        "centerAverage": "372c75",
+        "suggestedBgColor": "130c3a"
+      },
+      "urlId": "in-store-cift-card",
+      "title": "Salt Horse Gift Card",
+      "body": null,
+      "excerpt": "<p style=\"white-space:pre-wrap;\" data-rte-preserve-empty=\"true\"><strong>Give the Gift of Salt Horse!</strong></p><p class=\"\" style=\"white-space:pre-wrap;\" data-rte-preserve-empty=\"true\">Looking for the great gift for someone who loves craft beer, delicious burgers, and good times? A Salt Horse gift card is the ideal way to treat friends and family at one of Edinburgh's favorite spots. Whether they're enjoying a refreshing juicy IPA, digging into one of our juicy burgers, or exploring our ever-evolving menu, a Salt Horse gift card has them covered.</p>",
+      "likeCount": 0,
+      "commentCount": 0,
+      "publicCommentCount": 0,
+      "commentState": 1,
+      "unsaved": false,
+      "author": {
+        "id": "664478b0af88bd547ee785c5",
+        "displayName": "Robert Taylor",
+        "firstName": "Robert",
+        "lastName": "Taylor",
+        "bio": ""
+      },
+      "fullUrl": "/gift-cards/p/in-store-cift-card",
+      "assetUrl": "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png",
+      "contentType": "image/png",
+      "structuredContent": {
+        "_type": "StoreItem",
+        "priceCents": 0,
+        "salePriceCents": 0,
+        "priceMoney": {
+          "currency": "GBP",
+          "value": "0.00"
+        },
+        "salePriceMoney": {
+          "currency": "GBP",
+          "value": "0.00"
+        },
+        "onSale": false,
+        "productType": 4,
+        "customAddButtonText": "Add To Cart",
+        "useCustomAddButtonText": false,
+        "variants": [
+          {
+            "attributes": {
+              "Value": "£25.00"
+            },
+            "optionValues": [
+              {
+                "optionName": "Value",
+                "value": "£25.00"
+              }
+            ],
+            "id": "331b7f0f-3bdf-43b2-93be-bbf085a96f03",
+            "sku": "SHGIFT25",
+            "price": 2500,
+            "salePrice": 0,
+            "priceMoney": {
+              "currency": "GBP",
+              "value": "25.00"
+            },
+            "salePriceMoney": {
+              "currency": "GBP",
+              "value": "0.00"
+            },
+            "onSale": false,
+            "unlimited": true,
+            "qtyInStock": 0,
+            "width": 0.0,
+            "height": 0.0,
+            "weight": 0.0,
+            "imageIds": [],
+            "images": [],
+            "len": 0.0
+          },
+          {
+            "attributes": {
+              "Value": "£50.00"
+            },
+            "optionValues": [
+              {
+                "optionName": "Value",
+                "value": "£50.00"
+              }
+            ],
+            "id": "f0e5ffd9-e5f5-496a-bef5-d94152b203dc",
+            "sku": "SHGIFT50",
+            "price": 5000,
+            "salePrice": 0,
+            "priceMoney": {
+              "currency": "GBP",
+              "value": "50.00"
+            },
+            "salePriceMoney": {
+              "currency": "GBP",
+              "value": "0.00"
+            },
+            "onSale": false,
+            "unlimited": true,
+            "qtyInStock": 0,
+            "width": 0.0,
+            "height": 0.0,
+            "weight": 0.0,
+            "imageIds": [],
+            "images": [],
+            "len": 0.0
+          },
+          {
+            "attributes": {
+              "Value": "£75.00"
+            },
+            "optionValues": [
+              {
+                "optionName": "Value",
+                "value": "£75.00"
+              }
+            ],
+            "id": "6f3f0938-70b6-4b53-9fcd-e0ddfeb210af",
+            "sku": "SHGIFT75",
+            "price": 7500,
+            "salePrice": 0,
+            "priceMoney": {
+              "currency": "GBP",
+              "value": "75.00"
+            },
+            "salePriceMoney": {
+              "currency": "GBP",
+              "value": "0.00"
+            },
+            "onSale": false,
+            "unlimited": true,
+            "qtyInStock": 0,
+            "width": 0.0,
+            "height": 0.0,
+            "weight": 0.0,
+            "imageIds": [],
+            "images": [],
+            "len": 0.0
+          },
+          {
+            "attributes": {
+              "Value": "£100.00"
+            },
+            "optionValues": [
+              {
+                "optionName": "Value",
+                "value": "£100.00"
+              }
+            ],
+            "id": "84c3565a-86e1-4286-89fd-b05a4e99ab4e",
+            "sku": "SHGIFT100",
+            "price": 10000,
+            "salePrice": 0,
+            "priceMoney": {
+              "currency": "GBP",
+              "value": "100.00"
+            },
+            "salePriceMoney": {
+              "currency": "GBP",
+              "value": "0.00"
+            },
+            "onSale": false,
+            "unlimited": true,
+            "qtyInStock": 0,
+            "width": 0.0,
+            "height": 0.0,
+            "weight": 0.0,
+            "imageIds": [],
+            "images": [],
+            "len": 0.0
+          }
+        ],
+        "variantOptionOrdering": [
+          "Value"
+        ],
+        "isSubscribable": false,
+        "fulfilledExternally": false,
+        "mightHavePaymentPlan": false
+      },
+      "priceCents": 0,
+      "salePriceCents": 0,
+      "priceMoney": {
+        "currency": "GBP",
+        "value": "0.00"
+      },
+      "salePriceMoney": {
+        "currency": "GBP",
+        "value": "0.00"
+      },
+      "onSale": false,
+      "productType": 4,
+      "customAddButtonText": "Add To Cart",
+      "useCustomAddButtonText": false,
+      "variants": [
+        {
+          "attributes": {
+            "Value": "£25.00"
+          },
+          "optionValues": [
+            {
+              "optionName": "Value",
+              "value": "£25.00"
+            }
+          ],
+          "id": "331b7f0f-3bdf-43b2-93be-bbf085a96f03",
+          "sku": "SHGIFT25",
+          "price": 2500,
+          "salePrice": 0,
+          "priceMoney": {
+            "currency": "GBP",
+            "value": "25.00"
+          },
+          "salePriceMoney": {
+            "currency": "GBP",
+            "value": "0.00"
+          },
+          "onSale": false,
+          "unlimited": true,
+          "qtyInStock": 0,
+          "width": 0.0,
+          "height": 0.0,
+          "weight": 0.0,
+          "imageIds": [],
+          "images": [],
+          "len": 0.0
+        },
+        {
+          "attributes": {
+            "Value": "£50.00"
+          },
+          "optionValues": [
+            {
+              "optionName": "Value",
+              "value": "£50.00"
+            }
+          ],
+          "id": "f0e5ffd9-e5f5-496a-bef5-d94152b203dc",
+          "sku": "SHGIFT50",
+          "price": 5000,
+          "salePrice": 0,
+          "priceMoney": {
+            "currency": "GBP",
+            "value": "50.00"
+          },
+          "salePriceMoney": {
+            "currency": "GBP",
+            "value": "0.00"
+          },
+          "onSale": false,
+          "unlimited": true,
+          "qtyInStock": 0,
+          "width": 0.0,
+          "height": 0.0,
+          "weight": 0.0,
+          "imageIds": [],
+          "images": [],
+          "len": 0.0
+        },
+        {
+          "attributes": {
+            "Value": "£75.00"
+          },
+          "optionValues": [
+            {
+              "optionName": "Value",
+              "value": "£75.00"
+            }
+          ],
+          "id": "6f3f0938-70b6-4b53-9fcd-e0ddfeb210af",
+          "sku": "SHGIFT75",
+          "price": 7500,
+          "salePrice": 0,
+          "priceMoney": {
+            "currency": "GBP",
+            "value": "75.00"
+          },
+          "salePriceMoney": {
+            "currency": "GBP",
+            "value": "0.00"
+          },
+          "onSale": false,
+          "unlimited": true,
+          "qtyInStock": 0,
+          "width": 0.0,
+          "height": 0.0,
+          "weight": 0.0,
+          "imageIds": [],
+          "images": [],
+          "len": 0.0
+        },
+        {
+          "attributes": {
+            "Value": "£100.00"
+          },
+          "optionValues": [
+            {
+              "optionName": "Value",
+              "value": "£100.00"
+            }
+          ],
+          "id": "84c3565a-86e1-4286-89fd-b05a4e99ab4e",
+          "sku": "SHGIFT100",
+          "price": 10000,
+          "salePrice": 0,
+          "priceMoney": {
+            "currency": "GBP",
+            "value": "100.00"
+          },
+          "salePriceMoney": {
+            "currency": "GBP",
+            "value": "0.00"
+          },
+          "onSale": false,
+          "unlimited": true,
+          "qtyInStock": 0,
+          "width": 0.0,
+          "height": 0.0,
+          "weight": 0.0,
+          "imageIds": [],
+          "images": [],
+          "len": 0.0
+        }
+      ],
+      "variantOptionOrdering": [
+        "Value"
+      ],
+      "isSubscribable": false,
+      "fulfilledExternally": false,
+      "mightHavePaymentPlan": false,
+      "items": [
+        {
+          "id": "67507adba553e608638c2d87",
+          "collectionId": "675076932fd9c774c38781f1",
+          "recordType": 2,
+          "addedOn": 1733327579167,
+          "updatedOn": 1733327579167,
+          "displayIndex": 0,
+          "authorId": "664478b0af88bd547ee785c5",
+          "parentId": "675076b42c7ec556bb261042",
+          "systemDataId": "5eb12bb9-1d6f-4028-a084-d6c78aa12e75",
+          "systemDataVariants": "1200x1200,100w,300w,500w,750w,1000w",
+          "systemDataSourceType": "PNG",
+          "filename": "shgiftcard2.png",
+          "mediaFocalPoint": {
+            "x": 0.5,
+            "y": 0.5,
+            "source": 3
+          },
+          "colorData": {
+            "topLeftAverage": "000000",
+            "topRightAverage": "000000",
+            "bottomLeftAverage": "000000",
+            "bottomRightAverage": "000000",
+            "centerAverage": "372c75",
+            "suggestedBgColor": "130c3a"
+          },
+          "title": "",
+          "body": null,
+          "likeCount": 0,
+          "commentCount": 0,
+          "publicCommentCount": 0,
+          "commentState": 1,
+          "author": {
+            "id": "664478b0af88bd547ee785c5",
+            "displayName": "Robert Taylor",
+            "firstName": "Robert",
+            "lastName": "Taylor",
+            "bio": ""
+          },
+          "fullUrl": "/gift-cards/null",
+          "assetUrl": "https://images.squarespace-cdn.com/content/v1/65e9da5115406510ba2dcf7c/5eb12bb9-1d6f-4028-a084-d6c78aa12e75/shgiftcard2.png",
+          "contentType": "image/png",
+          "pushedServices": {},
+          "pendingPushedServices": {},
+          "recordTypeLabel": "image",
+          "originalSize": "1200x1200"
+        }
+      ],
+      "pushedServices": {},
+      "pendingPushedServices": {},
+      "seoData": {
+        "seoHidden": false
+      },
+      "recordTypeLabel": "store-item",
+      "originalSize": "1200x1200"
+    }
+  ],
+  "pagePreviewContext": {
+    "isPreviewMode": false,
+    "memberAccessUrl": "/gift-cards?format=json&requestAccess=true"
+  }
+}
