@@ -56,7 +56,7 @@ const contentBlocks = [
   { key: 'book_title', value: 'Bookings', type: 'text', label: 'Section Title', section: 'Book', sort_order: 41 },
   { key: 'book_description', value: 'Booking is optional — we always hold half the space for walk-ins. But if you want to guarantee a spot, book below.', type: 'text', label: 'Description', section: 'Book', sort_order: 42 },
   { key: 'book_url', value: 'https://book.tablesense.com/3oNRnDvfNYywe3S7n3WXrz', type: 'text', label: 'Booking URL', section: 'Book', sort_order: 43 },
-  { key: 'book_groups_text', value: "Call us on 07400 653295. We can't assure multiple booked tables will be next to each other — contact us and we'll sort it.", type: 'text', label: 'Groups Info', section: 'Book', sort_order: 44 },
+  { key: 'book_groups_text', value: "Call us on +44 7400 653295. We can't assure multiple booked tables will be next to each other — contact us and we'll sort it.", type: 'text', label: 'Groups Info', section: 'Book', sort_order: 44 },
   { key: 'book_notice_text', value: "Tables are reserved for 10 minutes — give us a call if you're running late. Garden seating is first-come, first-served and cannot be reserved.", type: 'text', label: 'Notice Text', section: 'Book', sort_order: 45 },
 
   // Location
