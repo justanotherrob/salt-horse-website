@@ -96,7 +96,15 @@
     "error_recipient": "请输入收件人信息",
     "processing_payment": "正在确认你的支付...",
     "confirmation_sent": "确认和礼品卡PDF已发送至",
-    "personal_message_placeholder": "添加个人留言（可选）"
+    "personal_message_placeholder": "添加个人留言（可选）",
+    "for_me_desc": "我们将通过电子邮件向您发送可打印的礼品卡以供亲自赠送",
+    "for_friend_desc": "我们将直接向收件人发送礼品卡",
+    "confirm_self_title": "您的礼品卡正在路上",
+    "confirm_self_message": "我们已向您发送可打印的礼品卡至",
+    "confirm_check_inbox": "请检查您的收件箱。",
+    "confirm_friend_title": "礼品卡已发送！",
+    "confirm_friend_message": "我们已向以下收件人发送礼品卡",
+    "confirm_friend_email": "礼品卡已通过电子邮件发送至"
   },
 
   "gift_cards_success": {

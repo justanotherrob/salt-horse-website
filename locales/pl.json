@@ -96,7 +96,15 @@
     "error_recipient": "Wpisz dane odbiorcy",
     "processing_payment": "Potwierdzanie twojej płatności...",
     "confirmation_sent": "Potwierdzenie i PDF karty podarunkowej wysłane do",
-    "personal_message_placeholder": "Dodaj wiadomość osobistą (opcjonalnie)"
+    "personal_message_placeholder": "Dodaj wiadomość osobistą (opcjonalnie)",
+    "for_me_desc": "Wyślemy ci kartę podarunkową do wydruku, którą będziesz mógł/mogła podarować osobiście",
+    "for_friend_desc": "Wyślemy kartę podarunkową bezpośrednio do tej osoby",
+    "confirm_self_title": "Twoja karta podarunkowa jest w drodze",
+    "confirm_self_message": "Wysłaliśmy twoją kartę podarunkową do wydruku na adres",
+    "confirm_check_inbox": "Sprawdź swoją skrzynkę odbiorczą.",
+    "confirm_friend_title": "Karta podarunkowa wysłana!",
+    "confirm_friend_message": "Wysłaliśmy kartę podarunkową do",
+    "confirm_friend_email": "Karta podarunkowa została wysłana mailem na adres"
   },
 
   "gift_cards_success": {

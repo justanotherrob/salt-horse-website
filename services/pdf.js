@@ -1,16 +1,11 @@
 const PDFDocument = require('pdfkit');
-const path = require('path');
-const fs = require('fs');
 
 function generateGiftCardPDF(giftCard) {
   return new Promise((resolve, reject) => {
     try {
-      const hasMessage = giftCard.personal_message && giftCard.send_to === 'friend';
-      const pageHeight = hasMessage ? 420 : 340;
-
       const doc = new PDFDocument({
-        size: [600, pageHeight],
-        margins: { top: 40, bottom: 40, left: 50, right: 50 },
+        size: 'A4',
+        margins: { top: 60, bottom: 60, left: 60, right: 60 },
       });
 
       const chunks = [];
@@ -19,74 +14,76 @@ function generateGiftCardPDF(giftCard) {
       doc.on('error', reject);
 
       const navy = '#182241';
-      const cream = '#FFF6DA';
       const amber = '#D4943A';
+      const grey = '#666666';
+      const pageWidth = 595.28;
+      const contentWidth = pageWidth - 120; // 60px margins each side
 
-      // Background
-      doc.rect(0, 0, 600, pageHeight).fill(navy);
+      // ── Header ──
+      doc.fontSize(14).fill(navy).font('Helvetica-Bold');
+      doc.text('SALT HORSE', 60, 60, { align: 'center', width: contentWidth });
 
-      // Decorative border
-      doc.rect(15, 15, 570, pageHeight - 30).lineWidth(1).stroke(amber);
+      doc.fontSize(9).fill(grey).font('Helvetica');
+      doc.text('CRAFT BEER & BURGERS — EDINBURGH', 60, 80, { align: 'center', width: contentWidth });
 
-      // Header
-      doc.fontSize(10).fill(amber).font('Helvetica');
-      doc.text('SALT HORSE', 50, 35, { align: 'center', width: 500 });
+      // Amber divider
+      doc.moveTo(180, 105).lineTo(pageWidth - 180, 105).lineWidth(1).stroke(amber);
 
-      doc.fontSize(7).fill(cream).font('Helvetica');
-      doc.text('CRAFT BEER & BURGERS — EDINBURGH', 50, 50, { align: 'center', width: 500 });
+      // ── Gift Card Box ──
+      const boxTop = 140;
+      const boxHeight = 320;
+
+      // Light border box
+      doc.roundedRect(80, boxTop, pageWidth - 160, boxHeight, 4)
+        .lineWidth(1.5)
+        .stroke(amber);
+
+      // "GIFT CARD" label
+      doc.fontSize(12).fill(amber).font('Helvetica');
+      doc.text('GIFT CARD', 60, boxTop + 30, { align: 'center', width: contentWidth });
+
+      // Amount — big and bold
+      const amountStr = '\u00A3' + (giftCard.initial_amount / 100).toFixed(0);
+      doc.fontSize(72).fill(navy).font('Helvetica-Bold');
+      doc.text(amountStr, 60, boxTop + 55, { align: 'center', width: contentWidth });
+
+      // Divider inside box
+      doc.moveTo(160, boxTop + 150).lineTo(pageWidth - 160, boxTop + 150).lineWidth(0.5).stroke(amber);
+
+      // Code — prominent
+      doc.fontSize(28).fill(navy).font('Courier-Bold');
+      doc.text(giftCard.code, 60, boxTop + 170, { align: 'center', width: contentWidth, characterSpacing: 4 });
 
       // Divider
-      doc.moveTo(200, 68).lineTo(400, 68).lineWidth(0.5).stroke(amber);
+      doc.moveTo(160, boxTop + 215).lineTo(pageWidth - 160, boxTop + 215).lineWidth(0.5).stroke(amber);
 
-      // Gift Card label
-      doc.fontSize(22).fill(cream).font('Helvetica-Bold');
-      doc.text('GIFT CARD', 50, 80, { align: 'center', width: 500 });
-
-      // Amount
-      const amountStr = `£${(giftCard.initial_amount / 100).toFixed(0)}`;
-      doc.fontSize(56).fill(amber).font('Helvetica-Bold');
-      doc.text(amountStr, 50, 115, { align: 'center', width: 500 });
-
-      // Code
-      doc.fontSize(20).fill(cream).font('Courier-Bold');
-      doc.text(giftCard.code, 50, 190, { align: 'center', width: 500, characterSpacing: 3 });
-
-      // Divider
-      doc.moveTo(200, 225).lineTo(400, 225).lineWidth(0.5).stroke(amber);
-
-      // Details
-      let detailY = 235;
-      doc.fontSize(8).fill(cream).font('Helvetica');
-
-      if (giftCard.recipient_name && giftCard.send_to === 'friend') {
-        doc.text(`For: ${giftCard.recipient_name}`, 50, detailY, { align: 'center', width: 500 });
-        detailY += 15;
-      }
-
+      // Expiry
       const expiryDate = giftCard.expires_at
         ? new Date(giftCard.expires_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
         : '12 months from purchase';
-      doc.text(`Valid until ${expiryDate}`, 50, detailY, { align: 'center', width: 500 });
-      detailY += 20;
 
-      // Personal message
-      if (hasMessage) {
-        doc.moveTo(150, detailY).lineTo(450, detailY).lineWidth(0.5).stroke(amber);
-        detailY += 12;
-        doc.fontSize(9).fill(cream).font('Helvetica-Oblique');
-        doc.text(`"${giftCard.personal_message}"`, 60, detailY, {
-          align: 'center',
-          width: 480,
-          lineGap: 3
-        });
-        detailY += doc.heightOfString(`"${giftCard.personal_message}"`, { width: 480, lineGap: 3 }) + 15;
+      doc.fontSize(10).fill(grey).font('Helvetica');
+      doc.text('Valid until ' + expiryDate, 60, boxTop + 230, { align: 'center', width: contentWidth });
+
+      // Purchaser name
+      if (giftCard.purchaser_name) {
+        doc.fontSize(10).fill(grey).font('Helvetica');
+        doc.text('Purchased by ' + giftCard.purchaser_name, 60, boxTop + 255, { align: 'center', width: contentWidth });
       }
 
-      // Footer
-      doc.fontSize(7).fill(amber).font('Helvetica');
-      const footerY = hasMessage ? pageHeight - 45 : 280;
-      doc.text('Redeem in person at Salt Horse', 50, footerY, { align: 'center', width: 500 });
-      doc.text('57-61 Blackfriars St, Edinburgh EH1 1NB', 50, footerY + 12, { align: 'center', width: 500 });
+      // ── Footer ──
+      const footerY = boxTop + boxHeight + 40;
+
+      doc.fontSize(11).fill(navy).font('Helvetica-Bold');
+      doc.text('Redeem in person at Salt Horse', 60, footerY, { align: 'center', width: contentWidth });
+
+      doc.fontSize(9).fill(grey).font('Helvetica');
+      doc.text('57-61 Blackfriars St, Edinburgh EH1 1NB', 60, footerY + 18, { align: 'center', width: contentWidth });
+      doc.text('salthorse.beer', 60, footerY + 33, { align: 'center', width: contentWidth });
+
+      // Small note at bottom
+      doc.fontSize(8).fill('#999999').font('Helvetica');
+      doc.text('Present this card when you visit. Can be used for anything we serve or sell.', 60, footerY + 60, { align: 'center', width: contentWidth });
 
       doc.end();
     } catch (err) {

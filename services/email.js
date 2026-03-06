@@ -37,21 +37,30 @@ function emailFooter() {
 </html>`;
 }
 
-// ── Send gift card email (with code + PDF) to recipient ──
+// ── Send gift card email ──
+// For "self": includes printable PDF attachment, copy about printing
+// For "friend": no PDF, includes personal message, copy about redeeming
 async function sendGiftCardEmail(giftCard, overrideEmail) {
-  const pdf = await generateGiftCardPDF(giftCard);
-  const amountStr = `£${(giftCard.initial_amount / 100).toFixed(0)}`;
+  const amountStr = `\u00A3${(giftCard.initial_amount / 100).toFixed(0)}`;
   const expiryDate = giftCard.expires_at
     ? new Date(giftCard.expires_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
     : '12 months from purchase';
 
   const toEmail = overrideEmail || (giftCard.send_to === 'friend' ? giftCard.recipient_email : giftCard.purchaser_email);
   const toName = giftCard.send_to === 'friend' ? giftCard.recipient_name : giftCard.purchaser_name;
-
   const isFriend = giftCard.send_to === 'friend';
-  const greeting = isFriend
-    ? `${giftCard.purchaser_name} has sent you a ${amountStr} gift card to Salt Horse!`
-    : `Here's your ${amountStr} Salt Horse gift card!`;
+
+  let subject, greeting, closingText;
+
+  if (isFriend) {
+    subject = `You've received a ${amountStr} Salt Horse gift card!`;
+    greeting = `${giftCard.purchaser_name} has sent you a ${amountStr} gift card to Salt Horse!`;
+    closingText = 'Present this code when you visit Salt Horse to redeem your gift card. It can be used for anything we serve or sell.';
+  } else {
+    subject = `Your ${amountStr} Salt Horse Gift Card`;
+    greeting = `Here's your ${amountStr} Salt Horse gift card. We've attached a printable version so you can give it in person.`;
+    closingText = 'Present this card when you visit Salt Horse. It can be used for anything we serve or sell.';
+  }
 
   const html = emailHeader() + `
         <tr><td style="padding:30px 40px;">
@@ -66,7 +75,7 @@ async function sendGiftCardEmail(giftCard, overrideEmail) {
             </td></tr>
           </table>
 
-          ${giftCard.personal_message && giftCard.send_to === 'friend' ? `
+          ${isFriend && giftCard.personal_message ? `
           <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(212,148,58,0.08);border-left:3px solid #D4943A;border-radius:0 4px 4px 0;margin-bottom:20px;">
             <tr><td style="padding:15px 20px;">
               <p style="color:rgba(255,246,218,0.5);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;">Personal Message</p>
@@ -74,11 +83,8 @@ async function sendGiftCardEmail(giftCard, overrideEmail) {
             </td></tr>
           </table>` : ''}
 
-          <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0 0 10px;">
-            Present this code when you visit Salt Horse to redeem your gift card. It can be used for anything we serve or sell.
-          </p>
           <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0;">
-            Your gift card PDF is attached to this email for easy printing.
+            ${closingText}
           </p>
         </td></tr>` + emailFooter();
 
@@ -87,25 +93,31 @@ async function sendGiftCardEmail(giftCard, overrideEmail) {
     return { skipped: true };
   }
 
-  const result = await resend.emails.send({
+  // Only attach PDF for self-purchase (printable gift card)
+  const emailOptions = {
     from: fromEmail,
     to: [toEmail],
-    subject: `Your ${amountStr} Salt Horse Gift Card`,
+    subject: subject,
     html: html,
-    attachments: [{
+  };
+
+  if (!isFriend) {
+    const pdf = await generateGiftCardPDF(giftCard);
+    emailOptions.attachments = [{
       filename: `SaltHorse-GiftCard-${giftCard.code}.pdf`,
       content: pdf.toString('base64'),
       contentType: 'application/pdf',
-    }],
-  });
+    }];
+  }
 
+  const result = await resend.emails.send(emailOptions);
   console.log(`Gift card email sent to ${toEmail}:`, result);
   return result;
 }
 
-// ── Send purchase receipt to the buyer ──
+// ── Send purchase receipt to the buyer (friend gifts only) ──
 async function sendPurchaserReceipt(giftCard, overrideEmail) {
-  const amountStr = `£${(giftCard.initial_amount / 100).toFixed(0)}`;
+  const amountStr = `\u00A3${(giftCard.initial_amount / 100).toFixed(0)}`;
   const toEmail = overrideEmail || giftCard.purchaser_email;
   const toName = giftCard.purchaser_name;
   const purchaseDate = giftCard.purchased_at
@@ -115,31 +127,22 @@ async function sendPurchaserReceipt(giftCard, overrideEmail) {
     ? new Date(giftCard.expires_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
     : '12 months from purchase';
 
-  const isFriend = giftCard.send_to === 'friend';
-  const recipientLine = isFriend
-    ? `<p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 25px;">A ${amountStr} gift card has been sent to <strong>${giftCard.recipient_name}</strong> at <strong>${giftCard.recipient_email}</strong>.</p>`
-    : `<p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 25px;">Your ${amountStr} gift card is ready. Check your inbox for the gift card email with your code and PDF.</p>`;
-
   const html = emailHeader() + `
         <tr><td style="padding:30px 40px;">
           <p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 15px;">Hi${toName ? ' ' + toName : ''},</p>
           <p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 10px;">Thanks for your purchase!</p>
-          ${recipientLine}
+          <p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 25px;">We've sent a ${amountStr} gift card to <strong>${giftCard.recipient_name}</strong> at <strong>${giftCard.recipient_email}</strong>.</p>
 
           <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(255,246,218,0.08);border:1px solid rgba(255,246,218,0.15);border-radius:6px;margin-bottom:25px;">
             <tr><td style="padding:20px 25px;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Gift Card</td>
-                  <td style="color:#FFF6DA;font-size:13px;padding:6px 0;text-align:right;">Salt Horse Gift Card</td>
-                </tr>
-                <tr>
                   <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Amount</td>
                   <td style="color:#D4943A;font-size:13px;font-weight:bold;padding:6px 0;text-align:right;">${amountStr}</td>
                 </tr>
                 <tr>
-                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Code</td>
-                  <td style="color:#FFF6DA;font-size:13px;font-family:monospace;letter-spacing:2px;padding:6px 0;text-align:right;">${giftCard.code}</td>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Sent to</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:6px 0;text-align:right;">${giftCard.recipient_name}</td>
                 </tr>
                 <tr>
                   <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Date</td>

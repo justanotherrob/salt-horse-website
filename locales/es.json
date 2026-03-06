@@ -96,7 +96,15 @@
     "error_recipient": "Introduce los datos del destinatario",
     "processing_payment": "Confirmando tu pago...",
     "confirmation_sent": "Confirmación y PDF de tarjeta regalo enviados a",
-    "personal_message_placeholder": "Añadir un mensaje personal (opcional)"
+    "personal_message_placeholder": "Añadir un mensaje personal (opcional)",
+    "for_me_desc": "Te enviaremos una tarjeta regalo imprimible por email para regalar en persona",
+    "for_friend_desc": "Enviaremos la tarjeta regalo directamente a esa persona",
+    "confirm_self_title": "Tu tarjeta regalo está en camino",
+    "confirm_self_message": "Hemos enviado tu tarjeta regalo imprimible a",
+    "confirm_check_inbox": "Revisa tu bandeja de entrada.",
+    "confirm_friend_title": "¡Tarjeta regalo enviada!",
+    "confirm_friend_message": "Hemos enviado una tarjeta regalo a",
+    "confirm_friend_email": "La tarjeta regalo ha sido enviada por email a"
   },
 
   "gift_cards_success": {

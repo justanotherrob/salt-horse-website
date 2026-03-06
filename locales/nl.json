@@ -96,7 +96,15 @@
     "error_recipient": "Voer alstublieft de gegevens van de ontvanger in",
     "processing_payment": "Je betaling wordt bevestigd...",
     "confirmation_sent": "Bevestiging en cadeaubon-PDF verzonden naar",
-    "personal_message_placeholder": "Voeg een persoonlijk bericht toe (optioneel)"
+    "personal_message_placeholder": "Voeg een persoonlijk bericht toe (optioneel)",
+    "for_me_desc": "We sturen je een afdrukbare cadeaubon per e-mail om persoonlijk uit te reiken",
+    "for_friend_desc": "We sturen de cadeaubon rechtstreeks naar hen",
+    "confirm_self_title": "Je cadeaubon is onderweg",
+    "confirm_self_message": "We hebben je afdrukbare cadeaubon verstuurd naar",
+    "confirm_check_inbox": "Controleer je inbox.",
+    "confirm_friend_title": "Cadeaubon verzonden!",
+    "confirm_friend_message": "We hebben een cadeaubon verstuurd naar",
+    "confirm_friend_email": "De cadeaubon is per e-mail verstuurd naar"
   },
 
   "gift_cards_success": {

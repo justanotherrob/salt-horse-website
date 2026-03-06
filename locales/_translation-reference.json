@@ -93,7 +93,15 @@
     "error_recipient": "Please enter recipient details",
     "processing_payment": "Confirming your payment...",
     "confirmation_sent": "Confirmation and gift card PDF sent to",
-    "personal_message_placeholder": "Add a personal message (optional)"
+    "personal_message_placeholder": "Add a personal message (optional)",
+    "for_me_desc": "We'll email you a printable gift card to give in person",
+    "for_friend_desc": "We'll email the gift card directly to them",
+    "confirm_self_title": "Your gift card is on its way",
+    "confirm_self_message": "We've sent your printable gift card to",
+    "confirm_check_inbox": "Check your inbox.",
+    "confirm_friend_title": "Gift card sent!",
+    "confirm_friend_message": "We've sent a gift card to",
+    "confirm_friend_email": "The gift card has been emailed to"
   },
 
   "gift_cards_success": {

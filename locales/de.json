@@ -96,7 +96,15 @@
     "error_recipient": "Bitte gib die Daten des Empfängers ein",
     "processing_payment": "Zahlung wird bestätigt...",
     "confirmation_sent": "Bestätigung und Gutschein-PDF versendet an",
-    "personal_message_placeholder": "Persönliche Nachricht hinzufügen (optional)"
+    "personal_message_placeholder": "Persönliche Nachricht hinzufügen (optional)",
+    "for_me_desc": "Wir senden dir einen druckbaren Gutschein per E-Mail zum Verschenken in Person",
+    "for_friend_desc": "Wir senden den Gutschein direkt an diese Person",
+    "confirm_self_title": "Dein Gutschein ist unterwegs",
+    "confirm_self_message": "Wir haben deinen druckbaren Gutschein gesendet an",
+    "confirm_check_inbox": "Überprüfe dein Posteingang.",
+    "confirm_friend_title": "Gutschein versendet!",
+    "confirm_friend_message": "Wir haben einen Gutschein gesendet an",
+    "confirm_friend_email": "Der Gutschein wurde per E-Mail gesendet an"
   },
 
   "gift_cards_success": {

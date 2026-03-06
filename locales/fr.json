@@ -96,7 +96,15 @@
     "error_recipient": "Veuillez entrer les coordonnées du destinataire",
     "processing_payment": "Confirmation de votre paiement...",
     "confirmation_sent": "Confirmation et PDF de la carte cadeau envoyés à",
-    "personal_message_placeholder": "Ajouter un message personnel (facultatif)"
+    "personal_message_placeholder": "Ajouter un message personnel (facultatif)",
+    "for_me_desc": "Nous vous enverrons une carte cadeau imprimable par email à donner en main propre",
+    "for_friend_desc": "Nous enverrons la carte cadeau directement à cette personne",
+    "confirm_self_title": "Votre carte cadeau est en route",
+    "confirm_self_message": "Nous avons envoyé votre carte cadeau imprimable à",
+    "confirm_check_inbox": "Consultez votre boîte de réception.",
+    "confirm_friend_title": "Carte cadeau envoyée !",
+    "confirm_friend_message": "Nous avons envoyé une carte cadeau à",
+    "confirm_friend_email": "La carte cadeau a été envoyée par email à"
   },
 
   "gift_cards_success": {

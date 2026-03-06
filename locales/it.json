@@ -96,7 +96,15 @@
     "error_recipient": "Inserisci i dati del destinatario",
     "processing_payment": "Confermando il tuo pagamento...",
     "confirmation_sent": "Conferma e PDF del buono regalo inviati a",
-    "personal_message_placeholder": "Aggiungi un messaggio personale (facoltativo)"
+    "personal_message_placeholder": "Aggiungi un messaggio personale (facoltativo)",
+    "for_me_desc": "Ti invieremo un buono regalo stampabile via email da consegnare di persona",
+    "for_friend_desc": "Invieremo il buono regalo direttamente a loro",
+    "confirm_self_title": "Il tuo buono regalo è in arrivo",
+    "confirm_self_message": "Abbiamo inviato il tuo buono regalo stampabile a",
+    "confirm_check_inbox": "Controlla la tua email.",
+    "confirm_friend_title": "Buono regalo inviato!",
+    "confirm_friend_message": "Abbiamo inviato un buono regalo a",
+    "confirm_friend_email": "Il buono regalo è stato inviato via email a"
   },
 
   "gift_cards_success": {

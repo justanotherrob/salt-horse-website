@@ -136,15 +136,15 @@ app.get('/gift-cards/status', (req, res) => {
   const sessionId = req.query.session_id;
   if (!sessionId) return res.status(400).json({ error: 'Missing session_id' });
 
-  const card = db.prepare('SELECT code, status, initial_amount, expires_at, recipient_email, purchaser_email, send_to FROM gift_cards WHERE stripe_session_id = ?').get(sessionId);
+  const card = db.prepare('SELECT status, initial_amount, recipient_email, recipient_name, purchaser_email, send_to FROM gift_cards WHERE stripe_session_id = ?').get(sessionId);
   console.log('[STATUS] Poll for session:', sessionId, '-> status:', card ? card.status : 'not found');
   if (!card) return res.json({ status: 'not_found' });
 
   res.json({
     status: card.status,
-    code: card.status === 'active' ? card.code : null,
     amount: card.status === 'active' ? (card.initial_amount / 100).toFixed(2) : null,
-    expiresAt: card.status === 'active' ? card.expires_at : null,
+    sendTo: card.send_to,
+    recipientName: card.recipient_name,
     emailSentTo: card.status === 'active' ? (card.send_to === 'friend' ? card.recipient_email : card.purchaser_email) : null,
   });
 });
