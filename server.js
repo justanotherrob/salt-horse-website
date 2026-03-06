@@ -24,20 +24,28 @@ app.set('views', path.join(__dirname, 'views'));
 
 // ── Stripe Webhook (must be before body-parser) ──────────
 app.post('/webhook/stripe', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
-  if (!stripe) return res.status(503).send('Stripe not configured');
+  console.log('[WEBHOOK] Received webhook request');
+  if (!stripe) {
+    console.error('[WEBHOOK] Stripe not configured');
+    return res.status(503).send('Stripe not configured');
+  }
   const sig = req.headers['stripe-signature'];
+  console.log('[WEBHOOK] Signature present:', !!sig);
+  console.log('[WEBHOOK] Secret present:', !!process.env.STRIPE_WEBHOOK_SECRET);
   let event;
   try {
     event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    console.log('[WEBHOOK] Event verified:', event.type, event.id);
   } catch (err) {
-    console.error('Webhook signature verification failed:', err.message);
+    console.error('[WEBHOOK] Signature verification FAILED:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
   try {
     await handleWebhook(event);
+    console.log('[WEBHOOK] Handler completed successfully');
   } catch (err) {
-    console.error('Webhook handler error:', err);
+    console.error('[WEBHOOK] Handler error:', err);
   }
 
   res.json({ received: true });
@@ -87,12 +95,18 @@ app.use('/', publicRoutes);
 app.use('/admin', adminRoutes);
 app.use('/api', apiRoutes);
 
+// ── Deploy version check ─────────────────────────────────
+app.get('/api/version', (req, res) => {
+  res.json({ version: 'v3-debug', deployed: new Date().toISOString() });
+});
+
 // ── Gift Card Checkout Route ─────────────────────────────
 const { createCheckoutSession } = require('./services/stripe');
 
 app.post('/gift-cards/checkout', async (req, res) => {
   try {
     const { amount, purchaserName, purchaserEmail, recipientName, recipientEmail, sendTo, personalMessage } = req.body;
+    console.log('[CHECKOUT] Request:', { amount, purchaserName, purchaserEmail, sendTo });
 
     const amountPence = parseInt(amount);
     if (isNaN(amountPence) || amountPence < 2500 || amountPence > 25000) {
@@ -109,9 +123,10 @@ app.post('/gift-cards/checkout', async (req, res) => {
       personalMessage: sendTo === 'friend' ? (personalMessage || '').substring(0, 300) : null,
     });
 
+    console.log('[CHECKOUT] Session created:', session.id);
     res.json({ clientSecret: session.client_secret });
   } catch (err) {
-    console.error('Checkout error:', err);
+    console.error('[CHECKOUT] Error:', err);
     res.status(500).json({ error: 'Failed to create checkout session' });
   }
 });
@@ -122,6 +137,7 @@ app.get('/gift-cards/status', (req, res) => {
   if (!sessionId) return res.status(400).json({ error: 'Missing session_id' });
 
   const card = db.prepare('SELECT code, status, initial_amount, expires_at, recipient_email, purchaser_email, send_to FROM gift_cards WHERE stripe_session_id = ?').get(sessionId);
+  console.log('[STATUS] Poll for session:', sessionId, '-> status:', card ? card.status : 'not found');
   if (!card) return res.json({ status: 'not_found' });
 
   res.json({

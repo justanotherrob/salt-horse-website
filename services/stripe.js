@@ -77,21 +77,32 @@ async function createCheckoutSession({ amount, purchaserName, purchaserEmail, re
 }
 
 async function handleWebhook(event) {
+  console.log('[STRIPE] handleWebhook called, event type:', event.type);
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
+    console.log('[STRIPE] Session ID:', session.id);
+    console.log('[STRIPE] Session metadata:', JSON.stringify(session.metadata));
 
     // Only process gift card payments
-    if (session.metadata?.type !== 'gift_card') return;
-
-    const card = db.prepare('SELECT * FROM gift_cards WHERE stripe_session_id = ?').get(session.id);
-    if (!card) {
-      console.error('Gift card not found for session:', session.id);
+    if (session.metadata?.type !== 'gift_card') {
+      console.log('[STRIPE] Not a gift card payment, skipping');
       return;
     }
 
-    if (card.status !== 'pending') return; // Already processed
+    const card = db.prepare('SELECT * FROM gift_cards WHERE stripe_session_id = ?').get(session.id);
+    if (!card) {
+      console.error('[STRIPE] Gift card not found for session:', session.id);
+      return;
+    }
+    console.log('[STRIPE] Found pending card ID:', card.id, 'status:', card.status);
+
+    if (card.status !== 'pending') {
+      console.log('[STRIPE] Card already processed, skipping');
+      return;
+    }
 
     const code = generateUniqueCode();
+    console.log('[STRIPE] Generated new code:', code);
     const now = new Date().toISOString();
 
     // Activate the gift card
@@ -99,6 +110,7 @@ async function handleWebhook(event) {
       UPDATE gift_cards SET code = ?, status = 'active', stripe_payment_intent = ?, purchased_at = ?
       WHERE id = ?
     `).run(code, session.payment_intent, now, card.id);
+    console.log('[STRIPE] Card activated with code:', code);
 
     // Create purchase transaction
     db.prepare(`
@@ -109,13 +121,17 @@ async function handleWebhook(event) {
     // Send emails
     try {
       const updatedCard = db.prepare('SELECT * FROM gift_cards WHERE id = ?').get(card.id);
+      console.log('[STRIPE] Sending gift card email...');
       await sendGiftCardEmail(updatedCard);
+      console.log('[STRIPE] Gift card email sent');
       // If it's a gift for a friend, also send the purchaser a receipt
       if (updatedCard.send_to === 'friend') {
+        console.log('[STRIPE] Sending purchaser receipt...');
         await sendPurchaserReceipt(updatedCard);
+        console.log('[STRIPE] Purchaser receipt sent');
       }
     } catch (err) {
-      console.error('Failed to send gift card email:', err);
+      console.error('[STRIPE] Failed to send gift card email:', err);
     }
   }
 }
