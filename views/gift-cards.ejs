@@ -414,7 +414,7 @@
                     <button class="toggle-btn active" onclick="toggleFor('self', this)"><%= t.gift_cards.for_me %></button>
                     <button class="toggle-btn" onclick="toggleFor('friend', this)"><%= t.gift_cards.for_friend %></button>
                 </div>
-                <p class="gc-toggle-hint" id="toggleHint"><%= t.gift_cards.for_me_desc || "We'll email you a printable gift card to give in person" %></p>
+                <p class="gc-toggle-hint" id="toggleHint"><%- t.gift_cards.for_me_desc || "We'll email you a printable gift card to give in person" %></p>
             </div>
 
             <!-- Buyer Details -->
@@ -534,8 +534,8 @@
             btn.classList.add('active');
             document.getElementById('recipientSection').style.display = type === 'friend' ? 'block' : 'none';
             document.getElementById('toggleHint').textContent = type === 'friend'
-                ? '<%= t.gift_cards.for_friend_desc || "We\\'ll email the gift card directly to them" %>'
-                : '<%= t.gift_cards.for_me_desc || "We\\'ll email you a printable gift card to give in person" %>';
+                ? '<%- (t.gift_cards.for_friend_desc || "We\\'ll email the gift card directly to them").replace(/'/g, "\\'") %>'
+                : '<%- (t.gift_cards.for_me_desc || "We\\'ll email you a printable gift card to give in person").replace(/'/g, "\\'") %>';
         }
 
         // Character counter for personal message

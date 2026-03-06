@@ -28,7 +28,7 @@
 
         <div class="detail-group">
             <label>Expires</label>
-            <span><%= new Date(card.expires_at).toLocaleDateString() %></span>
+            <span><%= new Date(card.expires_at).toLocaleDateString('en-GB') %></span>
         </div>
 
         <% if (card.status === 'active') { %>
@@ -57,7 +57,7 @@
                 <tbody>
                     <% transactions.forEach(t => { %>
                         <tr>
-                            <td><%= new Date(t.created_at).toLocaleDateString() %></td>
+                            <td><%= new Date(t.created_at).toLocaleDateString('en-GB') %></td>
                             <td>£<%= t.amount.toFixed(2) %></td>
                             <td><%= t.description %></td>
                         </tr>

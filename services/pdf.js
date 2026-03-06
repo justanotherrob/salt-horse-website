@@ -65,12 +65,6 @@ function generateGiftCardPDF(giftCard) {
       doc.fontSize(10).fill(grey).font('Helvetica');
       doc.text('Valid until ' + expiryDate, 60, boxTop + 230, { align: 'center', width: contentWidth });
 
-      // Purchaser name
-      if (giftCard.purchaser_name) {
-        doc.fontSize(10).fill(grey).font('Helvetica');
-        doc.text('Purchased by ' + giftCard.purchaser_name, 60, boxTop + 255, { align: 'center', width: contentWidth });
-      }
-
       // ── Footer ──
       const footerY = boxTop + boxHeight + 40;
 

@@ -175,8 +175,8 @@
                         <%= card.status.charAt(0).toUpperCase() + card.status.slice(1) %>
                     </span>
                 </td>
-                <td><%= card.purchased_at ? new Date(card.purchased_at).toLocaleDateString() : new Date(card.created_at).toLocaleDateString() %></td>
-                <td><%= new Date(card.expires_at).toLocaleDateString() %></td>
+                <td><%= card.purchased_at ? new Date(card.purchased_at).toLocaleDateString('en-GB') : new Date(card.created_at).toLocaleDateString('en-GB') %></td>
+                <td><%= new Date(card.expires_at).toLocaleDateString('en-GB') %></td>
             </tr>
             <tr class="gc-detail-row" id="detail-<%= card.id %>">
                 <td class="gc-detail-cell" colspan="8">

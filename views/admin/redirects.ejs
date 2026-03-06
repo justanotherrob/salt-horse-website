@@ -34,7 +34,7 @@
                 <tr data-id="<%= r.id %>">
                     <td><code><%= r.from_path %></code></td>
                     <td><%= r.to_url %></td>
-                    <td><%= new Date(r.created_at).toLocaleDateString() %></td>
+                    <td><%= new Date(r.created_at).toLocaleDateString('en-GB') %></td>
                     <td><button class="btn-delete" onclick="deleteRedirect('<%= r.id %>')">Delete</button></td>
                 </tr>
             <% }); %>
