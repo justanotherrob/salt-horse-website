@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const session = require('express-session');
-const SQLiteStore = require('connect-sqlite3')(session);
+const PgSession = require('connect-pg-simple')(session);
 const bodyParser = require('body-parser');
 const path = require('path');
 const stripe = process.env.STRIPE_SECRET_KEY
@@ -11,6 +11,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
 
 const cookieParser = require('cookie-parser');
 const db = require('./db/database');
+const { initDatabase } = require('./db/database');
 const { redirectMiddleware } = require('./middleware/redirects');
 const { i18nMiddleware } = require('./middleware/i18n');
 const { handleWebhook } = require('./services/stripe');
@@ -55,13 +56,12 @@ app.post('/webhook/stripe', bodyParser.raw({ type: 'application/json' }), async 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Session store goes in the same persistent directory as the main DB
-const sessionDir = process.env.DATABASE_PATH
-  ? path.dirname(process.env.DATABASE_PATH)
-  : path.join(__dirname, 'db');
-
+// Session store — PostgreSQL
 app.use(session({
-  store: new SQLiteStore({ db: 'sessions.db', dir: sessionDir }),
+  store: new PgSession({
+    conString: process.env.DATABASE_URL,
+    createTableIfMissing: true,
+  }),
   secret: process.env.SESSION_SECRET || 'dev-secret',
   resave: false,
   saveUninitialized: false,
@@ -97,7 +97,7 @@ app.use('/api', apiRoutes);
 
 // ── Deploy version check ─────────────────────────────────
 app.get('/api/version', (req, res) => {
-  res.json({ version: 'v3-debug', deployed: new Date().toISOString() });
+  res.json({ version: 'v4-postgres', deployed: new Date().toISOString() });
 });
 
 // ── Gift Card Checkout Route ─────────────────────────────
@@ -132,11 +132,11 @@ app.post('/gift-cards/checkout', async (req, res) => {
 });
 
 // ── Gift Card Status Polling ─────────────────────────────
-app.get('/gift-cards/status', (req, res) => {
+app.get('/gift-cards/status', async (req, res) => {
   const sessionId = req.query.session_id;
   if (!sessionId) return res.status(400).json({ error: 'Missing session_id' });
 
-  const card = db.prepare('SELECT status, initial_amount, recipient_email, recipient_name, purchaser_email, send_to FROM gift_cards WHERE stripe_session_id = ?').get(sessionId);
+  const card = await db.get('SELECT status, initial_amount, recipient_email, recipient_name, purchaser_email, send_to FROM gift_cards WHERE stripe_session_id = $1', [sessionId]);
   console.log('[STATUS] Poll for session:', sessionId, '-> status:', card ? card.status : 'not found');
   if (!card) return res.json({ status: 'not_found' });
 
@@ -171,6 +171,14 @@ app.use((err, req, res, next) => {
 });
 
 // ── Start ────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`\n  Salt Horse running at http://localhost:${PORT}\n`);
+async function start() {
+  await initDatabase();
+  app.listen(PORT, () => {
+    console.log(`\n  Salt Horse running at http://localhost:${PORT}\n`);
+  });
+}
+
+start().catch(err => {
+  console.error('Failed to start:', err);
+  process.exit(1);
 });

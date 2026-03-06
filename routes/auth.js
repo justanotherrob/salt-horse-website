@@ -19,7 +19,7 @@ router.post('/admin/login', async (req, res) => {
     return res.render('admin/login', { error: 'Email and password required', layout: false });
   }
 
-  const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email.toLowerCase().trim());
+  const user = await db.get('SELECT * FROM users WHERE email = $1', [email.toLowerCase().trim()]);
 
   if (!user) {
     return res.render('admin/login', { error: 'Invalid email or password', layout: false });

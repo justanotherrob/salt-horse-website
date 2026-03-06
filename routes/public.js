@@ -3,14 +3,14 @@ const db = require('../db/database');
 const router = express.Router();
 
 // Helper: check if a site setting is enabled
-function getSetting(key) {
-  const row = db.prepare('SELECT value FROM site_settings WHERE key = ?').get(key);
+async function getSetting(key) {
+  const row = await db.get('SELECT value FROM site_settings WHERE key = $1', [key]);
   return row ? row.value === 'true' : false;
 }
 
 // Helper: get all content as key-value object
-function getContent() {
-  const rows = db.prepare('SELECT key, value, type FROM content_blocks').all();
+async function getContent() {
+  const rows = await db.all('SELECT key, value, type FROM content_blocks');
   const content = {};
   for (const row of rows) {
     content[row.key] = row.value;
@@ -19,8 +19,8 @@ function getContent() {
 }
 
 // Helper: get opening hours as array sorted by day_order
-function getHours() {
-  return db.prepare('SELECT * FROM opening_hours ORDER BY day_order').all();
+async function getHours() {
+  return db.all('SELECT * FROM opening_hours ORDER BY day_order');
 }
 
 // Helper: format 24h time to display format
@@ -35,31 +35,31 @@ function formatTime(time24) {
 }
 
 // GET / — Main site
-router.get('/', (req, res) => {
-  const content = getContent();
-  const hours = getHours();
-  const giftCardsEnabled = getSetting('gift_cards_enabled');
+router.get('/', async (req, res) => {
+  const content = await getContent();
+  const hours = await getHours();
+  const giftCardsEnabled = await getSetting('gift_cards_enabled');
   res.render('index', { content, hours, formatTime, stripeKey: process.env.STRIPE_PUBLISHABLE_KEY, giftCardsEnabled });
 });
 
 // GET /gift-cards — Purchase page
-router.get('/gift-cards', (req, res) => {
-  if (!getSetting('gift_cards_enabled')) return res.redirect('/');
-  const content = getContent();
+router.get('/gift-cards', async (req, res) => {
+  if (!(await getSetting('gift_cards_enabled'))) return res.redirect('/');
+  const content = await getContent();
   res.render('gift-cards', { content, stripeKey: process.env.STRIPE_PUBLISHABLE_KEY });
 });
 
 // GET /gift-cards/success
-router.get('/gift-cards/success', (req, res) => {
-  if (!getSetting('gift_cards_enabled')) return res.redirect('/');
+router.get('/gift-cards/success', async (req, res) => {
+  if (!(await getSetting('gift_cards_enabled'))) return res.redirect('/');
   const sessionId = req.query.session_id;
   let giftCard = null;
 
   if (sessionId) {
-    giftCard = db.prepare('SELECT * FROM gift_cards WHERE stripe_session_id = ?').get(sessionId);
+    giftCard = await db.get('SELECT * FROM gift_cards WHERE stripe_session_id = $1', [sessionId]);
   }
 
-  const content = getContent();
+  const content = await getContent();
   res.render('gift-cards-success', { content, giftCard });
 });
 

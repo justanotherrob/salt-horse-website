@@ -7,18 +7,18 @@ const router = express.Router();
 router.use(requireAuth);
 
 // GET /admin — Dashboard
-router.get('/', (req, res) => {
-  const totalCards = db.prepare('SELECT COUNT(*) as count FROM gift_cards').get();
-  const activeCards = db.prepare('SELECT COUNT(*) as count FROM gift_cards WHERE status = ?').get('active');
-  const totalRevenue = db.prepare("SELECT COALESCE(SUM(initial_amount), 0) as total FROM gift_cards WHERE status IN ('active', 'redeemed')").get();
-  const redirectCount = db.prepare('SELECT COUNT(*) as count FROM redirects').get();
-  const giftCardsEnabled = db.prepare("SELECT value FROM site_settings WHERE key = 'gift_cards_enabled'").get();
+router.get('/', async (req, res) => {
+  const totalCards = await db.get('SELECT COUNT(*) as count FROM gift_cards');
+  const activeCards = await db.get('SELECT COUNT(*) as count FROM gift_cards WHERE status = $1', ['active']);
+  const totalRevenue = await db.get("SELECT COALESCE(SUM(initial_amount), 0) as total FROM gift_cards WHERE status IN ('active', 'redeemed')");
+  const redirectCount = await db.get('SELECT COUNT(*) as count FROM redirects');
+  const giftCardsEnabled = await db.get("SELECT value FROM site_settings WHERE key = 'gift_cards_enabled'");
 
   // Get enabled state for each language
   const langCodes = ['fr', 'de', 'es', 'it', 'nl', 'pl', 'zh'];
   const enabledLangs = {};
   for (const code of langCodes) {
-    const setting = db.prepare("SELECT value FROM site_settings WHERE key = ?").get(`lang_${code}_enabled`);
+    const setting = await db.get("SELECT value FROM site_settings WHERE key = $1", [`lang_${code}_enabled`]);
     enabledLangs[code] = setting ? setting.value === 'true' : true; // default to true if not set
   }
 
@@ -36,8 +36,8 @@ router.get('/', (req, res) => {
 });
 
 // GET /admin/content
-router.get('/content', (req, res) => {
-  const blocks = db.prepare('SELECT * FROM content_blocks ORDER BY section, sort_order').all();
+router.get('/content', async (req, res) => {
+  const blocks = await db.all('SELECT * FROM content_blocks ORDER BY section, sort_order');
 
   // Group by section
   const sections = {};
@@ -50,13 +50,13 @@ router.get('/content', (req, res) => {
 });
 
 // GET /admin/hours
-router.get('/hours', (req, res) => {
-  const hours = db.prepare('SELECT * FROM opening_hours ORDER BY day_order').all();
+router.get('/hours', async (req, res) => {
+  const hours = await db.all('SELECT * FROM opening_hours ORDER BY day_order');
   res.render('admin/hours', { hours, user: req.session.userName });
 });
 
 // GET /admin/gift-cards
-router.get('/gift-cards', (req, res) => {
+router.get('/gift-cards', async (req, res) => {
   const filter = req.query.filter || 'all';
   const search = req.query.search || '';
   const page = parseInt(req.query.page) || 1;
@@ -65,6 +65,7 @@ router.get('/gift-cards', (req, res) => {
 
   let where = "WHERE 1=1";
   const params = [];
+  let paramIndex = 1;
 
   if (filter === 'active') { where += " AND status = 'active'"; }
   else if (filter === 'redeemed') { where += " AND status = 'redeemed'"; }
@@ -72,12 +73,13 @@ router.get('/gift-cards', (req, res) => {
   else if (filter === 'pending') { where += " AND status = 'pending'"; }
 
   if (search) {
-    where += ' AND (code LIKE ? OR purchaser_email LIKE ? OR recipient_email LIKE ?)';
+    where += ` AND (code ILIKE $${paramIndex} OR purchaser_email ILIKE $${paramIndex + 1} OR recipient_email ILIKE $${paramIndex + 2})`;
     params.push(`%${search}%`, `%${search}%`, `%${search}%`);
+    paramIndex += 3;
   }
 
-  const total = db.prepare(`SELECT COUNT(*) as count FROM gift_cards ${where}`).get(...params);
-  const cards = db.prepare(`SELECT * FROM gift_cards ${where} ORDER BY created_at DESC LIMIT ? OFFSET ?`).all(...params, perPage, offset);
+  const total = await db.get(`SELECT COUNT(*) as count FROM gift_cards ${where}`, params);
+  const cards = await db.all(`SELECT * FROM gift_cards ${where} ORDER BY created_at DESC LIMIT $${paramIndex} OFFSET $${paramIndex + 1}`, [...params, perPage, offset]);
 
   res.render('admin/gift-cards', {
     cards,
@@ -91,15 +93,15 @@ router.get('/gift-cards', (req, res) => {
 });
 
 // GET /admin/redeem
-router.get('/redeem', (req, res) => {
+router.get('/redeem', async (req, res) => {
   const code = req.query.code || '';
   let card = null;
   let transactions = [];
 
   if (code) {
-    card = db.prepare('SELECT * FROM gift_cards WHERE code = ?').get(code);
+    card = await db.get('SELECT * FROM gift_cards WHERE code = $1', [code]);
     if (card) {
-      transactions = db.prepare('SELECT * FROM gift_card_transactions WHERE gift_card_id = ? ORDER BY created_at DESC').all(card.id);
+      transactions = await db.all('SELECT * FROM gift_card_transactions WHERE gift_card_id = $1 ORDER BY created_at DESC', [card.id]);
     }
   }
 
@@ -112,8 +114,8 @@ router.get('/import', (req, res) => {
 });
 
 // GET /admin/redirects
-router.get('/redirects', (req, res) => {
-  const redirects = db.prepare('SELECT * FROM redirects ORDER BY created_at DESC').all();
+router.get('/redirects', async (req, res) => {
+  const redirects = await db.all('SELECT * FROM redirects ORDER BY created_at DESC');
   res.render('admin/redirects', { redirects, user: req.session.userName });
 });
 
