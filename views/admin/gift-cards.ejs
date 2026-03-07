@@ -165,7 +165,7 @@
     <tbody>
         <% cards.forEach(card => { %>
             <tr class="gc-row" onclick="toggleDetail(<%= card.id %>)">
-                <td><code><%= card.code %></code></td>
+                <td><code><%= card.code.length > 4 ? '••••' + card.code.slice(-4) : card.code %></code></td>
                 <td><%= card.purchaser_email %></td>
                 <td><%= card.recipient_email || '' %></td>
                 <td>£<%= (card.initial_amount / 100).toFixed(2) %></td>
@@ -211,7 +211,7 @@
                             </div>
                             <div class="gc-detail-field">
                                 <span class="gc-detail-label">Code</span>
-                                <span class="gc-detail-value" style="font-family: 'Space Mono', monospace; letter-spacing: 1px;"><%= card.code %></span>
+                                <span class="gc-detail-value" style="font-family: 'Space Mono', monospace; letter-spacing: 1px;"><%= card.code.length > 4 ? '••••' + card.code.slice(-4) : card.code %></span>
                             </div>
                             <button class="gc-resend-btn" id="resend-recipient-<%= card.id %>"
                                 onclick="event.stopPropagation(); openResendModal(<%= card.id %>, 'recipient', '<%= (card.recipient_email || card.purchaser_email || '').replace(/'/g, "\\'") %>')">

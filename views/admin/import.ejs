@@ -1,19 +1,58 @@
 <%- include('_header') %>
 
-<h1>Import Gift Cards</h1>
+<h1>Import & Export Gift Cards</h1>
 
-<div class="import-form">
-    <form id="importForm" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="file">CSV File</label>
-            <input type="file" id="file" name="csv" accept=".csv" required>
-            <p class="help-text">Accepts CSV exports with columns: GIFT CODE, INITIAL VALUE, REMAINING VALUE, PURCHASER EMAIL, RECIPIENT EMAIL, PURCHASE DATE, USAGE</p>
-        </div>
-        <button type="submit" class="btn btn-fill" id="importBtn">Import</button>
-    </form>
+<style>
+    .ie-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 800px;
+        margin-bottom: 2rem;
+    }
+    .ie-section {
+        background: var(--bg-light);
+        border: 1px solid var(--cream-faint);
+        border-radius: 6px;
+        padding: 1.5rem;
+    }
+    .ie-section h2 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem;
+    }
+    .ie-section p {
+        font-size: 0.85rem;
+        color: var(--cream-dim);
+        margin: 0 0 1.25rem;
+    }
+    @media (max-width: 600px) {
+        .ie-sections { grid-template-columns: 1fr; }
+    }
+</style>
+
+<div class="ie-sections">
+    <!-- Import -->
+    <div class="ie-section">
+        <h2>Import</h2>
+        <p>Upload a CSV file to import gift cards into the system.</p>
+        <form id="importForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" id="file" name="csv" accept=".csv" required>
+                <p class="help-text" style="margin-top:0.5rem; font-size:0.75rem;">Columns: GIFT CODE, INITIAL VALUE, REMAINING VALUE, PURCHASER EMAIL, RECIPIENT EMAIL, PURCHASE DATE, USAGE</p>
+            </div>
+            <button type="submit" class="btn btn-fill" id="importBtn" style="width:100%;">Import</button>
+        </form>
+    </div>
+
+    <!-- Export -->
+    <div class="ie-section">
+        <h2>Export</h2>
+        <p>Download all gift cards as a CSV file. Full gift card codes are included in the export.</p>
+        <a href="/api/gift-cards/export" class="btn btn-fill" style="display:block; text-align:center; text-decoration:none;">Download CSV</a>
+    </div>
 </div>
 
-<div id="importResults" style="display:none; margin-top: 2rem;">
+<div id="importResults" style="display:none; margin-top: 1rem; max-width: 800px;">
     <h3>Import Results</h3>
     <p><strong id="resImported">0</strong> cards imported</p>
     <p><strong id="resSkipped">0</strong> rows skipped</p>

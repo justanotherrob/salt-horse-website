@@ -87,12 +87,15 @@ router.post('/gift-cards/:code/redeem', async (req, res) => {
 
   const card = await db.get('SELECT * FROM gift_cards WHERE code = $1', [code]);
   if (!card) return res.status(404).json({ error: 'Gift card not found' });
-  if (card.status !== 'active') return res.status(400).json({ error: `Gift card is ${card.status}` });
+  // Allow active and expired (with balance) cards to be redeemed
+  if (card.status !== 'active' && card.status !== 'expired') {
+    return res.status(400).json({ error: `Gift card is ${card.status}` });
+  }
+  if (card.balance <= 0) return res.status(400).json({ error: 'Gift card has no remaining balance' });
 
-  // Check expiry
-  if (card.expires_at && new Date(card.expires_at) < new Date()) {
+  // Auto-mark as expired if past expiry (but don't block redemption)
+  if (card.status === 'active' && card.expires_at && new Date(card.expires_at) < new Date()) {
     await db.run("UPDATE gift_cards SET status = 'expired' WHERE id = $1", [card.id]);
-    return res.status(400).json({ error: 'Gift card has expired' });
   }
 
   const redeemAmount = parseInt(amount);
@@ -100,7 +103,7 @@ router.post('/gift-cards/:code/redeem', async (req, res) => {
   if (redeemAmount > card.balance) return res.status(400).json({ error: `Amount exceeds balance of £${(card.balance / 100).toFixed(2)}` });
 
   const newBalance = card.balance - redeemAmount;
-  const newStatus = newBalance === 0 ? 'redeemed' : 'active';
+  const newStatus = newBalance === 0 ? 'redeemed' : card.status;
 
   await db.run('UPDATE gift_cards SET balance = $1, status = $2 WHERE id = $3', [newBalance, newStatus, card.id]);
   await db.run('INSERT INTO gift_card_transactions (gift_card_id, amount, type, redeemed_by_user_id) VALUES ($1, $2, $3, $4)', [card.id, redeemAmount, 'redemption', req.session.userId]);
@@ -174,6 +177,52 @@ router.post('/gift-cards/import', upload.single('csv'), async (req, res) => {
     res.json({ success: true, imported, skipped, total: records.length, errors: errors.slice(0, 20) });
   } catch (err) {
     res.status(400).json({ error: `Failed to parse CSV: ${err.message}` });
+  }
+});
+
+// ── CSV Export ───────────────────────────────────────────
+
+// GET /api/gift-cards/export
+router.get('/gift-cards/export', async (req, res) => {
+  try {
+    const cards = await db.all(`
+      SELECT code, initial_amount, balance, currency, status,
+             purchaser_email, purchaser_name, recipient_email, recipient_name,
+             send_to, purchased_at, expires_at
+      FROM gift_cards
+      WHERE status != 'pending'
+      ORDER BY purchased_at DESC
+    `);
+
+    const header = 'GIFT CODE,INITIAL VALUE,REMAINING VALUE,STATUS,PURCHASER EMAIL,PURCHASER NAME,RECIPIENT EMAIL,RECIPIENT NAME,PURCHASE DATE,EXPIRES';
+    const rows = cards.map(c => {
+      const initial = (c.initial_amount / 100).toFixed(2) + ' GBP';
+      const remaining = (c.balance / 100).toFixed(2) + ' GBP';
+      const purchased = c.purchased_at ? new Date(c.purchased_at).toISOString() : '';
+      const expires = c.expires_at ? new Date(c.expires_at).toISOString() : '';
+      return [
+        `"${c.code}"`,
+        `"${initial}"`,
+        `"${remaining}"`,
+        `"${c.status}"`,
+        `"${c.purchaser_email || ''}"`,
+        `"${(c.purchaser_name || '').replace(/"/g, '""')}"`,
+        `"${c.recipient_email || ''}"`,
+        `"${(c.recipient_name || '').replace(/"/g, '""')}"`,
+        `"${purchased}"`,
+        `"${expires}"`
+      ].join(',');
+    });
+
+    const csv = header + '\n' + rows.join('\n');
+    const filename = `gift-cards-export-${new Date().toISOString().slice(0, 10)}.csv`;
+
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    res.send(csv);
+  } catch (err) {
+    console.error('[EXPORT] Error:', err);
+    res.status(500).json({ error: 'Failed to export gift cards' });
   }
 });
 

@@ -209,7 +209,12 @@
             </div>
         </div>
 
-        <% if (card.status === 'active') { %>
+        <% if (card.status === 'active' || (card.status === 'expired' && card.balance > 0)) { %>
+            <% if (card.status === 'expired') { %>
+                <div style="background: rgba(231, 76, 60, 0.15); border: 1px solid rgba(231, 76, 60, 0.4); border-radius: 4px; padding: 0.75rem 1rem; margin-bottom: 1.25rem; font-size: 0.85rem; color: #e74c3c;">
+                    This gift card has expired but still has a remaining balance.
+                </div>
+            <% } %>
             <div class="redeem-actions">
                 <div class="redeem-action-primary">
                     <button class="btn btn-fill" onclick="redeemAll('<%= card.code %>')">Redeem Full Balance — £<%= (card.balance / 100).toFixed(2) %></button>
@@ -252,8 +257,13 @@
 <% } %>
 
 <script>
+const isExpired = <%= card && card.status === 'expired' ? 'true' : 'false' %>;
+
 function redeemAll(code) {
-    if (confirm('Redeem the full balance of £<%= card ? (card.balance / 100).toFixed(2) : '0.00' %>?')) {
+    const msg = isExpired
+        ? 'This gift card has expired. Are you sure you want to redeem the full balance of £<%= card ? (card.balance / 100).toFixed(2) : '0.00' %>?'
+        : 'Redeem the full balance of £<%= card ? (card.balance / 100).toFixed(2) : '0.00' %>?';
+    if (confirm(msg)) {
         fetch('/api/gift-cards/' + code + '/redeem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -277,7 +287,10 @@ function redeemCustom(code) {
     }
     const pence = Math.round(pounds * 100);
 
-    if (confirm('Redeem £' + pounds.toFixed(2) + ' from this card?')) {
+    const msg = isExpired
+        ? 'This gift card has expired. Are you sure you want to redeem £' + pounds.toFixed(2) + '?'
+        : 'Redeem £' + pounds.toFixed(2) + ' from this card?';
+    if (confirm(msg)) {
         fetch('/api/gift-cards/' + code + '/redeem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
