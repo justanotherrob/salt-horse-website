@@ -6,34 +6,22 @@
     <form id="importForm" enctype="multipart/form-data">
         <div class="form-group">
             <label for="file">CSV File</label>
-            <input type="file" id="file" name="file" accept=".csv" required>
-            <p class="help-text">CSV format: code, amount, purchaser_email, recipient_email, expires_at</p>
+            <input type="file" id="file" name="csv" accept=".csv" required>
+            <p class="help-text">Accepts CSV exports with columns: GIFT CODE, INITIAL VALUE, REMAINING VALUE, PURCHASER EMAIL, RECIPIENT EMAIL, PURCHASE DATE, USAGE</p>
         </div>
-        <button type="submit" class="btn btn-fill">Import</button>
-        <div id="progress" class="progress-container" style="display:none;">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
+        <button type="submit" class="btn btn-fill" id="importBtn">Import</button>
     </form>
 </div>
 
-<% if (result) { %>
-    <div class="import-results">
-        <h3>Import Results</h3>
-        <p><strong><%= result.imported %></strong> cards imported</p>
-        <p><strong><%= result.skipped %></strong> rows skipped</p>
-
-        <% if (result.errors && result.errors.length > 0) { %>
-            <div class="errors-list">
-                <h4>Errors:</h4>
-                <ul>
-                    <% result.errors.forEach(err => { %>
-                        <li><%= err %></li>
-                    <% }); %>
-                </ul>
-            </div>
-        <% } %>
+<div id="importResults" style="display:none; margin-top: 2rem;">
+    <h3>Import Results</h3>
+    <p><strong id="resImported">0</strong> cards imported</p>
+    <p><strong id="resSkipped">0</strong> rows skipped</p>
+    <div id="resErrors" style="display:none;">
+        <h4>Notes:</h4>
+        <ul id="resErrorList"></ul>
     </div>
-<% } %>
+</div>
 
 <script>
 document.getElementById('importForm').addEventListener('submit', async (e) => {
@@ -42,11 +30,12 @@ document.getElementById('importForm').addEventListener('submit', async (e) => {
     const file = document.getElementById('file').files[0];
     if (!file) return;
 
-    const formData = new FormData();
-    formData.append('file', file);
+    const btn = document.getElementById('importBtn');
+    btn.disabled = true;
+    btn.textContent = 'Importing...';
 
-    const progress = document.getElementById('progress');
-    progress.style.display = 'block';
+    const formData = new FormData();
+    formData.append('csv', file);
 
     try {
         const response = await fetch('/api/gift-cards/import', {
@@ -54,14 +43,35 @@ document.getElementById('importForm').addEventListener('submit', async (e) => {
             body: formData
         });
 
-        if (response.ok) {
-            location.reload();
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            document.getElementById('resImported').textContent = data.imported;
+            document.getElementById('resSkipped').textContent = data.skipped;
+
+            const errorList = document.getElementById('resErrorList');
+            errorList.innerHTML = '';
+            if (data.errors && data.errors.length > 0) {
+                data.errors.forEach(err => {
+                    const li = document.createElement('li');
+                    li.textContent = err;
+                    errorList.appendChild(li);
+                });
+                document.getElementById('resErrors').style.display = 'block';
+            } else {
+                document.getElementById('resErrors').style.display = 'none';
+            }
+
+            document.getElementById('importResults').style.display = 'block';
         } else {
-            alert('Import failed');
+            alert(data.error || 'Import failed');
         }
     } catch (err) {
         alert('Error: ' + err.message);
     }
+
+    btn.disabled = false;
+    btn.textContent = 'Import';
 });
 </script>
 

@@ -110,7 +110,7 @@ router.get('/redeem', async (req, res) => {
 
 // GET /admin/import
 router.get('/import', (req, res) => {
-  res.render('admin/import', { user: req.session.userName, result: null });
+  res.render('admin/import', { user: req.session.userName });
 });
 
 // GET /admin/redirects
