@@ -23,7 +23,7 @@
 
         <div class="balance-display">
             <div class="balance-label">Balance</div>
-            <div class="balance-amount">£<%= card.balance.toFixed(2) %></div>
+            <div class="balance-amount">£<%= (card.balance / 100).toFixed(2) %></div>
         </div>
 
         <div class="detail-group">
@@ -58,7 +58,7 @@
                     <% transactions.forEach(t => { %>
                         <tr>
                             <td><%= new Date(t.created_at).toLocaleDateString('en-GB') %></td>
-                            <td>£<%= t.amount.toFixed(2) %></td>
+                            <td>£<%= (t.amount / 100).toFixed(2) %></td>
                             <td><%= t.description %></td>
                         </tr>
                     <% }); %>
@@ -82,11 +82,12 @@ function redeemAll(code) {
         fetch(`/api/gift-cards/${code}/redeem`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ amount: null })
+            body: JSON.stringify({ amount: <%= card ? card.balance : 0 %> })
         })
         .then(res => res.json())
         .then(data => {
-            alert('Redeemed! Balance: £' + data.balance.toFixed(2));
+            if (data.error) { alert('Error: ' + data.error); return; }
+            alert('Redeemed! Balance: ' + data.balanceFormatted);
             location.reload();
         })
         .catch(err => alert('Error: ' + err.message));
@@ -94,20 +95,22 @@ function redeemAll(code) {
 }
 
 function redeemCustom(code) {
-    const amount = parseFloat(document.getElementById('customAmount').value);
-    if (!amount || amount <= 0) {
+    const pounds = parseFloat(document.getElementById('customAmount').value);
+    if (!pounds || pounds <= 0) {
         alert('Enter a valid amount');
         return;
     }
+    const pence = Math.round(pounds * 100);
 
     fetch(`/api/gift-cards/${code}/redeem`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount })
+        body: JSON.stringify({ amount: pence })
     })
     .then(res => res.json())
     .then(data => {
-        alert('Redeemed £' + amount.toFixed(2) + '! Balance: £' + data.balance.toFixed(2));
+        if (data.error) { alert('Error: ' + data.error); return; }
+        alert('Redeemed £' + pounds.toFixed(2) + '! Balance: ' + data.balanceFormatted);
         location.reload();
     })
     .catch(err => alert('Error: ' + err.message));
