@@ -58,7 +58,7 @@ async function sendGiftCardEmail(giftCard, overrideEmail) {
     closingText = 'Present this code when you visit Salt Horse to redeem your gift card. It can be used for anything we serve or sell.';
   } else {
     subject = `Your ${amountStr} Salt Horse Gift Card`;
-    greeting = `Here's your ${amountStr} Salt Horse gift card. We've attached a printable version so you can give it in person.`;
+    greeting = `Here's your ${amountStr} Salt Horse gift card. We've attached a version you can print and give in person.`;
     closingText = 'Present this card when you visit Salt Horse. It can be used for anything we serve or sell.';
   }
 

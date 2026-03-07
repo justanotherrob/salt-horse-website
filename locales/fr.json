@@ -73,7 +73,7 @@
 
   "gift_cards": {
     "page_title": "Offrez de la Bière Artisanale",
-    "subtitle": "Choisissez un montant, dites-nous pour qui, et nous enverrons une carte cadeau par email avec un PDF à imprimer.",
+    "subtitle": "Choisissez un montant, dites-nous pour qui, et nous nous occupons du reste.",
     "choose_amount": "Choisir un Montant",
     "custom_amount": "Ou choisissez votre propre montant",
     "min_max": "Min £25 — Max £250",
@@ -95,12 +95,12 @@
     "error_details": "Veuillez entrer vos coordonnées",
     "error_recipient": "Veuillez entrer les coordonnées du destinataire",
     "processing_payment": "Confirmation de votre paiement...",
-    "confirmation_sent": "Confirmation et PDF de la carte cadeau envoyés à",
+    "confirmation_sent": "Confirmation et carte cadeau envoyés à",
     "personal_message_placeholder": "Ajouter un message personnel (facultatif)",
-    "for_me_desc": "Nous vous enverrons une carte cadeau imprimable par email à donner en main propre",
+    "for_me_desc": "Nous vous enverrons une carte cadeau par email que vous pourrez imprimer et remettre en main propre",
     "for_friend_desc": "Nous enverrons la carte cadeau directement à cette personne",
     "confirm_self_title": "Votre carte cadeau est en route",
-    "confirm_self_message": "Nous avons envoyé votre carte cadeau imprimable à",
+    "confirm_self_message": "Nous avons envoyé votre carte cadeau à",
     "confirm_check_inbox": "Consultez votre boîte de réception.",
     "confirm_friend_title": "Carte cadeau envoyée !",
     "confirm_friend_message": "Nous avons envoyé une carte cadeau à",
@@ -113,7 +113,7 @@
     "code_label": "Code Carte Cadeau",
     "amount_label": "Montant",
     "expires_label": "Valable Jusqu'au",
-    "email_note": "Vérifiez vos emails pour la carte cadeau avec le PDF en pièce jointe.",
+    "email_note": "Vérifiez vos emails — votre carte cadeau est en pièce jointe et prête à être utilisée.",
     "back_home": "Retour à Salt Horse",
     "processing_title": "Traitement de votre carte cadeau...",
     "processing_text": "Votre paiement est en cours de confirmation. Vous recevrez un email avec votre carte cadeau sous peu."

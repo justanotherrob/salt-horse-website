@@ -414,7 +414,7 @@
                     <button class="toggle-btn active" onclick="toggleFor('self', this)"><%= t.gift_cards.for_me %></button>
                     <button class="toggle-btn" onclick="toggleFor('friend', this)"><%= t.gift_cards.for_friend %></button>
                 </div>
-                <p class="gc-toggle-hint" id="toggleHint"><%- t.gift_cards.for_me_desc || "We'll email you a printable gift card to give in person" %></p>
+                <p class="gc-toggle-hint" id="toggleHint"><%- t.gift_cards.for_me_desc || "We'll email you a gift card you can print and hand over in person" %></p>
             </div>
 
             <!-- Buyer Details -->
@@ -534,8 +534,8 @@
             btn.classList.add('active');
             document.getElementById('recipientSection').style.display = type === 'friend' ? 'block' : 'none';
             document.getElementById('toggleHint').textContent = type === 'friend'
-                ? '<%- (t.gift_cards.for_friend_desc || "We\\'ll email the gift card directly to them").replace(/'/g, "\\'") %>'
-                : '<%- (t.gift_cards.for_me_desc || "We\\'ll email you a printable gift card to give in person").replace(/'/g, "\\'") %>';
+                ? '<%- (t.gift_cards.for_friend_desc || "We\\'ll email the gift card straight to them").replace(/'/g, "\\'") %>'
+                : '<%- (t.gift_cards.for_me_desc || "We\\'ll email you a gift card you can print and hand over in person").replace(/'/g, "\\'") %>';
         }
 
         // Character counter for personal message
@@ -582,11 +582,6 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         amount: Math.round(amount * 100),
-                        buyer_name: buyerName,
-                        buyer_email: buyerEmail,
-                        recipient_name: recipientName,
-                        recipient_email: recipientEmail,
-                        for_friend: giftFor === 'friend',
                         purchaserName: buyerName,
                         purchaserEmail: buyerEmail,
                         recipientName: recipientName,
@@ -674,7 +669,7 @@
                     document.getElementById('confirmEmailNote').textContent = '<%= t.gift_cards.confirm_friend_email || "The gift card has been emailed to" %> ' + data.emailSentTo;
                 } else {
                     document.getElementById('confirmTitle').textContent = '<%= t.gift_cards.confirm_self_title || "Your gift card is on its way" %>';
-                    document.getElementById('confirmSub').textContent = '<%= t.gift_cards.confirm_self_message || "We\\'ve sent your printable gift card to" %> ' + data.emailSentTo + '. <%= t.gift_cards.confirm_check_inbox || "Check your inbox." %>';
+                    document.getElementById('confirmSub').textContent = '<%= t.gift_cards.confirm_self_message || "We\\'ve sent your gift card to" %> ' + data.emailSentTo + '. <%= t.gift_cards.confirm_check_inbox || "Check your inbox." %>';
                     document.getElementById('confirmEmailNote').textContent = '';
                 }
             } else {

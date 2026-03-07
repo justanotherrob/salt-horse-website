@@ -73,7 +73,7 @@
 
   "gift_cards": {
     "page_title": "Verschenke Craft-Bier",
-    "subtitle": "Wähle einen Betrag, sag uns für wen, und wir senden eine Geschenkkarte per E-Mail mit PDF zum Ausdrucken.",
+    "subtitle": "Wähle einen Betrag, sag uns für wen, und wir kümmern uns um den Rest.",
     "choose_amount": "Betrag Wählen",
     "custom_amount": "Oder wähle einen eigenen Betrag",
     "min_max": "Min £25 — Max £250",
@@ -95,12 +95,12 @@
     "error_details": "Bitte gib deine Daten ein",
     "error_recipient": "Bitte gib die Daten des Empfängers ein",
     "processing_payment": "Zahlung wird bestätigt...",
-    "confirmation_sent": "Bestätigung und Gutschein-PDF versendet an",
+    "confirmation_sent": "Bestätigung und Gutschein versendet an",
     "personal_message_placeholder": "Persönliche Nachricht hinzufügen (optional)",
-    "for_me_desc": "Wir senden dir einen druckbaren Gutschein per E-Mail zum Verschenken in Person",
+    "for_me_desc": "Wir senden dir einen Gutschein per E-Mail, den du ausdrucken und persönlich verschenken kannst",
     "for_friend_desc": "Wir senden den Gutschein direkt an diese Person",
     "confirm_self_title": "Dein Gutschein ist unterwegs",
-    "confirm_self_message": "Wir haben deinen druckbaren Gutschein gesendet an",
+    "confirm_self_message": "Wir haben deinen Gutschein gesendet an",
     "confirm_check_inbox": "Überprüfe dein Posteingang.",
     "confirm_friend_title": "Gutschein versendet!",
     "confirm_friend_message": "Wir haben einen Gutschein gesendet an",
@@ -113,7 +113,7 @@
     "code_label": "Gutschein-Code",
     "amount_label": "Betrag",
     "expires_label": "Gültig Bis",
-    "email_note": "Prüfe deine E-Mails für den Gutschein mit PDF-Anhang.",
+    "email_note": "Überprüfe deine E-Mails — dein Gutschein ist angehängt und bereit.",
     "back_home": "Zurück zu Salt Horse",
     "processing_title": "Dein Gutschein wird bearbeitet...",
     "processing_text": "Deine Zahlung wird bestätigt. Du erhältst in Kürze eine E-Mail mit deinem Gutschein."

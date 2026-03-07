@@ -73,7 +73,7 @@
 
   "gift_cards": {
     "page_title": "Regala Cerveza Artesanal",
-    "subtitle": "Elige un importe, dinos para quién, y enviaremos una tarjeta regalo por email con un PDF para imprimir.",
+    "subtitle": "Elige un importe, dinos para quién, y nosotros nos ocupamos del resto.",
     "choose_amount": "Elige un Importe",
     "custom_amount": "O elige tu propio importe",
     "min_max": "Mín £25 — Máx £250",
@@ -95,12 +95,12 @@
     "error_details": "Introduce tus datos",
     "error_recipient": "Introduce los datos del destinatario",
     "processing_payment": "Confirmando tu pago...",
-    "confirmation_sent": "Confirmación y PDF de tarjeta regalo enviados a",
+    "confirmation_sent": "Confirmación y tarjeta regalo enviados a",
     "personal_message_placeholder": "Añadir un mensaje personal (opcional)",
-    "for_me_desc": "Te enviaremos una tarjeta regalo imprimible por email para regalar en persona",
+    "for_me_desc": "Te enviaremos una tarjeta regalo por email que puedes imprimir y entregar en persona",
     "for_friend_desc": "Enviaremos la tarjeta regalo directamente a esa persona",
     "confirm_self_title": "Tu tarjeta regalo está en camino",
-    "confirm_self_message": "Hemos enviado tu tarjeta regalo imprimible a",
+    "confirm_self_message": "Hemos enviado tu tarjeta regalo a",
     "confirm_check_inbox": "Revisa tu bandeja de entrada.",
     "confirm_friend_title": "¡Tarjeta regalo enviada!",
     "confirm_friend_message": "Hemos enviado una tarjeta regalo a",
@@ -113,7 +113,7 @@
     "code_label": "Código de Tarjeta Regalo",
     "amount_label": "Importe",
     "expires_label": "Válida Hasta",
-    "email_note": "Revisa tu email para la tarjeta regalo con el PDF adjunto.",
+    "email_note": "Revisa tu email — tu tarjeta regalo está adjunta y lista para usar.",
     "back_home": "Volver a Salt Horse",
     "processing_title": "Procesando tu tarjeta regalo...",
     "processing_text": "Tu pago está siendo confirmado. Recibirás un email con tu tarjeta regalo en breve."

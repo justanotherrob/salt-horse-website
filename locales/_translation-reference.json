@@ -70,7 +70,7 @@
 
   "gift_cards": {
     "page_title": "Give the Gift of Craft Beer",
-    "subtitle": "Choose an amount, tell us who it is for, and we will send a gift card by email with a printable PDF.",
+    "subtitle": "Pick a value, tell us who it's for, and we'll take care of the rest.",
     "choose_amount": "Choose an Amount",
     "custom_amount": "Or choose your own amount",
     "min_max": "Min £25 — Max £250",
@@ -92,12 +92,12 @@
     "error_details": "Please enter your details",
     "error_recipient": "Please enter recipient details",
     "processing_payment": "Confirming your payment...",
-    "confirmation_sent": "Confirmation and gift card PDF sent to",
+    "confirmation_sent": "Confirmation and gift card sent to",
     "personal_message_placeholder": "Add a personal message (optional)",
-    "for_me_desc": "We'll email you a printable gift card to give in person",
+    "for_me_desc": "We'll email you a gift card you can print and hand over in person",
     "for_friend_desc": "We'll email the gift card directly to them",
     "confirm_self_title": "Your gift card is on its way",
-    "confirm_self_message": "We've sent your printable gift card to",
+    "confirm_self_message": "We've sent your gift card to",
     "confirm_check_inbox": "Check your inbox.",
     "confirm_friend_title": "Gift card sent!",
     "confirm_friend_message": "We've sent a gift card to",
@@ -110,7 +110,7 @@
     "code_label": "Gift Card Code",
     "amount_label": "Amount",
     "expires_label": "Valid Until",
-    "email_note": "Check your email for the gift card with PDF attachment.",
+    "email_note": "Check your email — your gift card is attached and ready to go.",
     "back_home": "Back to Salt Horse",
     "processing_title": "Processing Your Gift Card...",
     "processing_text": "Your payment is being confirmed. You will receive an email with your gift card shortly."

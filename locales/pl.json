@@ -73,7 +73,7 @@
 
   "gift_cards": {
     "page_title": "Podaruj Piwo Rzemieślnicze",
-    "subtitle": "Wybierz kwotę, powiedz nam dla kogo, a wyślemy kartę podarunkową e-mailem z PDF-em do wydruku.",
+    "subtitle": "Wybierz kwotę, powiedz nam dla kogo, a my zajmiemy się resztą.",
     "choose_amount": "Wybierz Kwotę",
     "custom_amount": "Lub wybierz własną kwotę",
     "min_max": "Min £25 — Max £250",
@@ -95,12 +95,12 @@
     "error_details": "Wpisz swoje dane",
     "error_recipient": "Wpisz dane odbiorcy",
     "processing_payment": "Potwierdzanie twojej płatności...",
-    "confirmation_sent": "Potwierdzenie i PDF karty podarunkowej wysłane do",
+    "confirmation_sent": "Potwierdzenie i karta podarunkowa wysłane do",
     "personal_message_placeholder": "Dodaj wiadomość osobistą (opcjonalnie)",
-    "for_me_desc": "Wyślemy ci kartę podarunkową do wydruku, którą będziesz mógł/mogła podarować osobiście",
+    "for_me_desc": "Wyślemy ci kartę podarunkową e-mailem, którą możesz wydrukować i podarować osobiście",
     "for_friend_desc": "Wyślemy kartę podarunkową bezpośrednio do tej osoby",
     "confirm_self_title": "Twoja karta podarunkowa jest w drodze",
-    "confirm_self_message": "Wysłaliśmy twoją kartę podarunkową do wydruku na adres",
+    "confirm_self_message": "Wysłaliśmy twoją kartę podarunkową na adres",
     "confirm_check_inbox": "Sprawdź swoją skrzynkę odbiorczą.",
     "confirm_friend_title": "Karta podarunkowa wysłana!",
     "confirm_friend_message": "Wysłaliśmy kartę podarunkową do",
@@ -113,7 +113,7 @@
     "code_label": "Kod Karty Podarunkowej",
     "amount_label": "Kwota",
     "expires_label": "Ważna Do",
-    "email_note": "Sprawdź swoją skrzynkę — karta podarunkowa z PDF-em została wysłana e-mailem.",
+    "email_note": "Sprawdź swoją skrzynkę — karta podarunkowa jest w załączniku i gotowa do użycia.",
     "back_home": "Wróć do Salt Horse",
     "processing_title": "Przetwarzanie Twojej Karty Podarunkowej...",
     "processing_text": "Twoja płatność jest potwierdzana. Wkrótce otrzymasz e-mail z kartą podarunkową."

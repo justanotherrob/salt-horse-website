@@ -73,7 +73,7 @@
 
   "gift_cards": {
     "page_title": "Regala Birra Artigianale",
-    "subtitle": "Scegli un importo, dicci per chi è, e invieremo un buono regalo via email con un PDF da stampare.",
+    "subtitle": "Scegli un importo, dicci per chi è, e noi pensiamo al resto.",
     "choose_amount": "Scegli un Importo",
     "custom_amount": "Oppure scegli il tuo importo",
     "min_max": "Min £25 — Max £250",
@@ -95,12 +95,12 @@
     "error_details": "Inserisci i tuoi dati",
     "error_recipient": "Inserisci i dati del destinatario",
     "processing_payment": "Confermando il tuo pagamento...",
-    "confirmation_sent": "Conferma e PDF del buono regalo inviati a",
+    "confirmation_sent": "Conferma e buono regalo inviati a",
     "personal_message_placeholder": "Aggiungi un messaggio personale (facoltativo)",
-    "for_me_desc": "Ti invieremo un buono regalo stampabile via email da consegnare di persona",
+    "for_me_desc": "Ti invieremo un buono regalo via email che potrai stampare e consegnare di persona",
     "for_friend_desc": "Invieremo il buono regalo direttamente a loro",
     "confirm_self_title": "Il tuo buono regalo è in arrivo",
-    "confirm_self_message": "Abbiamo inviato il tuo buono regalo stampabile a",
+    "confirm_self_message": "Abbiamo inviato il tuo buono regalo a",
     "confirm_check_inbox": "Controlla la tua email.",
     "confirm_friend_title": "Buono regalo inviato!",
     "confirm_friend_message": "Abbiamo inviato un buono regalo a",
@@ -113,7 +113,7 @@
     "code_label": "Codice Buono Regalo",
     "amount_label": "Importo",
     "expires_label": "Valido Fino Al",
-    "email_note": "Controlla la tua email per il buono regalo con il PDF allegato.",
+    "email_note": "Controlla la tua email — il buono regalo è allegato e pronto per essere utilizzato.",
     "back_home": "Torna a Salt Horse",
     "processing_title": "Elaborazione del tuo buono regalo...",
     "processing_text": "Il tuo pagamento è in fase di conferma. Riceverai un'email con il tuo buono regalo a breve."

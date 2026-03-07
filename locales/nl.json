@@ -73,7 +73,7 @@
 
   "gift_cards": {
     "page_title": "Geef Craft Bier Cadeau",
-    "subtitle": "Kies een bedrag, vertel ons voor wie, en we sturen een cadeaubon per e-mail met een PDF om af te drukken.",
+    "subtitle": "Kies een bedrag, vertel ons voor wie, en wij regelen de rest.",
     "choose_amount": "Kies een Bedrag",
     "custom_amount": "Of kies je eigen bedrag",
     "min_max": "Min £25 — Max £250",
@@ -95,12 +95,12 @@
     "error_details": "Voer alstublieft je gegevens in",
     "error_recipient": "Voer alstublieft de gegevens van de ontvanger in",
     "processing_payment": "Je betaling wordt bevestigd...",
-    "confirmation_sent": "Bevestiging en cadeaubon-PDF verzonden naar",
+    "confirmation_sent": "Bevestiging en cadeaubon verzonden naar",
     "personal_message_placeholder": "Voeg een persoonlijk bericht toe (optioneel)",
-    "for_me_desc": "We sturen je een afdrukbare cadeaubon per e-mail om persoonlijk uit te reiken",
+    "for_me_desc": "We sturen je een cadeaubon per e-mail die je kunt afdrukken en persoonlijk overhandigen",
     "for_friend_desc": "We sturen de cadeaubon rechtstreeks naar hen",
     "confirm_self_title": "Je cadeaubon is onderweg",
-    "confirm_self_message": "We hebben je afdrukbare cadeaubon verstuurd naar",
+    "confirm_self_message": "We hebben je cadeaubon verstuurd naar",
     "confirm_check_inbox": "Controleer je inbox.",
     "confirm_friend_title": "Cadeaubon verzonden!",
     "confirm_friend_message": "We hebben een cadeaubon verstuurd naar",
@@ -113,7 +113,7 @@
     "code_label": "Cadeaubon Code",
     "amount_label": "Bedrag",
     "expires_label": "Geldig Tot",
-    "email_note": "Controleer je e-mail voor de cadeaubon met PDF-bijlage.",
+    "email_note": "Controleer je e-mail — je cadeaubon is bijgevoegd en klaar om te gebruiken.",
     "back_home": "Terug naar Salt Horse",
     "processing_title": "Je cadeaubon wordt verwerkt...",
     "processing_text": "Je betaling wordt bevestigd. Je ontvangt binnenkort een e-mail met je cadeaubon."
