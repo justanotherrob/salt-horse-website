@@ -1,0 +1,117 @@
+<%- include('_header') %>
+
+<h1>Import & Export Gift Cards</h1>
+
+<style>
+    .ie-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 800px;
+        margin-bottom: 2rem;
+    }
+    .ie-section {
+        background: var(--bg-light);
+        border: 1px solid var(--cream-faint);
+        border-radius: 6px;
+        padding: 1.5rem;
+    }
+    .ie-section h2 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem;
+    }
+    .ie-section p {
+        font-size: 0.85rem;
+        color: var(--cream-dim);
+        margin: 0 0 1.25rem;
+    }
+    @media (max-width: 600px) {
+        .ie-sections { grid-template-columns: 1fr; }
+    }
+</style>
+
+<div class="ie-sections">
+    <!-- Import -->
+    <div class="ie-section">
+        <h2>Import</h2>
+        <p>Upload a CSV file to import gift cards into the system.</p>
+        <form id="importForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" id="file" name="csv" accept=".csv" required>
+                <p class="help-text" style="margin-top:0.5rem; font-size:0.75rem;">Columns: GIFT CODE, INITIAL VALUE, REMAINING VALUE, PURCHASER EMAIL, RECIPIENT EMAIL, PURCHASE DATE, USAGE</p>
+            </div>
+            <button type="submit" class="btn btn-fill" id="importBtn" style="width:100%;">Import</button>
+        </form>
+    </div>
+
+    <!-- Export -->
+    <div class="ie-section">
+        <h2>Export</h2>
+        <p>Download all gift cards as a CSV file. Full gift card codes are included in the export.</p>
+        <a href="/api/gift-cards/export" class="btn btn-fill" style="display:block; text-align:center; text-decoration:none;">Download CSV</a>
+    </div>
+</div>
+
+<div id="importResults" style="display:none; margin-top: 1rem; max-width: 800px;">
+    <h3>Import Results</h3>
+    <p><strong id="resImported">0</strong> cards imported</p>
+    <p><strong id="resSkipped">0</strong> rows skipped</p>
+    <div id="resErrors" style="display:none;">
+        <h4>Notes:</h4>
+        <ul id="resErrorList"></ul>
+    </div>
+</div>
+
+<script>
+document.getElementById('importForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const file = document.getElementById('file').files[0];
+    if (!file) return;
+
+    const btn = document.getElementById('importBtn');
+    btn.disabled = true;
+    btn.textContent = 'Importing...';
+
+    const formData = new FormData();
+    formData.append('csv', file);
+
+    try {
+        const response = await fetch('/api/gift-cards/import', {
+            method: 'POST',
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            document.getElementById('resImported').textContent = data.imported;
+            document.getElementById('resSkipped').textContent = data.skipped;
+
+            const errorList = document.getElementById('resErrorList');
+            errorList.innerHTML = '';
+            if (data.errors && data.errors.length > 0) {
+                data.errors.forEach(err => {
+                    const li = document.createElement('li');
+                    li.textContent = err;
+                    errorList.appendChild(li);
+                });
+                document.getElementById('resErrors').style.display = 'block';
+            } else {
+                document.getElementById('resErrors').style.display = 'none';
+            }
+
+            document.getElementById('importResults').style.display = 'block';
+        } else {
+            alert(data.error || 'Import failed');
+        }
+    } catch (err) {
+        alert('Error: ' + err.message);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Import';
+});
+</script>
+
+<%- include('_footer') %>

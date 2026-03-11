@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= t.nav.gift_cards %> - Salt Horse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        .gc-page { min-height: 100vh; }
+
+        /* ── Form Layout ── */
+        .gc-form-wrap {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .gc-hero {
+            padding: 10rem 2rem 3rem;
+            text-align: center;
+        }
+        .gc-hero .section-text {
+            margin: 1.5rem auto 0;
+            max-width: 600px;
+        }
+
+        .form-section {
+            margin-bottom: 2.5rem;
+        }
+        .form-label {
+            display: block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cream-dim);
+            margin-bottom: 1rem;
+        }
+
+        /* Amount buttons */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .amount-btn {
+            background: transparent;
+            border: 1px solid var(--cream-faint);
+            color: var(--cream);
+            padding: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 2px;
+        }
+        .amount-btn:hover { border-color: var(--cream-dim); }
+        .amount-btn.active {
+            border-color: var(--amber);
+            color: var(--amber);
+            background: rgba(212, 148, 58, 0.1);
+        }
+        .custom-amount-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .custom-amount-row span {
+            color: var(--cream-dim);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .amount-input {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--cream-faint);
+            border-radius: 2px;
+            color: var(--cream);
+            padding: 0.75rem 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+        }
+        .amount-input:focus { outline: none; border-color: var(--amber); }
+        .amount-range {
+            color: var(--cream-dim);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            text-align: right;
+        }
+
+        /* Toggle buttons */
+        .toggle-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .toggle-btn {
+            background: transparent;
+            border: 1px solid var(--cream-faint);
+            color: var(--cream-dim);
+            padding: 0.85rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 2px;
+        }
+        .toggle-btn:hover { border-color: var(--cream-dim); color: var(--cream); }
+        .toggle-btn.active {
+            border-color: var(--amber);
+            color: var(--amber);
+            background: rgba(212, 148, 58, 0.1);
+        }
+
+        /* Form inputs */
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--cream-faint);
+            border-radius: 2px;
+            color: var(--cream);
+            padding: 0.85rem 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .form-input:focus { outline: none; border-color: var(--amber); }
+        .form-input::placeholder { color: rgba(255, 246, 218, 0.3); }
+
+        /* Buy button */
+        .gc-buy-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--amber);
+            color: var(--bg);
+            border: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            border-radius: 2px;
+            margin-top: 1rem;
+        }
+        .gc-buy-btn:hover { opacity: 0.9; }
+        .gc-buy-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .gc-toggle-hint {
+            font-size: 0.8rem;
+            color: var(--cream-dim);
+            margin-top: 0.75rem;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .gc-note {
+            font-size: 0.8rem;
+            color: var(--cream-dim);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* ── Payment Overlay ── */
+        .payment-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--bg);
+            overflow-y: auto;
+        }
+        .payment-overlay.active { display: flex; flex-direction: column; }
+
+        .payment-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid var(--cream-faint);
+            flex-shrink: 0;
+        }
+        .payment-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin: 0;
+        }
+        .payment-close {
+            background: none;
+            border: none;
+            color: var(--cream-dim);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            line-height: 1;
+        }
+        .payment-close:hover { color: var(--cream); }
+
+        .payment-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .payment-inner {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Order summary in overlay */
+        .order-summary {
+            background: rgba(255, 246, 218, 0.04);
+            border: 1px solid var(--cream-faint);
+            border-radius: 2px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .order-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+        }
+        .order-label { color: var(--cream-dim); }
+        .order-value { color: var(--cream); font-weight: 500; }
+        .order-total {
+            border-top: 1px solid var(--cream-faint);
+            margin-top: 0.5rem;
+            padding-top: 0.75rem;
+        }
+        .order-total .order-value {
+            color: var(--amber);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* Stripe embed container */
+        #stripe-checkout {
+            min-height: 300px;
+        }
+
+        /* ── Confirmation Screen (inside overlay) ── */
+        .confirmation {
+            display: none;
+            text-align: center;
+        }
+        .confirmation.active { display: block; }
+        .confirm-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--amber);
+        }
+        .confirm-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+        .confirm-sub {
+            color: var(--cream-dim);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        .confirm-email-note {
+            background: rgba(212, 148, 58, 0.1);
+            border: 1px solid rgba(212, 148, 58, 0.25);
+            border-radius: 2px;
+            padding: 1rem 1.25rem;
+            font-size: 0.85rem;
+            color: var(--cream);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        .confirm-done-btn {
+            display: inline-block;
+            padding: 0.9rem 3rem;
+            background: var(--amber);
+            color: var(--bg);
+            border: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        .confirm-done-btn:hover { opacity: 0.9; }
+
+        /* Processing spinner */
+        .processing {
+            display: none;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .processing.active { display: block; }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--cream-faint);
+            border-top-color: var(--amber);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .processing-text {
+            color: var(--cream-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Error state */
+        .payment-error {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .payment-error.active { display: block; }
+        .error-text {
+            color: #e74c3c;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .error-retry-btn {
+            padding: 0.75rem 2rem;
+            background: transparent;
+            border: 1px solid var(--cream-dim);
+            color: var(--cream);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+        .error-retry-btn:hover { border-color: var(--cream); }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#drink" onclick="closeMenu()"><%= t.nav.drink %></a></li>
+            <li><a href="/#food" onclick="closeMenu()"><%= t.nav.food %></a></li>
+            <li><a href="/gift-cards" onclick="closeMenu()"><%= t.nav.gift_cards %></a></li>
+            <li><a href="/#book" onclick="closeMenu()"><%= t.nav.book %></a></li>
+            <li><a href="/#location" onclick="closeMenu()"><%= t.nav.find_us %></a></li>
+            <li><a href="#reserve" target="_blank" class="nav-cta" onclick="closeMenu()"><%= t.nav.reserve %></a></li>
+        </ul>
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-current" onclick="toggleLangMenu()" aria-label="Change language">
+                <%= t.flag %> <%= t.lang_name %>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <% supportedLangs.forEach(function(code) { %>
+                    <a href="?lang=<%= code %>" class="lang-option<%= code === lang ? ' active' : '' %>">
+                        <%= locales[code].flag %> <%= locales[code].lang_name %>
+                    </a>
+                <% }); %>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="gc-page">
+        <!-- HERO -->
+        <section class="gc-hero">
+            <div class="section-inner">
+                <h1 class="section-title"><%= t.gift_cards.page_title %></h1>
+                <p class="section-text"><%= t.gift_cards.subtitle %></p>
+            </div>
+        </section>
+
+        <!-- PURCHASE FORM -->
+        <section class="gc-form-wrap">
+            <!-- Amount -->
+            <div class="form-section">
+                <label class="form-label"><%= t.gift_cards.choose_amount %></label>
+                <div class="amount-grid">
+                    <button class="amount-btn" onclick="setAmount(25, this)">£25</button>
+                    <button class="amount-btn" onclick="setAmount(50, this)">£50</button>
+                    <button class="amount-btn" onclick="setAmount(75, this)">£75</button>
+                    <button class="amount-btn" onclick="setAmount(100, this)">£100</button>
+                </div>
+                <div class="custom-amount-row">
+                    <span><%= t.gift_cards.custom_amount %></span>
+                    <input type="number" id="customAmount" placeholder="£" min="25" max="250" step="1" class="amount-input" oninput="clearPresets()">
+                </div>
+                <p class="amount-range"><%= t.gift_cards.min_max %></p>
+            </div>
+
+            <!-- For Me / For a Friend -->
+            <div class="form-section">
+                <label class="form-label"><%= t.gift_cards.who_is_it_for %></label>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" onclick="toggleFor('self', this)"><%= t.gift_cards.for_me %></button>
+                    <button class="toggle-btn" onclick="toggleFor('friend', this)"><%= t.gift_cards.for_friend %></button>
+                </div>
+                <p class="gc-toggle-hint" id="toggleHint"><%- t.gift_cards.for_me_desc || "We'll email you a gift card you can print and hand over in person" %></p>
+            </div>
+
+            <!-- Buyer Details -->
+            <div class="form-section">
+                <label class="form-label"><%= t.gift_cards.your_details %></label>
+                <input type="text" id="buyerName" placeholder="<%= t.gift_cards.your_name %>" class="form-input" required>
+                <input type="email" id="buyerEmail" placeholder="<%= t.gift_cards.your_email %>" class="form-input" required>
+            </div>
+
+            <!-- Recipient Details -->
+            <div class="form-section" id="recipientSection" style="display:none;">
+                <label class="form-label"><%= t.gift_cards.recipient_details %></label>
+                <input type="text" id="recipientName" placeholder="<%= t.gift_cards.recipient_name %>" class="form-input">
+                <input type="email" id="recipientEmail" placeholder="<%= t.gift_cards.recipient_email %>" class="form-input">
+                <textarea id="personalMessage" placeholder="<%= t.gift_cards.personal_message_placeholder || 'Add a personal message (optional)' %>" class="form-input" maxlength="300" rows="3" style="resize:none;"></textarea>
+                <p class="amount-range"><span id="messageCharCount">0</span>/300</p>
+            </div>
+
+            <!-- Buy Button -->
+            <button class="gc-buy-btn" id="buyBtn" onclick="openCheckout()">
+                <%= t.gift_cards.buy_button %>
+            </button>
+            <p class="gc-note"><%= t.gift_cards.expires_note %></p>
+        </section>
+    </div>
+
+    <!-- ═══ PAYMENT OVERLAY ═══ -->
+    <div class="payment-overlay" id="paymentOverlay">
+        <div class="payment-header">
+            <h2><%= t.gift_cards.payment_title || 'Complete Payment' %></h2>
+            <button class="payment-close" onclick="closeOverlay()">&times;</button>
+        </div>
+        <div class="payment-body">
+            <div class="payment-inner">
+                <!-- Order Summary -->
+                <div class="order-summary" id="orderSummary">
+                    <div class="order-row">
+                        <span class="order-label">Salt Horse Gift Card</span>
+                        <span class="order-value" id="summaryAmount"></span>
+                    </div>
+                    <div class="order-row" id="summaryRecipientRow" style="display:none;">
+                        <span class="order-label"><%= t.gift_cards.recipient_label || 'For' %></span>
+                        <span class="order-value" id="summaryRecipient"></span>
+                    </div>
+                    <div class="order-row order-total">
+                        <span class="order-label">Total</span>
+                        <span class="order-value" id="summaryTotal"></span>
+                    </div>
+                </div>
+
+                <!-- Stripe Embedded Checkout -->
+                <div id="stripe-checkout"></div>
+
+                <!-- Processing State -->
+                <div class="processing" id="processingState">
+                    <div class="spinner"></div>
+                    <p class="processing-text"><%= t.gift_cards.processing_payment || 'Confirming your payment...' %></p>
+                </div>
+
+                <!-- Confirmation State -->
+                <div class="confirmation" id="confirmationState">
+                    <div class="confirm-icon">✓</div>
+                    <div class="confirm-title" id="confirmTitle"></div>
+                    <div class="confirm-sub" id="confirmSub"></div>
+
+                    <div class="confirm-email-note" id="confirmEmailNote"></div>
+
+                    <a href="/" class="confirm-done-btn"><%= t.gift_cards_success.back_home %></a>
+                </div>
+
+                <!-- Error State -->
+                <div class="payment-error" id="errorState">
+                    <p class="error-text" id="errorText"></p>
+                    <button class="error-retry-btn" onclick="retryPayment()">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note"><%= t.footer.tagline %></p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.
+        </div>
+    </footer>
+
+    <script>
+        const stripeKey = '<%= stripeKey %>';
+        const stripe = Stripe(stripeKey);
+        let selectedAmount = null;
+        let giftFor = 'self';
+        let currentCheckout = null;
+        let pollTimer = null;
+        let currentSessionId = null;
+
+        function setAmount(amount, btn) {
+            selectedAmount = amount;
+            document.getElementById('customAmount').value = '';
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function clearPresets() {
+            selectedAmount = null;
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+        }
+
+        function toggleFor(type, btn) {
+            giftFor = type;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('recipientSection').style.display = type === 'friend' ? 'block' : 'none';
+            document.getElementById('toggleHint').textContent = type === 'friend'
+                ? '<%- (t.gift_cards.for_friend_desc || "We\\'ll email the gift card straight to them").replace(/'/g, "\\'") %>'
+                : '<%- (t.gift_cards.for_me_desc || "We\\'ll email you a gift card you can print and hand over in person").replace(/'/g, "\\'") %>';
+        }
+
+        // Character counter for personal message
+        document.getElementById('personalMessage').addEventListener('input', function() {
+            document.getElementById('messageCharCount').textContent = this.value.length;
+        });
+
+        async function openCheckout() {
+            const amount = selectedAmount || parseFloat(document.getElementById('customAmount').value);
+            if (!amount || amount < 25 || amount > 250) {
+                alert('<%= t.gift_cards.error_amount || "Please select an amount between £25 and £250" %>');
+                return;
+            }
+
+            const buyerName = document.getElementById('buyerName').value.trim();
+            const buyerEmail = document.getElementById('buyerEmail').value.trim();
+            if (!buyerName || !buyerEmail) {
+                alert('<%= t.gift_cards.error_details || "Please enter your details" %>');
+                return;
+            }
+
+            let recipientName = buyerName;
+            let recipientEmail = buyerEmail;
+            let personalMessage = '';
+            if (giftFor === 'friend') {
+                recipientName = document.getElementById('recipientName').value.trim();
+                recipientEmail = document.getElementById('recipientEmail').value.trim();
+                personalMessage = document.getElementById('personalMessage').value.trim().substring(0, 300);
+                if (!recipientName || !recipientEmail) {
+                    alert('<%= t.gift_cards.error_recipient || "Please enter recipient details" %>');
+                    return;
+                }
+            }
+
+            // Disable button
+            const btn = document.getElementById('buyBtn');
+            btn.textContent = '<%= t.gift_cards.processing || "Processing..." %>';
+            btn.disabled = true;
+
+            try {
+                // Create checkout session
+                const response = await fetch('/gift-cards/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount: Math.round(amount * 100),
+                        purchaserName: buyerName,
+                        purchaserEmail: buyerEmail,
+                        recipientName: recipientName,
+                        recipientEmail: recipientEmail,
+                        sendTo: giftFor === 'friend' ? 'friend' : 'self',
+                        personalMessage: personalMessage
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) throw new Error(data.error);
+
+                // Show overlay with order summary
+                document.getElementById('summaryAmount').textContent = '£' + amount.toFixed(2);
+                document.getElementById('summaryTotal').textContent = '£' + amount.toFixed(2);
+                if (giftFor === 'friend') {
+                    document.getElementById('summaryRecipientRow').style.display = 'flex';
+                    document.getElementById('summaryRecipient').textContent = recipientName;
+                } else {
+                    document.getElementById('summaryRecipientRow').style.display = 'none';
+                }
+
+                document.getElementById('paymentOverlay').classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                // Mount Stripe Embedded Checkout
+                currentCheckout = await stripe.initEmbeddedCheckout({
+                    clientSecret: data.clientSecret,
+                    onComplete: handlePaymentComplete
+                });
+                currentCheckout.mount('#stripe-checkout');
+
+            } catch (err) {
+                alert(err.message || 'Something went wrong. Please try again.');
+                btn.textContent = '<%= t.gift_cards.buy_button %>';
+                btn.disabled = false;
+            }
+        }
+
+        async function handlePaymentComplete() {
+            // Hide Stripe form, show processing
+            document.getElementById('stripe-checkout').style.display = 'none';
+            document.getElementById('orderSummary').style.display = 'none';
+            document.getElementById('processingState').classList.add('active');
+
+            // Get the session ID from the checkout
+            const session = await currentCheckout.session();
+            currentSessionId = session.id;
+
+            // Poll for gift card activation
+            let attempts = 0;
+            pollTimer = setInterval(async () => {
+                attempts++;
+                try {
+                    const res = await fetch('/gift-cards/status?session_id=' + currentSessionId);
+                    const data = await res.json();
+
+                    if (data.status === 'active') {
+                        clearInterval(pollTimer);
+                        showConfirmation(data);
+                    } else if (attempts > 15) {
+                        // After 30 seconds, show fallback
+                        clearInterval(pollTimer);
+                        showConfirmation({
+                            code: null,
+                            amount: null,
+                            expiresAt: null,
+                            emailSentTo: null
+                        });
+                    }
+                } catch (e) {
+                    // Keep polling
+                }
+            }, 2000);
+        }
+
+        function showConfirmation(data) {
+            document.getElementById('processingState').classList.remove('active');
+            document.getElementById('confirmationState').classList.add('active');
+
+            if (data.status === 'active') {
+                if (data.sendTo === 'friend') {
+                    document.getElementById('confirmTitle').textContent = '<%= t.gift_cards.confirm_friend_title || "Gift card sent!" %>';
+                    document.getElementById('confirmSub').textContent = '<%= t.gift_cards.confirm_friend_message || "We\\'ve sent a gift card to" %> ' + data.recipientName + '.';
+                    document.getElementById('confirmEmailNote').textContent = '<%= t.gift_cards.confirm_friend_email || "The gift card has been emailed to" %> ' + data.emailSentTo;
+                } else {
+                    document.getElementById('confirmTitle').textContent = '<%= t.gift_cards.confirm_self_title || "Your gift card is on its way" %>';
+                    document.getElementById('confirmSub').textContent = '<%= t.gift_cards.confirm_self_message || "We\\'ve sent your gift card to" %> ' + data.emailSentTo + '. <%= t.gift_cards.confirm_check_inbox || "Check your inbox." %>';
+                    document.getElementById('confirmEmailNote').textContent = '';
+                }
+            } else {
+                // Fallback if webhook hasn't fired yet
+                document.getElementById('confirmTitle').textContent = '<%= t.gift_cards.confirm_self_title || "Your gift card is on its way" %>';
+                document.getElementById('confirmSub').textContent = '';
+                document.getElementById('confirmEmailNote').textContent = '<%= t.gift_cards_success.processing_text || "Your payment is confirmed. You\\'ll receive an email with your gift card shortly." %>';
+            }
+        }
+
+        function closeOverlay() {
+            if (pollTimer) clearInterval(pollTimer);
+            if (currentCheckout) {
+                currentCheckout.destroy();
+                currentCheckout = null;
+            }
+
+            document.getElementById('paymentOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+
+            // Reset overlay states
+            document.getElementById('stripe-checkout').style.display = '';
+            document.getElementById('stripe-checkout').innerHTML = '';
+            document.getElementById('orderSummary').style.display = '';
+            document.getElementById('processingState').classList.remove('active');
+            document.getElementById('confirmationState').classList.remove('active');
+            document.getElementById('errorState').classList.remove('active');
+
+            // Reset buy button
+            document.getElementById('buyBtn').textContent = '<%= t.gift_cards.buy_button %>';
+            document.getElementById('buyBtn').disabled = false;
+        }
+
+        function retryPayment() {
+            document.getElementById('errorState').classList.remove('active');
+            document.getElementById('stripe-checkout').style.display = '';
+            document.getElementById('orderSummary').style.display = '';
+        }
+
+        // Navigation
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Language switcher
+        function toggleLangMenu() {
+            document.getElementById('langDropdown').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-switcher')) {
+                document.getElementById('langDropdown').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

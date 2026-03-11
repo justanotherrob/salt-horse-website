@@ -6,7 +6,7 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
-const fromEmail = process.env.RESEND_FROM_EMAIL || 'Salt Horse <salthorsebeerbar@gmail.com>';
+const fromEmail = process.env.RESEND_FROM_EMAIL || 'Salt Horse <hello@salthorse.beer>';
 
 function emailHeader() {
   return `
@@ -157,7 +157,7 @@ async function sendPurchaserReceipt(giftCard, overrideEmail) {
           </table>
 
           <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0;">
-            This is your purchase receipt. If you have any questions, pop in or email us at salthorsebeerbar@gmail.com.
+            This is your purchase receipt. If you have any questions, pop in or email us at hello@salthorse.beer.
           </p>
         </td></tr>` + emailFooter();
 

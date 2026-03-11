@@ -1,0 +1,358 @@
+<%- include('_header') %>
+
+<style>
+    .gc-detail-row { display: none; }
+    .gc-detail-row.open { display: table-row; }
+    .gc-detail-cell {
+        padding: 0 !important;
+        background: rgba(255, 246, 218, 0.03);
+        border-bottom: 1px solid rgba(255, 246, 218, 0.08);
+    }
+    .gc-detail-inner {
+        padding: 1.5rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .gc-detail-section h4 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--cream-dim, rgba(255,246,218,0.6));
+        margin: 0 0 0.75rem;
+        font-weight: 600;
+    }
+    .gc-detail-field {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.35rem 0;
+        font-size: 0.85rem;
+    }
+    .gc-detail-label { color: rgba(255,246,218,0.5); }
+    .gc-detail-value { color: #FFF6DA; font-weight: 500; }
+    .gc-resend-btn {
+        display: inline-block;
+        margin-top: 0.75rem;
+        padding: 0.4rem 1rem;
+        background: transparent;
+        border: 1px solid rgba(212, 148, 58, 0.4);
+        color: #D4943A;
+        font-size: 0.8rem;
+        font-family: inherit;
+        cursor: pointer;
+        border-radius: 2px;
+        transition: all 0.2s;
+    }
+    .gc-resend-btn:hover { border-color: #D4943A; background: rgba(212, 148, 58, 0.1); }
+    .gc-resend-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .gc-resend-btn.sent { border-color: #27ae60; color: #27ae60; }
+    tr.gc-row { cursor: pointer; }
+    tr.gc-row:hover { background: rgba(255, 246, 218, 0.03); }
+    tr.gc-row.expanded { background: rgba(255, 246, 218, 0.03); }
+
+    /* Email edit modal */
+    .email-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    .email-modal-overlay.active { display: flex; }
+    .email-modal {
+        background: #1e2d54;
+        border: 1px solid rgba(255, 246, 218, 0.1);
+        border-radius: 4px;
+        padding: 2rem;
+        width: 100%;
+        max-width: 420px;
+    }
+    .email-modal h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+        color: #FFF6DA;
+    }
+    .email-modal p {
+        margin: 0 0 1.25rem;
+        font-size: 0.85rem;
+        color: rgba(255,246,218,0.6);
+    }
+    .email-modal input {
+        width: 100%;
+        padding: 0.7rem 0.85rem;
+        background: rgba(255,246,218,0.05);
+        border: 1px solid rgba(255,246,218,0.15);
+        border-radius: 2px;
+        color: #FFF6DA;
+        font-family: inherit;
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+    .email-modal input:focus { outline: none; border-color: #D4943A; }
+    .email-modal-actions {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: flex-end;
+    }
+    .email-modal-cancel {
+        padding: 0.5rem 1.25rem;
+        background: transparent;
+        border: 1px solid rgba(255,246,218,0.2);
+        color: rgba(255,246,218,0.6);
+        font-family: inherit;
+        font-size: 0.85rem;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+    .email-modal-cancel:hover { border-color: rgba(255,246,218,0.4); color: #FFF6DA; }
+    .email-modal-send {
+        padding: 0.5rem 1.25rem;
+        background: #D4943A;
+        border: none;
+        color: #182241;
+        font-family: inherit;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+    .email-modal-send:hover { opacity: 0.9; }
+    .email-modal-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .gc-transactions { margin-top: 1rem; }
+    .gc-transactions h4 { margin-bottom: 0.5rem; }
+    .gc-tx {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3rem 0;
+        font-size: 0.8rem;
+        border-bottom: 1px solid rgba(255,246,218,0.05);
+    }
+    .gc-tx-type { color: rgba(255,246,218,0.5); }
+    .gc-tx-amount { color: #FFF6DA; }
+    .gc-tx-date { color: rgba(255,246,218,0.4); font-size: 0.75rem; }
+</style>
+
+<h1>Gift Cards</h1>
+
+<div class="filter-tabs">
+    <a href="?filter=all" class="tab <%= filter === 'all' ? 'active' : '' %>">All</a>
+    <a href="?filter=active" class="tab <%= filter === 'active' ? 'active' : '' %>">Active</a>
+    <a href="?filter=redeemed" class="tab <%= filter === 'redeemed' ? 'active' : '' %>">Redeemed</a>
+    <a href="?filter=expired" class="tab <%= filter === 'expired' ? 'active' : '' %>">Expired</a>
+    <a href="?filter=pending" class="tab <%= filter === 'pending' ? 'active' : '' %>">Pending</a>
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search by code or email" value="<%= search %>">
+</div>
+
+<table class="gift-cards-table">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Purchaser</th>
+            <th>Recipient</th>
+            <th>Amount</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th>Purchased</th>
+            <th>Expires</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% cards.forEach(card => { %>
+            <tr class="gc-row" onclick="toggleDetail(<%= card.id %>)">
+                <td><code><%= card.code.length > 4 ? '••••' + card.code.slice(-4) : card.code %></code></td>
+                <td><%= card.purchaser_email %></td>
+                <td><%= card.recipient_email || '' %></td>
+                <td>£<%= (card.initial_amount / 100).toFixed(2) %></td>
+                <td>£<%= (card.balance / 100).toFixed(2) %></td>
+                <td>
+                    <span class="badge <%= card.status %>">
+                        <%= card.status.charAt(0).toUpperCase() + card.status.slice(1) %>
+                    </span>
+                </td>
+                <td><%= card.purchased_at ? new Date(card.purchased_at).toLocaleDateString('en-GB') : new Date(card.created_at).toLocaleDateString('en-GB') %></td>
+                <td><%= new Date(card.expires_at).toLocaleDateString('en-GB') %></td>
+            </tr>
+            <tr class="gc-detail-row" id="detail-<%= card.id %>">
+                <td class="gc-detail-cell" colspan="8">
+                    <div class="gc-detail-inner">
+                        <!-- Purchaser Section -->
+                        <div class="gc-detail-section">
+                            <h4>Purchaser</h4>
+                            <div class="gc-detail-field">
+                                <span class="gc-detail-label">Name</span>
+                                <span class="gc-detail-value"><%= card.purchaser_name || 'N/A' %></span>
+                            </div>
+                            <div class="gc-detail-field">
+                                <span class="gc-detail-label">Email</span>
+                                <span class="gc-detail-value"><%= card.purchaser_email || 'N/A' %></span>
+                            </div>
+                            <button class="gc-resend-btn" id="resend-purchaser-<%= card.id %>"
+                                onclick="event.stopPropagation(); openResendModal(<%= card.id %>, 'purchaser', '<%= (card.purchaser_email || '').replace(/'/g, "\\'") %>')">
+                                Resend Receipt
+                            </button>
+                        </div>
+
+                        <!-- Recipient Section -->
+                        <div class="gc-detail-section">
+                            <h4>Recipient</h4>
+                            <div class="gc-detail-field">
+                                <span class="gc-detail-label">Name</span>
+                                <span class="gc-detail-value"><%= card.recipient_name || card.purchaser_name || 'N/A' %></span>
+                            </div>
+                            <div class="gc-detail-field">
+                                <span class="gc-detail-label">Email</span>
+                                <span class="gc-detail-value"><%= card.recipient_email || card.purchaser_email || 'N/A' %></span>
+                            </div>
+                            <div class="gc-detail-field">
+                                <span class="gc-detail-label">Code</span>
+                                <span class="gc-detail-value" style="font-family: 'Space Mono', monospace; letter-spacing: 1px;"><%= card.code.length > 4 ? '••••' + card.code.slice(-4) : card.code %></span>
+                            </div>
+                            <button class="gc-resend-btn" id="resend-recipient-<%= card.id %>"
+                                onclick="event.stopPropagation(); openResendModal(<%= card.id %>, 'recipient', '<%= (card.recipient_email || card.purchaser_email || '').replace(/'/g, "\\'") %>')">
+                                Resend Gift Card
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="?page=<%= i %>&filter=<%= filter %>&search=<%= search %>" class="page-link <%= i === page ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+</div>
+
+<div class="total-count">Total: <%= total %> cards</div>
+
+<!-- Email Resend Modal -->
+<div class="email-modal-overlay" id="resendModal">
+    <div class="email-modal">
+        <h3 id="resendModalTitle">Resend Email</h3>
+        <p id="resendModalDesc">Confirm or edit the email address before sending.</p>
+        <input type="email" id="resendModalEmail" placeholder="Email address">
+        <div class="email-modal-actions">
+            <button class="email-modal-cancel" onclick="closeResendModal()">Cancel</button>
+            <button class="email-modal-send" id="resendModalSend" onclick="confirmResend()">Send</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Search
+    let searchTimer;
+    document.getElementById('search').addEventListener('input', function() {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => {
+            window.location.href = '?filter=<%= filter %>&search=' + encodeURIComponent(this.value);
+        }, 500);
+    });
+
+    // Toggle detail row
+    function toggleDetail(id) {
+        const row = document.getElementById('detail-' + id);
+        const mainRow = row.previousElementSibling;
+        if (row.classList.contains('open')) {
+            row.classList.remove('open');
+            mainRow.classList.remove('expanded');
+        } else {
+            // Close any other open rows
+            document.querySelectorAll('.gc-detail-row.open').forEach(r => {
+                r.classList.remove('open');
+                r.previousElementSibling.classList.remove('expanded');
+            });
+            row.classList.add('open');
+            mainRow.classList.add('expanded');
+        }
+    }
+
+    // Resend modal
+    let resendCardId = null;
+    let resendType = null;
+
+    function openResendModal(cardId, type, email) {
+        resendCardId = cardId;
+        resendType = type;
+        document.getElementById('resendModalEmail').value = email;
+
+        if (type === 'purchaser') {
+            document.getElementById('resendModalTitle').textContent = 'Resend Purchase Receipt';
+            document.getElementById('resendModalDesc').textContent = 'This will send the purchase receipt to the email below.';
+        } else {
+            document.getElementById('resendModalTitle').textContent = 'Resend Gift Card';
+            document.getElementById('resendModalDesc').textContent = 'This will resend the gift card to the email below.';
+        }
+
+        document.getElementById('resendModal').classList.add('active');
+    }
+
+    function closeResendModal() {
+        document.getElementById('resendModal').classList.remove('active');
+        resendCardId = null;
+        resendType = null;
+    }
+
+    async function confirmResend() {
+        const email = document.getElementById('resendModalEmail').value.trim();
+        if (!email) return;
+
+        const sendBtn = document.getElementById('resendModalSend');
+        sendBtn.textContent = 'Sending...';
+        sendBtn.disabled = true;
+
+        try {
+            const endpoint = resendType === 'purchaser'
+                ? `/api/gift-cards/${resendCardId}/resend-purchaser`
+                : `/api/gift-cards/${resendCardId}/resend-recipient`;
+
+            const res = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+
+            const data = await res.json();
+            if (data.success) {
+                // Update the button in the detail row
+                const btnId = `resend-${resendType}-${resendCardId}`;
+                const btn = document.getElementById(btnId);
+                if (btn) {
+                    btn.textContent = 'Sent!';
+                    btn.classList.add('sent');
+                    setTimeout(() => {
+                        btn.textContent = resendType === 'purchaser' ? 'Resend Receipt' : 'Resend Gift Card';
+                        btn.classList.remove('sent');
+                    }, 3000);
+                }
+                closeResendModal();
+            } else {
+                alert('Failed: ' + (data.error || 'Unknown error'));
+            }
+        } catch (err) {
+            alert('Error: ' + err.message);
+        }
+
+        sendBtn.textContent = 'Send';
+        sendBtn.disabled = false;
+    }
+
+    // Close modal on overlay click
+    document.getElementById('resendModal').addEventListener('click', function(e) {
+        if (e.target === this) closeResendModal();
+    });
+
+    // Close modal on Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeResendModal();
+    });
+</script>
+
+<%- include('_footer') %>

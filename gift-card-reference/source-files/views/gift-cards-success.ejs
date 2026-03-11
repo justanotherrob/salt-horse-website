@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= t.gift_cards_success.title %> - Salt Horse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .success-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .success-container {
+            text-align: center;
+            max-width: 600px;
+        }
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        .gift-card-code {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            word-break: break-all;
+            color: var(--amber);
+        }
+        .card-details {
+            background: rgba(255, 246, 218, 0.05);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        .detail-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .detail-line:last-child {
+            margin-bottom: 0;
+        }
+        .detail-label {
+            color: var(--cream-dim);
+        }
+        .detail-value {
+            font-weight: 600;
+            color: var(--cream);
+        }
+        .processing-message {
+            background: rgba(212, 148, 58, 0.15);
+            border: 1px solid var(--amber);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ NAV ═══ -->
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+    </nav>
+
+    <% if (giftCard) { %>
+        <!-- Success State -->
+        <section class="success-section">
+            <div class="success-container">
+                <div class="success-icon">✓</div>
+
+                <% if (giftCard.send_to === 'friend') { %>
+                    <!-- Friend purchase — don't show code, confirm it was sent to recipient -->
+                    <h1 class="section-title">Thank You!</h1>
+                    <p class="section-text" style="margin: 1rem auto;">
+                        We've emailed a £<%= (giftCard.initial_amount / 100).toFixed(0) %> Salt Horse gift card to <strong><%= giftCard.recipient_name %></strong> at <strong><%= giftCard.recipient_email %></strong>.
+                    </p>
+                    <p class="section-text" style="margin: 1rem auto; font-size: 0.9rem; opacity: 0.7;">
+                        We've also sent a receipt to your email address for your records.
+                    </p>
+                <% } else { %>
+                    <!-- Self purchase — confirm printable card is on its way -->
+                    <h1 class="section-title">Your Gift Card is on its Way!</h1>
+                    <p class="section-text" style="margin: 1rem auto;">
+                        We've sent your £<%= (giftCard.initial_amount / 100).toFixed(0) %> gift card to <strong><%= giftCard.purchaser_email %></strong>. Check your inbox — it's ready to print and give in person.
+                    </p>
+                <% } %>
+
+                <a href="/" class="btn btn-fill" style="display: inline-block; margin-top: 2rem;"><%= t.gift_cards_success.back_home %></a>
+            </div>
+        </section>
+    <% } else { %>
+        <!-- Processing State -->
+        <section class="success-section">
+            <div class="success-container">
+                <h1 class="section-title"><%= t.gift_cards_success.processing_title %></h1>
+                <div class="processing-message">
+                    <p><%= t.gift_cards_success.processing_text %></p>
+                </div>
+                <a href="/" class="btn btn-fill" style="display: inline-block; margin-top: 2rem;"><%= t.gift_cards_success.back_home %></a>
+            </div>
+        </section>
+    <% } %>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note"><%= t.footer.tagline %></p>
+        <div class="footer-bottom">
+            &copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
