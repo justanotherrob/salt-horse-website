@@ -8,15 +8,20 @@ async function seed() {
   await initDatabase();
 
   // ── Seed Admin User ──────────────────────────────────────
-  const existingUser = await db.get('SELECT id FROM users LIMIT 1');
+  const email = process.env.ADMIN_INITIAL_EMAIL || 'admin@salthorse.beer';
+  const password = process.env.ADMIN_INITIAL_PASSWORD || 'changeme123';
+  const hash = bcrypt.hashSync(password, 12);
+
+  const existingUser = await db.get('SELECT id FROM users WHERE email = $1', [email.toLowerCase().trim()]);
   if (!existingUser) {
-    const email = process.env.ADMIN_INITIAL_EMAIL || 'admin@salthorse.beer';
-    const password = process.env.ADMIN_INITIAL_PASSWORD || 'changeme123';
-    const hash = bcrypt.hashSync(password, 12);
+    // Delete any old admin users and create fresh with current env vars
+    await db.run('DELETE FROM users');
     await db.run('INSERT INTO users (email, password_hash, name) VALUES ($1, $2, $3)', [email, hash, 'Admin']);
     console.log(`✓ Admin user created: ${email}`);
   } else {
-    console.log('  Admin user already exists, skipping');
+    // Update existing user's password to match current env var
+    await db.run('UPDATE users SET password_hash = $1 WHERE email = $2', [hash, email.toLowerCase().trim()]);
+    console.log(`✓ Admin user updated: ${email}`);
   }
 
   // ── Seed Content Blocks ──────────────────────────────────
