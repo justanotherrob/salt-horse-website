@@ -68,4 +68,9 @@ router.get('/butterbeer', (req, res) => {
   res.render('butterbeer');
 });
 
+// GET /privacy — Privacy Policy
+router.get('/privacy', (req, res) => {
+  res.render('privacy');
+});
+
 module.exports = router;

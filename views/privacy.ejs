@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Salt Horse</title>
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .privacy-page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+        }
+        .privacy-page h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .privacy-updated {
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+            margin-bottom: 3rem;
+        }
+        .privacy-page h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 2.5rem 0 0.75rem;
+            color: var(--cream);
+        }
+        .privacy-page p,
+        .privacy-page li {
+            font-size: 0.95rem;
+            color: var(--cream-dim);
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+        .privacy-page ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 1rem;
+        }
+        .privacy-page ul li {
+            padding-left: 1.25rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+        .privacy-page ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.75em;
+            width: 6px;
+            height: 1px;
+            background: var(--amber);
+        }
+        .privacy-page a {
+            color: var(--amber);
+            transition: color 0.3s;
+        }
+        .privacy-page a:hover {
+            color: var(--cream);
+        }
+        .privacy-intro {
+            font-size: 1rem;
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="privacy-page">
+        <h1>Privacy Policy</h1>
+        <p class="privacy-updated">Last updated: March 12, 2026</p>
+
+        <p class="privacy-intro">Welcome to Salt Horse. We are committed to protecting and respecting your privacy.</p>
+
+        <p>This Privacy Policy explains how we collect, use, and protect your personal data when you visit our website, purchase gift cards, or interact with us. We comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+
+        <h2>Who We Are</h2>
+        <p>Salt Horse is operated by Blackfriarsbar Ltd (Company No. SC525862).</p>
+        <ul>
+            <li>Registered Address: Cowan & Partners, 60 Constitution Street, Leith, Edinburgh, EH6 6RR</li>
+            <li>Bar Address: 57–61 Blackfriars Street, Edinburgh, EH1 1NB</li>
+            <li>Email: <a href="mailto:salthorsebeerbar@gmail.com">salthorsebeerbar@gmail.com</a></li>
+            <li>Phone: <a href="tel:+447400653295">+44 7400 653295</a></li>
+            <li>Website: <a href="https://www.salthorse.beer">salthorse.beer</a></li>
+        </ul>
+
+        <h2>What Data We Collect</h2>
+        <p>We may collect and process the following personal data:</p>
+        <ul>
+            <li><strong>Identity Data:</strong> Name or similar identifier.</li>
+            <li><strong>Contact Data:</strong> Email address and telephone number.</li>
+            <li><strong>Financial Data:</strong> Payment card details (processed securely via Stripe — we do not store card details).</li>
+            <li><strong>Transaction Data:</strong> Details of gift card purchases and redemptions.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type and version, time zone setting, operating system, and platform.</li>
+            <li><strong>Marketing and Communications Data:</strong> Preferences in receiving marketing from us and your communication preferences.</li>
+        </ul>
+
+        <h2>How We Collect Your Data</h2>
+        <p>We use different methods to collect data from and about you, including:</p>
+        <ul>
+            <li>Direct interactions (e.g. when you purchase a gift card or contact us)</li>
+            <li>Automated technologies (e.g. cookies and server logs when you use our website)</li>
+            <li>Third-party services (e.g. Stripe for payment processing, Resend for transactional emails)</li>
+        </ul>
+
+        <h2>How We Use Your Data</h2>
+        <p>We use your data to:</p>
+        <ul>
+            <li>Process and deliver gift card purchases</li>
+            <li>Send transactional emails (e.g. gift card confirmations and receipts)</li>
+            <li>Communicate with you, including responding to queries</li>
+            <li>Improve our website and customer experience</li>
+            <li>Comply with legal obligations</li>
+        </ul>
+        <p>We will only use your data when the law allows us to. Most commonly, we rely on the following lawful bases: performance of a contract, consent, legal obligation, and legitimate interests.</p>
+
+        <h2>Marketing and Your Choices</h2>
+        <p>We do not currently operate a mailing list. If we do in the future, we will only send marketing communications with your explicit consent. You will always be able to unsubscribe.</p>
+        <p>We never sell or rent your data to third parties.</p>
+
+        <h2>Cookies</h2>
+        <p>We use essential cookies to keep our website working (e.g. session cookies and language preferences). We do not use advertising or tracking cookies. You can control cookie preferences through your browser settings.</p>
+
+        <h2>Sharing Your Data</h2>
+        <p>We may share your personal data with:</p>
+        <ul>
+            <li>Stripe (payment processing)</li>
+            <li>Resend (transactional email delivery)</li>
+            <li>Railway (website hosting)</li>
+            <li>Legal or regulatory authorities if required</li>
+        </ul>
+        <p>All third parties are required to respect the security of your personal data and to treat it in accordance with the law.</p>
+
+        <h2>Data Security</h2>
+        <p>We take data security seriously and have appropriate measures in place to prevent your data from being lost, misused, or accessed without authorisation. Payment details are handled entirely by Stripe and never touch our servers.</p>
+
+        <h2>Data Retention</h2>
+        <p>We retain your data only as long as necessary to fulfil the purposes we collected it for, including for legal, accounting, or reporting requirements. Gift card transaction records are retained for the lifetime of the gift card plus any period required for tax or accounting purposes.</p>
+
+        <h2>Your Rights</h2>
+        <p>Under data protection laws, you have the right to:</p>
+        <ul>
+            <li>Access your personal data</li>
+            <li>Request correction or erasure of your data</li>
+            <li>Object to or restrict processing</li>
+            <li>Request transfer of your data</li>
+            <li>Withdraw consent (where applicable)</li>
+        </ul>
+        <p>To exercise any of your rights, please contact us at <a href="mailto:salthorsebeerbar@gmail.com">salthorsebeerbar@gmail.com</a>.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or your data, please contact us:</p>
+        <ul>
+            <li>Email: <a href="mailto:salthorsebeerbar@gmail.com">salthorsebeerbar@gmail.com</a></li>
+            <li>Phone: <a href="tel:+447400653295">+44 7400 653295</a></li>
+            <li>Post: Blackfriarsbar Ltd, Cowan & Partners, 60 Constitution Street, Leith, Edinburgh, EH6 6RR</li>
+        </ul>
+        <p>If you are not satisfied with our response, you can complain to the Information Commissioner's Office (ICO) at <a href="https://www.ico.org.uk" target="_blank">ico.org.uk</a>.</p>
+    </div>
+
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note"><%= t.footer.tagline %></p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s; font-size: 0.75rem;">Privacy Policy</a>
+            <p style="margin-top: 0.75rem;">&copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.</p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        function toggleMenu() {
+            document.getElementById('navLinks')?.classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
