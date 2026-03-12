@@ -12,15 +12,13 @@ async function seed() {
   const password = process.env.ADMIN_INITIAL_PASSWORD || 'changeme123';
   const hash = bcrypt.hashSync(password, 12);
 
-  const existingUser = await db.get('SELECT id FROM users WHERE email = $1', [email.toLowerCase().trim()]);
+  const existingUser = await db.get('SELECT id FROM users LIMIT 1');
   if (!existingUser) {
-    // Delete any old admin users and create fresh with current env vars
-    await db.run('DELETE FROM users');
     await db.run('INSERT INTO users (email, password_hash, name) VALUES ($1, $2, $3)', [email, hash, 'Admin']);
     console.log(`✓ Admin user created: ${email}`);
   } else {
-    // Update existing user's password to match current env var
-    await db.run('UPDATE users SET password_hash = $1 WHERE email = $2', [hash, email.toLowerCase().trim()]);
+    // Update existing user's email and password to match current env vars
+    await db.run('UPDATE users SET email = $1, password_hash = $2 WHERE id = $3', [email, hash, existingUser.id]);
     console.log(`✓ Admin user updated: ${email}`);
   }
 
