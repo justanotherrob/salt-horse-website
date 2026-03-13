@@ -235,7 +235,7 @@ async function sendGroupEnquiry(data) {
           </table>` : ''}
 
           <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0;">
-            Reply to this email to respond directly to ${name}.
+            Reply directly to ${name}: <a href="mailto:${email}" style="color:#D4943A;">${email}</a>
           </p>
         </td></tr>` + emailFooter();
 
