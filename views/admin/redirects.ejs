@@ -2,19 +2,33 @@
 
 <h1>URL Redirects</h1>
 
-<div class="add-redirect-form">
-    <h3>Add New Redirect</h3>
+<div style="background: rgba(255, 246, 218, 0.05); border: 1px solid rgba(255, 246, 218, 0.1); border-radius: 4px; padding: 1.5rem; margin-bottom: 2rem; font-size: 0.85rem; line-height: 1.6; color: rgba(255, 246, 218, 0.7);">
+    <strong style="color: var(--cream);">How redirects work</strong><br>
+    <strong>From</strong> — Enter a slug, not a full URL. Example: <code>/old-page</code> or <code>/menu</code><br>
+    <strong>To</strong> — The destination. Can be a full URL (<code>https://example.com/page</code>) or a path on this site (<code>/gift-cards</code>)<br>
+    <strong>Type</strong> — <strong>301</strong> (permanent) tells search engines the page has moved for good. Use for pages that won't come back. <strong>302</strong> (temporary) is for short-term redirects, like a seasonal page or an external link you might change later.
+</div>
+
+<div style="background: var(--bg-light); border: 1px solid var(--cream-faint); border-radius: 4px; padding: 1.5rem; margin-bottom: 2rem;">
+    <h3 style="margin-top: 0; margin-bottom: 1rem; font-size: 1rem;">Add New Redirect</h3>
     <form id="addRedirectForm">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="from">From Path</label>
-                <input type="text" id="from" placeholder="/old-path" required>
+        <div style="display: grid; grid-template-columns: 1fr 1fr auto auto; gap: 1rem; align-items: flex-end;">
+            <div class="form-group" style="margin: 0;">
+                <label for="from">From (slug)</label>
+                <input type="text" id="from" placeholder="/old-page" required>
             </div>
-            <div class="form-group">
-                <label for="to">To URL</label>
-                <input type="url" id="to" placeholder="https://example.com/new-path" required>
+            <div class="form-group" style="margin: 0;">
+                <label for="to">To (destination)</label>
+                <input type="text" id="to" placeholder="https://example.com or /new-page" required>
             </div>
-            <button type="submit" class="btn">Add</button>
+            <div class="form-group" style="margin: 0;">
+                <label for="type">Type</label>
+                <select id="type" style="width: 100%; padding: 0.6rem; background: rgba(24, 34, 65, 0.5); border: 1px solid rgba(255, 246, 218, 0.2); border-radius: 4px; color: var(--cream); font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem;">
+                    <option value="301">301 Permanent</option>
+                    <option value="302">302 Temporary</option>
+                </select>
+            </div>
+            <button type="submit" class="btn" style="white-space: nowrap;">Add</button>
         </div>
     </form>
 </div>
@@ -22,8 +36,9 @@
 <table class="redirects-table">
     <thead>
         <tr>
-            <th>From Path</th>
-            <th>To URL</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Type</th>
             <th>Created</th>
             <th>Action</th>
         </tr>
@@ -33,16 +48,25 @@
             <% redirects.forEach(r => { %>
                 <tr data-id="<%= r.id %>">
                     <td><code><%= r.from_path %></code></td>
-                    <td><%= r.to_url %></td>
+                    <td style="word-break: break-all; max-width: 300px;"><%= r.to_url %></td>
+                    <td><span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(255, 246, 218, 0.08); color: <%= r.redirect_type === 302 ? 'var(--amber)' : 'var(--cream-dim)' %>;"><%= r.redirect_type || 301 %></span></td>
                     <td><%= new Date(r.created_at).toLocaleDateString('en-GB') %></td>
                     <td><button class="btn-delete" onclick="deleteRedirect('<%= r.id %>')">Delete</button></td>
                 </tr>
             <% }); %>
         <% } else { %>
-            <tr><td colspan="4" style="text-align:center; padding: 2rem;">No redirects yet</td></tr>
+            <tr><td colspan="5" style="text-align:center; padding: 2rem; color: var(--cream-dim);">No redirects yet</td></tr>
         <% } %>
     </tbody>
 </table>
+
+<style>
+    @media (max-width: 768px) {
+        #addRedirectForm > div {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
 
 <script>
 document.getElementById('addRedirectForm').addEventListener('submit', async (e) => {
@@ -50,7 +74,8 @@ document.getElementById('addRedirectForm').addEventListener('submit', async (e) 
 
     const data = {
         from_path: document.getElementById('from').value,
-        to_url: document.getElementById('to').value
+        to_url: document.getElementById('to').value,
+        redirect_type: parseInt(document.getElementById('type').value)
     };
 
     try {
@@ -63,7 +88,8 @@ document.getElementById('addRedirectForm').addEventListener('submit', async (e) 
         if (response.ok) {
             location.reload();
         } else {
-            alert('Error adding redirect');
+            const err = await response.json();
+            alert(err.error || 'Error adding redirect');
         }
     } catch (err) {
         alert('Error: ' + err.message);

@@ -96,6 +96,7 @@ async function initDatabase() {
       id SERIAL PRIMARY KEY,
       from_path TEXT UNIQUE NOT NULL,
       to_url TEXT NOT NULL,
+      redirect_type INTEGER DEFAULT 301,
       created_at TIMESTAMPTZ DEFAULT NOW()
     );
 
@@ -114,6 +115,12 @@ async function initDatabase() {
     CREATE INDEX IF NOT EXISTS idx_gift_cards_stripe ON gift_cards(stripe_session_id);
     CREATE INDEX IF NOT EXISTS idx_content_key ON content_blocks(key);
     CREATE INDEX IF NOT EXISTS idx_redirects_path ON redirects(from_path);
+  `);
+
+  // ── Migrations ──────────────────────────────────────────
+  // Add redirect_type column if missing (for existing databases)
+  await pool.query(`
+    ALTER TABLE redirects ADD COLUMN IF NOT EXISTS redirect_type INTEGER DEFAULT 301;
   `);
 
   // ── Seed language settings ──────────────────────────────

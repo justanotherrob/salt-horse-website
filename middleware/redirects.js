@@ -5,8 +5,8 @@ let lastLoaded = 0;
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 async function loadRedirects() {
-  const rows = await db.all('SELECT from_path, to_url FROM redirects');
-  redirectMap = new Map(rows.map(r => [r.from_path, r.to_url]));
+  const rows = await db.all('SELECT from_path, to_url, redirect_type FROM redirects');
+  redirectMap = new Map(rows.map(r => [r.from_path, { to_url: r.to_url, type: r.redirect_type || 301 }]));
   lastLoaded = Date.now();
 }
 
@@ -23,7 +23,7 @@ async function redirectMiddleware(req, res, next) {
 
     const target = redirectMap.get(req.path);
     if (target) {
-      return res.redirect(301, target);
+      return res.redirect(target.type, target.to_url);
     }
   } catch (err) {
     // Don't block the request if redirect loading fails

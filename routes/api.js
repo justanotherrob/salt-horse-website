@@ -244,15 +244,18 @@ router.post('/settings/:key', async (req, res) => {
 
 // POST /api/redirects
 router.post('/redirects', async (req, res) => {
-  let { from_path, to_url } = req.body;
+  let { from_path, to_url, redirect_type } = req.body;
 
   if (!from_path || !to_url) return res.status(400).json({ error: 'Both fields required' });
 
   // Ensure from_path starts with /
   if (!from_path.startsWith('/')) from_path = '/' + from_path;
 
+  // Validate redirect type
+  const type = redirect_type === 302 ? 302 : 301;
+
   try {
-    await db.run('INSERT INTO redirects (from_path, to_url) VALUES ($1, $2)', [from_path, to_url]);
+    await db.run('INSERT INTO redirects (from_path, to_url, redirect_type) VALUES ($1, $2, $3)', [from_path, to_url, type]);
     await refreshRedirects();
     res.json({ success: true });
   } catch (err) {
@@ -266,11 +269,12 @@ router.post('/redirects', async (req, res) => {
 // PUT /api/redirects/:id
 router.put('/redirects/:id', async (req, res) => {
   const { id } = req.params;
-  let { from_path, to_url } = req.body;
+  let { from_path, to_url, redirect_type } = req.body;
 
   if (!from_path.startsWith('/')) from_path = '/' + from_path;
+  const type = redirect_type === 302 ? 302 : 301;
 
-  await db.run('UPDATE redirects SET from_path = $1, to_url = $2 WHERE id = $3', [from_path, to_url, id]);
+  await db.run('UPDATE redirects SET from_path = $1, to_url = $2, redirect_type = $3 WHERE id = $4', [from_path, to_url, type, id]);
   await refreshRedirects();
   res.json({ success: true });
 });
