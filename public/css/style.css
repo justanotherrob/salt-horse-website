@@ -59,6 +59,8 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 2rem;
     list-style: none;
     align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-links a {
