@@ -13,14 +13,19 @@
     "reserve": "预订"
   },
 
+  "meta": {
+    "title": "Salt Horse — 精酿啤酒与汉堡，爱丁堡"
+  },
+
   "hero": {
-    "explore": "探索"
+    "explore": "探索",
+    "tagline": "精酿啤酒与汉堡 — 爱丁堡老城区"
   },
 
   "stats": {
     "taps_label": "轮换生啤",
     "bottles_label": "罐装与瓶装",
-    "years_label": "年经营历史"
+    "years_label": "年精心酿造"
   },
 
   "drink": {
@@ -31,7 +36,7 @@
     "feature_2": "约200种来自英国及世界各地的罐装和瓶装啤酒",
     "feature_3": "始终提供丰富的无酒精和无麸质啤酒选择",
     "feature_4": "精选少量葡萄酒和烈酒",
-    "feature_5": "提供外带服务"
+    "feature_5": "Bottle shop提供外带服务"
   },
 
   "food": {
@@ -68,7 +73,8 @@
   },
 
   "footer": {
-    "tagline": "自2016年起，在爱丁堡老城区提供精酿啤酒与汉堡。"
+    "tagline": "自2016年起，在爱丁堡老城区提供精酿啤酒与汉堡。",
+    "privacy_policy": "隐私政策"
   },
 
   "gift_cards": {

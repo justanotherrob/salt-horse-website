@@ -13,8 +13,13 @@
     "reserve": "Reserve"
   },
 
+  "meta": {
+    "title": "Salt Horse — Great Beer & Burgers, Edinburgh"
+  },
+
   "hero": {
-    "explore": "Explore"
+    "explore": "Explore",
+    "tagline": "Great Beer & Burgers — Edinburgh Old Town"
   },
 
   "stats": {
@@ -68,7 +73,8 @@
   },
 
   "footer": {
-    "tagline": "Great Beer & Burgers in Edinburgh's Old Town since 2016."
+    "tagline": "Great Beer & Burgers in Edinburgh's Old Town since 2016.",
+    "privacy_policy": "Privacy Policy"
   },
 
   "gift_cards": {

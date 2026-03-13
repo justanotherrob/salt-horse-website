@@ -68,7 +68,7 @@ async function seed() {
     // Location
     { key: 'location_address_1', value: '57-61 Blackfriars St', type: 'text', label: 'Address Line 1', section: 'Location', sort_order: 50 },
     { key: 'location_address_2', value: 'Edinburgh', type: 'text', label: 'Address Line 2', section: 'Location', sort_order: 51 },
-    { key: 'location_address_3', value: 'EH6 4BN', type: 'text', label: 'Address Line 3', section: 'Location', sort_order: 52 },
+    { key: 'location_address_3', value: 'EH1 1NB', type: 'text', label: 'Address Line 3', section: 'Location', sort_order: 52 },
     { key: 'location_phone', value: '+44 7400 653 295', type: 'text', label: 'Phone Number', section: 'Location', sort_order: 53 },
     { key: 'location_maps_url', value: 'https://maps.app.goo.gl/cGZe1mgLYT23A3sm6', type: 'text', label: 'Google Maps URL', section: 'Location', sort_order: 54 },
     { key: 'location_notice', value: 'Our licence prohibits under-18s on the premises.', type: 'text', label: 'Licence Notice', section: 'Location', sort_order: 55 },

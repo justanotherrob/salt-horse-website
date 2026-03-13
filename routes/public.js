@@ -23,15 +23,20 @@ async function getHours() {
   return db.all('SELECT * FROM opening_hours ORDER BY day_order');
 }
 
-// Helper: format 24h time to display format
-function formatTime(time24) {
+// Helper: format time — 12h for English, 24h for everything else
+function formatTime(time24, lang) {
   if (!time24) return '';
   const [h, m] = time24.split(':').map(Number);
-  if (h === 0 && m === 0) return '12am';
-  if (h === 12 && m === 0) return '12pm';
-  const period = h >= 12 ? 'pm' : 'am';
-  const hour12 = h > 12 ? h - 12 : (h === 0 ? 12 : h);
-  return m === 0 ? `${hour12}${period}` : `${hour12}:${m.toString().padStart(2, '0')}${period}`;
+  // English uses 12h format
+  if (!lang || lang === 'en') {
+    if (h === 0 && m === 0) return '12am';
+    if (h === 12 && m === 0) return '12pm';
+    const period = h >= 12 ? 'pm' : 'am';
+    const hour12 = h > 12 ? h - 12 : (h === 0 ? 12 : h);
+    return m === 0 ? `${hour12}${period}` : `${hour12}:${m.toString().padStart(2, '0')}${period}`;
+  }
+  // All other languages use 24h format
+  return `${h}:${m.toString().padStart(2, '0')}`;
 }
 
 // GET / — Main site
@@ -39,7 +44,8 @@ router.get('/', async (req, res) => {
   const content = await getContent();
   const hours = await getHours();
   const giftCardsEnabled = await getSetting('gift_cards_enabled');
-  res.render('index', { content, hours, formatTime, stripeKey: process.env.STRIPE_PUBLISHABLE_KEY, giftCardsEnabled });
+  const lang = res.locals.lang || 'en';
+  res.render('index', { content, hours, formatTime: (t) => formatTime(t, lang), stripeKey: process.env.STRIPE_PUBLISHABLE_KEY, giftCardsEnabled });
 });
 
 // GET /gift-cards — Purchase page

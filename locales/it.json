@@ -13,14 +13,19 @@
     "reserve": "Prenota"
   },
 
+  "meta": {
+    "title": "Salt Horse — Birra Artigianale e Hamburger, Edimburgo"
+  },
+
   "hero": {
-    "explore": "Esplora"
+    "explore": "Esplora",
+    "tagline": "Birra Artigianale e Hamburger — Centro Storico di Edimburgo"
   },
 
   "stats": {
     "taps_label": "Spine a Rotazione",
     "bottles_label": "Lattine e Bottiglie",
-    "years_label": "Anni di Attività"
+    "years_label": "Anni alla Spina"
   },
 
   "drink": {
@@ -30,8 +35,8 @@
     "feature_1": "14 spine a rotazione — sempre qualcosa di nuovo",
     "feature_2": "Circa 200 lattine e bottiglie dal Regno Unito e oltre",
     "feature_3": "Sempre una buona selezione di birre analcoliche e senza glutine",
-    "feature_4": "Una piccola e curata selezione di vini e liquori",
-    "feature_5": "Asporto disponibile"
+    "feature_4": "Una piccola e curata selezione di vini e distillati",
+    "feature_5": "Asporto disponibile dal bottle shop"
   },
 
   "food": {
@@ -68,7 +73,8 @@
   },
 
   "footer": {
-    "tagline": "Birra artigianale e hamburger nel centro storico di Edimburgo dal 2016."
+    "tagline": "Birra artigianale e hamburger nel centro storico di Edimburgo dal 2016.",
+    "privacy_policy": "Privacy Policy"
   },
 
   "gift_cards": {

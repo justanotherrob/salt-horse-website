@@ -6,9 +6,9 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1BRNHD9X1Y');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salt Horse — Great Beer & Burgers, Edinburgh</title>
+    <title><%= t.meta ? t.meta.title : 'Salt Horse — Great Beer & Burgers, Edinburgh' %></title>
     <meta name="description" content="<%= content.meta_description %>">
-    <meta property="og:title" content="Salt Horse — Great Beer & Burgers, Edinburgh">
+    <meta property="og:title" content="<%= t.meta ? t.meta.title : 'Salt Horse — Great Beer & Burgers, Edinburgh' %>">
     <meta property="og:description" content="14 rotating draught lines. 200+ cans and bottles. Smash burgers. Edinburgh Old Town.">
     <meta property="og:type" content="website">
     <link rel="icon" href="/images/favicon.ico">
@@ -55,7 +55,7 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <img src="/logos/salthorse_lesstext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="hero-logo">
-            <p class="hero-tagline"><%= content.hero_tagline %></p>
+            <p class="hero-tagline"><%= (t.hero && t.hero.tagline) ? t.hero.tagline : content.hero_tagline %></p>
             <div class="hero-scroll">
                 <a href="#drink">
                     <span><%= t.hero.explore %></span>
@@ -226,7 +226,7 @@
             <a href="<%= content.footer_untappd %>" target="_blank">Untappd</a>
         </div>
         <div class="footer-bottom">
-            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;">Privacy Policy</a>
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;"><%= (t.footer && t.footer.privacy_policy) ? t.footer.privacy_policy : 'Privacy Policy' %></a>
             <p style="margin-top: 0.75rem;">&copy; Salt Horse. <%= content.location_address_1 %>, <%= content.location_address_2 %>, <%= content.location_address_3 %>.</p>
         </div>
     </footer>
