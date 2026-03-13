@@ -18,7 +18,7 @@
   },
 
   "stats": {
-    "taps_label": "Grifos Rotativos",
+    "taps_label": "Grifos Cambiantes",
     "bottles_label": "Latas y Botellas",
     "years_label": "Años Abiertos"
   },
@@ -27,7 +27,7 @@
     "section_label": "Nuestras Bebidas",
     "title": "Solo lo<br>Mejor.",
     "description": "Ofrecemos una selección cuidada y renovada regularmente de cerveza artesanal — catorce grifos y más de 200 latas y botellas. Disfruta aquí o llévala a casa. Tú eliges.",
-    "feature_1": "14 grifos rotativos — siempre algo nuevo",
+    "feature_1": "14 grifos cambiantes — siempre algo nuevo",
     "feature_2": "Alrededor de 200 latas y botellas del Reino Unido y más allá",
     "feature_3": "Siempre una buena selección de cervezas sin alcohol y sin gluten",
     "feature_4": "Una pequeña y cuidada selección de vinos y licores",
