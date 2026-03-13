@@ -143,6 +143,8 @@
     "not_available": "Nicht verfügbar",
     "how_many": "Wie viele?",
     "num_people": "Anzahl der Personen",
+    "comments_label": "Noch etwas?",
+    "comments_placeholder": "Gibt es einen Anlass? Besondere Ernährungsbedürfnisse? Lass es uns wissen.",
     "age_notice": "Salt Horse ist ein Lokal ab 18 Jahren. Alle Gäste müssen 18 oder älter sein.",
     "submit": "Anfrage Senden",
     "sending": "Wird gesendet...",

@@ -179,7 +179,7 @@ async function sendPurchaserReceipt(giftCard, overrideEmail) {
 
 // ── Send group booking enquiry to the bar ──
 async function sendGroupEnquiry(data) {
-  const { name, email, phone, date, time, groupSize, type } = data;
+  const { name, email, phone, date, time, groupSize, type, comments } = data;
   const typeLabel = type === 'food_and_drinks' ? 'Food & Drinks' : 'Drinks Only';
 
   // Format date nicely
@@ -225,6 +225,14 @@ async function sendGroupEnquiry(data) {
               </table>
             </td></tr>
           </table>
+
+          ${comments ? `
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(212,148,58,0.08);border-left:3px solid #D4943A;border-radius:0 4px 4px 0;margin-bottom:20px;">
+            <tr><td style="padding:15px 20px;">
+              <p style="color:rgba(255,246,218,0.5);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;">Notes</p>
+              <p style="color:#FFF6DA;font-size:14px;line-height:1.5;margin:0;">${comments}</p>
+            </td></tr>
+          </table>` : ''}
 
           <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0;">
             Reply to this email to respond directly to ${name}.

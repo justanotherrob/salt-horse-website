@@ -143,6 +143,8 @@
     "not_available": "Not available",
     "how_many": "How many?",
     "num_people": "Number of people",
+    "comments_label": "Anything Else?",
+    "comments_placeholder": "Celebrating something? Any dietary needs? Let us know here.",
     "age_notice": "Salt Horse is an 18+ venue. All guests must be 18 or over.",
     "submit": "Send Enquiry",
     "sending": "Sending...",

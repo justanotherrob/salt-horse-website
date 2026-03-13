@@ -79,7 +79,7 @@ router.get('/groups', async (req, res) => {
 // POST /groups — Submit group booking enquiry
 router.post('/groups', async (req, res) => {
   try {
-    const { name, email, phone, date, time, groupSize, type } = req.body;
+    const { name, email, phone, date, time, groupSize, type, comments } = req.body;
 
     // Validation
     if (!name || !email || !phone || !date || !time || !groupSize) {
@@ -93,7 +93,7 @@ router.post('/groups', async (req, res) => {
     }
 
     // Send emails
-    await sendGroupEnquiry({ name, email, phone, date, time, groupSize, type });
+    await sendGroupEnquiry({ name, email, phone, date, time, groupSize, type, comments: (comments || '').substring(0, 500) });
 
     res.json({ success: true });
   } catch (err) {

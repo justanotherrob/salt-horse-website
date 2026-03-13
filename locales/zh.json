@@ -143,6 +143,8 @@
     "not_available": "不可用",
     "how_many": "多少人？",
     "num_people": "人数",
+    "comments_label": "还有其他需要告诉我们的吗？",
+    "comments_placeholder": "有什么值得庆祝的吗？有饮食需求？在这里告诉我们。",
     "age_notice": "Salt Horse仅限18岁以上人士入场。所有客人必须年满18岁。",
     "submit": "发送咨询",
     "sending": "发送中...",

@@ -272,6 +272,12 @@
                     <input type="number" id="groupSize" placeholder="<%= t.groups.num_people %>" class="form-input" min="7" max="100" required>
                 </div>
 
+                <!-- Comments -->
+                <div class="form-section">
+                    <label class="form-label"><%= t.groups.comments_label %></label>
+                    <textarea id="comments" placeholder="<%= t.groups.comments_placeholder %>" class="form-input" maxlength="500" rows="3" style="resize:none;"></textarea>
+                </div>
+
                 <!-- 18+ Notice -->
                 <div class="age-notice">
                     <%= t.groups.age_notice %>
@@ -391,6 +397,7 @@
             const date = document.getElementById('eventDate').value;
             const time = document.getElementById('eventTime').value;
             const groupSize = document.getElementById('groupSize').value;
+            const comments = document.getElementById('comments').value.trim();
             const errorEl = document.getElementById('formError');
 
             // Basic validation
@@ -423,7 +430,8 @@
                     body: JSON.stringify({
                         name, email, phone, date, time,
                         groupSize: parseInt(groupSize),
-                        type: bookingType
+                        type: bookingType,
+                        comments: comments || ''
                     })
                 });
 

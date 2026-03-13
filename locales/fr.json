@@ -143,6 +143,8 @@
     "not_available": "Non disponible",
     "how_many": "Combien ?",
     "num_people": "Nombre de personnes",
+    "comments_label": "Autre chose ?",
+    "comments_placeholder": "Un anniversaire ? Des besoins alimentaires ? Dites-le nous ici.",
     "age_notice": "Salt Horse est un établissement réservé aux plus de 18 ans. Tous les invités doivent avoir 18 ans ou plus.",
     "submit": "Envoyer la Demande",
     "sending": "Envoi en cours...",
