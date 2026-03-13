@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BRNHD9X1Y"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1BRNHD9X1Y');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Bookings - Salt Horse</title>
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .groups-page { min-height: 100vh; }
+
+        .groups-hero {
+            padding: 10rem 2rem 3rem;
+            text-align: center;
+        }
+        .groups-hero .section-text {
+            margin: 1.5rem auto 0;
+            max-width: 600px;
+        }
+
+        .groups-form-wrap {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .form-section {
+            margin-bottom: 2.5rem;
+        }
+        .form-label {
+            display: block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cream-dim);
+            margin-bottom: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--cream-faint);
+            border-radius: 2px;
+            color: var(--cream);
+            padding: 0.85rem 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .form-input:focus { outline: none; border-color: var(--amber); }
+        .form-input::placeholder { color: rgba(255, 246, 218, 0.3); }
+        select.form-input { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='rgba(255,246,218,0.4)'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+        select.form-input option { background: var(--bg-dark); color: var(--cream); }
+
+        /* Date/time row */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        /* Toggle buttons (Drinks / Food & Drinks) */
+        .toggle-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .toggle-btn {
+            background: transparent;
+            border: 1px solid var(--cream-faint);
+            color: var(--cream-dim);
+            padding: 0.85rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 2px;
+        }
+        .toggle-btn:hover { border-color: var(--cream-dim); color: var(--cream); }
+        .toggle-btn.active {
+            border-color: var(--amber);
+            color: var(--amber);
+            background: rgba(212, 148, 58, 0.1);
+        }
+
+        /* 18+ notice */
+        .age-notice {
+            padding: 1rem 1.25rem;
+            background: rgba(212, 148, 58, 0.08);
+            border-left: 2px solid var(--amber);
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        /* Submit button */
+        .groups-submit-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--amber);
+            color: var(--bg);
+            border: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            border-radius: 2px;
+        }
+        .groups-submit-btn:hover { opacity: 0.9; }
+        .groups-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--cream-dim);
+            text-align: center;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Error message */
+        .form-error {
+            display: none;
+            padding: 0.85rem 1rem;
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 2px;
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .form-error.visible { display: block; }
+
+        /* Success state */
+        .groups-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0 4rem;
+        }
+        .groups-success.visible { display: block; }
+        .groups-form.hidden { display: none; }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--amber);
+        }
+        .success-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+        }
+        .success-text {
+            color: var(--cream-dim);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+        .success-home-btn {
+            display: inline-block;
+            padding: 0.9rem 3rem;
+            background: var(--amber);
+            color: var(--bg);
+            border: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        .success-home-btn:hover { opacity: 0.9; }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#drink" onclick="closeMenu()"><%= t.nav.drink %></a></li>
+            <li><a href="/#food" onclick="closeMenu()"><%= t.nav.food %></a></li>
+            <li><a href="/#book" onclick="closeMenu()"><%= t.nav.book %></a></li>
+            <li><a href="/#location" onclick="closeMenu()"><%= t.nav.find_us %></a></li>
+            <li><a href="<%= bookUrl %>" target="_blank" class="nav-cta" onclick="closeMenu()"><%= t.nav.reserve %></a></li>
+        </ul>
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-current" onclick="toggleLangMenu()" aria-label="Change language">
+                <%= t.flag %> <%= t.lang_name %>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <% supportedLangs.forEach(function(code) { %>
+                    <a href="?lang=<%= code %>" class="lang-option<%= code === lang ? ' active' : '' %>">
+                        <%= locales[code].flag %> <%= locales[code].lang_name %>
+                    </a>
+                <% }); %>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="groups-page">
+        <!-- HERO -->
+        <section class="groups-hero">
+            <div class="section-inner">
+                <div class="section-label" style="text-align:center;"><%= t.groups.section_label %></div>
+                <h1 class="section-title" style="text-align:center;"><%- t.groups.title %></h1>
+                <p class="section-text" style="text-align:center;"><%= t.groups.subtitle %></p>
+            </div>
+        </section>
+
+        <!-- FORM -->
+        <section class="groups-form-wrap">
+            <div class="form-error" id="formError"></div>
+
+            <div class="groups-form" id="groupsForm">
+                <!-- Name -->
+                <div class="form-section">
+                    <label class="form-label"><%= t.groups.your_details %></label>
+                    <input type="text" id="customerName" placeholder="<%= t.groups.your_name %>" class="form-input" required>
+                    <input type="email" id="customerEmail" placeholder="<%= t.groups.email %>" class="form-input" required>
+                    <input type="tel" id="customerPhone" placeholder="<%= t.groups.phone %>" class="form-input" required>
+                </div>
+
+                <!-- Type: Drinks / Food & Drinks -->
+                <div class="form-section">
+                    <label class="form-label"><%= t.groups.type_label %></label>
+                    <div class="toggle-group">
+                        <button class="toggle-btn" onclick="setType('drinks', this)"><%= t.groups.drinks_only %></button>
+                        <button class="toggle-btn active" onclick="setType('food_and_drinks', this)"><%= t.groups.food_and_drinks %></button>
+                    </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="form-section">
+                    <label class="form-label"><%= t.groups.when %></label>
+                    <div class="form-row">
+                        <input type="date" id="eventDate" class="form-input" required onchange="updateTimeSlots()">
+                        <select id="eventTime" class="form-input" required disabled>
+                            <option value="" disabled selected><%= t.groups.pick_date_first %></option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Number of People -->
+                <div class="form-section">
+                    <label class="form-label"><%= t.groups.how_many %></label>
+                    <input type="number" id="groupSize" placeholder="<%= t.groups.num_people %>" class="form-input" min="7" max="100" required>
+                </div>
+
+                <!-- 18+ Notice -->
+                <div class="age-notice">
+                    <%= t.groups.age_notice %>
+                </div>
+
+                <!-- Submit -->
+                <button class="groups-submit-btn" id="submitBtn" onclick="submitEnquiry()">
+                    <%= t.groups.submit %>
+                </button>
+
+                <p class="form-note"><%= t.groups.response_time %></p>
+
+            </div>
+
+            <!-- SUCCESS STATE -->
+            <div class="groups-success" id="successState">
+                <div class="success-icon">&#10003;</div>
+                <div class="success-title"><%= t.groups.success_title %></div>
+                <p class="success-text"><%= t.groups.success_text %></p>
+                <a href="/" class="success-home-btn"><%= t.groups.back_home %></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note"><%= t.footer.tagline %></p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;"><%= (t.footer && t.footer.privacy_policy) ? t.footer.privacy_policy : 'Privacy Policy' %></a>
+            <p style="margin-top: 0.75rem;">&copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.</p>
+        </div>
+    </footer>
+
+    <script>
+        let bookingType = 'food_and_drinks';
+
+        function setType(type, btn) {
+            bookingType = type;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Set min date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('eventDate').setAttribute('min', today);
+
+        // Kitchen hours by day of week (0=Sun, 1=Mon, ... 6=Sat)
+        // Format: [openHour, openMin, closeHour, closeMin]
+        const kitchenHours = {
+            0: [12, 30, 21, 0],  // Sunday 12:30–9pm
+            1: [16, 0, 21, 0],   // Monday 4pm–9pm
+            2: [16, 0, 21, 0],   // Tuesday 4pm–9pm
+            3: [16, 0, 21, 0],   // Wednesday 4pm–9pm
+            4: [12, 0, 21, 0],   // Thursday 12pm–9pm
+            5: [12, 0, 22, 0],   // Friday 12pm–10pm
+            6: [12, 0, 22, 0],   // Saturday 12pm–10pm
+        };
+
+        function updateTimeSlots() {
+            const dateInput = document.getElementById('eventDate');
+            const timeSelect = document.getElementById('eventTime');
+            const dateVal = dateInput.value;
+
+            if (!dateVal) {
+                timeSelect.disabled = true;
+                timeSelect.innerHTML = '<option value="" disabled selected><%= t.groups.pick_date_first %></option>';
+                return;
+            }
+
+            // Get day of week from the selected date
+            const d = new Date(dateVal + 'T12:00:00');
+            const dow = d.getDay();
+            const hours = kitchenHours[dow];
+
+            if (!hours) {
+                timeSelect.disabled = true;
+                timeSelect.innerHTML = '<option value="" disabled selected><%= t.groups.not_available %></option>';
+                return;
+            }
+
+            const [openH, openM, closeH, closeM] = hours;
+
+            // First slot: kitchen open + 15 mins
+            let startMins = (openH * 60 + openM) + 15;
+            // Last slot: kitchen close - 60 mins
+            let endMins = (closeH * 60 + closeM) - 60;
+
+            // Round start up to next 15-min mark
+            if (startMins % 15 !== 0) {
+                startMins = Math.ceil(startMins / 15) * 15;
+            }
+
+            timeSelect.innerHTML = '<option value="" disabled selected><%= t.groups.select_time %></option>';
+
+            for (let m = startMins; m <= endMins; m += 15) {
+                const hh = Math.floor(m / 60);
+                const mm = m % 60;
+                const val = String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
+                const opt = document.createElement('option');
+                opt.value = val;
+                opt.textContent = val;
+                timeSelect.appendChild(opt);
+            }
+
+            timeSelect.disabled = false;
+        }
+
+        async function submitEnquiry() {
+            const name = document.getElementById('customerName').value.trim();
+            const email = document.getElementById('customerEmail').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const date = document.getElementById('eventDate').value;
+            const time = document.getElementById('eventTime').value;
+            const groupSize = document.getElementById('groupSize').value;
+            const errorEl = document.getElementById('formError');
+
+            // Basic validation
+            if (!name || !email || !phone) {
+                errorEl.textContent = '<%= t.groups.error_details %>';
+                errorEl.classList.add('visible');
+                return;
+            }
+            if (!date || !time) {
+                errorEl.textContent = '<%= t.groups.error_date_time %>';
+                errorEl.classList.add('visible');
+                return;
+            }
+            if (!groupSize || groupSize < 7) {
+                errorEl.textContent = '<%= t.groups.error_group_size %>';
+                errorEl.classList.add('visible');
+                return;
+            }
+
+            errorEl.classList.remove('visible');
+
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = '<%= t.groups.sending %>';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/groups', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name, email, phone, date, time,
+                        groupSize: parseInt(groupSize),
+                        type: bookingType
+                    })
+                });
+
+                const data = await res.json();
+
+                if (!res.ok || data.error) {
+                    throw new Error(data.error || 'Something went wrong. Please try again.');
+                }
+
+                // Show success
+                document.getElementById('groupsForm').classList.add('hidden');
+                document.getElementById('successState').classList.add('visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (err) {
+                errorEl.textContent = err.message;
+                errorEl.classList.add('visible');
+                btn.textContent = '<%= t.groups.submit %>';
+                btn.disabled = false;
+            }
+        }
+
+        // Nav functions
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        function toggleLangMenu() {
+            document.getElementById('langDropdown').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-switcher')) {
+                document.getElementById('langDropdown').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

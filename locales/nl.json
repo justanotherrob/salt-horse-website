@@ -55,7 +55,8 @@
     "description": "Reserveren is optioneel — we houden altijd de helft van de ruimte vrij voor inloop. Als je zeker wilt zijn van een tafel, reserveer hieronder.",
     "book_table": "Reserveer een Tafel",
     "groups_title": "Groep van meer dan 6?",
-    "groups_text": "Bel ons op +44 7400 653295. We kunnen niet garanderen dat meerdere gereserveerde tafels naast elkaar staan — neem contact met ons op en we regelen het.",
+    "groups_text": "We kunnen niet garanderen dat meerdere gereserveerde tafels naast elkaar staan — stuur ons een aanvraag en we regelen het.",
+    "groups_enquiry": "Aanvraag Versturen",
     "notice_title": "Goed om te Weten",
     "notice_text": "Tafels worden 10 minuten vastgehouden — bel als je later komt. Tuinplaatsen zijn op volgorde van binnenkomst en kunnen niet gereserveerd worden."
   },
@@ -123,6 +124,35 @@
     "back_home": "Terug naar Salt Horse",
     "processing_title": "Je cadeaubon wordt verwerkt...",
     "processing_text": "Je betaling wordt bevestigd. Je ontvangt binnenkort een e-mail met je cadeaubon."
+  },
+
+  "groups": {
+    "section_label": "Groepsreservering",
+    "title": "Iets groters<br>gepland?",
+    "subtitle": "Voor groepen van 7 of meer — vul het formulier in en we nemen contact op om alles te regelen.",
+    "your_details": "Jouw Gegevens",
+    "your_name": "Jouw Naam",
+    "email": "E-mailadres",
+    "phone": "Telefoonnummer",
+    "type_label": "Wat zoeken jullie?",
+    "drinks_only": "Alleen Drinken",
+    "food_and_drinks": "Eten & Drinken",
+    "when": "Wanneer?",
+    "pick_date_first": "Kies eerst een datum",
+    "select_time": "Tijd kiezen",
+    "not_available": "Niet beschikbaar",
+    "how_many": "Hoeveel?",
+    "num_people": "Aantal personen",
+    "age_notice": "Salt Horse is alleen toegankelijk voor 18+. Alle gasten moeten 18 jaar of ouder zijn.",
+    "submit": "Aanvraag Versturen",
+    "sending": "Bezig met verzenden...",
+    "response_time": "We nemen zo snel mogelijk contact op — meestal binnen 24 uur.",
+    "success_title": "Aanvraag Verstuurd",
+    "success_text": "Bedankt — we hebben je gegevens ontvangen en nemen binnenkort contact op om alles te bevestigen.",
+    "back_home": "Terug naar Salt Horse",
+    "error_details": "Vul je naam, e-mail en telefoonnummer in.",
+    "error_date_time": "Selecteer een datum en tijd.",
+    "error_group_size": "Groepsreserveringen zijn voor 7 of meer personen."
   },
 
   "days": {

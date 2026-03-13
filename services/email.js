@@ -177,4 +177,119 @@ async function sendPurchaserReceipt(giftCard, overrideEmail) {
   return result;
 }
 
-module.exports = { sendGiftCardEmail, sendPurchaserReceipt };
+// ── Send group booking enquiry to the bar ──
+async function sendGroupEnquiry(data) {
+  const { name, email, phone, date, time, groupSize, type } = data;
+  const typeLabel = type === 'food_and_drinks' ? 'Food & Drinks' : 'Drinks Only';
+
+  // Format date nicely
+  const dateObj = new Date(date + 'T00:00:00');
+  const formattedDate = dateObj.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+  // Email to the bar
+  const barHtml = emailHeader() + `
+        <tr><td style="padding:30px 40px;">
+          <p style="color:#D4943A;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin:0 0 20px;">New Group Enquiry</p>
+
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(255,246,218,0.08);border:1px solid rgba(255,246,218,0.15);border-radius:6px;margin-bottom:25px;">
+            <tr><td style="padding:20px 25px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;">Name</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:8px 0;text-align:right;font-weight:bold;">${name}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;">Email</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:8px 0;text-align:right;">${email}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;">Phone</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:8px 0;text-align:right;">${phone}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;border-top:1px solid rgba(255,246,218,0.1);">Date</td>
+                  <td style="color:#D4943A;font-size:13px;padding:8px 0;text-align:right;font-weight:bold;border-top:1px solid rgba(255,246,218,0.1);">${formattedDate}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;">Time</td>
+                  <td style="color:#D4943A;font-size:13px;padding:8px 0;text-align:right;font-weight:bold;">${time}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;">Group Size</td>
+                  <td style="color:#D4943A;font-size:13px;padding:8px 0;text-align:right;font-weight:bold;">${groupSize} people</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:8px 0;">Type</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:8px 0;text-align:right;">${typeLabel}</td>
+                </tr>
+              </table>
+            </td></tr>
+          </table>
+
+          <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0;">
+            Reply to this email to respond directly to ${name}.
+          </p>
+        </td></tr>` + emailFooter();
+
+  // Confirmation email to the customer
+  const customerHtml = emailHeader() + `
+        <tr><td style="padding:30px 40px;">
+          <p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 15px;">Hi ${name},</p>
+          <p style="color:#FFF6DA;font-size:15px;line-height:1.6;margin:0 0 25px;">Thanks for getting in touch about a group booking. We've got your details and we'll be in touch soon to confirm everything.</p>
+
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(255,246,218,0.08);border:1px solid rgba(255,246,218,0.15);border-radius:6px;margin-bottom:25px;">
+            <tr><td style="padding:20px 25px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Date</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:6px 0;text-align:right;">${formattedDate}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Time</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:6px 0;text-align:right;">${time}</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Group Size</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:6px 0;text-align:right;">${groupSize} people</td>
+                </tr>
+                <tr>
+                  <td style="color:rgba(255,246,218,0.6);font-size:13px;padding:6px 0;">Type</td>
+                  <td style="color:#FFF6DA;font-size:13px;padding:6px 0;text-align:right;">${typeLabel}</td>
+                </tr>
+              </table>
+            </td></tr>
+          </table>
+
+          <p style="color:rgba(255,246,218,0.6);font-size:13px;line-height:1.6;margin:0;">
+            If you have any questions, just reply to this email or give us a call on +44 7400 653295.
+          </p>
+        </td></tr>` + emailFooter();
+
+  if (!resend) {
+    console.warn('RESEND_API_KEY not set — skipping group enquiry emails');
+    return { skipped: true };
+  }
+
+  // Send to bar (reply-to set to customer)
+  const barResult = await resend.emails.send({
+    from: fromEmail,
+    to: ['salthorsebeerbar@gmail.com'],
+    replyTo: email,
+    subject: `Group Enquiry: ${groupSize} people — ${formattedDate}`,
+    html: barHtml,
+  });
+  console.log('Group enquiry email sent to bar:', barResult);
+
+  // Send confirmation to customer
+  const customerResult = await resend.emails.send({
+    from: fromEmail,
+    to: [email],
+    subject: 'We got your group booking enquiry — Salt Horse',
+    html: customerHtml,
+  });
+  console.log('Group enquiry confirmation sent to', email, ':', customerResult);
+
+  return { barResult, customerResult };
+}
+
+module.exports = { sendGiftCardEmail, sendPurchaserReceipt, sendGroupEnquiry };

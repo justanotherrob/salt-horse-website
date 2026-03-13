@@ -158,6 +158,9 @@
                 <div class="book-detail">
                     <strong><%= t.book.groups_title %></strong><br>
                     <%= t.book.groups_text %>
+                    <div style="margin-top: 1rem;">
+                        <a href="/groups" class="btn btn-amber" style="font-size: 0.65rem; padding: 0.6rem 1.5rem;"><%= t.book.groups_enquiry || 'Send an Enquiry' %></a>
+                    </div>
                 </div>
                 <div class="book-detail">
                     <strong><%= t.book.notice_title %></strong><br>

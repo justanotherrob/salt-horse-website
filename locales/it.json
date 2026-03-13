@@ -55,7 +55,8 @@
     "description": "La prenotazione è facoltativa — riserviamo sempre metà dei posti per chi arriva senza prenotare. Se vuoi essere sicuro di avere un tavolo, prenota qui sotto.",
     "book_table": "Prenota un Tavolo",
     "groups_title": "Gruppi di più di 6?",
-    "groups_text": "Chiamaci al +44 7400 653295. Non possiamo garantire che più tavoli prenotati siano vicini — contattaci e organizziamo tutto.",
+    "groups_text": "Non possiamo garantire che più tavoli prenotati siano vicini — inviaci una richiesta e organizziamo tutto.",
+    "groups_enquiry": "Invia Richiesta",
     "notice_title": "Buono a Sapersi",
     "notice_text": "I tavoli sono riservati per 10 minuti — chiamaci se sei in ritardo. I posti in giardino sono in ordine di arrivo e non possono essere prenotati."
   },
@@ -123,6 +124,35 @@
     "back_home": "Torna a Salt Horse",
     "processing_title": "Elaborazione del tuo buono regalo...",
     "processing_text": "Il tuo pagamento è in fase di conferma. Riceverai un'email con il tuo buono regalo a breve."
+  },
+
+  "groups": {
+    "section_label": "Prenotazioni di Gruppo",
+    "title": "State organizzando<br>qualcosa di grande?",
+    "subtitle": "Per gruppi di 7 o più persone, compila il modulo qui sotto e ti ricontatteremo per organizzare i dettagli.",
+    "your_details": "I Tuoi Dati",
+    "your_name": "Il Tuo Nome",
+    "email": "Indirizzo Email",
+    "phone": "Numero di Telefono",
+    "type_label": "Cosa cercate?",
+    "drinks_only": "Solo Bevande",
+    "food_and_drinks": "Cibo e Bevande",
+    "when": "Quando?",
+    "pick_date_first": "Scegli prima una data",
+    "select_time": "Seleziona l'orario",
+    "not_available": "Non disponibile",
+    "how_many": "Quanti siete?",
+    "num_people": "Numero di persone",
+    "age_notice": "Salt Horse è un locale riservato ai maggiori di 18 anni. Tutti gli ospiti devono avere almeno 18 anni.",
+    "submit": "Invia Richiesta",
+    "sending": "Invio in corso...",
+    "response_time": "Ti risponderemo il prima possibile — di solito entro 24 ore.",
+    "success_title": "Richiesta Inviata",
+    "success_text": "Grazie — abbiamo ricevuto i tuoi dati e ti ricontatteremo presto per confermare tutto.",
+    "back_home": "Torna a Salt Horse",
+    "error_details": "Inserisci il tuo nome, email e numero di telefono.",
+    "error_date_time": "Seleziona una data e un orario.",
+    "error_group_size": "Le prenotazioni di gruppo sono per 7 o più persone."
   },
 
   "days": {

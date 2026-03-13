@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../db/database');
+const { sendGroupEnquiry } = require('../services/email');
 const router = express.Router();
 
 // Helper: check if a site setting is enabled
@@ -67,6 +68,38 @@ router.get('/gift-cards/success', async (req, res) => {
 
   const content = await getContent();
   res.render('gift-cards-success', { content, giftCard });
+});
+
+// GET /groups — Group booking enquiry form
+router.get('/groups', async (req, res) => {
+  const content = await getContent();
+  res.render('groups', { bookUrl: content.book_url || '#' });
+});
+
+// POST /groups — Submit group booking enquiry
+router.post('/groups', async (req, res) => {
+  try {
+    const { name, email, phone, date, time, groupSize, type } = req.body;
+
+    // Validation
+    if (!name || !email || !phone || !date || !time || !groupSize) {
+      return res.status(400).json({ error: 'Please fill in all fields.' });
+    }
+    if (groupSize < 7) {
+      return res.status(400).json({ error: 'Group bookings are for 7 or more people.' });
+    }
+    if (!['drinks', 'food_and_drinks'].includes(type)) {
+      return res.status(400).json({ error: 'Please select drinks or food & drinks.' });
+    }
+
+    // Send emails
+    await sendGroupEnquiry({ name, email, phone, date, time, groupSize, type });
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Group enquiry error:', err);
+    res.status(500).json({ error: 'Something went wrong. Please try again or give us a call.' });
+  }
 });
 
 // GET /butterbeer — The Sorting Tap

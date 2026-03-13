@@ -55,7 +55,8 @@
     "description": "预订不是必须的 — 我们始终为无预约客人保留一半的位置。如果你想确保有座位，请在下方预订。",
     "book_table": "预订座位",
     "groups_title": "超过6人的团体？",
-    "groups_text": "请致电+44 7400 653295。我们无法保证多桌预订会相邻 — 请联系我们，我们会为您安排。",
+    "groups_text": "我们无法保证多桌预订会相邻 — 请发送咨询，我们会为您安排。",
+    "groups_enquiry": "发送咨询",
     "notice_title": "温馨提示",
     "notice_text": "座位保留10分钟 — 如果迟到请电话告知。花园座位先到先得，无法预订。"
   },
@@ -123,6 +124,35 @@
     "back_home": "返回 Salt Horse",
     "processing_title": "正在处理你的礼品卡...",
     "processing_text": "你的付款正在确认中。稍后你将收到包含礼品卡的邮件。"
+  },
+
+  "groups": {
+    "section_label": "团体预订",
+    "title": "计划大型<br>聚会？",
+    "subtitle": "7人及以上团体请填写以下表格，我们会尽快联系您确认细节。",
+    "your_details": "您的信息",
+    "your_name": "您的姓名",
+    "email": "电子邮箱",
+    "phone": "电话号码",
+    "type_label": "您需要什么？",
+    "drinks_only": "仅饮品",
+    "food_and_drinks": "餐饮",
+    "when": "什么时候？",
+    "pick_date_first": "请先选择日期",
+    "select_time": "选择时间",
+    "not_available": "不可用",
+    "how_many": "多少人？",
+    "num_people": "人数",
+    "age_notice": "Salt Horse仅限18岁以上人士入场。所有客人必须年满18岁。",
+    "submit": "发送咨询",
+    "sending": "发送中...",
+    "response_time": "我们会尽快回复您 — 通常在24小时内。",
+    "success_title": "咨询已发送",
+    "success_text": "感谢 — 我们已收到您的信息，将尽快与您联系确认一切。",
+    "back_home": "返回 Salt Horse",
+    "error_details": "请填写您的姓名、邮箱和电话号码。",
+    "error_date_time": "请选择日期和时间。",
+    "error_group_size": "团体预订适用于7人及以上。"
   },
 
   "days": {

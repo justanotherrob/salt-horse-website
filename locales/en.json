@@ -55,7 +55,8 @@
     "description": "Booking is optional — we always hold half the space for walk-ins. But if you want to guarantee a spot, book below.",
     "book_table": "Book a Table",
     "groups_title": "Groups over 6?",
-    "groups_text": "Call us on +44 7400 653295. We can't assure multiple booked tables will be next to each other — contact us and we'll sort it.",
+    "groups_text": "We can't guarantee multiple booked tables will be next to each other — send us an enquiry and we'll sort it.",
+    "groups_enquiry": "Send an Enquiry",
     "notice_title": "Good to Know",
     "notice_text": "Tables are reserved for 10 minutes — give us a call if you're running late. Garden seating is first-come, first-served and cannot be reserved."
   },
@@ -123,6 +124,35 @@
     "back_home": "Back to Salt Horse",
     "processing_title": "Processing Your Gift Card...",
     "processing_text": "Your payment is being confirmed. You'll receive an email with your gift card shortly."
+  },
+
+  "groups": {
+    "section_label": "Group Bookings",
+    "title": "Planning Something Bigger?",
+    "subtitle": "For groups of 7 or more, fill in the form below and we'll get back to you to sort out the details.",
+    "your_details": "Your Details",
+    "your_name": "Your Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "type_label": "What are you after?",
+    "drinks_only": "Drinks Only",
+    "food_and_drinks": "Food & Drinks",
+    "when": "When?",
+    "pick_date_first": "Pick a date first",
+    "select_time": "Select time",
+    "not_available": "Not available",
+    "how_many": "How many?",
+    "num_people": "Number of people",
+    "age_notice": "Salt Horse is an 18+ venue. All guests must be 18 or over.",
+    "submit": "Send Enquiry",
+    "sending": "Sending...",
+    "response_time": "We'll get back to you as soon as we can — usually within 24 hours.",
+    "success_title": "Enquiry Sent",
+    "success_text": "Thanks — we've got your details and we'll be in touch soon to confirm everything.",
+    "back_home": "Back to Salt Horse",
+    "error_details": "Please fill in your name, email, and phone number.",
+    "error_date_time": "Please select a date and time.",
+    "error_group_size": "Group bookings are for 7 or more people."
   },
 
   "days": {

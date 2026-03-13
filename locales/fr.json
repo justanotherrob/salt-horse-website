@@ -55,7 +55,8 @@
     "description": "La réservation est facultative — nous gardons toujours la moitié des places pour ceux qui viennent sans réserver. Si vous voulez être sûr d'avoir une table, réservez ci-dessous.",
     "book_table": "Réserver une Table",
     "groups_title": "Groupe de plus de 6 ?",
-    "groups_text": "Appelez-nous au +44 7400 653295. Nous ne pouvons pas garantir que plusieurs tables réservées seront côte à côte — contactez-nous et nous organiserons tout.",
+    "groups_text": "Nous ne pouvons pas garantir que plusieurs tables réservées seront côte à côte — envoyez-nous une demande et nous organiserons tout.",
+    "groups_enquiry": "Envoyer une Demande",
     "notice_title": "Bon à Savoir",
     "notice_text": "Les tables sont réservées pendant 10 minutes — appelez-nous si vous êtes en retard. Les places en terrasse sont en ordre d'arrivée et ne peuvent pas être réservées."
   },
@@ -123,6 +124,35 @@
     "back_home": "Retour à Salt Horse",
     "processing_title": "Traitement de votre carte cadeau...",
     "processing_text": "Votre paiement est en cours de confirmation. Vous recevrez un email avec votre carte cadeau sous peu."
+  },
+
+  "groups": {
+    "section_label": "Réservation de Groupe",
+    "title": "Vous êtes<br>nombreux ?",
+    "subtitle": "Pour les groupes de 7 personnes ou plus, remplissez le formulaire ci-dessous et nous vous recontacterons pour organiser les détails.",
+    "your_details": "Vos Coordonnées",
+    "your_name": "Votre Nom",
+    "email": "Adresse Email",
+    "phone": "Numéro de Téléphone",
+    "type_label": "Que souhaitez-vous ?",
+    "drinks_only": "Boissons Uniquement",
+    "food_and_drinks": "Repas et Boissons",
+    "when": "Quand ?",
+    "pick_date_first": "Choisissez d'abord une date",
+    "select_time": "Choisir l'heure",
+    "not_available": "Non disponible",
+    "how_many": "Combien ?",
+    "num_people": "Nombre de personnes",
+    "age_notice": "Salt Horse est un établissement réservé aux plus de 18 ans. Tous les invités doivent avoir 18 ans ou plus.",
+    "submit": "Envoyer la Demande",
+    "sending": "Envoi en cours...",
+    "response_time": "Nous vous répondrons dès que possible — généralement sous 24 heures.",
+    "success_title": "Demande Envoyée",
+    "success_text": "Merci — nous avons bien reçu vos informations et nous vous recontacterons bientôt pour tout confirmer.",
+    "back_home": "Retour à Salt Horse",
+    "error_details": "Veuillez remplir votre nom, email et numéro de téléphone.",
+    "error_date_time": "Veuillez sélectionner une date et une heure.",
+    "error_group_size": "Les réservations de groupe sont pour 7 personnes ou plus."
   },
 
   "days": {
