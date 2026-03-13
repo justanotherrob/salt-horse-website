@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BRNHD9X1Y"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1BRNHD9X1Y');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Us — Salt Horse, 57-61 Blackfriars St, Edinburgh</title>
+    <meta name="description" content="Salt Horse is at 57-61 Blackfriars Street in Edinburgh's Old Town, just off the Royal Mile. Open seven days a week. Bar and kitchen hours listed.">
+    <meta property="og:title" content="Find Salt Horse — Edinburgh Old Town">
+    <meta property="og:description" content="57-61 Blackfriars Street, Edinburgh EH1 1NB. Just off the Royal Mile. Open seven days a week.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.salthorse.beer/find-us">
+    <meta property="og:site_name" content="Salt Horse">
+    <link rel="canonical" href="https://www.salthorse.beer/find-us">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .lp-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .lp-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('/images/outsidebar.jpeg') center/cover;
+            filter: brightness(0.2) saturate(0.6);
+        }
+        .lp-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .lp-hero .section-text {
+            margin: 1.5rem auto 0;
+            max-width: 620px;
+        }
+
+        .lp-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .lp-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--cream-faint);
+        }
+        .lp-section:last-child { border-bottom: none; }
+
+        .lp-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lp-section p {
+            color: var(--cream-dim);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .lp-section p:last-child { margin-bottom: 0; }
+
+        /* Address block */
+        .address-box {
+            background: var(--cream-faint);
+            border-radius: 4px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .address-box .venue-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+        .address-box p {
+            color: var(--cream-dim);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            line-height: 1.6;
+        }
+        .address-links-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .address-links-row a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--amber);
+            transition: color 0.3s;
+        }
+        .address-links-row a:hover { color: var(--cream); }
+        .address-links-row a::before { content: '→ '; }
+
+        /* Map embed */
+        .map-embed {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            filter: grayscale(0.3) brightness(0.9);
+        }
+
+        /* Hours grid */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+        .hours-block h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--cream-faint);
+        }
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--cream-faint);
+            font-size: 0.9rem;
+        }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-row .day { color: var(--cream-dim); }
+        .hours-row .time {
+            color: var(--cream);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .hours-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+        }
+
+        .age-notice {
+            margin-top: 1.5rem;
+            padding: 0.75rem 1rem;
+            background: rgba(212, 148, 58, 0.1);
+            border-left: 2px solid var(--amber);
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+        }
+
+        /* Getting here */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .transport-card {
+            padding: 1.5rem;
+            background: var(--cream-faint);
+            border-radius: 4px;
+        }
+        .transport-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--amber);
+            margin-bottom: 0.5rem;
+        }
+        .transport-card p {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .lp-cta {
+            text-align: center;
+            padding: 4rem 0 5rem;
+        }
+        .lp-cta p {
+            color: var(--cream-dim);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .lp-cta .btn { margin: 0 0.5rem; }
+
+        @media (max-width: 600px) {
+            .hours-grid { grid-template-columns: 1fr; }
+            .transport-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "Salt Horse",
+        "url": "https://www.salthorse.beer",
+        "telephone": "+447400653295",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "57-61 Blackfriars Street",
+            "addressLocality": "Edinburgh",
+            "postalCode": "EH1 1NB",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.9494,
+            "longitude": -3.1870
+        },
+        "openingHoursSpecification": [
+            <% hours.forEach(function(h, i) { %>
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "<%= h.day %>",
+                "opens": "<%= h.bar_open %>",
+                "closes": "<%= h.bar_close %>"
+            }<%= i < hours.length - 1 ? ',' : '' %>
+            <% }); %>
+        ],
+        "servesCuisine": ["Craft Beer", "Burgers"],
+        "priceRange": "££"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav scrolled" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/drink" onclick="closeMenu()">Drink</a></li>
+            <li><a href="/food" onclick="closeMenu()">Food</a></li>
+            <li><a href="/book" onclick="closeMenu()">Book</a></li>
+            <li><a href="/find-us" onclick="closeMenu()" style="color: var(--cream);">Find Us</a></li>
+            <li><a href="<%= bookUrl %>" target="_blank" class="nav-cta" onclick="closeMenu()">Reserve</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+        <div class="lp-hero-bg"></div>
+        <div class="lp-hero-content">
+            <div class="section-label" style="text-align:center;">Find Us</div>
+            <h1 class="section-title" style="text-align:center;">Location &amp; Hours</h1>
+            <p class="section-text" style="text-align:center;">We're on Blackfriars Street in Edinburgh's Old Town, just a minute off the Royal Mile. Open seven days a week.</p>
+        </div>
+    </section>
+
+    <div class="lp-content">
+
+        <!-- Address -->
+        <div class="lp-section">
+            <h2>Where We Are</h2>
+            <div class="address-box">
+                <div class="venue-name">Salt Horse</div>
+                <p><%= content.location_address_1 %></p>
+                <p><%= content.location_address_2 %></p>
+                <p><%= content.location_address_3 %></p>
+                <div class="address-links-row">
+                    <a href="<%= content.location_maps_url %>" target="_blank">Google Maps</a>
+                    <a href="tel:+447400653295">+44 7400 653295</a>
+                    <a href="mailto:salthorsebeerbar@gmail.com">Email Us</a>
+                </div>
+            </div>
+
+            <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.0!2d-3.187!3d55.9494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7902dbbb4d5%3A0x1b9e8cdd2b7d9f0!2sSalt%20Horse!5e0!3m2!1sen!2suk!4v1" allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="age-notice">We are an 18+ venue. All guests must be 18 or over.</div>
+        </div>
+
+        <!-- Hours -->
+        <div class="lp-section">
+            <h2>Opening Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-block">
+                    <h3>Bar Hours</h3>
+                    <% hours.forEach(function(h) { %>
+                    <div class="hours-row">
+                        <span class="day"><%= h.day %></span>
+                        <span class="time"><%= formatTime(h.bar_open) %> – <%= formatTime(h.bar_close) %></span>
+                    </div>
+                    <% }); %>
+                </div>
+                <div class="hours-block">
+                    <h3>Kitchen Hours</h3>
+                    <% hours.forEach(function(h) { %>
+                    <div class="hours-row">
+                        <span class="day"><%= h.day %></span>
+                        <span class="time"><%= formatTime(h.kitchen_open) %> – <%= formatTime(h.kitchen_close) %></span>
+                    </div>
+                    <% }); %>
+                    <p class="hours-note">Walk-in only after the kitchen closes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Here -->
+        <div class="lp-section">
+            <h2>Getting Here</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <h3>On Foot</h3>
+                    <p>We're on Blackfriars Street, just off the Royal Mile between South Bridge and the Cowgate. A two-minute walk from the High Street.</p>
+                </div>
+                <div class="transport-card">
+                    <h3>By Bus</h3>
+                    <p>Buses along South Bridge and the Royal Mile stop within a couple of minutes' walk. Routes 3, 5, 7, 8, 29, 31, 37, 47, and 49 all pass nearby.</p>
+                </div>
+                <div class="transport-card">
+                    <h3>By Train</h3>
+                    <p>Edinburgh Waverley station is a 10-minute walk. Head south through the Old Town towards the Cowgate.</p>
+                </div>
+                <div class="transport-card">
+                    <h3>By Car</h3>
+                    <p>Street parking is limited in the Old Town. The nearest car park is NCP Castle Terrace, about a 10-minute walk away.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="lp-cta">
+            <p>Come say hello. We're open seven days a week.</p>
+            <a href="<%= bookUrl %>" target="_blank" class="btn btn-fill">Reserve a Table</a>
+            <a href="/drink" class="btn">See What's on Tap</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note">Great Beer & Burgers in Edinburgh's Old Town since 2016.</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;">Privacy Policy</a>
+            <p style="margin-top: 0.75rem;">&copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

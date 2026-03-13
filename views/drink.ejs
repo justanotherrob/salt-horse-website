@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BRNHD9X1Y"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1BRNHD9X1Y');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Beer in Edinburgh — 14 Taps &amp; 200+ Bottles | Salt Horse</title>
+    <meta name="description" content="Fourteen rotating draught lines and over 200 cans and bottles of craft beer from Scotland, the UK, and beyond. Always something new on tap. Salt Horse, Edinburgh Old Town.">
+    <meta property="og:title" content="Craft Beer in Edinburgh — Salt Horse">
+    <meta property="og:description" content="14 rotating taps. 200+ cans and bottles. Alcohol-free options. Bottle shop takeaway. Edinburgh Old Town.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.salthorse.beer/drink">
+    <meta property="og:site_name" content="Salt Horse">
+    <link rel="canonical" href="https://www.salthorse.beer/drink">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .lp-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .lp-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('/images/taps.jpg') center/cover;
+            filter: brightness(0.2) saturate(0.6);
+        }
+        .lp-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .lp-hero .section-text {
+            margin: 1.5rem auto 0;
+            max-width: 620px;
+        }
+
+        .lp-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .lp-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--cream-faint);
+        }
+        .lp-section:last-child { border-bottom: none; }
+
+        .lp-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lp-section p {
+            color: var(--cream-dim);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .lp-section p:last-child { margin-bottom: 0; }
+
+        .lp-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .lp-feature {
+            padding: 1.5rem;
+            background: var(--cream-faint);
+            border-radius: 4px;
+        }
+        .lp-feature h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--amber);
+            margin-bottom: 0.5rem;
+        }
+        .lp-feature p {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .lp-image-break {
+            margin: 0 -2rem;
+            height: 35vh;
+            min-height: 250px;
+            overflow: hidden;
+        }
+        .lp-image-break img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6) saturate(0.8);
+        }
+
+        .lp-cta {
+            text-align: center;
+            padding: 4rem 0 5rem;
+        }
+        .lp-cta p {
+            color: var(--cream-dim);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .lp-cta .btn { margin: 0 0.5rem; }
+
+        @media (max-width: 600px) {
+            .lp-features { grid-template-columns: 1fr; }
+            .lp-image-break { margin: 0 -1.5rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "Salt Horse",
+        "description": "Craft beer bar with 14 rotating draught lines and over 200 cans and bottles in Edinburgh's Old Town.",
+        "url": "https://www.salthorse.beer",
+        "telephone": "+447400653295",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "57-61 Blackfriars Street",
+            "addressLocality": "Edinburgh",
+            "postalCode": "EH1 1NB",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.9494,
+            "longitude": -3.1870
+        },
+        "servesCuisine": ["Craft Beer", "Burgers"],
+        "priceRange": "££"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav scrolled" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/drink" onclick="closeMenu()" style="color: var(--cream);">Drink</a></li>
+            <li><a href="/food" onclick="closeMenu()">Food</a></li>
+            <li><a href="/book" onclick="closeMenu()">Book</a></li>
+            <li><a href="/find-us" onclick="closeMenu()">Find Us</a></li>
+            <li><a href="<%= bookUrl %>" target="_blank" class="nav-cta" onclick="closeMenu()">Reserve</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+        <div class="lp-hero-bg"></div>
+        <div class="lp-hero-content">
+            <div class="section-label" style="text-align:center;">What We Pour</div>
+            <h1 class="section-title" style="text-align:center;">Just the Good Stuff.</h1>
+            <p class="section-text" style="text-align:center;">Fourteen rotating draught lines and over 200 cans and bottles from Scotland, the UK, and beyond. We're serious about beer and relaxed about everything else.</p>
+        </div>
+    </section>
+
+    <div class="lp-content">
+
+        <!-- On Tap -->
+        <div class="lp-section">
+            <h2>What's on Tap</h2>
+            <p>Our fourteen draught lines change constantly. We work with some of the best breweries in Scotland, the UK and Europe — Otherworld, Verdant, DEYA, Burnt Mill, Donzoko, Pillars, and many more. You'll always find something new when you visit.</p>
+            <p>We pour everything from hazy IPAs and crisp lagers to Belgian tripels and barrel-aged stouts. Whatever you're into, there's something on for you.</p>
+        </div>
+
+        <!-- Fridge & Bottles -->
+        <div class="lp-section">
+            <h2>The Fridge</h2>
+            <p>Over 200 cans and bottles line our fridges — a carefully curated and regularly rotated selection from breweries across the world. From sought-after lambics and imperial stouts to easy-drinking pale ales and lagers.</p>
+            <p>Everything in the fridge is available to drink in or take away from our bottle shop. Grab something for now or pick up a few to enjoy at home.</p>
+        </div>
+
+    </div>
+
+    <!-- Image break -->
+    <div class="lp-image-break">
+        <img src="/images/fridges.jpg" alt="Craft beer fridges at Salt Horse Edinburgh">
+    </div>
+
+    <div class="lp-content">
+
+        <!-- What we carry -->
+        <div class="lp-section">
+            <div class="lp-features">
+                <div class="lp-feature">
+                    <h3>14 Rotating Taps</h3>
+                    <p>Always changing, always interesting. We rotate our lines regularly so there's something new every time you visit.</p>
+                </div>
+                <div class="lp-feature">
+                    <h3>200+ Cans &amp; Bottles</h3>
+                    <p>A huge range from Scotland, the UK, Belgium, Germany, Scandinavia and beyond. Drink in or take away.</p>
+                </div>
+                <div class="lp-feature">
+                    <h3>Alcohol-Free Options</h3>
+                    <p>Always a good selection of alcohol-free beers. We take them just as seriously as everything else.</p>
+                </div>
+                <div class="lp-feature">
+                    <h3>Wine &amp; Spirits</h3>
+                    <p>A small, well-formed selection of wines and spirits for when you fancy something different.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="lp-cta">
+            <p>Come see what's pouring. We're on Blackfriars Street in Edinburgh's Old Town.</p>
+            <a href="<%= bookUrl %>" target="_blank" class="btn btn-fill">Reserve a Table</a>
+            <a href="/find-us" class="btn">Find Us</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note">Great Beer & Burgers in Edinburgh's Old Town since 2016.</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;">Privacy Policy</a>
+            <p style="margin-top: 0.75rem;">&copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

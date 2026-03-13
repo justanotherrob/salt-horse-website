@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BRNHD9X1Y"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1BRNHD9X1Y');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgers &amp; Food in Edinburgh Old Town | Salt Horse</title>
+    <meta name="description" content="Smash burgers, fried chicken, wings, and hand-cut chips in Edinburgh's Old Town. Freshly made with quality ingredients. Vegan options available. Salt Horse.">
+    <meta property="og:title" content="Burgers & Food — Salt Horse, Edinburgh">
+    <meta property="og:description" content="Smash burgers, fried chicken sandwiches, wings, and proper hand-cut chips. Freshly made. No shortcuts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.salthorse.beer/food">
+    <meta property="og:site_name" content="Salt Horse">
+    <link rel="canonical" href="https://www.salthorse.beer/food">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .lp-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .lp-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('/images/IMG_3780.jpg') center/cover;
+            filter: brightness(0.2) saturate(0.6);
+        }
+        .lp-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .lp-hero .section-text {
+            margin: 1.5rem auto 0;
+            max-width: 620px;
+        }
+
+        .lp-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .lp-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--cream-faint);
+        }
+        .lp-section:last-child { border-bottom: none; }
+
+        .lp-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lp-section p {
+            color: var(--cream-dim);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .lp-section p:last-child { margin-bottom: 0; }
+
+        .lp-menu-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin: 2rem 0;
+        }
+        .food-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+        .food-grid img:first-child {
+            grid-column: 1 / -1;
+            height: 280px;
+        }
+
+        .lp-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .lp-highlight {
+            padding: 1.5rem;
+            background: var(--cream-faint);
+            border-radius: 4px;
+        }
+        .lp-highlight h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--amber);
+            margin-bottom: 0.5rem;
+        }
+        .lp-highlight p {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .lp-cta {
+            text-align: center;
+            padding: 4rem 0 5rem;
+        }
+        .lp-cta p {
+            color: var(--cream-dim);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .lp-cta .btn { margin: 0 0.5rem; }
+
+        .lp-hours-note {
+            background: var(--cream-faint);
+            border-left: 2px solid var(--amber);
+            padding: 1rem 1.25rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .lp-highlights { grid-template-columns: 1fr; }
+            .food-grid { grid-template-columns: 1fr; }
+            .food-grid img, .food-grid img:first-child { height: 200px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Salt Horse",
+        "description": "Smash burgers, fried chicken sandwiches, wings, and hand-cut chips in Edinburgh's Old Town. Craft beer bar and restaurant.",
+        "url": "https://www.salthorse.beer",
+        "telephone": "+447400653295",
+        "servesCuisine": ["Burgers", "American", "Craft Beer"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "57-61 Blackfriars Street",
+            "addressLocality": "Edinburgh",
+            "postalCode": "EH1 1NB",
+            "addressCountry": "GB"
+        },
+        "priceRange": "££",
+        "menu": "<%= menuUrl %>"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav scrolled" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/drink" onclick="closeMenu()">Drink</a></li>
+            <li><a href="/food" onclick="closeMenu()" style="color: var(--cream);">Food</a></li>
+            <li><a href="/book" onclick="closeMenu()">Book</a></li>
+            <li><a href="/find-us" onclick="closeMenu()">Find Us</a></li>
+            <li><a href="<%= bookUrl %>" target="_blank" class="nav-cta" onclick="closeMenu()">Reserve</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+        <div class="lp-hero-bg"></div>
+        <div class="lp-hero-content">
+            <div class="section-label" style="text-align:center;">What We Serve</div>
+            <h1 class="section-title" style="text-align:center;">Burgers That Don't<br>Mess About.</h1>
+            <p class="section-text" style="text-align:center;">Smash burgers, fried chicken sandwiches, wings, and proper hand-cut chips. Small menu, no shortcuts, everything made fresh.</p>
+        </div>
+    </section>
+
+    <div class="lp-content">
+
+        <!-- The Food -->
+        <div class="lp-section">
+            <h2>The Menu</h2>
+            <p>We keep it tight. Dry-aged beef smash burgers, crispy fried chicken sandwiches, loaded chips, wings, and a few things for sharing. Everything is made fresh to order with quality ingredients.</p>
+            <p>Vegan options that hold their own — not an afterthought. Gluten-free buns available on request.</p>
+
+            <div class="food-grid">
+                <img src="/images/IMG_3780.jpg" alt="Spread of Salt Horse burgers and craft beer">
+                <img src="/images/IMG_3692.jpg" alt="Smash burger close-up">
+                <img src="/images/IMG_3721.jpg" alt="Fried chicken burger and beer">
+            </div>
+
+            <div class="lp-menu-links">
+                <a href="<%= menuUrl %>" target="_blank" class="btn">Current Menu</a>
+                <a href="<%= allergensUrl %>" target="_blank" class="btn btn-amber">Allergens</a>
+            </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="lp-section">
+            <h2>What to Expect</h2>
+            <div class="lp-highlights">
+                <div class="lp-highlight">
+                    <h3>Smash Burgers</h3>
+                    <p>Dry-aged beef, smashed thin on the grill for maximum crust. Simple, proper, and satisfying.</p>
+                </div>
+                <div class="lp-highlight">
+                    <h3>Fried Chicken</h3>
+                    <p>Crispy buttermilk fried chicken sandwiches. Nashville hot if you can handle the heat.</p>
+                </div>
+                <div class="lp-highlight">
+                    <h3>Hand-Cut Chips</h3>
+                    <p>Proper chips, hand cut and cooked twice. The way they should be done.</p>
+                </div>
+                <div class="lp-highlight">
+                    <h3>Vegan Options</h3>
+                    <p>Plant-based burgers and sides that are just as good. Not an afterthought.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kitchen Hours -->
+        <div class="lp-section">
+            <h2>Kitchen Hours</h2>
+            <p>The kitchen has its own hours — we serve food from the times below. Walk-ins welcome after the kitchen closes for drinks only.</p>
+            <div class="lp-hours-note">
+                Monday – Wednesday: 4pm – 9pm<br>
+                Thursday – Saturday: 12pm – 9pm (Friday &amp; Saturday kitchen until 10pm)<br>
+                Sunday: 12:30pm – 9pm
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="lp-cta">
+            <p>Hungry? Book a table or just walk in.</p>
+            <a href="<%= bookUrl %>" target="_blank" class="btn btn-fill">Reserve a Table</a>
+            <a href="/drink" class="btn">See What's on Tap</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note">Great Beer & Burgers in Edinburgh's Old Town since 2016.</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;">Privacy Policy</a>
+            <p style="margin-top: 0.75rem;">&copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BRNHD9X1Y"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1BRNHD9X1Y');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table — Salt Horse, Edinburgh Old Town</title>
+    <meta name="description" content="Reserve a table at Salt Horse in Edinburgh's Old Town. Walk-ins always welcome — we hold half the space for you. Group bookings for 7+ available.">
+    <meta property="og:title" content="Book a Table — Salt Horse, Edinburgh">
+    <meta property="og:description" content="Reserve a table at Salt Horse. Walk-ins welcome. Group bookings for 7+ available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.salthorse.beer/book">
+    <meta property="og:site_name" content="Salt Horse">
+    <link rel="canonical" href="https://www.salthorse.beer/book">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .lp-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .lp-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('/images/barnight.jpg') center/cover;
+            filter: brightness(0.2) saturate(0.6);
+        }
+        .lp-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .lp-hero .section-text {
+            margin: 1.5rem auto 0;
+            max-width: 620px;
+        }
+
+        .lp-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .lp-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--cream-faint);
+        }
+        .lp-section:last-child { border-bottom: none; }
+
+        .lp-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lp-section p {
+            color: var(--cream-dim);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .lp-section p:last-child { margin-bottom: 0; }
+
+        .book-cta-box {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--cream-faint);
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+        .book-cta-box h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .book-cta-box p {
+            color: var(--cream-dim);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .info-card {
+            padding: 1.5rem;
+            background: var(--cream-faint);
+            border-radius: 4px;
+        }
+        .info-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--amber);
+            margin-bottom: 0.5rem;
+        }
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .lp-cta {
+            text-align: center;
+            padding: 4rem 0 5rem;
+        }
+        .lp-cta p {
+            color: var(--cream-dim);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .lp-cta .btn { margin: 0 0.5rem; }
+
+        @media (max-width: 600px) {
+            .info-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav scrolled" id="nav">
+        <a href="/" class="nav-logo">
+            <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/drink" onclick="closeMenu()">Drink</a></li>
+            <li><a href="/food" onclick="closeMenu()">Food</a></li>
+            <li><a href="/book" onclick="closeMenu()" style="color: var(--cream);">Book</a></li>
+            <li><a href="/find-us" onclick="closeMenu()">Find Us</a></li>
+            <li><a href="<%= bookUrl %>" target="_blank" class="nav-cta" onclick="closeMenu()">Reserve</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+        <div class="lp-hero-bg"></div>
+        <div class="lp-hero-content">
+            <div class="section-label" style="text-align:center;">Reserve a Table</div>
+            <h1 class="section-title" style="text-align:center;">Book a Table</h1>
+            <p class="section-text" style="text-align:center;">Booking is optional — we always hold half the space for walk-ins. But if you want to guarantee a spot, reserve below.</p>
+        </div>
+    </section>
+
+    <div class="lp-content">
+
+        <!-- Book a Table -->
+        <div class="lp-section">
+            <div class="book-cta-box">
+                <h3>Reserve Your Table</h3>
+                <p>Book online in seconds. Walk-ins are always welcome too.</p>
+                <a href="<%= bookUrl %>" target="_blank" class="btn btn-fill">Book a Table</a>
+            </div>
+        </div>
+
+        <!-- Good to Know -->
+        <div class="lp-section">
+            <h2>Good to Know</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>Walk-ins Welcome</h3>
+                    <p>We always hold half the space for walk-ins. No booking needed — just turn up and we'll find you a spot.</p>
+                </div>
+                <div class="info-card">
+                    <h3>10-Minute Hold</h3>
+                    <p>Tables are held for 10 minutes from your booking time. Running late? Just give us a call and we'll sort it.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Garden Seating</h3>
+                    <p>Our garden tables are first-come, first-served and can't be reserved. Get there early in summer.</p>
+                </div>
+                <div class="info-card">
+                    <h3>18+ Venue</h3>
+                    <p>Salt Horse is an 18+ venue. All guests must be 18 or over, sorry — no exceptions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Groups -->
+        <div class="lp-section">
+            <h2>Groups of 7 or More</h2>
+            <p>For larger groups, we can't guarantee that separately booked tables will be next to each other. Send us a group enquiry instead and we'll make sure you're sorted.</p>
+            <p>We'll get back to you within 24 hours to confirm the details.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="/groups" class="btn btn-amber">Send a Group Enquiry</a>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="lp-cta">
+            <p>We're on Blackfriars Street in Edinburgh's Old Town.</p>
+            <a href="/find-us" class="btn btn-fill">Find Us</a>
+            <a href="/drink" class="btn">See What's on Tap</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/logos/salthorse_notext_logo_FFF6DA_transparent.png" alt="Salt Horse" class="footer-logo">
+        <p class="footer-note">Great Beer & Burgers in Edinburgh's Old Town since 2016.</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/salthorsebar/" target="_blank">Instagram</a>
+            <a href="https://untappd.com/v/salt-horse/4673421" target="_blank">Untappd</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="/privacy" style="color: rgba(255, 246, 218, 0.4); transition: color 0.3s;">Privacy Policy</a>
+            <p style="margin-top: 0.75rem;">&copy; Salt Horse. 57-61 Blackfriars St, Edinburgh EH1 1NB.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

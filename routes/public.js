@@ -125,6 +125,38 @@ router.post('/groups', async (req, res) => {
   }
 });
 
+// ── SEO Landing Pages ──
+
+// GET /drink — Craft beer landing page
+router.get('/drink', async (req, res) => {
+  const content = await getContent();
+  res.render('drink', { bookUrl: content.book_url || '#' });
+});
+
+// GET /food — Food & burgers landing page
+router.get('/food', async (req, res) => {
+  const content = await getContent();
+  res.render('food', {
+    bookUrl: content.book_url || '#',
+    menuUrl: content.food_menu_url || '#',
+    allergensUrl: content.food_allergens_url || '#'
+  });
+});
+
+// GET /book — Reservations landing page
+router.get('/book', async (req, res) => {
+  const content = await getContent();
+  res.render('book', { bookUrl: content.book_url || '#' });
+});
+
+// GET /find-us — Location & hours landing page
+router.get('/find-us', async (req, res) => {
+  const content = await getContent();
+  const hours = await getHours();
+  const lang = res.locals.lang || 'en';
+  res.render('find-us', { content, hours, formatTime: (t) => formatTime(t, lang), bookUrl: content.book_url || '#' });
+});
+
 // GET /butterbeer — The Sorting Tap
 router.get('/butterbeer', (req, res) => {
   res.render('butterbeer');

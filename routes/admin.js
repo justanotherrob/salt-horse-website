@@ -113,6 +113,26 @@ router.get('/import', (req, res) => {
   res.render('admin/import', { user: req.session.userName });
 });
 
+// GET /admin/pages — All live site pages
+router.get('/pages', async (req, res) => {
+  const giftCardsEnabled = await db.get("SELECT value FROM site_settings WHERE key = 'gift_cards_enabled'");
+  const gcOn = giftCardsEnabled ? giftCardsEnabled.value === 'true' : false;
+
+  const pages = [
+    { name: 'Homepage',         path: '/',                   type: 'Main',    typeClass: 'main',    note: 'Main landing page' },
+    { name: 'Craft Beer',       path: '/drink',              type: 'SEO',     typeClass: 'seo',     note: 'Taps, bottles & fridge' },
+    { name: 'Food & Burgers',   path: '/food',               type: 'SEO',     typeClass: 'seo',     note: 'Menu & kitchen hours' },
+    { name: 'Book a Table',     path: '/book',               type: 'SEO',     typeClass: 'seo',     note: 'Reservations' },
+    { name: 'Find Us',          path: '/find-us',            type: 'SEO',     typeClass: 'seo',     note: 'Location, hours & map' },
+    { name: 'Group Bookings',   path: '/groups',             type: 'Feature', typeClass: 'feature', note: 'Enquiry form (7+ guests)' },
+    { name: 'Gift Cards',       path: '/gift-cards',         type: 'Feature', typeClass: 'feature', note: gcOn ? 'Live' : 'Currently hidden' },
+    { name: 'The Sorting Tap',  path: '/butterbeer',         type: 'Feature', typeClass: 'feature', note: 'Butterbeer quiz' },
+    { name: 'Privacy Policy',   path: '/privacy',            type: 'Legal',   typeClass: 'legal',   note: '' },
+  ];
+
+  res.render('admin/pages', { pages, user: req.session.userName });
+});
+
 // GET /admin/redirects
 router.get('/redirects', async (req, res) => {
   const redirects = await db.all('SELECT * FROM redirects ORDER BY created_at DESC');
