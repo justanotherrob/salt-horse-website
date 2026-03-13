@@ -73,13 +73,36 @@ router.get('/gift-cards/success', async (req, res) => {
 // GET /groups — Group booking enquiry form
 router.get('/groups', async (req, res) => {
   const content = await getContent();
-  res.render('groups', { bookUrl: content.book_url || '#' });
+  res.render('groups', { bookUrl: content.book_url || '#', recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY || '' });
 });
 
 // POST /groups — Submit group booking enquiry
 router.post('/groups', async (req, res) => {
   try {
-    const { name, email, phone, date, time, groupSize, type, comments } = req.body;
+    const { name, email, phone, date, time, groupSize, type, comments, recaptchaToken } = req.body;
+
+    // reCAPTCHA verification
+    if (process.env.RECAPTCHA_SECRET_KEY) {
+      if (!recaptchaToken) {
+        return res.status(400).json({ error: 'reCAPTCHA verification failed. Please try again.' });
+      }
+      try {
+        const recaptchaRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`
+        });
+        const recaptchaData = await recaptchaRes.json();
+        if (!recaptchaData.success || recaptchaData.score < 0.5) {
+          console.log('[RECAPTCHA] Blocked submission — score:', recaptchaData.score, 'success:', recaptchaData.success);
+          return res.status(400).json({ error: 'Submission blocked — please try again.' });
+        }
+        console.log('[RECAPTCHA] Passed — score:', recaptchaData.score);
+      } catch (recaptchaErr) {
+        console.error('[RECAPTCHA] Verification error:', recaptchaErr.message);
+        // Allow submission if reCAPTCHA service is down
+      }
+    }
 
     // Validation
     if (!name || !email || !phone || !date || !time || !groupSize) {

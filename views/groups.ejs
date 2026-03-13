@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <% if (recaptchaSiteKey) { %>
+    <script src="https://www.google.com/recaptcha/api.js?render=<%= recaptchaSiteKey %>"></script>
+    <% } %>
     <style>
         .groups-page { min-height: 100vh; }
 
@@ -190,6 +193,11 @@
         }
         .success-home-btn:hover { opacity: 0.9; }
 
+        /* Hide reCAPTCHA badge — using inline text credit instead */
+        .grecaptcha-badge { visibility: hidden !important; }
+        .recaptcha-notice { font-size: 0.7rem; color: rgba(255,246,218,0.3); text-align: center; margin-top: 0.75rem; }
+        .recaptcha-notice a { color: rgba(255,246,218,0.4); }
+
     </style>
 </head>
 <body>
@@ -289,6 +297,9 @@
                 </button>
 
                 <p class="form-note"><%= t.groups.response_time %></p>
+                <% if (recaptchaSiteKey) { %>
+                <p class="recaptcha-notice">Protected by reCAPTCHA. <a href="https://policies.google.com/privacy" target="_blank">Privacy</a> &amp; <a href="https://policies.google.com/terms" target="_blank">Terms</a>.</p>
+                <% } %>
 
             </div>
 
@@ -317,6 +328,7 @@
     </footer>
 
     <script>
+        const recaptchaSiteKey = '<%= recaptchaSiteKey || "" %>';
         let bookingType = 'food_and_drinks';
 
         function setType(type, btn) {
@@ -424,6 +436,12 @@
             btn.disabled = true;
 
             try {
+                // Get reCAPTCHA token if available
+                let recaptchaToken = '';
+                if (recaptchaSiteKey && window.grecaptcha) {
+                    recaptchaToken = await grecaptcha.execute(recaptchaSiteKey, { action: 'group_enquiry' });
+                }
+
                 const res = await fetch('/groups', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -431,7 +449,8 @@
                         name, email, phone, date, time,
                         groupSize: parseInt(groupSize),
                         type: bookingType,
-                        comments: comments || ''
+                        comments: comments || '',
+                        recaptchaToken
                     })
                 });
 
