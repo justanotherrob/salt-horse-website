@@ -8,7 +8,7 @@
     "drink": "Bevande",
     "food": "Cibo",
     "gift_cards": "Buoni Regalo",
-    "book": "Prenota",
+    "book": "Prenotazione",
     "find_us": "Trovaci",
     "reserve": "Prenota"
   },
@@ -74,7 +74,7 @@
 
   "footer": {
     "tagline": "Birra artigianale e hamburger nel centro storico di Edimburgo dal 2016.",
-    "privacy_policy": "Privacy Policy"
+    "privacy_policy": "Informativa sulla Privacy"
   },
 
   "gift_cards": {
