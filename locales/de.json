@@ -70,7 +70,8 @@
     "google_maps": "Google Maps",
     "call_us": "Ruf Uns An",
     "kitchen_note": "Nach Küchenschluss nur für Laufkundschaft.",
-    "venue_notice": "Eintritt ab 18 Jahren."
+    "venue_notice": "Eintritt ab 18 Jahren.",
+    "card_only_notice": "Nur Kartenzahlung. Bargeld wird nicht akzeptiert."
   },
 
   "footer": {

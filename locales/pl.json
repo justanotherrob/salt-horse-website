@@ -70,7 +70,8 @@
     "google_maps": "Google Maps",
     "call_us": "Zadzwoń",
     "kitchen_note": "Po zamknięciu kuchni obsługujemy tylko gości bez rezerwacji.",
-    "venue_notice": "Lokal wyłącznie dla osób powyżej 18 lat."
+    "venue_notice": "Lokal wyłącznie dla osób powyżej 18 lat.",
+    "card_only_notice": "Płatność tylko kartą. Gotówka nie jest akceptowana."
   },
 
   "footer": {

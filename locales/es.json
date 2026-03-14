@@ -70,7 +70,8 @@
     "google_maps": "Google Maps",
     "call_us": "Llámanos",
     "kitchen_note": "Solo sin reserva después del cierre de cocina.",
-    "venue_notice": "Solo para mayores de 18 años."
+    "venue_notice": "Solo para mayores de 18 años.",
+    "card_only_notice": "Solo aceptamos pago con tarjeta. No se acepta efectivo."
   },
 
   "footer": {

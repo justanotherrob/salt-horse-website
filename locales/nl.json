@@ -70,7 +70,8 @@
     "google_maps": "Google Maps",
     "call_us": "Bel Ons",
     "kitchen_note": "Alleen inloop na sluiting van de keuken.",
-    "venue_notice": "Alleen toegankelijk voor 18+."
+    "venue_notice": "Alleen toegankelijk voor 18+.",
+    "card_only_notice": "Alleen pinbetaling. Contant geld wordt niet geaccepteerd."
   },
 
   "footer": {

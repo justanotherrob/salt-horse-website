@@ -70,7 +70,8 @@
     "google_maps": "谷歌地图",
     "call_us": "致电我们",
     "kitchen_note": "厨房关闭后仅接待无预约客人。",
-    "venue_notice": "本场所仅限18岁以上人士进入。"
+    "venue_notice": "本场所仅限18岁以上人士进入。",
+    "card_only_notice": "本场所仅接受刷卡支付，不接受现金。"
   },
 
   "footer": {

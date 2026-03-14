@@ -70,7 +70,8 @@
     "google_maps": "Google Maps",
     "call_us": "Chiamaci",
     "kitchen_note": "Solo senza prenotazione dopo la chiusura della cucina.",
-    "venue_notice": "Locale riservato ai maggiori di 18 anni."
+    "venue_notice": "Locale riservato ai maggiori di 18 anni.",
+    "card_only_notice": "Accettiamo solo pagamenti con carta. Non si accettano contanti."
   },
 
   "footer": {

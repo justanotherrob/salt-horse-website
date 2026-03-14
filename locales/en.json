@@ -70,7 +70,8 @@
     "google_maps": "Google Maps",
     "call_us": "Call Us",
     "kitchen_note": "Walk-in only after the kitchen closes.",
-    "venue_notice": "We are an 18+ venue."
+    "venue_notice": "We are an 18+ venue.",
+    "card_only_notice": "We are a card-only venue. No cash accepted."
   },
 
   "footer": {
