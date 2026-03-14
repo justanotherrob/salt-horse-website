@@ -136,10 +136,28 @@
             line-height: 1.6;
         }
 
+        .lp-hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .lp-hours-grid h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--cream-faint);
+        }
+
         @media (max-width: 600px) {
             .lp-highlights { grid-template-columns: 1fr; }
             .food-grid { grid-template-columns: 1fr; }
             .food-grid img, .food-grid img:first-child { height: 200px; }
+            .lp-hours-grid { grid-template-columns: 1fr; gap: 1.5rem; }
         }
     </style>
 
@@ -198,8 +216,8 @@
         <!-- The Food -->
         <div class="lp-section">
             <h2>The Menu</h2>
-            <p>We keep it tight. Smash burgers made with organic, 100% pasture-fed Lincoln Red beef from <a href="https://butcherybowhouse.com" target="_blank" style="color: var(--amber);">Butchery at Bowhouse</a> on the Balcaskie Estate in Fife — dry-aged for six weeks before it hits our grill. Crispy fried chicken sandwiches, loaded chips, wings, and a few things for sharing.</p>
-            <p>Vegan options that hold their own — not an afterthought. Gluten-free buns available on request.</p>
+            <p>We keep it small and do it properly. Smash burgers, crispy fried chicken sandwiches, wings, loaded chips, and a few things for sharing. Everything is made fresh to order.</p>
+            <p>Our fried chicken is buttermilk-brined and double-coated for extra crunch — go Nashville hot if you can handle the heat. Chips are hand-cut and cooked twice the way they should be. Vegan burgers and sides that hold their own, not an afterthought. Gluten-free buns available on request.</p>
 
             <div class="food-grid">
                 <img src="/images/IMG_3780.jpg" alt="Spread of Salt Horse burgers and craft beer">
@@ -216,10 +234,11 @@
         <!-- Bowhouse provenance -->
         <div class="lp-section">
             <h2>Where Our Beef Comes From</h2>
-            <p>Our beef comes from <a href="https://butcherybowhouse.com" target="_blank" style="color: var(--amber);">Butchery at Bowhouse</a> on the Balcaskie Estate in Fife. Their Lincoln Red cattle are a rare native breed, 100% pasture-fed and Soil Association organic certified. The beef is dry-aged for six weeks at Bowhouse before we get it as mince for our burgers.</p>
+            <p>Our burger mince comes from <a href="https://butcherybowhouse.com" target="_blank" style="color: var(--amber);">Butchery at Bowhouse</a> on the Balcaskie Estate in Fife — just across the water from Edinburgh. Their Lincoln Red cattle are a rare native breed, 100% pasture-fed on herbal grasslands and Soil Association organic certified. The cows are moved to fresh pasture daily, and the beef is dry-aged whole for six weeks at Bowhouse before it's butchered and sent to us.</p>
+            <p>It makes a difference you can taste. The marbling from the Lincoln Red breed keeps the patty juicy, and the six weeks of dry-aging gives it a depth of flavour you don't get from regular mince.</p>
             <div class="food-grid" style="grid-template-columns: 1fr 1fr;">
                 <img src="/images/bowhouse-cattle.jpg" alt="Lincoln Red cattle grazing on the Balcaskie Estate, Fife" style="grid-column: auto;">
-                <img src="/images/bowhouse-estate.jpg" alt="Bowhouse on the Balcaskie Estate, Fife">
+                <img src="/images/Bowhouse-Fife-Summe.jpg" alt="Bowhouse on the Balcaskie Estate, Fife">
             </div>
             <p style="font-size: 0.8rem; color: rgba(255,246,218,0.35); margin-top: 0.5rem;">Images courtesy of <a href="https://butcherybowhouse.com" target="_blank" style="color: rgba(255,246,218,0.35);">Butchery at Bowhouse</a></p>
         </div>
@@ -230,31 +249,43 @@
             <div class="lp-highlights">
                 <div class="lp-highlight">
                     <h3>Smash Burgers</h3>
-                    <p>Organic, pasture-fed Lincoln Red beef from Fife, dry-aged for six weeks then smashed thin on the grill for maximum crust.</p>
+                    <p>Rare-breed Lincoln Red beef, smashed thin on a hot grill for maximum crust. Simple, proper, and satisfying.</p>
                 </div>
                 <div class="lp-highlight">
                     <h3>Fried Chicken</h3>
-                    <p>Crispy buttermilk fried chicken sandwiches. Nashville hot if you can handle the heat.</p>
+                    <p>Buttermilk-brined, double-coated, and fried until golden. Nashville hot or classic — your call.</p>
                 </div>
                 <div class="lp-highlight">
                     <h3>Hand-Cut Chips</h3>
-                    <p>Proper chips, hand cut and cooked twice. The way they should be done.</p>
+                    <p>Proper chips, hand cut and cooked twice. Loaded or on the side.</p>
                 </div>
                 <div class="lp-highlight">
                     <h3>Vegan Options</h3>
-                    <p>Plant-based burgers and sides that are just as good. Not an afterthought.</p>
+                    <p>Plant-based burgers and sides that are just as good. Always on the menu.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Kitchen Hours -->
+        <!-- Hours -->
         <div class="lp-section">
-            <h2>Kitchen Hours</h2>
-            <p>The kitchen has its own hours — we serve food from the times below. Walk-ins welcome after the kitchen closes for drinks only.</p>
-            <div class="lp-hours-note">
-                Monday – Wednesday: 4pm – 9pm<br>
-                Thursday – Saturday: 12pm – 9pm (Friday &amp; Saturday kitchen until 10pm)<br>
-                Sunday: 12:30pm – 9pm
+            <h2>Opening Hours</h2>
+            <div class="lp-hours-grid">
+                <div>
+                    <h3>Bar</h3>
+                    <table class="hours-table">
+                        <% hours.forEach(h => { %>
+                            <tr><td class="day"><%= h.day %></td><td class="time"><%= formatTime(h.bar_open) %> – <%= formatTime(h.bar_close) %></td></tr>
+                        <% }); %>
+                    </table>
+                </div>
+                <div>
+                    <h3>Kitchen</h3>
+                    <table class="hours-table">
+                        <% hours.forEach(h => { %>
+                            <tr><td class="day"><%= h.day %></td><td class="time"><%= formatTime(h.kitchen_open) %> – <%= formatTime(h.kitchen_close) %></td></tr>
+                        <% }); %>
+                    </table>
+                </div>
             </div>
         </div>
 

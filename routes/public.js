@@ -136,10 +136,14 @@ router.get('/drink', async (req, res) => {
 // GET /food — Food & burgers landing page
 router.get('/food', async (req, res) => {
   const content = await getContent();
+  const hours = await getHours();
+  const lang = res.locals.lang || 'en';
   res.render('food', {
     bookUrl: content.book_url || '#',
     menuUrl: content.food_menu_url || '#',
-    allergensUrl: content.food_allergens_url || '#'
+    allergensUrl: content.food_allergens_url || '#',
+    hours,
+    formatTime: (t) => formatTime(t, lang)
   });
 });
 
